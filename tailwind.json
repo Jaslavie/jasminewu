@@ -1,0 +1,41 @@
+{
+  "tailwindConfig": {
+    "directives": {
+      "name": "@apply",
+      "description": "Use the `@apply` directive to inline any existing utility classes into your own custom CSS. This is useful when you find a common utility pattern in your HTML that you'd like to extract to a new component.",
+      "references": [
+        {
+          "name": "Tailwind Documentation",
+          "url": "https://tailwindcss.com/docs/functions-and-directives#apply"
+        }
+      ]
+    },
+    "content": [
+      "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+      "./src/components/**/*.{js,ts,jsx,tsx,mdx}"
+    ],
+    "theme": {
+      "extend": {
+        "fontFamily": {
+          "sans": ["var(--font-body)"],
+          "mono": ["var(--font-mono)"],
+          "serif": ["var(--font-serif)"],
+          "subheading": ["var(--font-subheading)"]
+        },
+        "colors": {
+          "background": "var(--color-background)",
+          "outline": "var(--color-outline)",
+          "cardBorder": "var(--color-card-border)",
+          "text": {
+            "heading": "var(--color-text-heading)",
+            "body": "var(--color-text-body)",
+            "subheading": "var(--color-text-subheading)",
+            "gradient": "var(--color-text-gradient)"
+          },
+          "accent": "var(--color-accent)"
+        }
+      }
+    },
+    "plugins": []
+  }
+}

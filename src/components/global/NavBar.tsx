@@ -1,11 +1,14 @@
-import Link from "next/link";
+import ChaosLink from "@/components/ui/Link";
 
 export default function NavBar() {
     return (
         <div className="w-full flex justify-between flex-row">
             <nav className="flex flex-row gap-4">
-                <Link href="/about">about.</Link>
-                <Link href="/lists">lists.</Link>
+                <ChaosLink href="/">
+                    Jasmine Wu
+                </ChaosLink>
+                <ChaosLink href="/about">about.</ChaosLink>
+                <ChaosLink href="/lists">lists.</ChaosLink>
             </nav>
         </div>
     )
