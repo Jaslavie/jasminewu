@@ -14,6 +14,7 @@ const config: Config = {
           heading: 'var(--color-text-heading)',
           body: 'var(--color-text-body)',
           subheading: 'var(--color-text-subheading)',
+          active: 'var(--color-text-active)'
         },
         accent: 'var(--color-accent)',
       },
