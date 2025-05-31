@@ -43,11 +43,13 @@ class GlitchEffect {
         // Set original styles
         const computedStyle = window.getComputedStyle(element);
         this.originalStyles = {
-        fontFamily: computedStyle.fontFamily,
-        fontSize: computedStyle.fontSize,
-        fontWeight: computedStyle.fontWeight,
-        fontStyle: computedStyle.fontStyle,
-        color: computedStyle.color,
+            fontFamily: computedStyle.fontFamily,
+            fontSize: computedStyle.fontSize,
+            fontWeight: computedStyle.fontWeight,
+            fontStyle: computedStyle.fontStyle,
+            color: computedStyle.color,
+            textDecoration: computedStyle.textDecoration,
+            textDecorationColor: computedStyle.textDecorationColor,
         };
 
         // Initialize wrapper
@@ -64,6 +66,11 @@ class GlitchEffect {
     start() {
         if (this.isGlitching) return;
         this.isGlitching = true;
+
+        // Add hover styles
+        this.wrapper.style.textDecoration = 'underline';
+        this.wrapper.style.textDecorationColor = 'white';
+        this.wrapper.style.textDecorationStyle = 'solid';
 
         let iterations = 0;
         const maxIterations = 4;

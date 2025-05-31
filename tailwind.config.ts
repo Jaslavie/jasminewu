@@ -6,15 +6,16 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      // "bg-background"
       colors: {
         background: 'var(--color-background)',
         outline: 'var(--color-outline)',
         cardBorder: 'var(--color-card-border)',
+        // "text-text-heading"
         text: {
           heading: 'var(--color-text-heading)',
           body: 'var(--color-text-body)',
           subheading: 'var(--color-text-subheading)',
-          active: 'var(--color-text-active)'
         },
         accent: 'var(--color-accent)',
       },

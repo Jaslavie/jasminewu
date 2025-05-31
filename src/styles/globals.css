@@ -22,12 +22,6 @@
   --color-text-body: rgba(255, 255, 255, 0.7);
   --color-text-subheading: rgba(255, 255, 255, 0.395);
   --color-text-active: #ffffff; 
-
-  /* ----- Typography ----- */
-  --size-title: 48px;
-  --size-heading: 26px;
-  --size-subheading: 22px;
-  --size-paragraph: 14px;
 }
 
 /* ----- Base Styles ----- */
@@ -37,11 +31,19 @@
   }
 
   body {
-    @apply bg-background text-text-body font-sans min-h-screen w-full overflow-x-hidden;
+    @apply bg-background text-text-body font-sans min-h-screen w-full overflow-x-hidden leading-[1.25];
   }
 
   h1 {
-    @apply text-text-heading font-serif;
+    @apply text-text-heading leading-[1.15];
+  }
+
+  h2 {
+    @apply text-text-heading font-serif italic text-[38px] md:text-[42px];
+  }
+
+  p {
+    @apply text-text-body font-normal text-sm/6;
   }
 }
 
@@ -52,15 +54,10 @@
   }
 
   .link {
-    @apply relative underline-offset-1 decoration-2;
+    @apply text-white underline-offset-4 relative cursor-pointer decoration-dotted decoration-gray-600 underline;
     
-    &::after {
-      @apply absolute bottom-0 left-0 h-[1px] w-full origin-bottom-right scale-x-0  transition-transform;
-      content: '';
-    }
-    
-    &:hover::after {
-      @apply scale-x-100;
+    &:hover {
+      @apply underline decoration-solid cursor-pointer decoration-white;
     }
   }
 }
