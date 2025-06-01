@@ -26,7 +26,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <section className="relative min-h-screen min-w-screen overflow-hidden">
+        <section className="relative min-h-[90vh] min-w-screen overflow-hidden">
             {/* Video Background */}
             <video 
                 autoPlay 

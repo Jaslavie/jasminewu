@@ -47,7 +47,10 @@
   }
 
   p {
-    @apply text-text-body font-normal text-sm/6;
+    @apply text-text-body font-normal text-base/6;
+  }
+  ::selection {
+    @apply bg-[#415effed] z-10 text-white;
   }
 }
 
