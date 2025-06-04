@@ -16,7 +16,7 @@ interface ASCIIArtAnimationProps {
 
 const ASCIIArtAnimation: React.FC<ASCIIArtAnimationProps> = ({
   className = "",
-  fontSize = 27.62,
+  fontSize = 20,
   color = "rgba(255, 255, 255, 0.506)",
   activeColor = "#fff",
   opacity = 0.85,
@@ -43,6 +43,7 @@ const ASCIIArtAnimation: React.FC<ASCIIArtAnimationProps> = ({
  YMUP^
    ^^`;
 
+  //*----- animation for the ripple effect -------
   useEffect(() => {
     if (!containerRef.current) return;
 
@@ -139,7 +140,7 @@ const ASCIIArtAnimation: React.FC<ASCIIArtAnimationProps> = ({
           element.style.color = "";
           (element as any).isGlitching = false;
         }
-      }, 50);
+      }, 120); // speed of the glitch
     }
 
     function findNearbyChars(
@@ -178,7 +179,7 @@ const ASCIIArtAnimation: React.FC<ASCIIArtAnimationProps> = ({
         nearbyChars.forEach((nearChar, index) => {
           setTimeout(() => {
             simpleGlitch(nearChar);
-          }, index * 50);
+          }, index * 100);
         });
       };
 
@@ -198,6 +199,7 @@ const ASCIIArtAnimation: React.FC<ASCIIArtAnimationProps> = ({
     };
   }, [rippleRadius, glitchDuration, fontSize]);
 
+  //*----- styling for the hover effect -------
   const styles: React.CSSProperties = {
     color: "rgba(255, 255, 255, 0.506)",
     whiteSpace: "pre",
@@ -209,6 +211,7 @@ const ASCIIArtAnimation: React.FC<ASCIIArtAnimationProps> = ({
     opacity,
     letterSpacing,
     fontFamily: "EB Garamond",
+    transition: "opacity 0.5s ease-in-out",
   };
 
   return (

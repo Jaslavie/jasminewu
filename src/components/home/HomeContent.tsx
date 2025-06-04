@@ -3,40 +3,43 @@
 import Link from "@/components/ui/Link";
 import Planet from "@/components/misc/Planet";
 import TextReveal from "@/components/home/Animations/TextReveal";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ChaosLink from "@/components/ui/Link";
 
 export default function HomeContent() {
+  const [showContent, setShowContent] = useState(false);
+  const [showThesisPara1, setShowThesisPara1] = useState(false);
+  const [showThesisPara2, setShowThesisPara2] = useState(false);
+  const [showThesisPara3, setShowThesisPara3] = useState(false);
+  const [showThesisPara4, setShowThesisPara4] = useState(false);
+  const [showSocials, setShowSocials] = useState(false);
+  const [showPlanet, setShowPlanet] = useState(false);
+
   useEffect(() => {
     // Check if window is available (client-side only)
     if (typeof window === "undefined") return;
 
-    // Dynamic import to avoid SSR issues
-    import("scrollreveal").then((ScrollRevealModule) => {
-      const ScrollReveal = ScrollRevealModule.default;
+    // Listen for TextReveal completion
+    const handleTextRevealComplete = () => {
+      setShowContent(true);
 
-      const sr = ScrollReveal({
-        duration: 1000,
-        reset: false,
-        easing: "cubic-bezier(0.5, 0, 0, 1)",
-      });
+      // Stagger the reveals with intervals
+      setTimeout(() => setShowThesisPara1(true), 100); // First paragraph
+      setTimeout(() => setShowThesisPara2(true), 200); // Second paragraph
+      setTimeout(() => setShowThesisPara3(true), 300); // Third paragraph
+      setTimeout(() => setShowThesisPara4(true), 400); // Fourth paragraph
+      setTimeout(() => setShowSocials(true), 500); // Social links
+      setTimeout(() => setShowPlanet(true), 700); // Planet last
+    };
 
-      sr.reveal(".home-content p", {
-        delay: 2600,
-      });
+    window.addEventListener("textRevealComplete", handleTextRevealComplete);
 
-      sr.reveal("#Planet", {
-        delay: 3000,
-      });
-
-      sr.reveal(".thesis-content", {
-        delay: 3200,
-      });
-
-      sr.reveal(".social-links-bottom", {
-        delay: 3400,
-      });
-    });
+    return () => {
+      window.removeEventListener(
+        "textRevealComplete",
+        handleTextRevealComplete
+      );
+    };
   }, []);
 
   return (
@@ -44,19 +47,51 @@ export default function HomeContent() {
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col justify-center px-[10%]">
         {/* Header Section */}
-        <div className="home-content mb-16 max-w-2xl">
+        <div className="home-content mb-8 max-w-2xl w-[40vw]">
           <div className="mb-8">
             <TextReveal />
           </div>
-          <p className="text-base">
+          <p
+            className="text-base"
+            style={{
+              opacity: showContent ? 1 : 0,
+              visibility: showContent ? "visible" : "hidden",
+              transition: "opacity 0.5s ease-in-out",
+            }}
+          >
             currently in{" "}
             <Link href="https://www.palantir.com/">Washington D.C. ↗</Link>
           </p>
         </div>
 
         {/* Thesis Content */}
-        <div className="thesis-content space-y-6 max-w-2xl">
-          <p>
+        <div
+          className="thesis-content space-y-6 max-w-2xl w-[40vw]"
+          style={{
+            opacity:
+              showThesisPara1 ||
+              showThesisPara2 ||
+              showThesisPara3 ||
+              showThesisPara4
+                ? 1
+                : 0,
+            visibility:
+              showThesisPara1 ||
+              showThesisPara2 ||
+              showThesisPara3 ||
+              showThesisPara4
+                ? "visible"
+                : "hidden",
+            transition: "opacity 0.5s ease-in-out",
+          }}
+        >
+          <p
+            style={{
+              opacity: showThesisPara1 ? 1 : 0,
+              visibility: showThesisPara1 ? "visible" : "hidden",
+              transition: "opacity 0.5s ease-in-out",
+            }}
+          >
             The hardest problems demand clarity under chaos. The next frontier
             isn't smarter AI. It's interfaces where humans and AI think and act
             as one. I currently experiment with human-AI collaboration for
@@ -70,7 +105,13 @@ export default function HomeContent() {
             study CS & Neuroscience at UC Irvine.
           </p>
 
-          <p>
+          <p
+            style={{
+              opacity: showThesisPara2 ? 1 : 0,
+              visibility: showThesisPara2 ? "visible" : "hidden",
+              transition: "opacity 0.5s ease-in-out",
+            }}
+          >
             Previously, I won 15{" "}
             <Link href="https://devpost.com/jaslavie">hackathons</Link>{" "}
             including the world's largest AI hackathon, joined{" "}
@@ -87,14 +128,26 @@ export default function HomeContent() {
             Agency.
           </p>
 
-          <p>
+          <p
+            style={{
+              opacity: showThesisPara3 ? 1 : 0,
+              visibility: showThesisPara3 ? "visible" : "hidden",
+              transition: "opacity 0.5s ease-in-out",
+            }}
+          >
             As a kid I built cardboard claw machines and sold handmade clothes
             in my living room. Augmenting perception and beauty felt like
             alchemy. Henceforth, I made it my life's mission to master (and
             elevate) the art of human experience.
           </p>
 
-          <p>
+          <p
+            style={{
+              opacity: showThesisPara4 ? 1 : 0,
+              visibility: showThesisPara4 ? "visible" : "hidden",
+              transition: "opacity 0.5s ease-in-out",
+            }}
+          >
             Occasionally, I rabbit hole into{" "}
             <Link href="https://www.pinterest.com/Jaslavie/wwii/">
               WW2 history
@@ -104,36 +157,53 @@ export default function HomeContent() {
             , and linger in classical art museums. My favorite painting is{" "}
             <Link href="https://docs.google.com/document/d/1CzlYHEmkBuTxmPa-5-PeTGrjZgd06Puz3gIr9QQ1f1c/edit?tab=t.0">
               <i>the Blue Boy</i>
-            </Link>{" "}.
+            </Link>{" "}
+            .
           </p>
         </div>
 
         {/* Social Links at Bottom */}
-        <div className="social-links-bottom mt-16 space-y-4">
-          
-            <p className="flex flex-row gap-4 items-center">
-              <span>linkedin</span>
-              <ChaosLink href="https://linkedin.com/in/jaslavie">/jaslavie ↗</ChaosLink>
-            </p>
-          
-          
-            <p className="flex flex-row gap-4 items-center">
-              <span>substack</span>
-              <ChaosLink href="https://substack.com/@jaslavie">@jaslavie ↗</ChaosLink>
-            </p>
-          
-          
-            <p className="flex flex-row gap-4 items-center">
-              <span>github</span>
-              <ChaosLink href="https://github.com/jaslavie/">@jaslavie ↗</ChaosLink>
-            </p>
-         
+        <div
+          className="social-links-bottom mt-16 space-y-3"
+          style={{
+            opacity: showSocials ? 1 : 0,
+            visibility: showSocials ? "visible" : "hidden",
+            transition: "opacity 0.5s ease-in-out",
+          }}
+        >
+          <p className="flex flex-row gap-2 items-center">
+            <span>linkedin</span>
+            <ChaosLink href="https://linkedin.com/in/jaslavie">
+              /jaslavie ↗
+            </ChaosLink>
+          </p>
+
+          <p className="flex flex-row gap-2 items-center">
+            <span>substack</span>
+            <ChaosLink href="https://substack.com/@jaslavie">
+              @jaslavie ↗
+            </ChaosLink>
+          </p>
+
+          <p className="flex flex-row gap-2 items-center">
+            <span>github</span>
+            <ChaosLink href="https://github.com/jaslavie/">
+              @jaslavie ↗
+            </ChaosLink>
+          </p>
         </div>
       </div>
 
       {/* Right Side ASCII Art */}
       <div className="w-1/3 flex items-center justify-center">
-        <div id="Planet">
+        <div
+          id="Planet"
+          style={{
+            opacity: showPlanet ? 1 : 0,
+            visibility: showPlanet ? "visible" : "hidden",
+            transition: "opacity 0.5s ease-in-out",
+          }}
+        >
           <Planet />
         </div>
       </div>

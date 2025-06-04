@@ -137,7 +137,7 @@ export default function CurationsContent() {
       </div>
 
       {/* Description */}
-      <div className="curations-description mb-12 space-y-4">
+      <div className="curations-description mb-12 space-y-4 w-full md:w-10% ">
         <p>
           Thus, I enjoy curating experiences — be it places traveled, historical
           documents, or 1940s era photographs.
