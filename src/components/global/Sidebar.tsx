@@ -23,7 +23,12 @@ export default function Sidebar() {
       <nav className="flex flex-col space-y-4">
         {navItems.map((item) => (
           <div key={item.href}>
-            <Link href={item.href}>{item.label}</Link>
+            <Link
+              href={item.href}
+              className="text-gray-400 hover:text-white text-sm transition-colors"
+            >
+              {item.label}
+            </Link>
           </div>
         ))}
       </nav>

@@ -1,34 +1,19 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import WritingLink from "./WritingLink";
 
 export default function WritingContent() {
+  const [showWritingList, setShowWritingList] = useState(false);
+
   useEffect(() => {
-    // Check if window is available (client-side only)
-    if (typeof window === "undefined") return;
+    // Start animation with delay
+    const timer = setTimeout(() => setShowWritingList(true), 400);
 
-    // Dynamic import to avoid SSR issues
-    import("scrollreveal").then((ScrollRevealModule) => {
-      const ScrollReveal = ScrollRevealModule.default;
-
-      const sr = ScrollReveal({
-        origin: "bottom",
-        distance: "20px",
-        duration: 1000,
-        delay: 200,
-        easing: "cubic-bezier(0.5, 0, 0, 1)",
-        reset: false,
-      });
-
-      sr.reveal(".writing-header", {
-        delay: 200,
-      });
-
-      sr.reveal(".writing-list", {
-        delay: 400,
-      });
-    });
+    // Cleanup timer
+    return () => {
+      clearTimeout(timer);
+    };
   }, []);
 
   const writings = [
@@ -41,9 +26,15 @@ export default function WritingContent() {
 
   return (
     <div className="px-16 py-20 max-w-4xl">
-
       {/* Writing List */}
-      <div className="writing-list space-y-4">
+      <div
+        className="writing-list space-y-4"
+        style={{
+          opacity: showWritingList ? 1 : 0,
+          visibility: showWritingList ? "visible" : "hidden",
+          transition: "opacity 0.5s ease-in-out",
+        }}
+      >
         {writings.map((writing, index) => (
           <WritingLink key={index} href={writing.link}>
             {writing.title}

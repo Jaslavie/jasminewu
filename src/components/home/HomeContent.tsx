@@ -47,7 +47,7 @@ export default function HomeContent() {
   return (
     <div className="flex min-h-screen">
       {/* Main Content Area */}
-      <div className="flex-1 flex flex-col justify-center pl-[10%]">
+      <div className="flex-1 flex flex-col justify-center pl-[8%]">
         {/* Header Section */}
         <div className="home-content mb-12 max-w-2xl w-[38vw]">
           {/* Main header */}
@@ -210,7 +210,7 @@ export default function HomeContent() {
       </div>
 
       {/* Right Side ASCII Art */}
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center pr-[8%]">
         <div
           id="Planet"
           style={{

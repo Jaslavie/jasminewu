@@ -16,7 +16,7 @@ interface ASCIIArtAnimationProps {
 
 const ASCIIArtAnimation: React.FC<ASCIIArtAnimationProps> = ({
   className = "",
-  fontSize = 20,
+  fontSize = 18,
   color = "rgba(255, 255, 255, 0.506)",
   activeColor = "#fff",
   opacity = 0.85,
