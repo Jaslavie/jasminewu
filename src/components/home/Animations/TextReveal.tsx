@@ -17,13 +17,15 @@ export default function TextReveal() {
 
     // Calculate total animation duration
     const totalChars = text.replace(/\s/g, "").length;
-    const totalDuration = totalChars * 40 + 1000; // 40ms per char + 1s animation duration
+    const totalDuration = totalChars * 40 + 100; // 40ms per char + 1s animation duration
 
     words.forEach((word, wordIndex) => {
       const wordWrapper = document.createElement("span");
       wordWrapper.style.display = "inline-block";
       wordWrapper.style.whiteSpace = "nowrap";
       wordWrapper.style.marginRight = "0.2em";
+      wordWrapper.style.fontSize = "26px";
+      wordWrapper.style.fontWeight = "light";
 
       const characters = word.split("");
       const isSpecialWord =
@@ -41,7 +43,8 @@ export default function TextReveal() {
             "text-gradient",
             "font-serif",
             "italic",
-            "text-[36px]"
+            "text-[32px]",
+            "font-light"
           );
         }
 
@@ -66,7 +69,7 @@ export default function TextReveal() {
   return (
     <h1
       ref={containerRef}
-      className="font-light text-[28px] text-text-heading md:text-[32px]"
+      className="font-light"
     />
   );
 }

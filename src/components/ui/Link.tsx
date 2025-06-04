@@ -56,13 +56,13 @@ class GlitchEffect {
     // Get computed styles before creating wrapper
     const computedStyle = window.getComputedStyle(element);
     this.originalStyles = {
-      fontFamily: computedStyle.fontFamily || "Arial, sans-serif",
-      fontSize: computedStyle.fontSize || "16px",
-      fontWeight: computedStyle.fontWeight || "normal",
-      fontStyle: computedStyle.fontStyle || "normal",
-      color: computedStyle.color || "inherit",
-      textDecoration: computedStyle.textDecoration || "none",
-      textDecorationColor: computedStyle.textDecorationColor || "currentColor",
+      fontFamily: computedStyle.fontFamily,
+      fontSize: computedStyle.fontSize,
+      fontWeight: computedStyle.fontWeight,
+      fontStyle: computedStyle.fontStyle,
+      color: computedStyle.color,
+      textDecoration: computedStyle.textDecoration,
+      textDecorationColor: computedStyle.textDecorationColor,
     };
 
     // Measure original text width using canvas
@@ -108,10 +108,10 @@ class GlitchEffect {
 
     // Set font to match the element's computed style
     // computed style is extracted from the element
-    const fontStyle = computedStyle.fontStyle || "normal";
-    const fontWeight = computedStyle.fontWeight || "normal";
-    const fontSize = computedStyle.fontSize || "16px";
-    const fontFamily = computedStyle.fontFamily || "Arial, sans-serif";
+    const fontStyle = computedStyle.fontStyle;
+    const fontWeight = computedStyle.fontWeight;
+    const fontSize = computedStyle.fontSize;
+    const fontFamily = computedStyle.fontFamily;
 
     context.font = `${fontStyle} ${fontWeight} ${fontSize} ${fontFamily}`;
 

@@ -47,7 +47,7 @@
   }
 
   p {
-    @apply text-text-body font-normal text-[14px]/[1.40];
+    @apply text-text-body font-normal text-[12px]/[1.45];
   }
   ::selection {
     @apply bg-[#415effed] z-10 text-white;
@@ -84,6 +84,13 @@
 
   .link {
     @apply text-white underline-offset-4 relative cursor-pointer decoration-dotted decoration-gray-400 underline;
+
+    /* inherit from parent */
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    line-height: inherit;
 
     &:hover {
       @apply underline decoration-solid cursor-pointer decoration-white;

@@ -48,15 +48,17 @@ export default function HomeContent() {
       <div className="flex-1 flex flex-col justify-center px-[10%]">
         {/* Header Section */}
         <div className="home-content mb-8 max-w-2xl w-[40vw]">
+          {/* Main header */}
           <div className="mb-8">
             <TextReveal />
           </div>
+          {/* Currently in */}
           <p
             className="text-base"
             style={{
               opacity: showContent ? 1 : 0,
               visibility: showContent ? "visible" : "hidden",
-              transition: "opacity 0.5s ease-in-out",
+              transition: "opacity 0.5s ease-in-out"
             }}
           >
             currently in{" "}
