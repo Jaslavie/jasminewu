@@ -23,11 +23,11 @@ export default function Hero() {
       });
 
       sr.reveal("p", {
-        delay: 2600,
+        delay: 2000,
       });
 
       sr.reveal("#Planet", {
-        delay: 3000,
+        delay: 3200,
       });
     });
   }, []);
@@ -49,14 +49,8 @@ export default function Hero() {
       <div className="relative flex min-h-screen w-full z-10">
         {/* Left Content */}
         <div className="flex flex-col justify-center px-[10%] w-2/3">
-          {/* <h1 className="font-light text-[32px] text-text-heading md:text-[36px]">
-                        Jasmine designs 
-                        <span className="px-2 text-gradient font-serif italic text-[38px] md:text-[42px]">human-ai interfaces</span> 
-                        that translate 
-                        <span className="px-2 text-gradient font-serif italic text-[38px] md:text-[42px] chaos-text">chaos into order.</span>
-                    </h1> */}
           <TextReveal />
-          <p className="text-base mt-4">
+          <p className="text-base">
             currently in{" "}
             <Link href="https://www.palantir.com/">Washington D.C. ↗</Link>
           </p>

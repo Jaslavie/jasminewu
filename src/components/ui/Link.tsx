@@ -80,8 +80,12 @@ class GlitchEffect {
     this.wrapper.style.whiteSpace = "nowrap";
     this.wrapper.style.marginBottom = "-6px";
 
-    // Initialize wrapper
-    if (!element.contains(this.wrapper)) {
+    // Initialize wrapper - ensure we don't duplicate if it already exists
+    const existingWrapper = element.querySelector("span[data-glitch-wrapper]");
+    if (existingWrapper) {
+      this.wrapper = existingWrapper as HTMLSpanElement;
+    } else {
+      this.wrapper.setAttribute("data-glitch-wrapper", "true");
       this.wrapper.textContent = this.originalText;
       element.textContent = "";
       element.appendChild(this.wrapper);
@@ -117,7 +121,7 @@ class GlitchEffect {
   }
 
   start() {
-    if (this.isGlitching) return;
+    if (this.isGlitching || !this.wrapper || !this.originalText.trim()) return;
     this.isGlitching = true;
 
     // Add hover styles
@@ -129,6 +133,12 @@ class GlitchEffect {
     const maxIterations = 4;
 
     const interval = setInterval(() => {
+      if (!this.wrapper) {
+        clearInterval(interval);
+        this.isGlitching = false;
+        return;
+      }
+
       const scrambledText = this.originalText
         .split("")
         .map((char) =>
@@ -152,6 +162,7 @@ class GlitchEffect {
   }
 
   stop() {
+    if (!this.wrapper) return;
     this.isGlitching = false;
     this.wrapper.textContent = this.originalText;
     Object.assign(this.wrapper.style, this.originalStyles);
@@ -179,12 +190,16 @@ export default function ChaosLink({
 
   useEffect(() => {
     if (linkRef.current && !glitchEffectRef.current) {
-      // Small delay to ensure styles are fully computed
-      setTimeout(() => {
+      // Small delay to ensure styles are fully computed and cascade reveal is done
+      const initTimer = setTimeout(() => {
         if (linkRef.current) {
           glitchEffectRef.current = new GlitchEffect(linkRef.current);
         }
-      }, 0);
+      }, 50);
+
+      return () => {
+        clearTimeout(initTimer);
+      };
     }
 
     // cleanup the glitch effect when the link is unmounted
@@ -196,8 +211,12 @@ export default function ChaosLink({
     };
   }, []);
 
-  // event handlers
+  // Event handlers
   const handleMouseEnter = () => {
+    // If glitch effect isn't initialized yet, try to initialize it
+    if (!glitchEffectRef.current && linkRef.current) {
+      glitchEffectRef.current = new GlitchEffect(linkRef.current);
+    }
     glitchEffectRef.current?.start();
   };
 

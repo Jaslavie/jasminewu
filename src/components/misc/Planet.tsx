@@ -1,7 +1,6 @@
-"use client"
+"use client";
 
-import React, { useEffect, useRef } from 'react';
-import CascadeReveal from '@/components/home/Animations/CascadeReveal';
+import React, { useEffect, useRef } from "react";
 
 interface ASCIIArtAnimationProps {
   className?: string;
@@ -12,17 +11,19 @@ interface ASCIIArtAnimationProps {
   rippleRadius?: number;
   glitchDuration?: number;
   letterSpacing?: string;
+  zIndex?: number;
 }
 
 const ASCIIArtAnimation: React.FC<ASCIIArtAnimationProps> = ({
-  className = '',
+  className = "",
   fontSize = 27.62,
-  color = 'rgba(255, 255, 255, 0.506)',
-  activeColor = '#fff',
+  color = "rgba(255, 255, 255, 0.506)",
+  activeColor = "#fff",
   opacity = 0.85,
   rippleRadius = 50,
   glitchDuration = 1000,
-  letterSpacing = '0.02em'
+  letterSpacing = "0.02em",
+  zIndex = 10,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -46,158 +47,174 @@ const ASCIIArtAnimation: React.FC<ASCIIArtAnimationProps> = ({
     if (!containerRef.current) return;
 
     const container = containerRef.current;
-    
+
     // Split the art into individual characters and wrap each in a span
-    const wrappedArt = art.split('\n').map(line => 
-      line.split('').map(char => 
-        char === ' ' ? ' ' : `<span class="char" data-original-char="${char}">${char}</span>`
-      ).join('')
-    ).join('\n');
-    
+    const wrappedArt = art
+      .split("\n")
+      .map((line) =>
+        line
+          .split("")
+          .map((char) =>
+            char === " "
+              ? " "
+              : `<span class="char" data-original="${char}">${char}</span>`
+          )
+          .join("")
+      )
+      .join("\n");
+
     container.innerHTML = wrappedArt;
 
-    // Wrap each character in a container that preserves dimensions
-    const chars = container.querySelectorAll('.char') as NodeListOf<HTMLSpanElement>;
-    chars.forEach(char => {
-      // Create wrapper and store original dimensions
-      const wrapper = document.createElement('span');
-      wrapper.className = 'char-wrapper';
-      
-      // Force layout calculation to get correct dimensions
-      const rect = char.getBoundingClientRect();
-      wrapper.style.width = `${rect.width}px`;
-      wrapper.style.height = `${rect.height}px`;
-      wrapper.style.display = 'inline-block';
-      wrapper.style.position = 'relative';
-      wrapper.style.textAlign = 'center';
-      
-      // Wrap the character
-      char.parentNode?.insertBefore(wrapper, char);
-      wrapper.appendChild(char);
-    });
+    // Get all character spans and wrap them in fixed-width containers
+    const chars = container.querySelectorAll(
+      ".char"
+    ) as NodeListOf<HTMLSpanElement>;
 
-    function findNearbyChars(sourceChar: HTMLSpanElement, radius: number): HTMLSpanElement[] {
+    // Create a canvas to measure character widths
+    const canvas = document.createElement("canvas");
+    const context = canvas.getContext("2d");
+    if (context) {
+      context.font = `${fontSize}px "EB Garamond"`;
+
+      chars.forEach((char) => {
+        const originalChar = char.getAttribute("data-original") || "";
+
+        // Measure the original character width
+        const charWidth = context.measureText(originalChar).width;
+
+        // Create a wrapper with fixed width
+        const wrapper = document.createElement("span");
+        wrapper.className = "char-wrapper";
+        wrapper.style.display = "inline-block";
+        wrapper.style.width = `${Math.max(charWidth, 8)}px`; // Minimum 8px width
+        wrapper.style.overflow = "hidden";
+        wrapper.style.textAlign = "center";
+        wrapper.style.position = "relative";
+
+        // Move the character into the wrapper
+        if (char.parentNode) {
+          char.parentNode.insertBefore(wrapper, char);
+          wrapper.appendChild(char);
+        }
+
+        // Style the character span
+        char.style.display = "inline-block";
+        char.style.width = "100%";
+        char.style.textAlign = "center";
+      });
+    }
+
+    // Re-query to get the wrapped characters
+    const wrappedChars = container.querySelectorAll(
+      ".char"
+    ) as NodeListOf<HTMLSpanElement>;
+
+    function simpleGlitch(element: HTMLSpanElement): void {
+      if ((element as any).isGlitching) return;
+      (element as any).isGlitching = true;
+
+      // Turn text white on hover
+      element.style.color = "#ffffff";
+
+      const glitchChars = "!@#$%^&*()_+:,.";
+      const originalChar = element.getAttribute("data-original") || "";
+      let iterations = 0;
+      const maxIterations = 4;
+
+      const interval = setInterval(() => {
+        element.textContent = originalChar
+          .split("")
+          .map((char) =>
+            char === " "
+              ? char
+              : glitchChars[Math.floor(Math.random() * glitchChars.length)]
+          )
+          .join("");
+        iterations++;
+
+        if (iterations >= maxIterations) {
+          clearInterval(interval);
+          element.textContent = originalChar;
+          // Reset color after glitch
+          element.style.color = "";
+          (element as any).isGlitching = false;
+        }
+      }, 50);
+    }
+
+    function findNearbyChars(
+      sourceChar: HTMLSpanElement,
+      radius: number
+    ): HTMLSpanElement[] {
       const sourceRect = sourceChar.getBoundingClientRect();
       const sourceCenter = {
         x: sourceRect.left + sourceRect.width / 2,
-        y: sourceRect.top + sourceRect.height / 2
+        y: sourceRect.top + sourceRect.height / 2,
       };
 
-      return Array.from(container.querySelectorAll('.char')).filter(char => {
+      return Array.from(wrappedChars).filter((char) => {
         if (char === sourceChar) return false;
         const rect = char.getBoundingClientRect();
         const center = {
           x: rect.left + rect.width / 2,
-          y: rect.top + rect.height / 2
+          y: rect.top + rect.height / 2,
         };
         const distance = Math.sqrt(
-          Math.pow(center.x - sourceCenter.x, 2) + 
-          Math.pow(center.y - sourceCenter.y, 2)
+          Math.pow(center.x - sourceCenter.x, 2) +
+            Math.pow(center.y - sourceCenter.y, 2)
         );
         return distance <= radius;
       }) as HTMLSpanElement[];
     }
 
-    function simpleGlitch(element: HTMLSpanElement): void {
-      if ((element as any).isGlitching) return;
-      (element as any).isGlitching = true;
-      
-      const glitchChars = "!@#$%^&*()_+-=[]{}|;:,.<>";
-      let iterations = 0;
-      const maxIterations = 5;
-      
-      const interval = setInterval(() => {
-        element.textContent = glitchChars[Math.floor(Math.random() * glitchChars.length)];
-        iterations++;
-        
-        if (iterations >= maxIterations) {
-          clearInterval(interval);
-          // Always revert to the stored original character
-          element.textContent = element.dataset.originalChar || '';
+    // Add event listeners to each character
+    wrappedChars.forEach((char) => {
+      const handleMouseEnter = () => {
+        // Glitch the hovered character
+        simpleGlitch(char);
+
+        // Glitch nearby characters with delay
+        const nearbyChars = findNearbyChars(char, rippleRadius);
+        nearbyChars.forEach((nearChar, index) => {
           setTimeout(() => {
-            (element as any).isGlitching = false;
-          }, glitchDuration);
-        }
-      }, 200);
-    }
+            simpleGlitch(nearChar);
+          }, index * 50);
+        });
+      };
 
-    // Add event listeners
-    const handleMouseEnter = (char: HTMLSpanElement) => {
-      if ((char as any).isAnimating) return;
-      (char as any).isAnimating = true;
-      
-      // Animate hovered character
-      char.classList.add('active');
-      simpleGlitch(char);
+      char.addEventListener("mouseenter", handleMouseEnter);
 
-      // Ripple effect
-      const nearbyChars = findNearbyChars(char, rippleRadius);
-      nearbyChars.forEach((nearChar, index) => {
-        const delay = index * 100;
-        setTimeout(() => {
-          nearChar.classList.add('active');
-          simpleGlitch(nearChar);
-          
-          // Reset nearby char after animation
-          setTimeout(() => {
-            nearChar.classList.remove('active');
-            nearChar.textContent = nearChar.dataset.originalChar || '';
-          }, glitchDuration);
-        }, delay);
-      });
-
-      // Reset hovered char after animation
-      setTimeout(() => {
-        char.classList.remove('active');
-        char.textContent = char.dataset.originalChar || '';
-        (char as any).isAnimating = false;
-      }, glitchDuration);
-    };
-
-    chars.forEach(char => {
-      const listener = () => handleMouseEnter(char);
-      char.addEventListener('mouseenter', listener);
-      
       // Store the listener for cleanup
-      (char as any)._listener = listener;
+      (char as any)._listener = handleMouseEnter;
     });
 
     // Cleanup function
     return () => {
-      chars.forEach(char => {
+      wrappedChars.forEach((char) => {
         if ((char as any)._listener) {
-          char.removeEventListener('mouseenter', (char as any)._listener);
+          char.removeEventListener("mouseenter", (char as any)._listener);
         }
       });
     };
-  }, [rippleRadius, glitchDuration]);
+  }, [rippleRadius, glitchDuration, fontSize]);
 
   const styles: React.CSSProperties = {
-    color: '#666',
-    whiteSpace: 'pre',
+    color: "rgba(255, 255, 255, 0.506)",
+    whiteSpace: "pre",
     fontSize: `${fontSize}px`,
     lineHeight: 1,
-    cursor: 'default',
-    position: 'relative',
-    fontWeight: 'normal',
+    cursor: "pointer",
+    position: "relative",
+    fontWeight: "normal",
     opacity,
     letterSpacing,
-    fontFamily: '"EB Garamond", serif'
+    fontFamily: "EB Garamond",
   };
 
   return (
-   
-     
-
-      <CascadeReveal delay={3000} direction="left-to-right">
-      
-      <div 
-        style={styles}
-        className={className}
-      >
-        {art}
-      </div>
-    </CascadeReveal>
+    <div ref={containerRef} style={styles} className={className}>
+      {art}
+    </div>
   );
 };
 

@@ -4,6 +4,7 @@ import Link from "@/components/ui/Link";
 import Planet from "@/components/misc/Planet";
 import TextReveal from "@/components/home/Animations/TextReveal";
 import React, { useEffect } from "react";
+import ChaosLink from "@/components/ui/Link";
 
 export default function HomeContent() {
   useEffect(() => {
@@ -41,7 +42,7 @@ export default function HomeContent() {
   return (
     <div className="flex min-h-screen">
       {/* Main Content Area */}
-      <div className="flex-1 flex flex-col justify-center px-16 py-20">
+      <div className="flex-1 flex flex-col justify-center px-[10%]">
         {/* Header Section */}
         <div className="home-content mb-16 max-w-2xl">
           <div className="mb-8">
@@ -109,18 +110,24 @@ export default function HomeContent() {
 
         {/* Social Links at Bottom */}
         <div className="social-links-bottom mt-16 space-y-4">
-          <div className="flex flex-row gap-4 items-center">
-            <span className="text-gray-400">linkedin</span>
-            <Link href="https://linkedin.com/in/jaslavie">/jaslavie ↗</Link>
-          </div>
-          <div className="flex flex-row gap-4 items-center">
-            <span className="text-gray-400">substack</span>
-            <Link href="https://substack.com/@jaslavie">@jaslavie ↗</Link>
-          </div>
-          <div className="flex flex-row gap-4 items-center">
-            <span className="text-gray-400">github</span>
-            <Link href="https://github.com/jaslavie/">@jaslavie ↗</Link>
-          </div>
+          
+            <p className="flex flex-row gap-4 items-center">
+              <span>linkedin</span>
+              <ChaosLink href="https://linkedin.com/in/jaslavie">/jaslavie ↗</ChaosLink>
+            </p>
+          
+          
+            <p className="flex flex-row gap-4 items-center">
+              <span>substack</span>
+              <ChaosLink href="https://substack.com/@jaslavie">@jaslavie ↗</ChaosLink>
+            </p>
+          
+          
+            <p className="flex flex-row gap-4 items-center">
+              <span>github</span>
+              <ChaosLink href="https://github.com/jaslavie/">@jaslavie ↗</ChaosLink>
+            </p>
+         
         </div>
       </div>
 

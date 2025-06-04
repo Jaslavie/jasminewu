@@ -13,7 +13,7 @@ export default function Sidebar() {
   ];
 
   return (
-    <aside className="fixed left-0 top-0 h-screen w-40 border-r border-gray-700 flex flex-col p-6">
+    <aside className="fixed left-0 top-0 h-screen w-40 border-r border-gray-700 flex flex-col p-8 z-10">
       {/* Title */}
       <div className="mb-12">
         <ChaosLink href="/">Jasmine Wu</ChaosLink>

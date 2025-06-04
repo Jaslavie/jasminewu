@@ -16,12 +16,12 @@
   --color-outline: #5f5f5f40;
   --color-card-border: #363637;
   --color-accent: #6360ff;
-  
+
   /* Text Colors */
   --color-text-heading: #ffffff;
   --color-text-body: rgba(255, 255, 255, 0.7);
   --color-text-subheading: rgba(255, 255, 255, 0.395);
-  --color-text-active: #ffffff; 
+  --color-text-active: #ffffff;
 }
 
 /* ----- Base Styles ----- */
@@ -54,12 +54,12 @@
   }
 }
 
-/* ---- Misc components ----- */
+/* ---- Animation Keyframes ----- */
 @layer components {
   @keyframes revealText {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(10px);
     }
     to {
       opacity: 1;
@@ -67,7 +67,7 @@
     }
   }
 
-  @keyframes revealText {
+  @keyframes slideReveal {
     from {
       opacity: 0;
       transform: translateX(-10px);
@@ -84,7 +84,7 @@
 
   .link {
     @apply text-white underline-offset-4 relative cursor-pointer decoration-dotted decoration-gray-400 underline;
-    
+
     &:hover {
       @apply underline decoration-solid cursor-pointer decoration-white;
     }
