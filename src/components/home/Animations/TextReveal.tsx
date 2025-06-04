@@ -12,7 +12,7 @@ export default function TextReveal() {
         // Clear any existing content
         container.innerHTML = '';
 
-        const text = "Jasmine designs human-ai interfaces that translate chaos into order.";
+        const text = "Jasmine designs interfaces for human-AI collaboration.";
         const words = text.split(" ");
         
         words.forEach((word, wordIndex) => {
@@ -22,8 +22,8 @@ export default function TextReveal() {
             wordWrapper.style.marginRight = "0.2em";
             
             const characters = word.split("");
-            const isSpecialWord = word === "human-ai" || word === "interfaces" || 
-                                word === "chaos" || word === "into" || word === "order.";
+            const isSpecialWord = word === "human-AI" || word === "interfaces" || word === "for" 
+                            || word === "collaboration.";
             
             characters.forEach((char, charIndex) => {
                 const span = document.createElement("span");

@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
+import Sidebar from "@/components/global/Sidebar";
 
 export const metadata: Metadata = {
   title: "Jasmine Wu Portfolio",
-  description: "Jasmine Wu is an interdisciplinary designer who designs Human-AI interfaces for spacewalks and the battlefield.",
+  description:
+    "Jasmine Wu is an interdisciplinary designer who designs Human-AI interfaces for spacewalks and the battlefield.",
 };
 
 export default function RootLayout({
@@ -14,7 +16,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {children}
+        <div className="flex min-h-screen">
+          {/* Fixed Left Sidebar */}
+          <Sidebar />
+
+          {/* Main Content Area */}
+          <main className="flex-1 relative">{children}</main>
+        </div>
       </body>
     </html>
   );

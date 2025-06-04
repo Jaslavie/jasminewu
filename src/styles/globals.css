@@ -47,7 +47,7 @@
   }
 
   p {
-    @apply text-text-body font-normal text-base/6;
+    @apply text-text-body font-normal text-[14px]/[1.40];
   }
   ::selection {
     @apply bg-[#415effed] z-10 text-white;
@@ -83,7 +83,7 @@
   }
 
   .link {
-    @apply text-white underline-offset-4 relative cursor-pointer decoration-dotted decoration-gray-600 underline;
+    @apply text-white underline-offset-4 relative cursor-pointer decoration-dotted decoration-gray-400 underline;
     
     &:hover {
       @apply underline decoration-solid cursor-pointer decoration-white;
