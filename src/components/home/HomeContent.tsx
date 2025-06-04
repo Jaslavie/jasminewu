@@ -12,6 +12,7 @@ export default function HomeContent() {
   const [showThesisPara2, setShowThesisPara2] = useState(false);
   const [showThesisPara3, setShowThesisPara3] = useState(false);
   const [showThesisPara4, setShowThesisPara4] = useState(false);
+  const [showDivider, setShowDivider] = useState(false);
   const [showSocials, setShowSocials] = useState(false);
   const [showPlanet, setShowPlanet] = useState(false);
 
@@ -28,6 +29,7 @@ export default function HomeContent() {
       setTimeout(() => setShowThesisPara2(true), 200); // Second paragraph
       setTimeout(() => setShowThesisPara3(true), 300); // Third paragraph
       setTimeout(() => setShowThesisPara4(true), 400); // Fourth paragraph
+      setTimeout(() => setShowDivider(true), 450); // HR divider
       setTimeout(() => setShowSocials(true), 500); // Social links
       setTimeout(() => setShowPlanet(true), 700); // Planet last
     };
@@ -45,7 +47,7 @@ export default function HomeContent() {
   return (
     <div className="flex min-h-screen">
       {/* Main Content Area */}
-      <div className="flex-1 flex flex-col justify-center px-[10%]">
+      <div className="flex-1 flex flex-col justify-center pl-[10%]">
         {/* Header Section */}
         <div className="home-content mb-12 max-w-2xl w-[38vw]">
           {/* Main header */}
@@ -58,7 +60,7 @@ export default function HomeContent() {
             style={{
               opacity: showContent ? 1 : 0,
               visibility: showContent ? "visible" : "hidden",
-              transition: "opacity 0.5s ease-in-out"
+              transition: "opacity 0.5s ease-in-out",
             }}
           >
             currently in{" "}
@@ -166,7 +168,14 @@ export default function HomeContent() {
           </p>
         </div>
 
-        <hr className="border-gray-800 mt-8 w-[38vw]" />
+        <hr
+          className="border-gray-800 mt-8 w-[38vw]"
+          style={{
+            opacity: showDivider ? 1 : 0,
+            visibility: showDivider ? "visible" : "hidden",
+            transition: "opacity 0.5s ease-in-out",
+          }}
+        />
 
         {/* Social Links at Bottom */}
         <div
@@ -177,7 +186,6 @@ export default function HomeContent() {
             transition: "opacity 0.5s ease-in-out",
           }}
         >
-          
           <p className="flex flex-row gap-2 items-center">
             <span>linkedin</span>
             <ChaosLink href="https://linkedin.com/in/jaslavie">
@@ -202,7 +210,7 @@ export default function HomeContent() {
       </div>
 
       {/* Right Side ASCII Art */}
-      <div className="w-1/3 flex items-center justify-center">
+      <div className="flex items-center justify-center">
         <div
           id="Planet"
           style={{
