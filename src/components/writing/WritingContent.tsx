@@ -7,8 +7,8 @@ export default function WritingContent() {
   const [showWritingList, setShowWritingList] = useState(false);
 
   useEffect(() => {
-    // Start animation with delay
-    const timer = setTimeout(() => setShowWritingList(true), 400);
+    // Start animation with faster delay
+    const timer = setTimeout(() => setShowWritingList(true), 200);
 
     // Cleanup timer
     return () => {
@@ -25,10 +25,10 @@ export default function WritingContent() {
   ];
 
   return (
-    <div className="px-16 py-20 max-w-4xl">
+    <div className="p-[8%] max-w-4xl">
       {/* Writing List */}
       <div
-        className="writing-list space-y-4"
+        className="writing-list space-y-2"
         style={{
           opacity: showWritingList ? 1 : 0,
           visibility: showWritingList ? "visible" : "hidden",

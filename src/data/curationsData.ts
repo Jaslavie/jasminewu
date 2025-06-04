@@ -26,7 +26,7 @@ export const curationsData: CurationData = {
   //* ========== History ==========
   history: [
     {
-      title: "The Blue Boy - Thomas Gainsborough",
+      title: "The Blue Boy",
       link: "https://www.huntington.org/blue-boy",
     },
     {
@@ -58,11 +58,11 @@ export const curationsData: CurationData = {
   //* ========== Writing ==========
   writing: [
     {
-      title: "Mastery - Robert Greene",
+      title: "Mastery",
       link: "https://www.amazon.com/Mastery-Robert-Greene/dp/014312417X",
     },
     {
-      title: "Ironies of Automation - Lisanne Bainbridge",
+      title: "Ironies of Automation",
       link: "https://ckrybus.com/static/papers/Bainbridge_1983_Automatica.pdf",
     },
     {
@@ -70,11 +70,11 @@ export const curationsData: CurationData = {
       link: "https://www.amazon.com/Julius-Caesar-Folger-Shakespeare-Library/dp/0743482743/",
     },
     {
-      title: "How to do Great Work - Paul Graham",
+      title: "How to do Great Work",
       link: "https://paulgraham.com/greatwork.html",
     },
     {
-      title: "Live vs Dead Players - Sam Burja",
+      title: "Live vs Dead Players",
       link: "https://samoburja.com/live-versus-dead-players/",
     },
     {

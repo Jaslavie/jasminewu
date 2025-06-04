@@ -83,7 +83,7 @@
   }
 
   .link {
-    @apply text-gray-100 underline-offset-4 relative cursor-pointer decoration-dotted decoration-gray-400 underline;
+    @apply text-gray-100 underline-offset-4 relative cursor-pointer decoration-dotted decoration-gray-600 underline;
 
     /* inherit from parent */
     font-size: inherit;

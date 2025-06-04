@@ -22,7 +22,7 @@ function CurationColumn({ title, items, isVisible }: CurationColumnProps) {
       }}
     >
       <h2 className="text-white font-serif italic text-[22px] mb-8">{title}</h2>
-      <div className="space-y-2">
+      <div className="space-y-3">
         {items.map((item, index) => (
           <div
             key={index}
@@ -51,10 +51,10 @@ export default function CurationsContent() {
     // Initialize show states for columns
     setShowColumns(new Array(categories.length).fill(false));
 
-    // Start animations with delays
-    const timer1 = setTimeout(() => setShowDescription(true), 200);
+    // Start animations with faster delays
+    const timer1 = setTimeout(() => setShowDescription(true), 100);
 
-    // Stagger column reveals
+    // Stagger column reveals with faster timing
     categories.forEach((_, index) => {
       const timer = setTimeout(
         () => {
@@ -64,7 +64,7 @@ export default function CurationsContent() {
             return newState;
           });
         },
-        600 + index * 150
+        250 + index * 75
       );
     });
 
