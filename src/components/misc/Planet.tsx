@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useEffect, useRef } from 'react';
+import CascadeReveal from '@/components/home/Animations/CascadeReveal';
 
 interface ASCIIArtAnimationProps {
   className?: string;
@@ -185,27 +186,18 @@ const ASCIIArtAnimation: React.FC<ASCIIArtAnimationProps> = ({
   };
 
   return (
-    <>
-      <style>{`
-        .char {
-          display: inline-block;
-          transition: color 0.3s;
-          font-family: "EB Garamond", serif;
-          font-size: ${fontSize}px;
-          color: ${color};
-        }
+   
+     
 
-        .char.active {
-          color: ${activeColor};
-          transition: color 0.2s ease-in-out;
-        }
-      `}</style>
+      <CascadeReveal delay={3000} direction="left-to-right">
+      
       <div 
-        ref={containerRef}
-        className={className}
         style={styles}
-      />
-    </>
+        className={className}
+      >
+        {art}
+      </div>
+    </CascadeReveal>
   );
 };
 
