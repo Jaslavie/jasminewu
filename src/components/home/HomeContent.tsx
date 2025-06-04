@@ -47,9 +47,9 @@ export default function HomeContent() {
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col justify-center px-[10%]">
         {/* Header Section */}
-        <div className="home-content mb-8 max-w-2xl w-[40vw]">
+        <div className="home-content mb-12 max-w-2xl w-[38vw]">
           {/* Main header */}
-          <div className="mb-8">
+          <div className="mb-2">
             <TextReveal />
           </div>
           {/* Currently in */}
@@ -68,7 +68,7 @@ export default function HomeContent() {
 
         {/* Thesis Content */}
         <div
-          className="thesis-content space-y-6 max-w-2xl w-[40vw]"
+          className="thesis-content space-y-6 max-w-2xl w-[38vw]"
           style={{
             opacity:
               showThesisPara1 ||
@@ -157,22 +157,27 @@ export default function HomeContent() {
             ,{" "}
             <Link href="https://substack.com/home/post/p-156802970">write</Link>
             , and linger in classical art museums. My favorite painting is{" "}
-            <Link href="https://docs.google.com/document/d/1CzlYHEmkBuTxmPa-5-PeTGrjZgd06Puz3gIr9QQ1f1c/edit?tab=t.0">
-              <i>the Blue Boy</i>
-            </Link>{" "}
+            <i>
+              <Link href="https://docs.google.com/document/d/1CzlYHEmkBuTxmPa-5-PeTGrjZgd06Puz3gIr9QQ1f1c/edit?tab=t.0">
+                the Blue Boy
+              </Link>
+            </i>{" "}
             .
           </p>
         </div>
 
+        <hr className="border-gray-800 mt-8 w-[38vw]" />
+
         {/* Social Links at Bottom */}
         <div
-          className="social-links-bottom mt-16 space-y-3"
+          className="social-links-bottom mt-8 space-y-2"
           style={{
             opacity: showSocials ? 1 : 0,
             visibility: showSocials ? "visible" : "hidden",
             transition: "opacity 0.5s ease-in-out",
           }}
         >
+          
           <p className="flex flex-row gap-2 items-center">
             <span>linkedin</span>
             <ChaosLink href="https://linkedin.com/in/jaslavie">

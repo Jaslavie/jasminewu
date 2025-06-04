@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
 import Sidebar from "@/components/global/Sidebar";
+import BackgroundNoise from "@/components/global/BackgroundNoise";
 
 export const metadata: Metadata = {
   title: "Jasmine Wu Portfolio",
@@ -17,6 +18,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div className="flex min-h-screen">
+          {/* Background Noise Effect */}
+          <BackgroundNoise />
+
           {/* Fixed Left Sidebar */}
           <Sidebar />
 

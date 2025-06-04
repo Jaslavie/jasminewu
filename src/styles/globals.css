@@ -19,7 +19,7 @@
 
   /* Text Colors */
   --color-text-heading: #ffffff;
-  --color-text-body: rgba(255, 255, 255, 0.7);
+  --color-text-body: rgba(255, 255, 255, 0.65);
   --color-text-subheading: rgba(255, 255, 255, 0.395);
   --color-text-active: #ffffff;
 }
@@ -47,7 +47,7 @@
   }
 
   p {
-    @apply text-text-body font-normal text-[12px]/[1.45];
+    @apply text-text-body font-light text-[14px]/[1.5];
   }
   ::selection {
     @apply bg-[#415effed] z-10 text-white;
@@ -83,7 +83,7 @@
   }
 
   .link {
-    @apply text-white underline-offset-4 relative cursor-pointer decoration-dotted decoration-gray-400 underline;
+    @apply text-gray-100 underline-offset-4 relative cursor-pointer decoration-dotted decoration-gray-400 underline;
 
     /* inherit from parent */
     font-size: inherit;
@@ -93,7 +93,7 @@
     line-height: inherit;
 
     &:hover {
-      @apply underline decoration-solid cursor-pointer decoration-white;
+      @apply underline decoration-solid cursor-pointer decoration-white text-white;
     }
   }
 }
