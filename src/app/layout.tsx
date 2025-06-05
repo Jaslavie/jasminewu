@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
-import Sidebar from "@/components/global/Sidebar";
+import ConditionalSidebar from "@/components/global/ConditionalSidebar";
+import ConditionalLayout from "@/components/global/ConditionalLayout";
 import BackgroundNoise from "@/components/global/BackgroundNoise";
 
 export const metadata: Metadata = {
@@ -26,11 +27,11 @@ export default function RootLayout({
           {/* Background Noise Effect */}
           <BackgroundNoise />
 
-          {/* Fixed Left Sidebar */}
-          <Sidebar />
+          {/* Conditional Left Sidebar - Hidden on writing pages */}
+          <ConditionalSidebar />
 
-          {/* Main Content Area */}
-          <main className="flex-1 relative">{children}</main>
+          {/* Main Content Area - Adjusts layout based on sidebar presence */}
+          <ConditionalLayout>{children}</ConditionalLayout>
         </div>
       </body>
     </html>

@@ -122,13 +122,14 @@ export default function HomeContent() {
             <Link href="https://skydeck.berkeley.edu/">Berkeley Skydeck</Link>{" "}
             to build AI agents for 911 dispatchers, hosted the largest{" "}
             <Link href="https://designatuci.com/designathon/24">
-              design hackathon
+              designathon
             </Link>{" "}
-            in the U.S, and presented{" "}
+            in the U.S, and worked with NASA to build adaptive navigation {" "}
             <Link href="https://drive.google.com/file/d/1DkKtDtQf2yCWEBN7kKnwssy7x6IParCf/view">
-              research
+            tools
             </Link>{" "}
-            on adaptive navigation tools for spacewalks to the European Space
+            presented{" "}
+            to the European Space
             Agency.
           </p>
 

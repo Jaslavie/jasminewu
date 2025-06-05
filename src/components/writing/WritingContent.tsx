@@ -17,10 +17,19 @@ export default function WritingContent() {
   }, []);
 
   const writings = [
-    { title: "how to make outsized bets", link: "https://substack.com/home/post/p-156802970" },
-    { title: "curation and taste", link: "https://www.notion.so/thought-engine-17574d39a483809680f8e416bab5d4dd" },
-    { title: "contrary: orca security memo", link: "https://research.contrary.com/company/orca-security" },
-    { title: "principles", link: "#" },
+    {
+      title: "how to make outsized bets",
+      link: "https://substack.com/home/post/p-156802970",
+    },
+    {
+      title: "curation and taste",
+      link: "https://www.notion.so/thought-engine-17574d39a483809680f8e416bab5d4dd",
+    },
+    {
+      title: "contrary: orca security memo",
+      link: "https://research.contrary.com/company/orca-security",
+    },
+    { title: "principles", link: "/writing/principles" },
     { title: "paradigm shifts", link: "#" },
   ];
 

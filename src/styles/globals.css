@@ -43,12 +43,21 @@
   }
 
   h2 {
-    @apply text-text-heading font-serif italic text-[38px] md:text-[42px];
+    @apply text-text-heading font-subheading text-[24px] mb-6;
   }
 
   p {
     @apply text-text-body font-normal text-[14px]/[1.5];
   }
+
+  ol {
+    @apply text-text-body font-normal text-[14px]/[1.5] list-decimal pl-6;
+  }
+
+  li {
+    @apply text-text-body font-normal text-[14px]/[1.5] mb-4;
+  }
+
   ::selection {
     @apply bg-[#3639f8ed] z-10 text-white;
   }

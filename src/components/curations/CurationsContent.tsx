@@ -78,7 +78,7 @@ export default function CurationsContent() {
     <div className="p-[6%] w-full flex flex-row justify-between">
       {/* Description */}
       <div
-        className="curations-description w-[22vw] mr-12 space-y-4 flex-shrink-0"
+        className="curations-description w-[20vw] mr-12 space-y-4 flex-shrink-0"
         style={{
           opacity: showDescription ? 1 : 0,
           visibility: showDescription ? "visible" : "hidden",

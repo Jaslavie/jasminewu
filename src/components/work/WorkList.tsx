@@ -12,22 +12,24 @@ interface WorkProjectItemProps {
 function WorkProjectItem({ project, isVisible }: WorkProjectItemProps) {
   return (
     <div
-      className="border-b border-gray-800 pb-6"
+      className="border-b border-gray-800 pb-6 w-full"
       style={{
         opacity: isVisible ? 1 : 0,
         visibility: isVisible ? "visible" : "hidden",
         transition: "opacity 0.5s ease-in-out",
       }}
     >
-      <div className="flex items-start space-x-6">
-        <span className="text-gray-500 text-sm font-mono">
+      <div className="flex items-start space-x-6 w-full">
+        <span className="text-gray-500 text-sm font-mono flex-shrink-0">
           {project.number}.
         </span>
-        <div className="flex-1">
+        <div className="flex-1 min-w-0">
           <h3 className="text-white font-serif italic text-xl mb-2 hover:text-gray-300 transition-colors">
             <ChaosLink href={project.link}>{project.title} →</ChaosLink>
           </h3>
-          <p className="text-gray-400 text-sm">{project.description}</p>
+          <p className="text-gray-400 text-sm leading-relaxed">
+            {project.description}
+          </p>
         </div>
       </div>
     </div>
@@ -66,17 +68,17 @@ export default function WorkList() {
   }, []);
 
   return (
-    <div className="p-[6%] w-full flex flex-row justify-between">
+    <div className="p-[6%] w-full flex flex-row items-start">
       {/* Description */}
       <div
-        className="work-description w-[22vw] mr-12 space-y-4 flex-shrink-0"
+        className="work-description w-[20vw] mr-[12%] space-y-4 flex-shrink-0"
         style={{
           opacity: showDescription ? 1 : 0,
           visibility: showDescription ? "visible" : "hidden",
           transition: "opacity 0.5s ease-in-out",
         }}
       >
-        <p>Collections of interaction models & design prototypes.</p>
+        <p>Collection of interaction models & design prototypes.</p>
         <p>
           I'm curious about decision-making paradigms in high-pressure
           environments (emergency response, battlefield ops, and spacewalks).
@@ -92,8 +94,8 @@ export default function WorkList() {
       </div>
 
       {/* Projects Layout */}
-      <div className="flex-1 mr-8">
-        <div className="space-y-6">
+      <div className="flex-1 max-w-[30vw] mr-[6%] justify-start">
+        <div className="space-y-6 w-full">
           {workData.map((project, index) => (
             <WorkProjectItem
               key={project.number}
