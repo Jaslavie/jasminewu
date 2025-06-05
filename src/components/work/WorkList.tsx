@@ -85,7 +85,7 @@ export default function WorkList() {
           Particularly, how humans can better interact with these systems.
         </p>
         <p>
-          Worked on most things solo or in a very tight-knit team of engineers.
+          Worked solo or in a very tight-knit team of engineers.
         </p>
         <p>
           You can find more of my work on{" "}
