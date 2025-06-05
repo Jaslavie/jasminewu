@@ -38,10 +38,6 @@ export const curationsData: CurationData = {
       link: "https://towardsdatascience.com/napoleon-was-the-best-general-ever-and-the-math-proves-it-86efed303eeb",
     },
     {
-      title: '"The Steel of American Resolve", 9/11',
-      link: "https://www.youtube.com/watch?v=0218zWdyPS8&list=PLrvljGPnb6yWcRrURLXtfkWlN3J5MswoP&index=1",
-    },
-    {
       title: "Rise and Fall of the Third Reich",
       link: "https://www.amazon.com/Rise-Fall-Third-Reich-ebook/dp/B07XD76H41/",
     },

@@ -1,52 +1,108 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Card from "@/components/work/Card";
+import ChaosLink from "@/components/ui/Link";
+import { workData, WorkProject } from "../../data/workData";
+
+interface WorkProjectItemProps {
+  project: WorkProject;
+  isVisible: boolean;
+}
+
+function WorkProjectItem({ project, isVisible }: WorkProjectItemProps) {
+  return (
+    <div
+      className="border-b border-gray-800 pb-6"
+      style={{
+        opacity: isVisible ? 1 : 0,
+        visibility: isVisible ? "visible" : "hidden",
+        transition: "opacity 0.5s ease-in-out",
+      }}
+    >
+      <div className="flex items-start space-x-6">
+        <span className="text-gray-500 text-sm font-mono">
+          {project.number}.
+        </span>
+        <div className="flex-1">
+          <h3 className="text-white font-serif italic text-xl mb-2 hover:text-gray-300 transition-colors">
+            <ChaosLink href={project.link}>{project.title} →</ChaosLink>
+          </h3>
+          <p className="text-gray-400 text-sm">{project.description}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function WorkList() {
-  const [showTitle, setShowTitle] = useState(false);
-  const [showCards, setShowCards] = useState(false);
+  const [showDescription, setShowDescription] = useState(false);
+  const [showProjects, setShowProjects] = useState<boolean[]>([]);
 
   useEffect(() => {
-    // Start animations with fast delays
-    const timer1 = setTimeout(() => setShowTitle(true), 100);
-    const timer2 = setTimeout(() => setShowCards(true), 250);
+    // Initialize show states for projects
+    setShowProjects(new Array(workData.length).fill(false));
+
+    // Start animations with faster delays
+    const timer1 = setTimeout(() => setShowDescription(true), 100);
+
+    // Stagger project reveals with faster timing
+    workData.forEach((_, index) => {
+      const timer = setTimeout(
+        () => {
+          setShowProjects((prev) => {
+            const newState = [...prev];
+            newState[index] = true;
+            return newState;
+          });
+        },
+        250 + index * 75
+      );
+    });
 
     // Cleanup timers
     return () => {
       clearTimeout(timer1);
-      clearTimeout(timer2);
     };
   }, []);
 
   return (
-    <section className="px-[30%] py-20">
-      <h2
-        className="thesis-title text-text-heading font-serif italic text-[38px] md:text-[42px] mb-8"
-        style={{
-          opacity: showTitle ? 1 : 0,
-          visibility: showTitle ? "visible" : "hidden",
-          transition: "opacity 0.5s ease-in-out",
-        }}
-      >
-        experiments.
-      </h2>
-
+    <div className="p-[6%] w-full flex flex-row justify-between">
+      {/* Description */}
       <div
-        className="space-y-6"
+        className="work-description w-[22vw] mr-12 space-y-4 flex-shrink-0"
         style={{
-          opacity: showCards ? 1 : 0,
-          visibility: showCards ? "visible" : "hidden",
+          opacity: showDescription ? 1 : 0,
+          visibility: showDescription ? "visible" : "hidden",
           transition: "opacity 0.5s ease-in-out",
         }}
       >
-        <Card
-          number="01"
-          title="decision support system for lunar traversal"
-          description="exploring shared autonomy between AI and human operator on the moon."
-          link="/nasa-suits"
-        />
+        <p>Collections of interaction models & design prototypes.</p>
+        <p>
+          I'm curious about decision-making paradigms in high-pressure
+          environments (emergency response, battlefield ops, and spacewalks).
+          Particularly, how humans can better interact with these systems.
+        </p>
+        <p>
+          Worked on most things solo or in a very tight-knit team of engineers.
+        </p>
+        <p>
+          You can find more of my work on{" "}
+          <ChaosLink href="https://devpost.com/jaslavie">devpost</ChaosLink>.
+        </p>
       </div>
-    </section>
+
+      {/* Projects Layout */}
+      <div className="flex-1 mr-8">
+        <div className="space-y-6">
+          {workData.map((project, index) => (
+            <WorkProjectItem
+              key={project.number}
+              project={project}
+              isVisible={showProjects[index] || false}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }

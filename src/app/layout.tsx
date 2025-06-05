@@ -7,6 +7,11 @@ export const metadata: Metadata = {
   title: "Jasmine Wu Portfolio",
   description:
     "Jasmine Wu is an interdisciplinary designer who designs Human-AI interfaces for spacewalks and the battlefield.",
+  icons: {
+    icon: "/Jasmine_Wu_Logo_Square.png",
+    shortcut: "/Jasmine_Wu_Logo_Square.png",
+    apple: "/Jasmine_Wu_Logo_Square.png",
+  },
 };
 
 export default function RootLayout({

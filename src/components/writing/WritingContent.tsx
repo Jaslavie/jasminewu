@@ -17,15 +17,15 @@ export default function WritingContent() {
   }, []);
 
   const writings = [
-    { title: "how to make outsized bets", link: "#" },
-    { title: "curation and taste", link: "#" },
-    { title: "contrary: orca security memo", link: "#" },
+    { title: "how to make outsized bets", link: "https://substack.com/home/post/p-156802970" },
+    { title: "curation and taste", link: "https://www.notion.so/thought-engine-17574d39a483809680f8e416bab5d4dd" },
+    { title: "contrary: orca security memo", link: "https://research.contrary.com/company/orca-security" },
     { title: "principles", link: "#" },
     { title: "paradigm shifts", link: "#" },
   ];
 
   return (
-    <div className="p-[8%] max-w-4xl">
+    <div className="p-[6%] max-w-4xl">
       {/* Writing List */}
       <div
         className="writing-list space-y-2"

@@ -47,10 +47,10 @@
   }
 
   p {
-    @apply text-text-body font-light text-[14px]/[1.5];
+    @apply text-text-body font-normal text-[14px]/[1.5];
   }
   ::selection {
-    @apply bg-[#415effed] z-10 text-white;
+    @apply bg-[#3639f8ed] z-10 text-white;
   }
 }
 

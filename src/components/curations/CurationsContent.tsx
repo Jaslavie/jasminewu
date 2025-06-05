@@ -87,10 +87,10 @@ export default function CurationsContent() {
       >
         <p>
           I like to think of things like a scrapbook: nodes of artifacts to be
-          collected, then organized into a connected graph.
+          observed, collected, then organized into a network.
         </p>
         <p>
-          Thus, I enjoy curating experiences — be it places traveled, historical
+          I enjoy curating experiences the most — be it places traveled, historical
           documents, or 1940s era photographs.
         </p>
         <p>

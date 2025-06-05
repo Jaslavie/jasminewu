@@ -13,24 +13,30 @@ export default function Sidebar() {
   ];
 
   return (
-    <aside className="fixed left-0 top-0 h-screen w-40 border-r border-gray-700 flex flex-col p-8 z-10 ">
+    <aside className="fixed left-0 top-0 h-screen w-40 border-r border-gray-700 flex flex-col p-[2%] z-10 ">
       {/* Title */}
-      <div className="mb-12 font-serif italic text-2xl font-thin text-decoration-none outline-none border-none">
+      <div className="mb-5 font-['EB_Garamond'] italic text-2xl font-light text-decoration-none outline-none border-none">
         <Link href="/">J.W.</Link>
       </div>
 
       {/* Navigation */}
       <nav className="flex flex-col space-y-4">
-        {navItems.map((item) => (
-          <div key={item.href}>
-            <Link
-              href={item.href}
-              className="text-gray-400 hover:text-white text-sm transition-colors"
-            >
-              {item.label}
-            </Link>
-          </div>
-        ))}
+        {navItems.map((item) => {
+          const isActive = pathname === item.href;
+
+          return (
+            <div key={item.href}>
+              <Link
+                href={item.href}
+                className={`text-sm transition-colors ${
+                  isActive ? "text-white" : "text-gray-400 hover:text-white"
+                }`}
+              >
+                {item.label}
+              </Link>
+            </div>
+          );
+        })}
       </nav>
     </aside>
   );
