@@ -10,9 +10,15 @@ export default function ConditionalSidebar() {
   //* ==== Add all future writing pages here ====
   const isWritingPage = pathname.includes("/principles");
 
+  // Hide on writing pages (all devices) or on mobile (all pages)
   if (isWritingPage) {
     return null;
   }
 
-  return <Sidebar />;
+  // Only render sidebar on desktop
+  return (
+    <div className="hidden md:block">
+      <Sidebar />
+    </div>
+  );
 }

@@ -47,7 +47,7 @@
   }
 
   p {
-    @apply text-text-body font-normal text-[14px]/[1.5];
+    @apply text-text-body font-normal text-[14px]/[1.6];
   }
 
   ol {
@@ -104,5 +104,28 @@
     &:hover {
       @apply underline decoration-solid cursor-pointer decoration-white text-white;
     }
+  }
+}
+
+/* Mobile responsive typography */
+@media (max-width: 768px) {
+  h1 {
+    @apply text-[28px] leading-[1.2];
+  }
+
+  h2 {
+    @apply text-[24px] mb-4;
+  }
+
+  p {
+    @apply text-[14px]/[1.6];
+  }
+
+  ol {
+    @apply text-[14px]/[1.6];
+  }
+
+  li {
+    @apply text-[14px]/[1.6] mb-3;
   }
 }

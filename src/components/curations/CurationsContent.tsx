@@ -75,10 +75,10 @@ export default function CurationsContent() {
   }, [categories.length]);
 
   return (
-    <div className="p-[6%] w-full flex flex-row justify-between">
+    <div className="p-8 md:p-[6%] w-full flex flex-col md:flex-row md:justify-between space-y-10 md:space-y-0 max-w-full">
       {/* Description */}
       <div
-        className="curations-description w-[20vw] mr-12 space-y-4 flex-shrink-0"
+        className="curations-description w-full md:w-[20vw] md:mr-12 space-y-6 flex-shrink-0"
         style={{
           opacity: showDescription ? 1 : 0,
           visibility: showDescription ? "visible" : "hidden",
@@ -90,8 +90,8 @@ export default function CurationsContent() {
           observed, collected, then organized into a network.
         </p>
         <p>
-          I enjoy curating experiences the most — be it places traveled, historical
-          documents, or 1940s era photographs.
+          I enjoy curating experiences the most — be it places traveled,
+          historical documents, or 1940s era photographs.
         </p>
         <p>
           I like things that are slightly out of our attention, stripped to its
@@ -100,8 +100,8 @@ export default function CurationsContent() {
         <p>This is a collection of artifacts that resonate with me.</p>
       </div>
 
-      {/* Four Column Layout */}
-      <div className="flex flex-row gap-12 flex-1">
+      {/* Four Column Layout - Responsive Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:flex md:flex-row gap-10 md:gap-12 flex-1">
         {categories.map((category, index) => (
           <CurationColumn
             key={category}

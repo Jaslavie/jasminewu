@@ -78,7 +78,7 @@ class GlitchEffect {
     this.wrapper.style.textAlign = "left";
     this.wrapper.style.overflow = "hidden";
     this.wrapper.style.whiteSpace = "nowrap";
-    this.wrapper.style.marginBottom = "-5px";
+    this.wrapper.style.marginBottom = "-6px";
 
     // Initialize wrapper - ensure we don't duplicate if it already exists
     const existingWrapper = element.querySelector("span[data-glitch-wrapper]");

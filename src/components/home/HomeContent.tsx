@@ -45,13 +45,13 @@ export default function HomeContent() {
   }, []);
 
   return (
-    <div className="flex h-full pt-[5%]">
+    <div className="flex flex-col md:flex-row min-h-screen md:h-full px-8 md:px-0">
       {/* Main Content Area */}
-      <div className="flex-1 flex flex-col justify-center pl-[5%]">
+      <div className="flex-1 flex flex-col justify-center md:pl-[5%] max-w-full md:pb-0">
         {/* Header Section */}
-        <div className="home-content mb-12 max-w-2xl w-[38vw]">
+        <div className="home-content mb-10 md:mb-12 max-w-full md:max-w-2xl w-full md:w-[38vw]">
           {/* Main header */}
-          <div className="mb-2">
+          <div className="mb-3">
             <TextReveal />
           </div>
           {/* Currently in */}
@@ -70,7 +70,7 @@ export default function HomeContent() {
 
         {/* Thesis Content */}
         <div
-          className="thesis-content space-y-6 max-w-2xl w-[38vw]"
+          className="thesis-content space-y-6 md:space-y-6 max-w-full md:max-w-2xl w-full md:w-[38vw] md:mb-8"
           style={{
             opacity:
               showThesisPara1 ||
@@ -98,8 +98,7 @@ export default function HomeContent() {
           >
             The hardest problems demand clarity under chaos. The next frontier
             isn't smarter AI. It's interfaces where humans and AI think and act
-            as one. I currently experiment with human-AI collaboration for
-            battlefield ops at{" "}
+            as one. I design interfaces for human-AI collaboration on the battlefield at{" "}
             <Link href="https://www.palantir.com/platforms/gotham/">
               Palantir
             </Link>{" "}
@@ -151,7 +150,7 @@ export default function HomeContent() {
               transition: "opacity 0.5s ease-in-out",
             }}
           >
-            Occasionally, I rabbit hole into{" "}
+            In my free time, I rabbit hole into{" "}
             <Link href="https://www.pinterest.com/Jaslavie/wwii/">
               WW2 history
             </Link>
@@ -168,7 +167,7 @@ export default function HomeContent() {
         </div>
 
         <hr
-          className="border-gray-800 mt-8 w-[38vw]"
+          className="border-gray-800 my-3 w-full md:w-[38vw]"
           style={{
             opacity: showDivider ? 1 : 0,
             visibility: showDivider ? "visible" : "hidden",
@@ -178,7 +177,7 @@ export default function HomeContent() {
 
         {/* Social Links at Bottom */}
         <div
-          className="social-links-bottom mt-8 space-y-2"
+          className="social-links-bottom space-y-2"
           style={{
             opacity: showSocials ? 1 : 0,
             visibility: showSocials ? "visible" : "hidden",
@@ -209,7 +208,7 @@ export default function HomeContent() {
       </div>
 
       {/* Right Side ASCII Art */}
-      <div className="flex items-center justify-center pr-[8%]">
+      <div className="hidden md:flex items-center justify-center mt-12 md:mt-0 md:pr-[8%]">
         <div
           id="Planet"
           style={{

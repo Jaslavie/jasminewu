@@ -19,12 +19,12 @@ function WorkProjectItem({ project, isVisible }: WorkProjectItemProps) {
         transition: "opacity 0.5s ease-in-out",
       }}
     >
-      <div className="flex items-start space-x-6 w-full">
-        <span className="text-gray-500 text-sm font-mono flex-shrink-0">
+      <div className="flex flex-col md:flex-row md:items-start space-y-3 md:space-y-0 md:space-x-6 w-full">
+        <span className="text-gray-500 text-sm font-mono flex-shrink-0 md:block">
           {project.number}.
         </span>
         <div className="flex-1 min-w-0">
-          <h3 className="text-white font-serif italic text-xl mb-2 hover:text-gray-300 transition-colors">
+          <h3 className="text-white font-serif italic text-lg md:text-xl mb-2 hover:text-gray-300 transition-colors leading-tight">
             <ChaosLink href={project.link}>{project.title} →</ChaosLink>
           </h3>
           <p className="text-gray-400 text-sm leading-relaxed">
@@ -68,10 +68,10 @@ export default function WorkList() {
   }, []);
 
   return (
-    <div className="p-[6%] w-full flex flex-row items-start">
+    <div className="p-8 md:p-[6%] w-full flex flex-col md:flex-row items-start space-y-10 md:space-y-0 max-w-full">
       {/* Description */}
       <div
-        className="work-description w-[20vw] mr-[12%] space-y-4 flex-shrink-0"
+        className="work-description w-full md:w-[20vw] md:mr-[12%] space-y-6 flex-shrink-0"
         style={{
           opacity: showDescription ? 1 : 0,
           visibility: showDescription ? "visible" : "hidden",
@@ -94,8 +94,8 @@ export default function WorkList() {
       </div>
 
       {/* Projects Layout */}
-      <div className="flex-1 max-w-[40vw] mr-[6%] justify-start">
-        <div className="space-y-6 w-full">
+      <div className="flex-1 w-full md:max-w-[40vw] md:mr-[6%] justify-start">
+        <div className="space-y-6 md:space-y-8 w-full">
           {workData.map((project, index) => (
             <WorkProjectItem
               key={project.number}

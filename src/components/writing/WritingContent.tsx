@@ -34,10 +34,10 @@ export default function WritingContent() {
   ];
 
   return (
-    <div className="p-[6%] max-w-4xl">
+    <div className="p-8 md:p-[6%] max-w-full md:max-w-4xl">
       {/* Writing List */}
       <div
-        className="writing-list space-y-2"
+        className="writing-list space-y-3"
         style={{
           opacity: showWritingList ? 1 : 0,
           visibility: showWritingList ? "visible" : "hidden",

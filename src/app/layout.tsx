@@ -4,6 +4,7 @@ import ConditionalSidebar from "@/components/global/ConditionalSidebar";
 import ConditionalLayout from "@/components/global/ConditionalLayout";
 import BackgroundNoise from "@/components/global/BackgroundNoise";
 import ConditionalFooter from "@/components/global/ConditionalFooter";
+import MobileNav from "@/components/global/MobileNav";
 
 export const metadata: Metadata = {
   title: "Jasmine Wu Portfolio",
@@ -13,6 +14,11 @@ export const metadata: Metadata = {
     icon: "/Jasmine_Wu_Logo_Square.png",
     shortcut: "/Jasmine_Wu_Logo_Square.png",
     apple: "/Jasmine_Wu_Logo_Square.png",
+  },
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
   },
 };
 
@@ -28,9 +34,12 @@ export default function RootLayout({
           {/* Background Noise Effect */}
           <BackgroundNoise />
 
-          {/* Main Content Container - Height accounts for footer */}
-          <div className="relative" style={{ height: "calc(100vh - 2.5rem)" }}>
-            {/* Conditional Left Sidebar - Hidden on writing pages */}
+          {/* Mobile Navigation - Shows only on mobile */}
+          <MobileNav />
+
+          {/* Main Content Container - Mobile responsive */}
+          <div className="relative min-h-screen md:h-[calc(100vh-2.5rem)]">
+            {/* Conditional Left Sidebar - Hidden on writing pages and mobile */}
             <ConditionalSidebar />
 
             {/* Main Content Area - Adjusts layout based on sidebar presence */}
