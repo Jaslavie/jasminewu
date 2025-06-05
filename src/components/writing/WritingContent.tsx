@@ -17,6 +17,7 @@ export default function WritingContent() {
   }, []);
 
   const writings = [
+    { title: "principles", link: "/writing/principles" },
     {
       title: "how to make outsized bets",
       link: "https://substack.com/home/post/p-156802970",
@@ -29,8 +30,7 @@ export default function WritingContent() {
       title: "contrary: orca security memo",
       link: "https://research.contrary.com/company/orca-security",
     },
-    { title: "principles", link: "/writing/principles" },
-    { title: "paradigm shifts", link: "#" },
+    // { title: "paradigm shifts", link: "#" },
   ];
 
   return (

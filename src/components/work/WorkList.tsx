@@ -94,7 +94,7 @@ export default function WorkList() {
       </div>
 
       {/* Projects Layout */}
-      <div className="flex-1 max-w-[30vw] mr-[6%] justify-start">
+      <div className="flex-1 max-w-[40vw] mr-[6%] justify-start">
         <div className="space-y-6 w-full">
           {workData.map((project, index) => (
             <WorkProjectItem

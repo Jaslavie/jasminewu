@@ -18,7 +18,7 @@ export default function ConditionalLayout({
   const isWritingPage = pathname.includes("/principles");
 
   return (
-    <main className={`flex-1 relative ${isWritingPage ? "ml-0" : ""}`}>
+    <main className={`flex-1 relative z-10 ${isWritingPage ? "ml-0" : ""}`}>
       {children}
       {isWritingPage && <SocialLinks />}
     </main>

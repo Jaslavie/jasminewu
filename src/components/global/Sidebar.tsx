@@ -13,7 +13,7 @@ export default function Sidebar() {
   ];
 
   return (
-    <aside className="fixed left-0 top-0 h-screen w-40 border-r border-gray-700 flex flex-col p-[2%] z-10 ">
+    <aside className="fixed left-0 top-0 h-screen w-40 border-r border-gray-700 flex flex-col p-[2%] z-20">
       {/* Title */}
       <div className="mb-5 font-['EB_Garamond'] italic text-2xl font-light text-decoration-none outline-none border-none">
         <Link href="/">J.W.</Link>

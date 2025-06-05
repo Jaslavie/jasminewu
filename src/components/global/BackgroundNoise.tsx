@@ -26,14 +26,17 @@ export default function BackgroundNoise() {
       const data = imageData.data;
 
       for (let i = 0; i < data.length; i += 4) {
-        // Generate white noise
-        const noise = Math.random() * 200;
+        // Generate white noise - decreased amount by adding probability
+        if (Math.random() > 0.7) {
+          // Only generate noise for 30% of pixels (decreased amount)
+          const noise = Math.random() * 500;
 
-        // Apply white noise
-        data[i] = noise; // Red
-        data[i + 1] = noise; // Green
-        data[i + 2] = noise; // Blue
-        data[i + 3] = 50; // Alpha (less visible - 38/255 ≈ 15% opacity)
+          // Apply white noise
+          data[i] = noise; // Red
+          data[i + 1] = noise; // Green
+          data[i + 2] = noise; // Blue
+          data[i + 3] = 100; // Alpha (less visible - 38/255 ≈ 15% opacity)
+        }
       }
 
       ctx.putImageData(imageData, 0, 0);
@@ -42,7 +45,7 @@ export default function BackgroundNoise() {
     // Generate initial noise
     generateNoise();
 
-    const interval = setInterval(generateNoise, 150);
+    const interval = setInterval(generateNoise, 100);
 
     // Handle window resize
     const handleResize = () => {
@@ -63,9 +66,9 @@ export default function BackgroundNoise() {
       ref={canvasRef}
       className="fixed top-0 left-0 w-full h-full pointer-events-none"
       style={{
-        zIndex: 1,
+        zIndex: 9999,
         mixBlendMode: "screen", // Screen blend mode makes white pixels appear white
-        opacity: 0.6, // Increased opacity to make it more visible
+        opacity: 0.15, // Decreased opacity for more subtle effect
       }}
     />
   );

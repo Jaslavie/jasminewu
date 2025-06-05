@@ -43,7 +43,7 @@
   }
 
   h2 {
-    @apply text-text-heading font-subheading text-[24px] mb-6;
+    @apply text-text-heading font-subheading text-[26px] mb-3;
   }
 
   p {

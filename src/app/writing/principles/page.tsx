@@ -21,7 +21,7 @@ export default function Principles() {
   return (
     <div className="min-h-screen relative flex justify-center">
       <div
-        className="p-[6%] max-w-4xl w-[50vw]"
+        className="p-[6%] max-w-4xl w-[60vw]"
         style={{
           opacity: showContent ? 1 : 0,
           visibility: showContent ? "visible" : "hidden",
