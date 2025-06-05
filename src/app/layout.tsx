@@ -3,6 +3,7 @@ import "@/styles/globals.css";
 import ConditionalSidebar from "@/components/global/ConditionalSidebar";
 import ConditionalLayout from "@/components/global/ConditionalLayout";
 import BackgroundNoise from "@/components/global/BackgroundNoise";
+import ConditionalFooter from "@/components/global/ConditionalFooter";
 
 export const metadata: Metadata = {
   title: "Jasmine Wu Portfolio",
@@ -23,15 +24,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="flex min-h-screen">
+        <div>
           {/* Background Noise Effect */}
           <BackgroundNoise />
 
-          {/* Conditional Left Sidebar - Hidden on writing pages */}
-          <ConditionalSidebar />
+          {/* Main Content Container - Height accounts for footer */}
+          <div className="relative" style={{ height: "calc(100vh - 2.5rem)" }}>
+            {/* Conditional Left Sidebar - Hidden on writing pages */}
+            <ConditionalSidebar />
 
-          {/* Main Content Area - Adjusts layout based on sidebar presence */}
-          <ConditionalLayout>{children}</ConditionalLayout>
+            {/* Main Content Area - Adjusts layout based on sidebar presence */}
+            <ConditionalLayout>{children}</ConditionalLayout>
+          </div>
+
+          {/* Conditional Footer - Hidden on writing pages */}
+          <ConditionalFooter />
         </div>
       </body>
     </html>

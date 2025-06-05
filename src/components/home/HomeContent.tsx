@@ -45,9 +45,9 @@ export default function HomeContent() {
   }, []);
 
   return (
-    <div className="flex min-h-screen">
+    <div className="flex h-full pt-[5%]">
       {/* Main Content Area */}
-      <div className="flex-1 flex flex-col justify-center pl-[8%]">
+      <div className="flex-1 flex flex-col justify-center pl-[5%]">
         {/* Header Section */}
         <div className="home-content mb-12 max-w-2xl w-[38vw]">
           {/* Main header */}
@@ -106,7 +106,7 @@ export default function HomeContent() {
             and <Link href="https://www.gallatin.ai/">Gallatin AI</Link>. I'm a{" "}
             <Link href="https://research.contrary.com/">Contrary</Link> and{" "}
             <Link href="https://www.8vc.com/fellowships">8VC Fellow</Link>, and
-            study CS & Neuroscience at UC Irvine.
+            study CS & Neuroscience at UCI.
           </p>
 
           <p
@@ -124,13 +124,11 @@ export default function HomeContent() {
             <Link href="https://designatuci.com/designathon/24">
               designathon
             </Link>{" "}
-            in the U.S, and worked with NASA to build adaptive navigation {" "}
+            in the U.S, and worked with NASA to build adaptive navigation{" "}
             <Link href="https://drive.google.com/file/d/1DkKtDtQf2yCWEBN7kKnwssy7x6IParCf/view">
-            tools
+              tools
             </Link>{" "}
-            presented{" "}
-            to the European Space
-            Agency.
+            presented to the European Space Agency.
           </p>
 
           <p

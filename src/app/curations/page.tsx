@@ -3,7 +3,7 @@ import CurationsContent from "@/components/curations/CurationsContent";
 
 export default function Curations() {
   return (
-    <div className="ml-40 min-h-screen relative">
+    <div className="ml-40 h-full relative">
       <CurationsContent />
       <SocialLinks />
     </div>
