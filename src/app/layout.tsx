@@ -15,11 +15,12 @@ export const metadata: Metadata = {
     shortcut: "/Jasmine_Wu_Logo_Square.png",
     apple: "/Jasmine_Wu_Logo_Square.png",
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({

@@ -100,10 +100,10 @@
     font-style: inherit;
     font-family: inherit;
     line-height: inherit;
+  }
 
-    &:hover {
-      @apply underline decoration-solid cursor-pointer decoration-white text-white;
-    }
+  .link:hover {
+    @apply underline decoration-solid cursor-pointer decoration-white text-white;
   }
 }
 

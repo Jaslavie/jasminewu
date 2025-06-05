@@ -127,7 +127,11 @@ export default function HomeContent() {
             <Link href="https://drive.google.com/file/d/1DkKtDtQf2yCWEBN7kKnwssy7x6IParCf/view">
               tools
             </Link>{" "}
-            presented to the European Space Agency.
+            
+            <Link href="https://spacechi.media.mit.edu/">
+              presented
+            </Link>{" "}
+             to the European Space Agency.
           </p>
 
           <p

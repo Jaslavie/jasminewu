@@ -68,7 +68,7 @@ export default function BackgroundNoise() {
       style={{
         zIndex: 9999,
         mixBlendMode: "screen", // Screen blend mode makes white pixels appear white
-        opacity: 0.15, // Decreased opacity for more subtle effect
+        opacity: 0.2, // Decreased opacity for more subtle effect
       }}
     />
   );

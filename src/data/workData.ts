@@ -11,26 +11,26 @@ export const workData: WorkProject[] = [
     title: "decision support system for lunar traversal",
     description:
       "Exploring shared autonomy between AI and human operator in space.",
-    link: "/nasa-suits",
+    link: "/nasa",
   },
   {
     number: "02",
     title: "anticipatory heads-up displays for spacesuits",
     description:
       "XR decision making tool for astronauts. tested at the Johnson Space Center.",
-    link: "/spacesuit-hud",
+    link: "/suits",
   },
   {
     number: "03",
     title: "ai agents for emergency response",
     description: "911 dispatch agents to offload non-emergency calls.",
-    link: "/emergency-ai",
+    link: "/dispatchai",
   },
   {
     number: "04",
-    title: "the ctrl+r guide",
+    title: "the ctrl+ guide",
     description:
       "My consolidated thesis around interfaces for human-ai collaboration.",
-    link: "/ctrl-r-guide",
+    link: "/ctrl",
   },
 ];
