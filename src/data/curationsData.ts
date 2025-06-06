@@ -62,6 +62,10 @@ export const curationsData: CurationData = {
       link: "https://ckrybus.com/static/papers/Bainbridge_1983_Automatica.pdf",
     },
     {
+      title: "Effortless Action (Wu Wei)",
+      link: "https://www.edwardslingerland.com/academic-books/effortless-action",
+    },
+    {
       title: "Julius Caesar - Shakespeare",
       link: "https://www.amazon.com/Julius-Caesar-Folger-Shakespeare-Library/dp/0743482743/",
     },

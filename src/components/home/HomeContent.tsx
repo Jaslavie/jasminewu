@@ -98,7 +98,7 @@ export default function HomeContent() {
           >
             The hardest problems demand clarity under chaos. The next frontier
             isn't smarter AI. It's interfaces where humans and AI think and act
-            as one. I design interfaces for human-AI collaboration on the battlefield at{" "}
+            as one. I design these at{" "}
             <Link href="https://www.palantir.com/platforms/gotham/">
               Palantir
             </Link>{" "}
@@ -117,20 +117,21 @@ export default function HomeContent() {
           >
             Previously, I won 15{" "}
             <Link href="https://devpost.com/jaslavie">hackathons</Link>{" "}
-            including the world's largest AI hackathon, joined{" "}
-            <Link href="https://skydeck.berkeley.edu/">Berkeley Skydeck</Link>{" "}
-            to build AI agents for 911 dispatchers, hosted the largest{" "}
+            including the world's largest AI hackathon, built 911 dispatch agents at{" "}
+            <Link href="https://skydeck.berkeley.edu/">Berkeley Skydeck, </Link>{" "}
+            ran the largest U.S. {" "}
             <Link href="https://designatuci.com/designathon/24">
               designathon
-            </Link>{" "}
-            in the U.S, and worked with NASA to build adaptive navigation{" "}
-            <Link href="https://drive.google.com/file/d/1DkKtDtQf2yCWEBN7kKnwssy7x6IParCf/view">
-              tools
-            </Link>{" "}
+            </Link>
+            , and
+            {" "}
             
             <Link href="https://spacechi.media.mit.edu/">
               presented
-            </Link>{" "}
+            </Link>{" "} adaptive navigation{" "}
+            <Link href="https://drive.google.com/file/d/1DkKtDtQf2yCWEBN7kKnwssy7x6IParCf/view">
+              tools
+            </Link> for astronauts
              to the European Space Agency.
           </p>
 
