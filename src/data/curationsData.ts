@@ -62,7 +62,7 @@ export const curationsData: CurationData = {
       link: "https://ckrybus.com/static/papers/Bainbridge_1983_Automatica.pdf",
     },
     {
-      title: "Effortless Action (Wu Wei)",
+      title: "Effortless Action",
       link: "https://www.edwardslingerland.com/academic-books/effortless-action",
     },
     {
@@ -102,8 +102,8 @@ export const curationsData: CurationData = {
       link: "https://www.imdb.com/title/tt2119532/?ref_=nv_sr_srsg_1_tt_5_nm_2_in_0_q_hacksa",
     },
     {
-      title: "Hamilton, the Musical",
-      link: "https://www.youtube.com/watch?v=Ic7NqP_YGlg",
+      title: "The Last of Us",
+      link: "https://www.imdb.com/title/tt3581920/",
     },
     {
       title: "The Pianist",
@@ -120,6 +120,10 @@ export const curationsData: CurationData = {
     {
       title: "Pride and Prejudice",
       link: "https://www.imdb.com/title/tt0414387/",
+    },
+    {
+      title: "Romeo and Juliet 2013 film score",
+      link: "https://open.spotify.com/album/2QENswe8i7Uaqgn9zbRKz3",
     },
   ],
 };

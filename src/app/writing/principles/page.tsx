@@ -52,7 +52,10 @@ export default function Principles() {
             width={1000}
             height={1000}
           />
-          <p>my contrarian and not-so-contrarian beliefs.</p>
+          <p>
+            my contrarian and not-so-contrarian beliefs. separated by my core
+            principles and list of life lessons.
+          </p>
 
           <section>
             <h2>Enduring value</h2>
@@ -138,7 +141,7 @@ export default function Principles() {
           </section>
 
           <section>
-            <h2>Self-Creation</h2>
+            <h2>Obsession</h2>
 
             <div className="space-y-4 text-gray-300 leading-relaxed">
               <p>
@@ -162,15 +165,25 @@ export default function Principles() {
           </section>
 
           <section>
-            <h2>Build the ladder</h2>
+            <h2>Burn the boats</h2>
 
             <div className="space-y-4 text-gray-300 leading-relaxed">
               <p>
-                In school, we are conditioned to climb a pre-made corporate
-                ladder. Why not build our own and live on our own terms?
+                Every adult, teacher, and parent conditioned in us this
+                indestructible law of nature: to get into a good school, get
+                good grades, get a good job — ultimately, to set sail in the
+                boats that were already made for us.
+              </p>
+              <p>
+                Sometimes, we ought to burn these boats and leave no remnants.
+                Leave school for good. Move to a new country and never look
+                back. Film a youtube video everyday with less than 50
+                subscribers. All too often, we put our foot halfway through the
+                door. I believe that the best work demands giving 150%, not
+                100%, and certainly not 90%.
               </p>
 
-              <p>
+              {/* <p>
                 This isn't about building a venture or business, but designing a
                 life that deeply resonates with who you are. For me, that means
                 spending less time grinding without purpose and more time
@@ -183,7 +196,7 @@ export default function Principles() {
                 </ChaosLink>{" "}
                 the "drop-out founder" and "swe intern" titles and focusing more
                 on the legacy I am trying to build.
-              </p>
+              </p> */}
             </div>
           </section>
 
@@ -225,19 +238,18 @@ export default function Principles() {
                 this.
               </li>
               <li>
-                Chasing achievement/quick wins is a losing game. Always aim for
-                the long-term.
+                Chasing achievement/quick wins is a losing game people learn too
+                late. Always aim for the long-term.
               </li>
               <li>
-                Select close friends with the same criteria lvl of scrutiny as
-                you'd use to eval a romantic partner. Ask: "would i be satisfied
-                if i became them?". Never exceed 3-4 close friends.
+                Select close friends with the same criteria level of scrutiny
+                you'd use to evaluate a romantic partner. Ask: "do I feel
+                electrified around them?" Never exceed 3-4 close friends.
               </li>
               <li>
-                Stick with your convictions ruthlessly. If the group does not
-                align, leave rather than conform for the sake of harmony
-                (there's some nuance in this. the baseline of any opinion should
-                be a combo of intuition + reason).
+                Stick with your convictions ruthlessly. People will tell you
+                you're too much. If the group does not align, leave rather than
+                conform for the sake of harmony.
               </li>
               <li>
                 Sticking with habits means creating artificial routines for
@@ -251,8 +263,8 @@ export default function Principles() {
                 unchecked.
               </li>
               <li>
-                Bad environments can make you second guess truths. We must
-                critically curate our environments.
+                Bad environments turn you into a different person. Treat
+                mediocrity as a disease. Stay away from it at all costs.
               </li>
               <li>
                 Many groups, especially in university, underperform and will
@@ -270,6 +282,10 @@ export default function Principles() {
                 Never conflate good talkers with good doers. You need to
                 battle-test capability before drawing a conclusion (applies to
                 ourselves as well).
+              </li>
+              <li>
+                Don't feel compelled to attend every event. Trust that the
+                quality of your work will bring the right people to you.
               </li>
             </ol>
           </section>
