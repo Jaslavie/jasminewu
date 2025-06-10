@@ -7,7 +7,7 @@ import ConditionalFooter from "@/components/global/ConditionalFooter";
 import MobileNav from "@/components/global/MobileNav";
 
 export const metadata: Metadata = {
-  title: "Jasmine Wu Portfolio",
+  title: "Jasmine Wu",
   description:
     "Jasmine Wu is an interdisciplinary designer who designs Human-AI interfaces for spacewalks and the battlefield.",
   icons: {

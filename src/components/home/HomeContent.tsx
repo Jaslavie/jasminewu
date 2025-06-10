@@ -2,12 +2,12 @@
 
 import Link from "@/components/ui/Link";
 import Planet from "@/components/misc/Planet";
-import TextReveal from "@/components/home/Animations/TextReveal";
+// import TextReveal from "@/components/home/Animations/TextReveal";
 import React, { useEffect, useState } from "react";
 import ChaosLink from "@/components/ui/Link";
 
 export default function HomeContent() {
-  const [showContent, setShowContent] = useState(false);
+  // const [showContent, setShowContent] = useState(false);
   const [showThesisPara1, setShowThesisPara1] = useState(false);
   const [showThesisPara2, setShowThesisPara2] = useState(false);
   const [showThesisPara3, setShowThesisPara3] = useState(false);
@@ -17,61 +17,48 @@ export default function HomeContent() {
   const [showPlanet, setShowPlanet] = useState(false);
 
   useEffect(() => {
-    // Check if window is available (client-side only)
-    if (typeof window === "undefined") return;
+    // Automatically start the staggered animation on component mount
+    setTimeout(() => setShowThesisPara1(true), 200); // First paragraph
+    setTimeout(() => setShowThesisPara2(true), 400); // Second paragraph
+    setTimeout(() => setShowThesisPara3(true), 600); // Third paragraph
+    setTimeout(() => setShowThesisPara4(true), 800); // Fourth paragraph
+    setTimeout(() => setShowDivider(true), 1000); // HR divider
+    setTimeout(() => setShowSocials(true), 1200); // Social links
+    setTimeout(() => setShowPlanet(true), 1400); // Planet last
 
-    // Listen for TextReveal completion
-    const handleTextRevealComplete = () => {
-      setShowContent(true);
-
-      // Stagger the reveals with intervals
-      setTimeout(() => setShowThesisPara1(true), 100); // First paragraph
-      setTimeout(() => setShowThesisPara2(true), 200); // Second paragraph
-      setTimeout(() => setShowThesisPara3(true), 300); // Third paragraph
-      setTimeout(() => setShowThesisPara4(true), 400); // Fourth paragraph
-      setTimeout(() => setShowDivider(true), 450); // HR divider
-      setTimeout(() => setShowSocials(true), 500); // Social links
-      setTimeout(() => setShowPlanet(true), 700); // Planet last
-    };
-
-    window.addEventListener("textRevealComplete", handleTextRevealComplete);
-
-    return () => {
-      window.removeEventListener(
-        "textRevealComplete",
-        handleTextRevealComplete
-      );
-    };
+    // Previous TextReveal event listener code - commented out
+    // const handleTextRevealComplete = () => {
+    //   setShowContent(true);
+    //   setTimeout(() => setShowThesisPara1(true), 100);
+    //   setTimeout(() => setShowThesisPara2(true), 200);
+    //   setTimeout(() => setShowThesisPara3(true), 300);
+    //   setTimeout(() => setShowThesisPara4(true), 400);
+    //   setTimeout(() => setShowDivider(true), 450);
+    //   setTimeout(() => setShowSocials(true), 500);
+    //   setTimeout(() => setShowPlanet(true), 700);
+    // };
+    // window.addEventListener("textRevealComplete", handleTextRevealComplete);
+    // return () => {
+    //   window.removeEventListener("textRevealComplete", handleTextRevealComplete);
+    // };
   }, []);
 
   return (
     <div className="flex flex-col md:flex-row min-h-screen md:h-full px-8 md:px-0">
-      {/* Main Content Area */}
-      <div className="flex-1 flex flex-col justify-center md:pl-[5%] max-w-full md:pb-0">
-        {/* Header Section */}
-        <div className="home-content mb-10 md:mb-12 max-w-full md:max-w-2xl w-full md:w-[38vw]">
-          {/* Main header */}
-          <div className="mb-3">
-            <TextReveal />
-          </div>
-          {/* Currently in */}
-          <p
-            className="text-base"
-            style={{
-              opacity: showContent ? 1 : 0,
-              visibility: showContent ? "visible" : "hidden",
-              transition: "opacity 0.5s ease-in-out",
-            }}
-          >
-            currently in{" "}
-            <Link href="https://www.palantir.com/">Washington D.C. ↗</Link>
-          </p>
+      {/* left content Area */}
+      <div className="flex-1 flex flex-col justify-start md:pl-[5%] max-w-full md:pb-0 md:space-y-10">
+        {/* Header Section - Spacer for layout consistency */}
+        <div className="home-content mb-10 md:mb-12 max-w-full md:max-w-2xl w-full md:w-[30vw]">
+          {/* TextReveal component removed but keeping div structure for spacing */}
+          <div className="mb-3">{/* Removed TextReveal component */}</div>
         </div>
 
         {/* Thesis Content */}
         <div
-          className="thesis-content space-y-6 md:space-y-6 max-w-full md:max-w-2xl w-full md:w-[38vw] md:mb-8"
+          className="thesis-content space-y-4 sm:space-y-5 md:space-y-4 lg:space-y-6 max-w-full md:max-w-2xl w-full md:w-[30vw] text-sm sm:text-base md:text-base lg:text-lg xl:text-lg"
           style={{
+            fontSize: "clamp(0.875rem, 1.5vw, 1.125rem)",
+            lineHeight: "clamp(1.4, 1.6, 1.7)",
             opacity:
               showThesisPara1 ||
               showThesisPara2 ||
@@ -97,8 +84,8 @@ export default function HomeContent() {
             }}
           >
             The hardest problems demand clarity under chaos. The next frontier
-            isn't smarter AI. It's interfaces where humans and AI think and act
-            as one. I design these at{" "}
+            isn't smarter AI. It's radically fluid interfaces where humans and
+            machines make decisions as one. I design these at{" "}
             <Link href="https://www.palantir.com/platforms/gotham/">
               Palantir
             </Link>{" "}
@@ -117,22 +104,19 @@ export default function HomeContent() {
           >
             Previously, I won 15{" "}
             <Link href="https://devpost.com/jaslavie">hackathons</Link>{" "}
-            including the world's largest AI hackathon, built 911 dispatch agents at{" "}
+            including the world's largest AI hackathon, built 911 dispatch
+            agents at{" "}
             <Link href="https://skydeck.berkeley.edu/">Berkeley Skydeck, </Link>{" "}
-            ran the largest U.S. {" "}
+            ran the largest U.S.{" "}
             <Link href="https://designatuci.com/designathon/24">
               designathon
             </Link>
-            , and
-            {" "}
-            
-            <Link href="https://spacechi.media.mit.edu/">
-              presented
-            </Link>{" "} adaptive navigation{" "}
+            , and <Link href="https://spacechi.media.mit.edu/">presented</Link>{" "}
+            adaptive navigation{" "}
             <Link href="https://drive.google.com/file/d/1DkKtDtQf2yCWEBN7kKnwssy7x6IParCf/view">
               tools
-            </Link> for astronauts
-             to the European Space Agency.
+            </Link>{" "}
+            for astronauts to the European Space Agency.
           </p>
 
           <p
@@ -172,7 +156,7 @@ export default function HomeContent() {
         </div>
 
         <hr
-          className="border-gray-800 my-3 w-full md:w-[38vw]"
+          className="border-gray-800 my-3 w-full md:w-[30vw]"
           style={{
             opacity: showDivider ? 1 : 0,
             visibility: showDivider ? "visible" : "hidden",
@@ -182,8 +166,9 @@ export default function HomeContent() {
 
         {/* Social Links at Bottom */}
         <div
-          className="social-links-bottom space-y-2"
+          className="social-links-bottom space-y-1 sm:space-y-2 text-sm sm:text-base"
           style={{
+            fontSize: "clamp(0.875rem, 1.2vw, 1rem)",
             opacity: showSocials ? 1 : 0,
             visibility: showSocials ? "visible" : "hidden",
             transition: "opacity 0.5s ease-in-out",

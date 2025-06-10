@@ -7,26 +7,23 @@ export default function Home() {
   const [showVideo, setShowVideo] = useState(false);
 
   useEffect(() => {
-    // Check if window is available (client-side only)
-    if (typeof window === "undefined") return;
+    // Automatically show video after the planet appears (1400ms + 200ms buffer)
+    setTimeout(() => {
+      console.log("Setting showVideo to true - planet should be visible");
+      setShowVideo(true);
+    }, 1600);
 
-    // Listen for TextReveal completion and then show video when planet appears
-    const handleTextRevealComplete = () => {
-      // Planet appears 700ms after text reveal completes, video shows 200ms after planet
-      setTimeout(() => {
-        console.log("Setting showVideo to true - planet should be visible");
-        setShowVideo(true);
-      }, 900);
-    };
-
-    window.addEventListener("textRevealComplete", handleTextRevealComplete);
-
-    return () => {
-      window.removeEventListener(
-        "textRevealComplete",
-        handleTextRevealComplete
-      );
-    };
+    // Previous TextReveal event listener code - commented out
+    // const handleTextRevealComplete = () => {
+    //   setTimeout(() => {
+    //     console.log("Setting showVideo to true - planet should be visible");
+    //     setShowVideo(true);
+    //   }, 900);
+    // };
+    // window.addEventListener("textRevealComplete", handleTextRevealComplete);
+    // return () => {
+    //   window.removeEventListener("textRevealComplete", handleTextRevealComplete);
+    // };
   }, []);
 
   return (
