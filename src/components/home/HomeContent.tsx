@@ -92,7 +92,7 @@ export default function HomeContent() {
             and <Link href="https://www.gallatin.ai/">Gallatin AI</Link>. I'm a{" "}
             <Link href="https://research.contrary.com/">Contrary</Link> and{" "}
             <Link href="https://www.8vc.com/fellowships">8VC Fellow</Link>, and
-            study CS & Neuroscience at UCI.
+            study CS & Cognitive Neuroscience at UCI.
           </p>
 
           <p

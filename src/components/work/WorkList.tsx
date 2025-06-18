@@ -78,15 +78,16 @@ export default function WorkList() {
           transition: "opacity 0.5s ease-in-out",
         }}
       >
-        <p>Collection of interaction models & design prototypes.</p>
         <p>
-          I'm curious about decision-making paradigms in high-pressure
+          I'm interested in the <i>interaction layer</i> between humans and
+          machine intelligence.
+        </p>
+        <p>
+          I primarily work in decision-making paradigms for high-pressure
           environments (emergency response, battlefield ops, and spacewalks).
-          Particularly, how humans can better interact with these systems.
+          This is a collection of interaction models & design prototypes.
         </p>
-        <p>
-          Worked solo or in a very tight-knit team of engineers.
-        </p>
+        <p>Worked solo or in a very tight-knit team of engineers.</p>
         <p>
           You can find more of my work on{" "}
           <ChaosLink href="https://devpost.com/jaslavie">devpost</ChaosLink>.

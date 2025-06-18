@@ -2,9 +2,29 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function Sidebar() {
   const pathname = usePathname();
+  const [dcTime, setDcTime] = useState("");
+
+  useEffect(() => {
+    function updateTime() {
+      const now = new Date();
+      // Convert to Washington, DC time (America/New_York)
+      const options = {
+        hour: "2-digit" as const,
+        minute: "2-digit" as const,
+        second: "2-digit" as const,
+        hour12: true,
+        timeZone: "America/New_York",
+      };
+      setDcTime(now.toLocaleTimeString("en-US", options));
+    }
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   const navItems = [
     { href: "/work", label: "work" },
@@ -13,31 +33,38 @@ export default function Sidebar() {
   ];
 
   return (
-    <aside className="absolute left-0 top-0 h-full w-40 border-r border-gray-800 flex flex-col p-[2%] z-20">
-      {/* Title */}
-      <div className="mb-10 font-['EB_Garamond'] italic text-2xl font-light text-decoration-none outline-none border-none">
-        <Link href="/">J.W.</Link>
+    <header className="w-full flex flex-row items-center justify-between border-b border-gray-700 h-12 z-20 fixed top-0 left-0 font-subheading">
+      {/* Left: Name and time */}
+      <div className="flex flex-row items-stretch h-full">
+        <div className="flex items-center px-6 font-['EB_Garamond'] text-1xl font-light text-white h-full">
+          <Link href="/">Jasmine Wu</Link>
+        </div>
+        <div className="w-px bg-gray-700 h-full" />
+        <div className="flex items-center px-6 text-sm text-gray-400 font-subheading h-full">
+          currently it's {dcTime} in Washington, DC
+        </div>
+        <div className="w-px bg-gray-700 h-full" />
       </div>
-
-      {/* Navigation */}
-      <nav className="flex flex-col space-y-4">
-        {navItems.map((item) => {
+      {/* Right: Nav */}
+      <nav className="flex flex-row items-stretch h-full">
+        <div className="w-px bg-gray-700 h-full" />
+        {navItems.map((item, idx) => {
           const isActive = pathname === item.href;
-
           return (
-            <div key={item.href}>
+            <div key={item.href} className="flex items-center h-full">
               <Link
                 href={item.href}
-                className={`text-sm transition-colors ${
-                  isActive ? "text-white" : "text-gray-400 hover:text-white"
-                }`}
+                className={`px-6 text-base font-subheading transition-colors h-full flex items-center ${isActive ? "text-white" : "text-gray-400 hover:text-white"}`}
               >
                 {item.label}
               </Link>
+              {idx !== navItems.length - 1 && (
+                <div className="w-px bg-gray-700 h-full" />
+              )}
             </div>
           );
         })}
       </nav>
-    </aside>
+    </header>
   );
 }
