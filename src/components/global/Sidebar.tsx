@@ -36,11 +36,11 @@ export default function Sidebar() {
     <header className="w-full flex flex-row items-center justify-between border-b border-gray-700 px-6 py-3 z-20 fixed top-0 left-0 font-subheading">
       {/* Left: Name and time */}
       <div className="flex flex-row items-center space-x-4">
-        <div className="font-['EB_Garamond'] text-1xl font-light text-white">
+        <div className="font-serif text-1xl font-light text-white">
           <Link href="/">Jasmine Wu</Link>
         </div>
         <div className="h-6 border-r border-gray-700"></div>
-        <div className="text-sm text-gray-300 font-subheading">
+        <div className="text-sm text-gray-300 font-serif">
           currently it's {dcTime} in Washington, DC
         </div>
         <div className="h-6 border-r border-gray-700"></div>
@@ -55,7 +55,7 @@ export default function Sidebar() {
             <Link
               key={item.href}
               href={item.href}
-              className={`text-base font-subheading transition-colors ${isActive ? "text-white" : "text-gray-400 hover:text-white"}`}
+              className={`text-base font-serif transition-colors ${isActive ? "text-white" : "text-gray-400 hover:text-white"}`}
             >
               {item.label}
             </Link>
