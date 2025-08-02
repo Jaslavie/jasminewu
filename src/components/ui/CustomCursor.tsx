@@ -53,13 +53,14 @@ export default function CustomCursor() {
 
   return (
     <div
-      className="fixed pointer-events-none z-[9999] transition-all duration-200 ease-out"
+      className="fixed pointer-events-none z-[9999] transition-all duration-100"
       style={{
         left: position.x,
         top: position.y,
-        transform: "translate(-50%, -50%)",
+        // transform: "translate(-50%, -50%)",
       }}
     >
+      {/* normal cursor */}
       {cursorStyle === "retro" ? (
         <div className="w-6 h-6">
           <img
@@ -69,6 +70,7 @@ export default function CustomCursor() {
           />
         </div>
       ) : (
+        // text cursor
         <div className="w-0.5 h-5 bg-white shadow-lg" />
       )}
     </div>
