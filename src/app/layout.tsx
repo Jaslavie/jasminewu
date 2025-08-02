@@ -6,6 +6,13 @@ import BackgroundNoise from "@/components/global/BackgroundNoise";
 import ConditionalFooter from "@/components/global/ConditionalFooter";
 import MobileNav from "@/components/global/MobileNav";
 import CustomCursor from "@/components/ui/CustomCursor";
+import { EB_Garamond } from "next/font/google";
+
+const ebGaramond = EB_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-eb-garamond",
+});
 
 export const metadata: Metadata = {
   title: "Jasmine Wu",
@@ -30,7 +37,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={ebGaramond.variable}>
       <body>
         <div>
           {/* Custom Cursor */}
