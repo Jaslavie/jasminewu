@@ -33,35 +33,32 @@ export default function Sidebar() {
   ];
 
   return (
-    <header className="w-full flex flex-row items-center justify-between border-b border-gray-700 h-12 z-20 fixed top-0 left-0 font-subheading">
+    <header className="w-full flex flex-row items-center justify-between border-b border-gray-700 px-6 py-3 z-20 fixed top-0 left-0 font-subheading">
       {/* Left: Name and time */}
-      <div className="flex flex-row items-stretch h-full">
-        <div className="flex items-center px-6 font-['EB_Garamond'] text-1xl font-light text-white h-full">
+      <div className="flex flex-row items-center space-x-4">
+        <div className="font-['EB_Garamond'] text-1xl font-light text-white">
           <Link href="/">Jasmine Wu</Link>
         </div>
-        <div className="w-px bg-gray-700 h-full" />
-        <div className="flex items-center px-6 text-sm text-gray-400 font-subheading h-full">
+        <div className="h-6 border-r border-gray-700"></div>
+        <div className="text-sm text-gray-300 font-subheading">
           currently it's {dcTime} in Washington, DC
         </div>
-        <div className="w-px bg-gray-700 h-full" />
+        <div className="h-6 border-r border-gray-700"></div>
       </div>
-      {/* Right: Nav */}
-      <nav className="flex flex-row items-stretch h-full">
-        <div className="w-px bg-gray-700 h-full" />
-        {navItems.map((item, idx) => {
+      {/* Right page links */}
+
+      <nav className="flex flex-row space-x-8">
+        <div className="h-6 border-r border-gray-700"></div>
+        {navItems.map((item) => {
           const isActive = pathname === item.href;
           return (
-            <div key={item.href} className="flex items-center h-full">
-              <Link
-                href={item.href}
-                className={`px-6 text-base font-subheading transition-colors h-full flex items-center ${isActive ? "text-white" : "text-gray-400 hover:text-white"}`}
-              >
-                {item.label}
-              </Link>
-              {idx !== navItems.length - 1 && (
-                <div className="w-px bg-gray-700 h-full" />
-              )}
-            </div>
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`text-base font-subheading transition-colors ${isActive ? "text-white" : "text-gray-400 hover:text-white"}`}
+            >
+              {item.label}
+            </Link>
           );
         })}
       </nav>

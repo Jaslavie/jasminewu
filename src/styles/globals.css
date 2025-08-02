@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,8 +7,8 @@
   /* ----- Fonts ----- */
   --font-body: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --font-serif: "Source Serif Pro", serif;
-  --font-subheading: "EB Garamond", serif;
+  --font-serif: "EB Garamond", serif;
+  --font-subheading: "Inconsolata", sans-serif;
   --font-body: "Inter", sans-serif;
 
   /* ----- Colors ----- */
@@ -44,7 +43,7 @@
   }
 
   h2 {
-    @apply text-text-heading font-subheading text-[26px] mb-3;
+    @apply text-text-heading font-subheading text-[24px] mb-3 font-light leading-8;
   }
 
   p {
@@ -129,8 +128,4 @@
   li {
     @apply text-[14px]/[1.6] mb-3;
   }
-}
-
-.font-subheading {
-  font-family: var(--font-subheading);
 }

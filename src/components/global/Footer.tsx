@@ -12,12 +12,12 @@ export default function Footer() {
               <span className="hidden md:inline">•</span>
               <span>listening to</span>
               <a
-                href="https://open.spotify.com/track/4uLU6hMCjMI75M1A2tKUQC"
+                href="https://open.spotify.com/track/5Tk40lTBPdaNe74hOJdVC2"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline hover:text-white transition-colors"
               >
-                nuits d'été
+                radio - lana del rey
               </a>
             </div>
 
@@ -38,12 +38,12 @@ export default function Footer() {
               <span className="hidden md:inline">•</span>
               <span>reading</span>
               <a
-                href="https://www.goodreads.com/book/show/767171.The_Rise_and_Fall_of_the_Third_Reich"
+                href="https://www.amazon.com/Heretics-Heroes-Renaissance-Artists-Reformation/dp/0385495587"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline hover:text-white transition-colors"
               >
-                rise and fall of the third reich
+                heretics and heroes
               </a>
             </div>
           </div>

@@ -19,6 +19,7 @@ export default function MobileNav() {
     { href: "/work", label: "work" },
     { href: "/curations", label: "curations" },
     { href: "/writing", label: "writing" },
+    { href: "/about", label: "about" },
   ];
 
   return (
