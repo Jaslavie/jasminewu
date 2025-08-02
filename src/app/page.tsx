@@ -30,7 +30,7 @@ export default function Home() {
     <div className="h-full relative">
       {/* Video Background - Shows after planet appears, desktop only */}
       {showVideo && (
-        <div className="hidden md:block fixed inset-0 z-0">
+        <div className="hidden md:block inset-0 z-0">
           <video
             autoPlay
             loop

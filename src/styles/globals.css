@@ -38,6 +38,20 @@
     @apply bg-background text-text-body font-sans min-h-screen w-full overflow-x-hidden leading-[1.25];
   }
 
+  /* Text hover effects */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  div,
+  li {
+    transition: color 0.3s ease;
+  }
+
   h1 {
     @apply text-text-heading leading-[1.15];
   }
@@ -92,7 +106,7 @@
   }
 
   .link {
-    @apply text-gray-100 underline-offset-4 relative cursor-pointer decoration-dotted decoration-gray-600 underline;
+    @apply text-gray-100 underline-offset-4 relative  decoration-dotted decoration-gray-600 underline;
 
     /* inherit from parent */
     font-size: inherit;
@@ -103,7 +117,7 @@
   }
 
   .link:hover {
-    @apply underline decoration-solid cursor-pointer decoration-white text-white;
+    @apply underline decoration-solid decoration-white text-white;
   }
 }
 

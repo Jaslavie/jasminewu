@@ -67,7 +67,7 @@ export default function HomeContent() {
           </div>
         </div>
       </div>
-
+      <hr style={{ border: "1px solid #222" }} />
       {/* Projects Section - Reduced padding */}
       <div className="px-4 md:px-6 py-8">
         <ProjectsList />

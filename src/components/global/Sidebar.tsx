@@ -27,7 +27,7 @@ export default function Sidebar() {
   }, []);
 
   const navItems = [
-    { href: "/work", label: "work" },
+    { href: "/about", label: "about" },
     { href: "/curations", label: "curations" },
     { href: "/writing", label: "writing" },
   ];

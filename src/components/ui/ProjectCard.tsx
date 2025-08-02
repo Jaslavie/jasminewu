@@ -23,7 +23,7 @@ export default function ProjectCard({
 
   return (
     <div
-      className={`relative flex flex-col gap-4 cursor-pointer transition-all duration-300 hover:`}
+      className={`relative flex flex-col gap-4 transition-all duration-300`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
