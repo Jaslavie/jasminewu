@@ -7,6 +7,8 @@ import { useEffect, useState } from "react";
 export default function Sidebar() {
   const pathname = usePathname();
   const [dcTime, setDcTime] = useState("");
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     function updateTime() {
@@ -26,6 +28,26 @@ export default function Sidebar() {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Show sidebar when scrolling up, hide when scrolling down
+      if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        // Scrolling down and not at the top
+        setIsVisible(false);
+      } else if (currentScrollY < lastScrollY) {
+        // Scrolling up
+        setIsVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
   const navItems = [
     { href: "/about", label: "about" },
     { href: "/curations", label: "curations" },
@@ -33,7 +55,11 @@ export default function Sidebar() {
   ];
 
   return (
-    <header className="w-full flex flex-row items-center justify-between border-b border-gray-700 px-6 py-3 z-20 fixed top-0 left-0 font-subheading">
+    <header
+      className={`w-full flex flex-row items-center justify-between border-b border-gray-700 px-6 py-3 z-20 fixed top-0 left-0 font-subheading transition-transform duration-300 ease-in-out ${
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       {/* Left: Name and time */}
       <div className="flex flex-row items-center space-x-4">
         <div className="font-serif text-1xl font-light text-white">
