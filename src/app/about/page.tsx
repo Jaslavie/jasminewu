@@ -18,12 +18,11 @@ export default function About() {
   }, []);
 
   return (
-    // ======== hero section ======== //
-    <div className="flex flex-col h-[100vh] items-center justify-center">
-      <div className="mx-auto">
-        {/* Content */}
+    <div className="flex flex-col md:flex-row min-h-screen">
+      {/* Left Section - Text Content */}
+      <div className="flex-1 flex flex-col justify-center">
         <div
-          className="space-y-6 leading-[1.25]"
+          className="space-y-6 max-w-2xl py-[2v]"
           style={{
             fontFamily: "var(--font-eb-garamond), 'EB Garamond', serif",
             fontWeight: 300,
@@ -35,7 +34,7 @@ export default function About() {
             transition: "opacity 0.5s ease-in-out",
           }}
         >
-          <h2
+          <h3
             style={{
               opacity: showPara1 ? 1 : 0,
               visibility: showPara1 ? "visible" : "hidden",
@@ -52,9 +51,9 @@ export default function About() {
             <Link href="https://research.contrary.com/">Contrary</Link> and{" "}
             <Link href="https://www.8vc.com/fellowships">8VC Fellow</Link>, and
             study CS & Neuroscience at UCI.
-          </h2>
+          </h3>
 
-          <h2
+          <h3
             style={{
               opacity: showPara2 ? 1 : 0,
               visibility: showPara2 ? "visible" : "hidden",
@@ -76,9 +75,9 @@ export default function About() {
               simulations
             </Link>{" "}
             for astronauts to the European Space Agency.
-          </h2>
+          </h3>
 
-          <h2
+          <h3
             style={{
               opacity: showPara3 ? 1 : 0,
               visibility: showPara3 ? "visible" : "hidden",
@@ -89,9 +88,9 @@ export default function About() {
             in my living room. Augmenting perception and beauty felt like
             alchemy. Henceforth, I made it my life's mission to master (and
             elevate) the art of human experience.
-          </h2>
+          </h3>
 
-          <h2
+          <h3
             style={{
               opacity: showPara4 ? 1 : 0,
               visibility: showPara4 ? "visible" : "hidden",
@@ -111,9 +110,28 @@ export default function About() {
               </Link>
             </i>{" "}
             .
-          </h2>
-          <div />
+          </h3>
+
+          {/* Footer Links */}
+          <div className="pt-8 flex flex-row items-center gap-2 font-serif">
+            <h3 className="text-gray-400 mb-2">Elsewhere</h3>
+            <h3>·</h3>
+            <h3 className="flex space-x-6">
+              <Link href="https://linkedin.com/in/jaslavie">Linkedin</Link>
+              <Link href="https://x.com/jaslavie">X</Link>
+              <Link href="https://github.com/jaslavie">Github</Link>
+            </h3>
+          </div>
         </div>
+      </div>
+
+      {/* Right Section - Photo Collage */}
+      <div className="flex-1 flex items-center justify-center p-8">
+        <img
+          src="/aboutMePhotos.svg"
+          alt="Photo collage"
+          className="w-full h-[90%] max-w-lg object-contain"
+        />
       </div>
     </div>
   );
