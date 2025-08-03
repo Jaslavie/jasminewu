@@ -16,7 +16,7 @@ const projects: Project[] = [
   {
     title: "Emergency triage system for 911 dispatchers",
     description:
-      "Triage platform to offload non-emergency 911 calls. $68k funding from Berkeley Skydeck. Grants from OpenAI, Intel, and Mistral AI.",
+      "Triage platform to offload non-emergency 911 calls. $68k funding from Berkeley Skydeck.",
     number: "01",
     imageBefore: "/projects/dispatchAI_hover.png",
     imageAfter: "/projects/dispatchAI_hover_after.png",
@@ -25,35 +25,44 @@ const projects: Project[] = [
   {
     title: "Adaptive navigation tool for lunar traversal",
     description:
-      "Adaptive navigation tool for lunar traversal. Simulation software for routing. First author on paper presented at Space CHI 2025.",
+      "Simulation software for lunar exploration. Presented to the European Space Agency.",
     number: "02",
     imageBefore: "/projects/spaceCHI_hover.png",
     imageAfter: "/projects/spaceCHI_hover_after.png",
     link: "https://spacechi.media.mit.edu/",
   },
   {
-    title: "Palantir Gotham",
+    title: "Anticipatory heads-up displays for spacesuits",
     description:
-      "Human-AI interfaces for decision-making on spacewalks and battlefield operations.",
-    number: "02",
-    imageBefore: "/images/palantir_hover.png",
-    imageAfter: "/images/palantir_hover_after.png",
-    link: "https://www.palantir.com/platforms/gotham/",
-  },
-  {
-    title: "Gallatin AI",
-    description: "Advanced AI systems for complex decision-making scenarios.",
+      "XR displays for EVA operations. Simulation testing at NASA JSC. Presented to Astronauts.",
     number: "03",
-    imageBefore: "/images/gallatin_hover.png",
-    imageAfter: "/images/gallatin_hover_after.png",
-    link: "https://www.gallatin.ai/",
+    imageBefore: "/projects/nasaSUITS_hover.png",
+    imageAfter: "/projects/nasaSUITS_hover_after.png",
+    link: "/projects/nasa-suits",
   },
+  //   {
+  //     title: "Palantir Gotham",
+  //     description:
+  //       "Human-AI interfaces for decision-making on spacewalks and battlefield operations.",
+  //     number: "02",
+  //     imageBefore: "/images/palantir_hover.png",
+  //     imageAfter: "/images/palantir_hover_after.png",
+  //     link: "https://www.palantir.com/platforms/gotham/",
+  //   },
+  //   {
+  //     title: "Gallatin AI",
+  //     description: "Advanced AI systems for complex decision-making scenarios.",
+  //     number: "03",
+  //     imageBefore: "/images/gallatin_hover.png",
+  //     imageAfter: "/images/gallatin_hover_after.png",
+  //     link: "https://www.gallatin.ai/",
+  //   },
 ];
 
 export default function ProjectsList() {
   return (
     <div className="space-y-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
         {projects.map((project, index) => (
           <ProjectCard
             key={index}

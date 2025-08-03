@@ -65,7 +65,7 @@
     font-weight: 300;
   }
   h3 {
-    @apply text-text-heading font-serif text-[20px] mb-3 font-light leading-8;
+    @apply text-text-heading font-serif text-[18px] mb-3 font-light leading-8;
     font-family: var(--font-eb-garamond), "EB Garamond", serif;
     font-weight: 300;
   }

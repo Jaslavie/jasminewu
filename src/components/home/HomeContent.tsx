@@ -27,16 +27,16 @@ const StyledLink = ({
 export default function HomeContent() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section - Background animation contained here */}
-      <div className="flex flex-col md:flex-row h-[75vh] px-4 md:px-6 pt-0">
+      {/* Hero Section */}
+      <div className="flex flex-col lg:flex-row h-[75vh] px-4 sm:px-6 lg:px-0 pt-0">
         {/* left content Area */}
         <div
-          className="flex-1 flex flex-col justify-center max-w-full md:pb-0 md:space-y-10"
+          className="flex-1 flex flex-col justify-center max-w-full lg:pb-0 lg:space-y-10"
           style={{ marginTop: 0 }}
         >
           {/* Thesis Content */}
           <div
-            className="space-y-4 sm:space-y-5 md:space-y-4 lg:space-y-6 max-w-full md:max-w-2xl w-full md:w-[40vw] text-sm sm:text-base md:text-base lg:text-lg xl:text-lg"
+            className="space-y-4 sm:space-y-5 lg:space-y-4 xl:space-y-6 max-w-full lg:max-w-2xl w-full lg:w-[40vw] text-sm sm:text-base lg:text-base xl:text-lg 2xl:text-lg px-4 sm:px-6 lg:px-6"
             style={{
               fontSize: "clamp(0.875rem, 1.2vw, 1.125rem)",
               lineHeight: "clamp(1.4, 1.6, 1.7)",
@@ -59,7 +59,7 @@ export default function HomeContent() {
         </div>
         {/* Right Side ASCII Art */}
         <div
-          className="hidden md:flex items-center justify-center md:pr-[8%]"
+          className="hidden lg:flex items-center justify-center lg:pr-[8%]"
           style={{ marginTop: 0 }}
         >
           <div id="Planet">
@@ -67,9 +67,10 @@ export default function HomeContent() {
           </div>
         </div>
       </div>
+
       <hr style={{ border: "1px solid #222" }} />
       {/* Projects Section - Reduced padding */}
-      <div className="px-4 md:px-6 py-8">
+      <div className="px-4 sm:px-6 lg:px-6 py-6 sm:py-8">
         <ProjectsList />
       </div>
     </div>

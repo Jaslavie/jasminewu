@@ -17,7 +17,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="underline hover:text-white transition-colors"
               >
-                radio - lana del rey
+                Radio - Lana Del Rey
               </a>
             </div>
 
@@ -30,7 +30,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="underline hover:text-white transition-colors"
               >
-                the last of us
+                The Last of Us
               </a>
             </div>
 
@@ -43,7 +43,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="underline hover:text-white transition-colors"
               >
-                heretics and heroes
+                Heretics and Heroes
               </a>
             </div>
           </div>
