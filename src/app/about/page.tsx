@@ -6,6 +6,7 @@ import { experiences } from "@/data/experiences";
 import React, { useEffect, useState } from "react";
 
 export default function About() {
+  const [showPara0, setShowPara0] = useState(false);
   const [showPara1, setShowPara1] = useState(false);
   const [showPara2, setShowPara2] = useState(false);
   const [showPara3, setShowPara3] = useState(false);
@@ -13,6 +14,7 @@ export default function About() {
 
   useEffect(() => {
     // Staggered animation on component mount
+    setTimeout(() => setShowPara0(true), 0);
     setTimeout(() => setShowPara1(true), 200);
     setTimeout(() => setShowPara2(true), 400);
     setTimeout(() => setShowPara3(true), 600);
@@ -30,14 +32,23 @@ export default function About() {
             style={{
               fontFamily: "var(--font-eb-garamond), 'EB Garamond', serif",
               fontWeight: 300,
-              opacity: showPara1 || showPara2 || showPara3 || showPara4 ? 1 : 0,
+              opacity: showPara0 || showPara1 || showPara2 || showPara3 || showPara4 ? 1 : 0,
               visibility:
-                showPara1 || showPara2 || showPara3 || showPara4
+                showPara0 || showPara1 || showPara2 || showPara3 || showPara4
                   ? "visible"
                   : "hidden",
               transition: "opacity 0.5s ease-in-out",
             }}
           >
+            <h3
+            style={{
+                opacity: showPara0 ? 1 : 0,
+                visibility: showPara0 ? "visible" : "hidden",
+                transition: "opacity 0.5s ease-in-out",
+              }}
+            >
+            I design interfaces for humans to interact with intelligence and research the AI that drives them.
+            </h3>
             <h3
               style={{
                 opacity: showPara1 ? 1 : 0,

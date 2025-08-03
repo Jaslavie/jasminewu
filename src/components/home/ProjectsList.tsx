@@ -14,10 +14,19 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "Emergency triage system for 911 dispatchers",
+    description:
+      "Triage platform to offload non-emergency 911 calls. $68k funding from Berkeley Skydeck. Grants from OpenAI, Intel, and Mistral AI.",
+    number: "01",
+    imageBefore: "/projects/dispatchAI_hover.png",
+    imageAfter: "/projects/dispatchAI_hover_after.png",
+    link: "/projects/dispatch-ai",
+  },
+  {
     title: "Adaptive navigation tool for lunar traversal",
     description:
       "Adaptive navigation tool for lunar traversal. Simulation software for routing. First author on paper presented at Space CHI 2025.",
-    number: "01",
+    number: "02",
     imageBefore: "/projects/spaceCHI_hover.png",
     imageAfter: "/projects/spaceCHI_hover_after.png",
     link: "https://spacechi.media.mit.edu/",
@@ -53,6 +62,7 @@ export default function ProjectsList() {
             number={project.number}
             imageBefore={project.imageBefore}
             imageAfter={project.imageAfter}
+            link={project.link}
             className="hover:scale-105 transition-transform duration-300"
           />
         ))}
