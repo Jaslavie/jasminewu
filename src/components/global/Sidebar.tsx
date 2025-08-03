@@ -49,9 +49,9 @@ export default function Sidebar() {
   }, [lastScrollY]);
 
   const navItems = [
-    { href: "/about", label: "about" },
     { href: "/curations", label: "curations" },
     { href: "/writing", label: "writing" },
+    { href: "/about", label: "about" },
   ];
 
   return (
@@ -66,7 +66,7 @@ export default function Sidebar() {
           <Link href="/">Jasmine Wu</Link>
         </div>
         <div className="h-6 border-r border-gray-700"></div>
-        <div className="text-sm text-gray-300 font-serif">
+        <div className="text-sm text-[rgba(255,255,255,0.75)] font-serif">
           currently it's {dcTime} in Washington, DC
         </div>
         <div className="h-6 border-r border-gray-700"></div>

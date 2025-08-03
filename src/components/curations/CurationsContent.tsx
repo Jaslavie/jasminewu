@@ -75,7 +75,7 @@ export default function CurationsContent() {
   }, [categories.length]);
 
   return (
-    <div className="p-8 md:p-[6%] w-full flex flex-col md:flex-row md:justify-between space-y-10 md:space-y-0 max-w-full">
+    <div className="pt-[14vh] px-[4vw] w-full flex flex-col md:flex-row md:justify-between space-y-10 md:space-y-0 max-w-full">
       {/* Description */}
       <div
         className="curations-description w-full md:w-[20vw] md:mr-12 space-y-6 flex-shrink-0"

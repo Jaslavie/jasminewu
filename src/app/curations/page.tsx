@@ -5,7 +5,7 @@ export default function Curations() {
   return (
     <div className="h-full relative">
       <CurationsContent />
-      <SocialLinks />
+      {/* <SocialLinks /> */}
     </div>
   );
 }

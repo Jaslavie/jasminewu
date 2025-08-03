@@ -24,7 +24,7 @@ export default function About() {
       {/* Hero Section */}
       <div className="flex flex-col lg:flex-row min-h-screen">
         {/* Left Section - Text Content */}
-        <div className="flex-1 flex flex-col justify-center px-6 sm:px-8 lg:px-12 py-8 lg:py-0 mt-8 sm:mt-12 lg:mt-0">
+        <div className="flex-1 flex flex-col justify-center px-6 sm:px-8 lg:px-12 py-8 lg:py-0 sm:mt-12 lg:mt-0">
           <div
             className="space-y-4 sm:space-y-6 max-w-2xl mx-auto lg:mx-0"
             style={{
@@ -45,16 +45,18 @@ export default function About() {
                 transition: "opacity 0.5s ease-in-out",
               }}
             >
-              The hardest problems demand clarity under chaos. The next frontier
-              isn't smarter AI. It's radically fluid interfaces where humans and
-              machines make decisions as one. I design these at{" "}
+              I design interfaces for humans to interact with intelligence and
+              research the AI that drives them. The hardest problems demand
+              clarity under chaos. The next frontier isn't smarter AI. It's
+              radically fluid interfaces where humans and machines make
+              decisions as one. I design these at{" "}
               <Link href="https://www.palantir.com/platforms/gotham/">
                 Palantir
               </Link>{" "}
-              and <Link href="https://www.gallatin.ai/">Gallatin AI</Link>. I'm a{" "}
-              <Link href="https://research.contrary.com/">Contrary</Link> and{" "}
-              <Link href="https://www.8vc.com/fellowships">8VC Fellow</Link>, and
-              study CS & Neuroscience at UCI.
+              and <Link href="https://www.gallatin.ai/">Gallatin AI</Link>. I'm
+              a <Link href="https://research.contrary.com/">Contrary</Link> and{" "}
+              <Link href="https://www.8vc.com/fellowships">8VC Fellow</Link>,
+              and study CS & Neuroscience at UCI.
             </h3>
 
             <h3
@@ -68,12 +70,13 @@ export default function About() {
               <Link href="https://devpost.com/jaslavie">hackathons</Link>{" "}
               including the world's largest AI hackathon, built 911 dispatch
               agents at{" "}
-              <Link href="https://skydeck.berkeley.edu/">Berkeley Skydeck</Link>,{" "}
-              ran the largest U.S.{" "}
+              <Link href="https://skydeck.berkeley.edu/">Berkeley Skydeck</Link>
+              , ran the largest U.S.{" "}
               <Link href="https://designatuci.com/designathon/24">
                 designathon
               </Link>
-              , and <Link href="https://spacechi.media.mit.edu/">presented</Link>{" "}
+              , and{" "}
+              <Link href="https://spacechi.media.mit.edu/">presented</Link>{" "}
               adaptive navigation{" "}
               <Link href="https://drive.google.com/file/d/1DkKtDtQf2yCWEBN7kKnwssy7x6IParCf/view">
                 simulations
@@ -106,7 +109,9 @@ export default function About() {
                 WW2 history
               </Link>
               ,{" "}
-              <Link href="https://substack.com/home/post/p-156802970">write</Link>
+              <Link href="https://substack.com/home/post/p-156802970">
+                write
+              </Link>
               , and linger in classical art museums. My favorite painting is{" "}
               <i>
                 <Link href="https://docs.google.com/document/d/1CzlYHEmkBuTxmPa-5-PeTGrjZgd06Puz3gIr9QQ1f1c/edit?tab=t.0">
@@ -117,7 +122,7 @@ export default function About() {
             </h3>
 
             {/* Footer Links */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 font-serif pt-4 sm:pt-8">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 font-serif sm:pt-8">
               <h3 className="text-gray-400">Elsewhere</h3>
               <span className="hidden sm:inline">·</span>
               <h3 className="flex flex-col sm:flex-row gap-2 sm:gap-6">
@@ -131,9 +136,9 @@ export default function About() {
 
         {/* Right Section - Photo Collage */}
         <div className="flex-1 flex items-center justify-center p-4 sm:p-8 lg:p-12">
-          <img 
-            src="/aboutMePhotos.svg" 
-            alt="Photo collage" 
+          <img
+            src="/aboutMePhotos.svg"
+            alt="Photo collage"
             className="w-full h-auto max-w-md lg:max-w-lg object-contain"
           />
         </div>
