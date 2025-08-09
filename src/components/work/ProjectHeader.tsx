@@ -30,7 +30,7 @@ export default function ProjectHeader({
   className = "",
 }: ProjectHeaderProps) {
   return (
-    <header className={`lg:px-[16vw] px-[8vw] py-[16vh] ${className}`}>
+    <header className={`lg:px-[16vw] px-[8vw] pt-[12vh] pb-[2vh] ${className}`}>
       <div className="max-w-5xl mx-auto">
         {/* Back Navigation */}
         <div className="mb-8">
