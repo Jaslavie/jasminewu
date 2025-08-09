@@ -71,7 +71,7 @@
   }
 
   p {
-    @apply text-text-body font-normal text-[14px]/[1.6];
+    @apply text-text-body font-normal text-[14px]/[1.5] leading-[1.5];
   }
 
   ol {
@@ -79,7 +79,7 @@
   }
 
   li {
-    @apply text-text-body font-normal text-[14px]/[1.5] mb-4;
+    @apply text-text-body font-normal text-[14px]/[1.5] mb-2;
   }
 
   ::selection {

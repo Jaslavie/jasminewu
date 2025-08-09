@@ -29,7 +29,7 @@ const projects: Project[] = [
     number: "02",
     imageBefore: "/projects/spaceCHI_hover.png",
     imageAfter: "/projects/spaceCHI_hover_after.png",
-    link: "https://spacechi.media.mit.edu/",
+    link: "/projects/space-chi",
   },
   {
     title: "Anticipatory heads-up displays for spacesuits",

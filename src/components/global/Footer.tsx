@@ -17,7 +17,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="underline hover:text-white transition-colors"
               >
-                Radio - Lana Del Rey
+                Radio, Lana Del Rey
               </a>
             </div>
 

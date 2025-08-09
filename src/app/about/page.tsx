@@ -24,7 +24,7 @@ export default function About() {
       {/* Hero Section */}
       <div className="flex flex-col lg:flex-row min-h-screen">
         {/* Left Section - Text Content */}
-        <div className="flex-1 flex flex-col justify-center px-6 sm:px-8 lg:px-12 py-8 lg:py-0 sm:mt-12 lg:mt-0">
+        <div className="mt-[10vh] flex-1 flex flex-col justify-center px-4 sm:px-6 lg:px-8 py-8 lg:py-0 sm:mt-12 lg:mt-0">
           <div
             className="space-y-4 sm:space-y-6 max-w-2xl mx-auto lg:mx-0"
             style={{
@@ -48,15 +48,15 @@ export default function About() {
               I design interfaces for humans to interact with intelligence and
               research the AI that drives them. The hardest problems demand
               clarity under chaos. The next frontier isn't smarter AI. It's
-              radically fluid interfaces where humans and machines make
-              decisions as one. I design these at{" "}
+              radically fluid interfaces where humans and machines think and decide together. 
+              I build these systems at{" "}
               <Link href="https://www.palantir.com/platforms/gotham/">
                 Palantir
               </Link>{" "}
               and <Link href="https://www.gallatin.ai/">Gallatin AI</Link>. I'm
               a <Link href="https://research.contrary.com/">Contrary</Link> and{" "}
               <Link href="https://www.8vc.com/fellowships">8VC Fellow</Link>,
-              and study CS & Neuroscience at UCI.
+              studying CS & Neuroscience at UCI.
             </h3>
 
             <h3
@@ -75,7 +75,9 @@ export default function About() {
               <Link href="https://designatuci.com/designathon/24">
                 designathon
               </Link>
-              , and{" "}
+              , 
+              built spacesuit displays with NASA, 
+              and{" "}
               <Link href="https://spacechi.media.mit.edu/">presented</Link>{" "}
               adaptive navigation{" "}
               <Link href="https://drive.google.com/file/d/1DkKtDtQf2yCWEBN7kKnwssy7x6IParCf/view">
@@ -145,10 +147,10 @@ export default function About() {
       </div>
 
       {/* Past Life Section */}
-      <div className="px-6 sm:px-8 lg:px-[10vw] py-12 lg:py-16">
+      <div className="px-6 sm:px-8 lg:px-[10vw] pt-12 pb-[12vh]">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="flex items-center mb-8 lg:mb-12">
+          <div className="flex items-center lg:mb-12">
             <h2 className="text-[16px] sm:text-[18px] mr-4 font-serif text-gray-500">
               Past life
             </h2>
