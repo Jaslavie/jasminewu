@@ -90,13 +90,32 @@ export default function DispatchAIProject() {
           </div>
         </div>
       </ProjectSection>
+      <div className="border-t border-gray-800 mt-8"></div>
 
-      {/* Additional content can be added here */}
-      <div className="px-6 sm:px-8 lg:px-12 py-8">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-white text-center">More content coming soon</h2>
+      {/* design overview */}
+      <ProjectSection title="">
+        <h2 className="text-white italic text-[42px] mt-[2vh]">final design</h2>
+      </ProjectSection>
+      <ProjectSection title="the operational loop">
+        <div>
+          <p>
+            The system has two separate agents: 1) the human agent (dispatcher)
+            takes emergency calls. 2) the AI agent handles non-emergency calls.
+          </p>
+          <p>
+            I designed Dispatch on a continuous operational loop that decides
+            which agent should “take over” at each decision point (see model
+            design for more details). Each session data is logged to inform
+            future decisions.
+          </p>
         </div>
-      </div>
+       
+      </ProjectSection>
+      <ProjectImage
+          src="/projects/dispatchAI/finalDispatch.svg"
+          alt="Dispatch AI Platform Thumbnail"
+          caption=""
+        />
     </div>
   );
 }

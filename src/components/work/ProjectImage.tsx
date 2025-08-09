@@ -25,7 +25,7 @@ export default function ProjectImage({
         <img
           src={src}
           alt={alt}
-          className={`w-${width} h-${height} object-cover shadow-lg`}
+          className={`w-${width} h-${height} object-cover shadow-lg rounded-none`}
         />
         {caption && (
           <p className="text-gray-400 text-sm text-center italic">

@@ -14,24 +14,16 @@ export default function ProjectSection({
   className = "",
 }: ProjectSectionProps) {
   return (
-    <section className={`py-12 lg:py-16 ${className}`}>
+    <section className={`py-6  ${className}`}>
       <div className="mx-auto px-[18vw]">
         {/* Section Title */}
-        <h2
-          className="text-[20px] text-white mb-4 font-sans"
-          style={{ fontFamily: "Inter, sans-serif" }}
-        >
-          {title}
-        </h2>
+        <h2 className="text-[20px] text-white mb-4 font-sans font-light">{title}</h2>
 
         {/* Section Content */}
-        <div className="prose prose-invert max-w-none [&>p]:text-gray-300 [&>p]:text-lg [&>p]:leading-relaxed [&>div>h2]:text-white [&>div>h2]:font-semibold [&>div>h2]:mb-4 [&>div>ul]:space-y-3 [&>div>ul>li]:flex [&>div>ul>li]:items-start [&>div>ul>li]:gap-3 [&>div]:space-y-6 [&>div>ul>li>span:last-child]:text-gray-300 [&>div>h2]:font-sans">
+        <div className="prose prose-invert max-w-none [&>p]:text-gray-300 [&>p]:text-lg [&>p]:leading-relaxed [&>div>h2]:text-white [&>div>h2]:font-semibold [&>div>h2]:mb-4 [&>div>ul]:space-y-3 [&>div>ul>li]:flex [&>div>ul>li]:items-start [&>div>ul>li]:gap-3 [&>div]:space-y-6 [&>div>ul>li>span:last-child]:text-gray-300">
           {children}
         </div>
-        {/* divider */}
-      <div className="border-t border-gray-800 mt-8"></div>
       </div>
-      
     </section>
   );
 }

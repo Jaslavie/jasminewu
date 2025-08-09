@@ -2,12 +2,93 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ----- Font Face Declarations ----- */
+@font-face {
+  font-family: "EB Garamond";
+  src: url("../fonts/EBGaramond-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url("../fonts/EBGaramond-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url("../fonts/EBGaramond-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url("../fonts/EBGaramond-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url("../fonts/EBGaramond-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url("../fonts/EBGaramond-SemiBoldItalic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url("../fonts/EBGaramond-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url("../fonts/EBGaramond-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url("../fonts/EBGaramond-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url("../fonts/EBGaramond-ExtraBoldItalic.ttf") format("truetype");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
 /* Custom Properties */
 :root {
   /* ----- Fonts ----- */
   --font-body: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --font-serif: var(--font-eb-garamond), "EB Garamond", serif;
+  --font-serif: "EB Garamond", serif;
   --font-subheading: "Inconsolata", sans-serif;
   --font-body: "Inter", sans-serif;
 
@@ -60,13 +141,13 @@
   }
 
   h2 {
-    @apply text-text-heading font-subheading text-[24px] mb-3 font-light leading-8;
-    font-family: var(--font-eb-garamond), "EB Garamond", serif;
-    font-weight: 300;
+    @apply text-text-heading text-[24px] mb-3 font-normal leading-8;
+    font-family: "EB Garamond", serif;
+    font-weight: 400;
   }
   h3 {
-    @apply text-text-heading font-serif text-[18px] mb-3 font-light leading-8;
-    font-family: var(--font-eb-garamond), "EB Garamond", serif;
+    @apply text-text-heading text-[18px] mb-3 font-light leading-8;
+    font-family: "EB Garamond", serif;
     font-weight: 300;
   }
 

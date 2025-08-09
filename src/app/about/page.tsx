@@ -28,7 +28,7 @@ export default function About() {
           <div
             className="space-y-4 sm:space-y-6 max-w-2xl mx-auto lg:mx-0"
             style={{
-              fontFamily: "var(--font-eb-garamond), 'EB Garamond', serif",
+              fontFamily: "'EB Garamond', serif",
               fontWeight: 300,
               opacity: showPara1 || showPara2 || showPara3 || showPara4 ? 1 : 0,
               visibility:
@@ -48,8 +48,8 @@ export default function About() {
               I design interfaces for humans to interact with intelligence and
               research the AI that drives them. The hardest problems demand
               clarity under chaos. The next frontier isn't smarter AI. It's
-              radically fluid interfaces where humans and machines think and decide together. 
-              I build these systems at{" "}
+              radically fluid interfaces where humans and machines think and
+              decide together. I build these systems at{" "}
               <Link href="https://www.palantir.com/platforms/gotham/">
                 Palantir
               </Link>{" "}
@@ -75,9 +75,7 @@ export default function About() {
               <Link href="https://designatuci.com/designathon/24">
                 designathon
               </Link>
-              , 
-              built spacesuit displays with NASA, 
-              and{" "}
+              , built spacesuit displays with NASA, and{" "}
               <Link href="https://spacechi.media.mit.edu/">presented</Link>{" "}
               adaptive navigation{" "}
               <Link href="https://drive.google.com/file/d/1DkKtDtQf2yCWEBN7kKnwssy7x6IParCf/view">
