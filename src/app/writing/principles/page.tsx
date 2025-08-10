@@ -163,43 +163,6 @@ export default function Principles() {
               </p>
             </div>
           </section>
-
-          <section>
-            <h2>Burn the boats</h2>
-
-            <div className="space-y-4 text-gray-300 leading-relaxed">
-              <p>
-                Every adult, teacher, and parent conditioned in us this
-                indestructible law of nature: to get into a good school, get
-                good grades, get a good job — ultimately, to set sail in the
-                boats that were already made for us.
-              </p>
-              <p>
-                Sometimes, we ought to burn these boats and leave no remnants.
-                Leave school for good. Move to a new country and never look
-                back. Film a youtube video everyday with less than 50
-                subscribers. All too often, we put our foot halfway through the
-                door. I believe that the best work demands giving 150%, not
-                100%, and certainly not 90%.
-              </p>
-
-              {/* <p>
-                This isn't about building a venture or business, but designing a
-                life that deeply resonates with who you are. For me, that means
-                spending less time grinding without purpose and more time
-                visiting art museums and sketching in my notebook. It means
-                spending less time optimizing for summer, spring, and winter
-                internships and more time iterating over a single project I care
-                a lot about. It means{" "}
-                <ChaosLink href="https://substack.com/home/post/p-156802970">
-                  ditching
-                </ChaosLink>{" "}
-                the "drop-out founder" and "swe intern" titles and focusing more
-                on the legacy I am trying to build.
-              </p> */}
-            </div>
-          </section>
-
           <hr className="border-gray-800 my-12" />
 
           <section>
@@ -286,6 +249,12 @@ export default function Principles() {
               <li>
                 Don't feel compelled to attend every event. Trust that the
                 quality of your work will bring the right people to you.
+              </li>
+              <li>
+                If you're not naturally good at something, don't do it. Some
+                people are born with exceptional talent & intuition and they
+                will outperform you. Instead, find the thing you are
+                assymetrically good at (<i>based on talk from Alex Karp</i>).
               </li>
             </ol>
           </section>

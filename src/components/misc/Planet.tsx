@@ -205,7 +205,6 @@ const ASCIIArtAnimation: React.FC<ASCIIArtAnimationProps> = ({
     whiteSpace: "pre",
     fontSize: `${fontSize}px`,
     lineHeight: 1,
-    cursor: "pointer",
     position: "relative",
     fontWeight: "normal",
     opacity,

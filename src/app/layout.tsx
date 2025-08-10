@@ -5,6 +5,7 @@ import ConditionalLayout from "@/components/global/ConditionalLayout";
 import BackgroundNoise from "@/components/global/BackgroundNoise";
 import ConditionalFooter from "@/components/global/ConditionalFooter";
 import MobileNav from "@/components/global/MobileNav";
+import CustomCursor from "@/components/ui/CustomCursor";
 
 export const metadata: Metadata = {
   title: "Jasmine Wu",
@@ -31,7 +32,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div>
+        <div className="min-h-screen flex flex-col">
+          {/* Custom Cursor */}
+          <CustomCursor />
+
           {/* Background Noise Effect */}
           <BackgroundNoise />
 
@@ -39,7 +43,7 @@ export default function RootLayout({
           <MobileNav />
 
           {/* Main Content Container - Mobile responsive */}
-          <div className="relative min-h-screen md:h-[calc(100vh-2.5rem)]">
+          <div className="relative flex-1 min-h-screen md:h-[calc(100vh-2.5rem)]">
             {/* Conditional Left Sidebar - Hidden on writing pages and mobile */}
             <ConditionalSidebar />
 

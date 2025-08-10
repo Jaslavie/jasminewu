@@ -30,11 +30,19 @@ export default function WritingContent() {
       title: "contrary: orca security memo",
       link: "https://research.contrary.com/company/orca-security",
     },
+    {
+      title: "contrary: saildrone memo",
+      link: "https://research.contrary.com/company/saildrone",
+    },
+    {
+      title: "contrary: overland ai memo",
+      link: "https://research.contrary.com/company/overland-ai",
+    },
     // { title: "paradigm shifts", link: "#" },
   ];
 
   return (
-    <div className="p-8 md:p-[6%] max-w-full md:max-w-4xl">
+    <div className="pt-[14vh] px-[4vw] max-w-full md:max-w-4xl">
       {/* Writing List */}
       <div
         className="writing-list space-y-3"

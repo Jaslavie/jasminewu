@@ -22,7 +22,7 @@ export default function ConditionalLayout({
       className={`min-h-screen md:h-full ${
         isWritingPage
           ? "ml-0" // Writing pages: no mobile nav, no sidebar on any device
-          : "ml-0 md:ml-40 pt-16 md:pt-0" // Other pages: mobile nav padding on mobile, sidebar margin on desktop
+          : "py-[8vh] px-[5vw] pt-16 md:pt-0" // Other pages: mobile nav padding on mobile, sidebar margin on desktop
       }`}
     >
       {children}
