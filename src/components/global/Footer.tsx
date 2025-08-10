@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="relative md:fixed bottom-0 left-0 right-0 bg-background text-gray-400 text-xs border-t border-gray-800 z-20">
+    <footer className="relative bg-background text-gray-400 text-xs border-t border-gray-800 z-20 mt-auto">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center px-6 py-4 space-y-3 md:space-y-0">
         {/* Left side - Currently info */}
         <div className="flex flex-col md:flex-row md:flex-wrap md:items-center md:justify-start space-y-1 md:space-y-0 md:space-x-2 text-left">

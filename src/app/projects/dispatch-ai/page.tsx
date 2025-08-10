@@ -4,6 +4,7 @@ import React from "react";
 import ProjectHeader from "@/components/work/ProjectHeader";
 import ProjectSection from "@/components/work/ProjectSection";
 import ProjectImage from "@/components/work/ProjectImage";
+import Divider from "@/components/global/Divider";
 
 export default function DispatchAIProject() {
   const headerData = {
@@ -88,9 +89,9 @@ export default function DispatchAIProject() {
               </li>
             </ul>
           </div>
+          <Divider />
         </div>
       </ProjectSection>
-      <div className="border-t border-gray-800 mt-8"></div>
 
       {/* design overview */}
       <ProjectSection title="">
@@ -109,13 +110,39 @@ export default function DispatchAIProject() {
             future decisions.
           </p>
         </div>
-       
       </ProjectSection>
       <ProjectImage
-          src="/projects/dispatchAI/finalDispatch.svg"
+        src="/projects/dispatchAI/finalDispatch.svg"
+        alt="Dispatch AI Platform Thumbnail"
+        caption=""
+      />
+
+      {/* main features */}
+      <ProjectSection title="01 live incident monitoring" layout="row">
+        <p>
+          Operationalize transcripts by supporting live language translation and
+          dynamic script recommendations. Trained on 1000s of emergency call
+          data.
+        </p>
+
+        <ProjectImage
+          src="/projects/dispatchAI/demo/dispatchDemo_liveEmergency.mov"
           alt="Dispatch AI Platform Thumbnail"
           caption=""
         />
+      </ProjectSection>
+      <ProjectSection title="02 Alerting UI" layout="row">
+        <p>
+          Currently the calls themselves act as alerts. Stored alerts with all
+          details and checklists into a central pane-of-glass.
+        </p>
+
+        <ProjectImage
+          src="/projects/dispatchAI/demo/alertsDemoDispatch.mov"
+          alt="Dispatch AI Platform Thumbnail"
+          caption=""
+        />
+      </ProjectSection>
     </div>
   );
 }
