@@ -163,6 +163,11 @@
     @apply text-text-body font-normal text-[14px]/[1.5] mb-2;
   }
 
+  /* Target ChaosLink components inside paragraph tags */
+  p .link span {
+    margin-bottom: -5px !important;
+  }
+
   ::selection {
     @apply bg-[#3639f8ed] z-10 text-white;
   }

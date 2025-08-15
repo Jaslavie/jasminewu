@@ -7,11 +7,9 @@ export default function ConditionalFooter() {
   const pathname = usePathname();
 
   //* ==== Add all future writing pages here ====
-  const isWritingPage = pathname.includes("/principles");
+  const isWritingPage = pathname.startsWith("/writing");
 
-  if (isWritingPage) {
-    return null;
-  }
+  // Show footer on all pages including writing pages
 
   return <Footer />;
 }

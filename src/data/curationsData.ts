@@ -102,6 +102,10 @@ export const curationsData: CurationData = {
       link: "https://www.imdb.com/title/tt2119532/?ref_=nv_sr_srsg_1_tt_5_nm_2_in_0_q_hacksa",
     },
     {
+      title: "The Fault in our Stars",
+      link: "https://www.imdb.com/title/tt2582846/",
+    },
+    {
       title: "The Last of Us",
       link: "https://www.imdb.com/title/tt3581920/",
     },

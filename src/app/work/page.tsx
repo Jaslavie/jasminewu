@@ -5,7 +5,7 @@ export default function Work() {
   return (
     <div className="h-full relative">
       <WorkContent />
-      <SocialLinks />
+      {/* <SocialLinks /> */}
     </div>
   );
 }

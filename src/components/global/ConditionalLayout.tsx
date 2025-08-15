@@ -15,18 +15,18 @@ export default function ConditionalLayout({
   const pathname = usePathname();
 
   //* ==== Add all future writing pages here ====
-  const isWritingPage = pathname.includes("/principles");
+  const isWritingPage = pathname.startsWith("/writing");
 
   return (
     <div
       className={`min-h-screen md:h-full ${
         isWritingPage
-          ? "ml-0" // Writing pages: no mobile nav, no sidebar on any device
+          ? "py-[8vh] px-[5vw] pt-16 md:pt-0" // Writing pages: same layout as other pages with header/footer
           : "py-[8vh] px-[5vw] pt-16 md:pt-0" // Other pages: mobile nav padding on mobile, sidebar margin on desktop
       }`}
     >
       {children}
-      {isWritingPage && <SocialLinks />}
+      {isWritingPage}
     </div>
   );
 }
