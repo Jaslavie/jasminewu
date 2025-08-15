@@ -1,78 +1,96 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export default function CustomCursor() {
-  const [cursorStyle, setCursorStyle] = useState("retro");
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [enabled, setEnabled] = useState(false);
+  const [shown, setShown] = useState(false);
+  const [mode, setMode] = useState<"retro" | "text">("retro");
+  const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const updateCursorPosition = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY });
-    };
-
-    const handleMouseOver = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-
-      // Check if hovering over text elements
-      if (
-        target.tagName === "H1" ||
-        target.tagName === "H2" ||
-        target.tagName === "H3" ||
-        target.tagName === "H4" ||
-        target.tagName === "H5" ||
-        target.tagName === "H6" ||
-        target.tagName === "P" ||
-        target.tagName === "LI"
-      ) {
-        setCursorStyle("text");
-      } else {
-        setCursorStyle("retro");
-      }
-    };
-
-    const handleMouseOut = () => {
-      setCursorStyle("retro");
-    };
-
-    // Hide default cursor
-    document.body.style.cursor = "none";
-
-    // Add event listeners
-    document.addEventListener("mousemove", updateCursorPosition);
-    document.addEventListener("mouseover", handleMouseOver);
-    document.addEventListener("mouseout", handleMouseOut);
-
+    const fine = typeof window !== "undefined" && matchMedia("(pointer: fine)").matches;
+    const reduced = typeof window !== "undefined" && matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!fine || reduced) return;
+    setEnabled(true);
+    const prev = document.documentElement.style.cursor;
+    document.documentElement.style.cursor = "none";
     return () => {
-      document.removeEventListener("mousemove", updateCursorPosition);
-      document.removeEventListener("mouseover", handleMouseOver);
-      document.removeEventListener("mouseout", handleMouseOut);
-      document.body.style.cursor = "auto";
+      document.documentElement.style.cursor = prev || "auto";
     };
   }, []);
 
+  useEffect(() => {
+    if (!enabled || !ref.current) return;
+    const el = ref.current;
+    let seeded = false;
+
+    const move = (e: PointerEvent) => {
+      const x = e.clientX;
+      const y = e.clientY;
+      if (!seeded) {
+        setShown(true);
+        seeded = true;
+      }
+      el.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+    };
+
+    const vis = () => {
+      if (document.visibilityState !== "visible") seeded = false;
+    };
+
+    window.addEventListener("pointermove", move, { passive: true });
+    document.addEventListener("visibilitychange", vis);
+    return () => {
+      window.removeEventListener("pointermove", move);
+      document.removeEventListener("visibilitychange", vis);
+    };
+  }, [enabled]);
+
+  useEffect(() => {
+    if (!enabled) return;
+    const over = (e: PointerEvent) => {
+      const t = e.target as HTMLElement | null;
+      if (!t) return;
+      const next: "retro" | "text" = t.closest("p,li,h1,h2,h3,h4,h5,h6") ? "text" : "retro";
+      if (next !== mode) setMode(next);
+    };
+    window.addEventListener("pointerover", over, { passive: true });
+    return () => window.removeEventListener("pointerover", over);
+  }, [enabled, mode]);
+
+  if (!enabled) return null;
+
   return (
     <div
-      className="fixed pointer-events-none z-[9999] transition-all duration-100"
+      ref={ref}
+      className="fixed pointer-events-none z-[2147483647]"
       style={{
-        left: position.x,
-        top: position.y,
-        // transform: "translate(-50%, -50%)",
+        visibility: shown ? "visible" : "hidden",
+        transform: "translate3d(-100vw,-100vh,0)",
+        willChange: "transform",
+        contain: "layout style paint",
+        backfaceVisibility: "hidden",
       }}
     >
-      {/* normal cursor */}
-      {cursorStyle === "retro" ? (
-        <div className="w-6 h-6">
-          <img
-            src="/cursorRetro.svg"
-            alt="cursor"
-            className="w-[25px] h-[25px]"
-          />
-        </div>
-      ) : (
-        // text cursor
-        <div className="w-0.5 h-5 bg-white shadow-lg" />
-      )}
+      <div className="relative">
+        <img
+          src="/cursorRetro.svg"
+          alt=""
+          className={mode === "retro" ? "block w-[25px] h-[25px]" : "hidden"}
+          style={{ mixBlendMode: "difference" }}
+        />
+        <div
+          className={mode === "text" ? "block" : "hidden"}
+          style={{
+            width: 2,
+            height: 20,
+            background: "white",
+            boxShadow: "0 0 8px rgba(0,0,0,0.35)",
+            mixBlendMode: "difference",
+          }}
+        />
+      </div>
     </div>
   );
 }
