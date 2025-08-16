@@ -9,6 +9,7 @@ interface ProjectImageProps {
   className?: string;
   width?: string;
   height?: string;
+  maxHeight?: string;
   type?: "img" | "mov";
 }
 
@@ -53,6 +54,7 @@ export default function ProjectImage({
   className = "",
   width = "full",
   height = "auto",
+  maxHeight,
   type = "img",
 }: ProjectImageProps) {
   // Check if it's a video based on type prop or file extension
@@ -61,13 +63,17 @@ export default function ProjectImage({
     type === "mov" ||
     videoExtensions.some((ext) => src.toLowerCase().endsWith(ext));
 
+  // Build style object for maxHeight if provided
+  const style = maxHeight ? { maxHeight } : {};
+
   return (
     <div className={`my-2 ${className} w-full`}>
       <div className="mx-auto">
         {isVideo ? (
           <video
             src={src}
-            className={`w-${width} h-${height} object-cover shadow-lg rounded-none`}
+            className={`w-${width} h-${height} ${maxHeight ? "object-contain" : "object-cover"} shadow-lg rounded-none`}
+            style={style}
             loop
             muted
             autoPlay
@@ -81,7 +87,8 @@ export default function ProjectImage({
           <img
             src={src}
             alt={alt}
-            className={`w-${width} h-${height} object-cover shadow-lg rounded-none`}
+            className={`w-${width} h-${height} ${maxHeight ? "object-contain" : "object-cover"} shadow-lg rounded-none`}
+            style={style}
             loading="lazy"
           />
         )}

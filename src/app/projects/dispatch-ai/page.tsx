@@ -131,14 +131,69 @@ export default function DispatchAIProject() {
           caption=""
         />
       </ProjectSection>
-      <ProjectSection title="02 Alerting UI" layout="row">
+      <ProjectSection title="02 Resolving alerts" layout="row">
         <p>
-          Currently the calls themselves act as alerts. Stored alerts with all
-          details and checklists into a central pane-of-glass.
+          Currently, calls themselves act as decentralized alerts. We dedicated
+          a separate tab for alerts, alongside details and checklists, into a
+          single pane-of-glass.
         </p>
 
         <ProjectImage
           src="/projects/dispatchAI/demo/alertsDemoDispatch.mov"
+          alt="Dispatch AI Platform Thumbnail"
+          caption=""
+        />
+      </ProjectSection>
+      <ProjectSection title="03 Customizable modules" layout="row">
+        <p>
+          Currently, dispatchers navigate across multiple static interfaces. We
+          allow them to toggle on-off modules based on the data they need to
+          surface during the current stage of operations.
+        </p>
+
+        <ProjectImage
+          src="/projects/dispatchAI/demo/dispatchDemo_modular.mov"
+          alt="Dispatch AI Platform Thumbnail"
+          caption=""
+          maxHeight="800px"
+        />
+      </ProjectSection>
+      <ProjectSection title="04 Pathfinding" layout="row">
+        <p>
+          Operators can monitor the path first-responders will travel based on
+          live google maps data. They can see the traffic between each waypoint,
+          view status updates, and recommend changes.
+        </p>
+
+        <ProjectImage
+          src="/projects/dispatchAI/demo/dispatchDemo_route.mov"
+          alt="Dispatch AI Platform Thumbnail"
+          caption=""
+        />
+      </ProjectSection>
+      <ProjectSection title="05 Historic call data" layout="row">
+        <p>
+          Previously, dispatch centers store old call scripts in thousand-page
+          albums. We created a first-class solution that stores all previous
+          call in a central database. Operators can change security settings to
+          configure visibility.
+        </p>
+
+        <ProjectImage
+          src="/projects/dispatchAI/demo/dispatchDemo_log.mov"
+          alt="Dispatch AI Platform Thumbnail"
+          caption=""
+        />
+      </ProjectSection>
+      <ProjectSection title="06 Forecast future call volumes" layout="row">
+        <p>
+          Provide dispatchers with projected call volumes in the following weeks
+          to help anticipate spikes in calls. Based on historic call volumes,
+          which dispatch centers already collect.
+        </p>
+
+        <ProjectImage
+          src="/projects/dispatchAI/demo/dispatchDemo_stats.mov"
           alt="Dispatch AI Platform Thumbnail"
           caption=""
         />

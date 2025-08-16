@@ -24,7 +24,7 @@ export default function About() {
       {/* Hero Section */}
       <div className="flex flex-col lg:flex-row min-h-screen">
         {/* Left Section - Text Content */}
-        <div className="mt-[10vh] flex-1 flex flex-col justify-center px-4 sm:px-6 lg:px-8 py-8 lg:py-0 sm:mt-12 lg:mt-0">
+        <div className="flex-1 flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 py-8 lg:py-0 sm:mt-12 lg:mt-0">
           <div
             className="space-y-4 sm:space-y-6 max-w-2xl mx-auto lg:mx-0"
             style={{
@@ -118,11 +118,11 @@ export default function About() {
                   the Blue Boy
                 </Link>
               </i>{" "}
-              .
+              . Grew up in Orange County, with short stints in DC and LA.
             </h3>
 
             {/* Footer Links */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 font-serif sm:pt-8">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 font-serif">
               <h3 className="text-gray-400">Elsewhere</h3>
               <span className="hidden sm:inline">·</span>
               <h3 className="flex flex-col sm:flex-row gap-2 sm:gap-6">

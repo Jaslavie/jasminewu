@@ -189,11 +189,7 @@ export default function Principles() {
               <li>
                 Get really good at reading b.s. in people. this is often
                 disguised as prestige and status. Cultivate awareness when
-                people are putting up a front, but don't try to fix it.{" "}
-                <ChaosLink href="https://www.brainyquote.com/quotes/napoleon_bonaparte_103585">
-                  Never interrupt your enemy
-                </ChaosLink>{" "}
-                when they're making a mistake.
+                people are putting up a front, but don't try to fix it.
               </li>
               <li>
                 You know much, much less than you think. You only realize this
