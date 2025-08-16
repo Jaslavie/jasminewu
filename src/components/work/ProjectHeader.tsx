@@ -64,7 +64,7 @@ export default function ProjectHeader({
               <img
                 src={logo}
                 alt="Project logo"
-                className="h-8 w-auto object-contain"
+                className="h-full w-auto object-contain max-h-[80px]"
               />
             )}
           </div>

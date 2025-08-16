@@ -47,7 +47,7 @@ const projects: Project[] = [
     number: "03",
     imageBefore: "/projects/nasaSUITS_hover.png",
     imageAfter: "/projects/nasaSUITS_hover_after.png",
-    link: "/projects/nasa-suits",
+    link: "/projects/nasa",
   },
   //   {
   //     title: "Palantir Gotham",

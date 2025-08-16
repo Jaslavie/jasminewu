@@ -67,7 +67,7 @@ export default function ProjectImage({
   const style = maxHeight ? { maxHeight } : {};
 
   return (
-    <div className={`my-2 ${className} w-full`}>
+    <div className={`my-4 ${className} w-full`}>
       <div className="mx-auto">
         {isVideo ? (
           <video
@@ -93,7 +93,7 @@ export default function ProjectImage({
           />
         )}
         {caption && (
-          <p className="text-gray-400 text-sm text-center italic">{caption}</p>
+          <p className="text-gray-400 text-sm mt-3 text-center italic">{caption}</p>
         )}
       </div>
     </div>
