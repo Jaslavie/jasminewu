@@ -14,6 +14,15 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "Palantir",
+    description:
+      "Building workflows for targeting analysis and wargaming simulation.",
+    number: "01",
+    imageBefore: "/projects/palantir_hover.png",
+    imageAfter: "/projects/palantir_hover_after.png",
+    link: "https://time.com/6691662/ai-ukraine-war-palantir/",
+  },
+  {
     title: "Emergency triage system for 911 dispatchers",
     description:
       "Triage platform to offload non-emergency 911 calls. $68k funding from Berkeley Skydeck.",
