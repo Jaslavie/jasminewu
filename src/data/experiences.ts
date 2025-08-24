@@ -15,7 +15,7 @@ export const experiences: Experience[] = [
     title: "Product Designer @ Palantir",
     date: "Summer 2024",
     description:
-      "Targeting systems analysis & wargaming simulations. Proposed V1 of Fog of War system. Designed system to surface critical nodes of targets to support operators in prioritizing most high-impact attacks. ",
+      "Targeting systems analysis & wargaming simulations. Proposed V1 of Fog of War system. Designed system to surface critical nodes of targets to support operators in prioritizing most high-impact attacks.",
   },
   {
     title: "Founding a Research Lab",

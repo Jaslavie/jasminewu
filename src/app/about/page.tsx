@@ -115,10 +115,10 @@ export default function About() {
               , and linger in classical art museums. My favorite painting is{" "}
               <i>
                 <Link href="https://docs.google.com/document/d/1CzlYHEmkBuTxmPa-5-PeTGrjZgd06Puz3gIr9QQ1f1c/edit?tab=t.0">
-                  the Blue Boy
+                  the Blue Boy.
                 </Link>
               </i>{" "}
-              . Grew up in Orange County, with short stints in DC and LA.
+              Grew up in Orange County with short stints in DC and LA.
             </h3>
 
             {/* Footer Links */}

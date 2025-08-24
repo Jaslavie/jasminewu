@@ -26,7 +26,7 @@ const projects: Project[] = [
     title: "Emergency triage system for 911 dispatchers",
     description:
       "Triage platform to offload non-emergency 911 calls. $68k funding from Berkeley Skydeck.",
-    number: "01",
+    number: "02",
     imageBefore: "/projects/dispatchAI_hover.png",
     imageAfter: "/projects/dispatchAI_hover_after.png",
     link: "/projects/dispatch-ai",
@@ -35,7 +35,7 @@ const projects: Project[] = [
     title: "Adaptive navigation tool for lunar traversal",
     description:
       "Simulation software for lunar exploration. Presented to the European Space Agency.",
-    number: "02",
+    number: "03",
     imageBefore: "/projects/spaceCHI_hover.png",
     imageAfter: "/projects/spaceCHI_hover_after.png",
     link: "https://drive.google.com/file/d/1iQ2fm9aBCSS3OgeBD4rz7U4PUgjuU8ZG/view",
@@ -44,20 +44,11 @@ const projects: Project[] = [
     title: "Anticipatory heads-up displays for spacesuits",
     description:
       "XR displays for EVA operations. Simulation testing at NASA JSC. Presented to Astronauts.",
-    number: "03",
+    number: "04",
     imageBefore: "/projects/nasaSUITS_hover.png",
     imageAfter: "/projects/nasaSUITS_hover_after.png",
     link: "/projects/nasa",
   },
-  //   {
-  //     title: "Palantir Gotham",
-  //     description:
-  //       "Human-AI interfaces for decision-making on spacewalks and battlefield operations.",
-  //     number: "02",
-  //     imageBefore: "/images/palantir_hover.png",
-  //     imageAfter: "/images/palantir_hover_after.png",
-  //     link: "https://www.palantir.com/platforms/gotham/",
-  //   },
   //   {
   //     title: "Gallatin AI",
   //     description: "Advanced AI systems for complex decision-making scenarios.",

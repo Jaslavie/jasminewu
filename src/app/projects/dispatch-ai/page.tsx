@@ -131,7 +131,19 @@ export default function DispatchAIProject() {
           caption=""
         />
       </ProjectSection>
-      <ProjectSection title="02 Resolving alerts" layout="row">
+      <ProjectSection title="02 dispatching units" layout="row">
+        <p>
+          Select and dispatch units on-platform. Select from pre-designed
+          emergency procedures to reduce on-site decision-making.
+        </p>
+
+        <ProjectImage
+          src="/projects/dispatchAI/demo/dispatchDemo_confirmAction.mov"
+          alt="Dispatch AI Platform Thumbnail"
+          caption=""
+        />
+      </ProjectSection>
+      <ProjectSection title="03 Resolving alerts" layout="row">
         <p>
           Currently, calls themselves act as decentralized alerts. We dedicated
           a separate tab for alerts, alongside details and checklists, into a
@@ -144,7 +156,7 @@ export default function DispatchAIProject() {
           caption=""
         />
       </ProjectSection>
-      <ProjectSection title="03 Customizable modules" layout="row">
+      <ProjectSection title="04 Customizable modules" layout="row">
         <p>
           Currently, dispatchers navigate across multiple static interfaces. We
           allow them to toggle on-off modules based on the data they need to
@@ -158,7 +170,7 @@ export default function DispatchAIProject() {
           maxHeight="800px"
         />
       </ProjectSection>
-      <ProjectSection title="04 Pathfinding" layout="row">
+      <ProjectSection title="05 Pathfinding" layout="row">
         <p>
           Operators can monitor the path first-responders will travel based on
           live google maps data. They can see the traffic between each waypoint,
@@ -171,7 +183,7 @@ export default function DispatchAIProject() {
           caption=""
         />
       </ProjectSection>
-      <ProjectSection title="05 Historic call data" layout="row">
+      <ProjectSection title="06 Historic call data" layout="row">
         <p>
           Previously, dispatch centers store old call scripts in thousand-page
           albums. We created a first-class solution that stores all previous
@@ -185,7 +197,7 @@ export default function DispatchAIProject() {
           caption=""
         />
       </ProjectSection>
-      <ProjectSection title="06 Forecast future call volumes" layout="row">
+      <ProjectSection title="07 Forecast future call volumes" layout="row">
         <p>
           Provide dispatchers with projected call volumes in the following weeks
           to help anticipate spikes in calls. Based on historic call volumes,
@@ -197,6 +209,185 @@ export default function DispatchAIProject() {
           alt="Dispatch AI Platform Thumbnail"
           caption=""
         />
+      </ProjectSection>
+
+      <div style={{ padding: "0 8vw" }}>
+        <Divider />
+      </div>
+
+      {/* Problem Analysis Section */}
+      <ProjectSection title="">
+        <h2 className="text-white italic text-[42px] mt-[2vh]">the problem</h2>
+      </ProjectSection>
+      <ProjectSection title="">
+        <div>
+          <p>
+            The grim reality of dispatch centers: 82% are understaffed, with the
+            average wait time of Oakland PD being 62 seconds. 90% of these calls
+            are non-emergency, creating a system where dispatchers are
+            overwhelmed with routine calls while critical emergencies wait.
+          </p>
+          <p>
+            This constant pressure takes a severe toll on dispatchers' mental
+            health and operational efficiency.
+          </p>
+          <div className="mt-6 space-y-4">
+            <blockquote className="border-l-4 border-primary pl-4 italic text-white">
+              "We get a lot of non-emergency calls that distract us from
+              critical calls."
+              <div className="text-sm text-muted-foreground mt-1 text-gray-400">
+                — LAPD Deputy Chief
+              </div>
+            </blockquote>
+            <blockquote className="border-l-4 border-primary pl-4 italic text-white">
+              "I feel chronically anxious and stressed, which has impacted my
+              mental health"
+              <div className="text-sm text-muted-foreground mt-1 text-gray-400">
+                — Dispatcher
+              </div>
+            </blockquote>
+          </div>
+        </div>
+      </ProjectSection>
+
+      {/* Ground Zero Research Section */}
+      <ProjectSection title="at ground 0">
+        <div>
+          <p>
+            We had the opportunity to speak directly with LAPD staff and
+            observed common trends across dispatch centers. Through our
+            research, we identified three key pain points that affect
+            dispatchers daily.
+          </p>
+        </div>
+        <ProjectImage
+          src="/projects/dispatchAI/disptachNotes.png"
+          alt="Dispatch AI Platform Thumbnail"
+          caption=""
+        />
+      </ProjectSection>
+
+      {/* User Archetype Section */}
+      <ProjectSection title="user archetype">
+        <div>
+          <p>The archetypical user sits on two ends of the spectrum:</p>
+          <ol className="mt-2 space-y-1">
+            <li>Veteran dispatchers with decades of tenure</li>
+            <li>New-hires with no habitual reflexes toward dispatch ops</li>
+          </ol>
+          <p className="mt-4">
+            However, both parties are overwhelmed by the amount of data they
+            need to consume on a daily basis. This surfaces most when reading
+            off manual instruction scripts during emergencies.
+          </p>
+        </div>
+        {/* User Journey Section */}
+        <ProjectImage
+          src="/projects/dispatchAI/userJourney.png"
+          alt="Dispatch AI Platform Thumbnail"
+          caption=""
+        />
+      </ProjectSection>
+
+      {/* Current Workflow Section */}
+      <ProjectSection title="current workflow">
+        <div>
+          <p>
+            There are 3 primary decision points in a call. Currently, this work
+            is entirely manual - dispatchers type in tiny textboxes and read off
+            scripts. The process is inefficient and error-prone.
+          </p>
+          <ProjectImage
+            src="/projects/dispatchAI/dispatchWorkflow.png"
+            alt="Dispatch AI Platform Thumbnail"
+            caption=""
+          />
+        </div>
+      </ProjectSection>
+
+      {/* Root Cause Section */}
+      <ProjectSection title="the root node">
+        <div>
+          <p>
+            Poorly-documented calls is the root cause of distress. The symptoms
+            of this include:
+          </p>
+          <ol>
+            <li>slower response times</li>
+            <li>operator stress from repetitive calls</li>
+            <li>manual and in-malleable response procedures</li>
+          </ol>
+          <p className="mt-4">
+            The opportunity, therefore, is offloading documentation to a more
+            accurate and efficient agent to free up time for dispatchers to
+            focus on critical calls
+          </p>
+        </div>
+        <ProjectImage
+          src="/projects/dispatchAI/dispatchPain.png"
+          alt="Dispatch AI Platform Thumbnail"
+          caption=""
+        />
+      </ProjectSection>
+
+      <div style={{ padding: "0 8vw" }}>
+        <Divider />
+      </div>
+
+      {/* Problem Analysis Section */}
+      <ProjectSection title="">
+        <h2 className="text-white italic text-[42px] mt-[2vh]">
+          solution smithing
+        </h2>
+      </ProjectSection>
+      <ProjectSection title="big picture: communication flow">
+        <div>
+          <p>
+            The communication workflow flows through a chain-of-command system
+            from the caller to the dispatcher, incident commander, unit
+            commander, and finally the first responders. All of this intel must
+            also overcome physical barriers: sensor systems, gps, wifi signals,
+            and bluetooth.
+          </p>
+          <p>
+            This helped me better understand where each window and task can fit
+            inside of the comms workflow.
+          </p>
+        </div>
+        <ProjectImage
+          src="/projects/dispatchAI/dispatchAIWorkflow.png"
+          alt="Dispatch AI Platform Thumbnail"
+          caption=""
+        />
+      </ProjectSection>
+
+      <div style={{ padding: "0 8vw" }}>
+        <Divider />
+      </div>
+
+      {/* appendix */}
+      <ProjectSection title="">
+        <h2 className="text-white italic text-[42px] mt-[2vh]">appendix</h2>
+      </ProjectSection>
+      <ProjectSection title="">
+        <ProjectImage
+          src="/projects/dispatchAI/prepostHackathon.png"
+          alt="Dispatch AI Platform Thumbnail"
+          caption=""
+        />
+      </ProjectSection>
+      <ProjectSection title="design system">
+        <div>
+          <p>
+            custom-built branding and component library. Referenced from NATO
+            symbology/color guidelines.
+          </p>
+          <ProjectImage
+            src="/projects/dispatchAI/ComponentsLibraryDispatch.svg"
+            alt="Dispatch AI Platform Thumbnail"
+            caption=""
+          />
+        </div>
       </ProjectSection>
     </div>
   );
