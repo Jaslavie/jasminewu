@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 
 interface ProjectImageProps {
   src: string;
@@ -57,6 +57,9 @@ export default function ProjectImage({
   maxHeight,
   type = "img",
 }: ProjectImageProps) {
+  const [videoError, setVideoError] = useState(false);
+  const [isVideoLoading, setIsVideoLoading] = useState(true);
+
   // Check if it's a video based on type prop or file extension
   const videoExtensions = [".mov", ".mp4", ".webm", ".avi", ".mkv", ".m4v"];
   const isVideo =
@@ -66,23 +69,43 @@ export default function ProjectImage({
   // Build style object for maxHeight if provided
   const style = maxHeight ? { maxHeight } : {};
 
+  const handleVideoError = () => {
+    setVideoError(true);
+    setIsVideoLoading(false);
+    console.error(`Failed to load video: ${src}`);
+  };
+
+  const handleVideoLoad = () => {
+    setIsVideoLoading(false);
+  };
+
   return (
     <div className={`my-4 ${className} w-full`}>
       <div className="mx-auto">
-        {isVideo ? (
-          <video
-            src={src}
-            className={`w-${width} h-${height} ${maxHeight ? "object-contain" : "object-cover"} shadow-lg rounded-none`}
-            style={style}
-            loop
-            muted
-            autoPlay
-            aria-label={alt}
-            preload="metadata"
-          >
-            <track kind="captions" />
-            Your browser does not support the video tag.
-          </video>
+        {isVideo && !videoError ? (
+          <div className="relative">
+            {isVideoLoading && (
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+                <div className="text-gray-500">Loading video...</div>
+              </div>
+            )}
+            <video
+              src={src}
+              className={`w-${width} h-${height} ${maxHeight ? "object-contain" : "object-cover"} shadow-lg rounded-none`}
+              style={style}
+              loop
+              muted
+              autoPlay
+              aria-label={alt}
+              preload="metadata"
+              onError={handleVideoError}
+              onLoadedData={handleVideoLoad}
+              controls
+            >
+              <track kind="captions" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
         ) : (
           <img
             src={src}
@@ -92,8 +115,15 @@ export default function ProjectImage({
             loading="lazy"
           />
         )}
+        {videoError && (
+          <div className="text-red-500 text-sm mt-2 text-center">
+            Video failed to load. Please check the file path and format.
+          </div>
+        )}
         {caption && (
-          <p className="text-gray-400 text-sm mt-3 text-center italic">{caption}</p>
+          <p className="text-gray-400 text-sm mt-3 text-center italic">
+            {caption}
+          </p>
         )}
       </div>
     </div>
