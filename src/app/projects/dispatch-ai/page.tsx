@@ -373,16 +373,73 @@ export default function DispatchAIProject() {
         <div>
           <p>
             Response time is the immediate thing holding dispatchers back, but
-            forgoing accuracy for speed could be more costly. 
+            forgoing accuracy for speed could be more costly.
+            <br />
+            This informed the decision to migrate the database and model to a
+            less accurate, but faster model that can deliver responses rapidly.
           </p>
         </div>
         <ProjectImage
-          src="/projects/dispatchAI/dispatchAIWorkflow.png"
+          src="/projects/dispatchAI/dataProcessing.png"
+          alt="Dispatch AI Platform Thumbnail"
+          caption=""
+        />
+        <div>
+          <p>
+            I benchmarked 3 models (Mistral, GPT4, and a custom-trained model)
+            to see if there were significant differences in performance.
+            <br />
+            While the Mistral and OpenAI models were marginally more accurate,
+            it was 230% slower than a lighter weight model — the latter of which
+            we ultimately opted for.
+          </p>
+        </div>
+        <ProjectImage
+          src="/projects/dispatchAI/BenchmarkTests.png"
           alt="Dispatch AI Platform Thumbnail"
           caption=""
         />
       </ProjectSection>
+      {/* micro-interactions */}
+      <div style={{ padding: "0 8vw" }}>
+        <Divider />
+      </div>
 
+      <ProjectSection title="">
+        <h2 className="text-white italic text-[42px] mt-[2vh]">
+          micro-interactions
+        </h2>
+      </ProjectSection>
+      <ProjectSection title="Incorporating user feedback" layout="row">
+        <p>
+          Early exploration for operators to share feedback progressively during
+          a live call without interrupting the workflow.
+        </p>
+        <ProjectImage
+          src="/projects/dispatchAI/demo/dispatchDemo_feedback.mov"
+          alt="Dispatch AI Platform Thumbnail"
+          caption=""
+          maxHeight="400px"
+        />
+      </ProjectSection>
+      <ProjectSection title="Drag & Drop configuration" layout="row">
+        <p>
+          The workflow needed to flex to different scenarios. Drag and drop
+          allows users to surface info they need on-the-fly without interacting
+          with the config panel.
+        </p>
+        <ProjectImage
+          src="/projects/dispatchAI/dragAndDropDispatch.png"
+          alt="Dispatch AI Platform Thumbnail"
+          caption=""
+          maxHeight="640px"
+        />
+      </ProjectSection>
+
+      <div style={{ padding: "0 8vw" }}>
+        <Divider />
+      </div>
+      
       {/* appendix */}
       <ProjectSection title="">
         <h2 className="text-white italic text-[42px] mt-[2vh]">appendix</h2>
