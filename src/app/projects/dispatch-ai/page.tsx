@@ -439,7 +439,7 @@ export default function DispatchAIProject() {
       <div style={{ padding: "0 8vw" }}>
         <Divider />
       </div>
-      
+
       {/* appendix */}
       <ProjectSection title="">
         <h2 className="text-white italic text-[42px] mt-[2vh]">appendix</h2>
@@ -462,6 +462,37 @@ export default function DispatchAIProject() {
             alt="Dispatch AI Platform Thumbnail"
             caption=""
           />
+        </div>
+      </ProjectSection>
+
+      {/* tldr */}
+      <div style={{ padding: "0 8vw" }}>
+        <Divider />
+      </div>
+      <ProjectSection title="">
+        <h2 className="text-white italic text-[42px] mt-[2vh]">
+          food for thought
+        </h2>
+      </ProjectSection>
+      <ProjectSection title="">
+        <div>
+          <ol>
+            <li>
+              <div className="text-white">Over-optimized UX can be a disease.</div> Humans are wired to
+              crave familiarity and even slight deviations (for better or worse)
+              can cause a net reduction in user experience. We chose to keep the long transcripts over truncating them because
+              this was a long-standing structure dispatchers were used to engage
+              with.
+            </li>
+            <li>
+              <p>
+                <div className="text-white">Trust in human intuition.</div> It's better to forgo accuracy
+                for speed than the other way around. It's better to correct
+                wrong info than to falsely expect answers in a life-or-death
+                situation. Use explicit cards to reconcile the transparency issue.
+              </p>
+            </li>
+          </ol>
         </div>
       </ProjectSection>
     </div>
