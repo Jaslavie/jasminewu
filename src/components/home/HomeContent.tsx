@@ -38,7 +38,7 @@ export default function HomeContent() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <div className="flex flex-col lg:flex-row h-[75vh] px-4 sm:px-6 lg:px-0 pt-0">
+      <div className="flex flex-col lg:flex-row h-[60vh] sm:h-[65vh] lg:h-[75vh] px-4 sm:px-6 lg:px-0 pt-0">
         {/* left content Area */}
         <div
           className="flex-1 flex flex-col justify-center max-w-full lg:pb-0 lg:space-y-10"
@@ -46,7 +46,7 @@ export default function HomeContent() {
         >
           {/* Thesis Content */}
           <div
-            className="space-y-4 sm:space-y-5 lg:space-y-4 xl:space-y-6 max-w-full lg:max-w-2xl w-full lg:w-[40vw] text-sm sm:text-base lg:text-base xl:text-lg 2xl:text-lg px-4 sm:px-6 lg:px-6"
+            className="space-y-3 sm:space-y-4 lg:space-y-4 xl:space-y-6 max-w-full lg:max-w-2xl w-full lg:w-[40vw] text-sm sm:text-base lg:text-base xl:text-lg 2xl:text-lg px-2 sm:px-4 lg:px-6"
             style={{
               fontSize: "clamp(0.875rem, 1.2vw, 1.125rem)",
               lineHeight: "clamp(1.4, 1.6, 1.7)",
@@ -101,8 +101,8 @@ export default function HomeContent() {
       </div>
 
       <hr style={{ border: "1px solid #222" }} />
-      {/* Projects Section - Reduced padding */}
-      <div className="px-4 sm:px-6 lg:px-6 pt-6 pb-[12vh]">
+      {/* Projects Section - Responsive padding */}
+      <div className="px-2 sm:px-4 lg:px-6 pt-4 sm:pt-6 pb-[8vh] sm:pb-[10vh] lg:pb-[12vh]">
         <ProjectsList />
       </div>
     </div>

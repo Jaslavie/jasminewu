@@ -11,6 +11,7 @@ interface ProjectImageProps {
   height?: string;
   maxHeight?: string;
   type?: "img" | "mov";
+  gridSpan?: "full" | "2/3" | "1/3";
 }
 
 /**
@@ -23,6 +24,7 @@ interface ProjectImageProps {
  * @param width - Width class (e.g., "full", "1/2", "1/3")
  * @param height - Height class (e.g., "auto", "64", "96")
  * @param type - Media type ("img" or "mov"). If not specified, will be inferred from file extension
+ * @param gridSpan - Grid span for layout positioning ("full", "2/3", "1/3")
  *
  * @example
  * // Image usage (automatic detection)
@@ -38,6 +40,7 @@ interface ProjectImageProps {
  *   alt="Description of video"
  *   type="mov"
  *   caption="Video caption"
+ *   gridSpan="2/3"
  * />
  *
  * // Video usage with automatic detection
@@ -56,6 +59,7 @@ export default function ProjectImage({
   height = "auto",
   maxHeight,
   type = "img",
+  gridSpan = "full",
 }: ProjectImageProps) {
   const [videoError, setVideoError] = useState(false);
   const [isVideoLoading, setIsVideoLoading] = useState(true);
@@ -69,6 +73,19 @@ export default function ProjectImage({
   // Build style object for maxHeight if provided
   const style = maxHeight ? { maxHeight } : {};
 
+  // Determine grid classes based on gridSpan prop
+  const getGridClasses = () => {
+    switch (gridSpan) {
+      case "2/3":
+        return "lg:col-span-2";
+      case "1/3":
+        return "lg:col-span-1";
+      case "full":
+      default:
+        return "lg:col-span-3";
+    }
+  };
+
   const handleVideoError = () => {
     setVideoError(true);
     setIsVideoLoading(false);
@@ -80,18 +97,18 @@ export default function ProjectImage({
   };
 
   return (
-    <div className={`my-4 ${className} w-full`}>
-      <div className="mx-auto">
+    <div className={`my-4 ${className} w-full ${getGridClasses()}`}>
+      <div className="mx-auto w-full">
         {isVideo && !videoError ? (
-          <div className="relative">
-            {isVideoLoading && (
+          <div className="relative w-full">
+            {/* {isVideoLoading && (
               <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
                 <div className="text-gray-500">Loading video...</div>
               </div>
-            )}
+            )} */}
             <video
               src={src}
-              className={`w-${width} h-${height} ${maxHeight ? "object-contain" : "object-cover"} shadow-lg rounded-none`}
+              className={`w-full h-${height} ${maxHeight ? "object-contain" : "object-cover"} shadow-lg rounded-none`}
               style={style}
               loop
               muted
@@ -100,7 +117,6 @@ export default function ProjectImage({
               preload="metadata"
               onError={handleVideoError}
               onLoadedData={handleVideoLoad}
-              controls
             >
               <track kind="captions" />
               Your browser does not support the video tag.
@@ -110,7 +126,7 @@ export default function ProjectImage({
           <img
             src={src}
             alt={alt}
-            className={`w-${width} h-${height} ${maxHeight ? "object-contain" : "object-cover"} shadow-lg rounded-none`}
+            className={`w-full h-${height} ${maxHeight ? "object-contain" : "object-cover"} shadow-lg rounded-none`}
             style={style}
             loading="lazy"
           />

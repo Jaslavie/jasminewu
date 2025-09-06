@@ -26,7 +26,7 @@ export default function ProjectCard({
 
   return (
     <div
-      className={`relative flex flex-col gap-4 transition-all duration-300 h-full`}
+      className={`relative flex flex-col gap-3 sm:gap-4 transition-all duration-300 h-full`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -34,10 +34,10 @@ export default function ProjectCard({
       <div>
         {/* Title and Number */}
         <div className="flex justify-between items-start flex-col">
-          <span className="text-[rgba(255, 255, 255, 0.50)] text-[18px] font-serif">
+          <span className="text-[rgba(255, 255, 255, 0.50)] text-[16px] sm:text-[18px] font-serif">
             {number}
           </span>
-          <div className="text-white font-body text-[18px] group">
+          <div className="text-white font-body text-[16px] sm:text-[18px] group">
             <div className="flex items-center gap-2">
               <Link href={link || ""}>{title}</Link>
               <span
@@ -52,12 +52,12 @@ export default function ProjectCard({
         </div>
 
         {/* Description */}
-        <p className="text-[rgba(255, 255, 255, 0.75)] text-[14px] leading-[1.25] mt-[1vh] font-body">
+        <p className="text-[rgba(255, 255, 255, 0.75)] text-[12px] sm:text-[14px] leading-[1.25] mt-[0.5vh] sm:mt-[1vh] font-body">
           {description}
         </p>
       </div>
       {/* Image Container */}
-      <div className="relative w-full mb-4 overflow-hidden rounded-sm">
+      <div className="relative w-full mb-2 sm:mb-4 overflow-hidden rounded-sm">
         <a href={link || ""}>
           <img
             src={isHovered ? imageAfter : imageBefore}

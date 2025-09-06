@@ -129,6 +129,7 @@ export default function DispatchAIProject() {
           src="/projects/dispatchAI/demo/dispatchDemo_liveEmergency.mov"
           alt="Dispatch AI Platform Thumbnail"
           caption=""
+          gridSpan="2/3"
         />
       </ProjectSection>
       <ProjectSection title="02 dispatching units" layout="row">
@@ -141,6 +142,7 @@ export default function DispatchAIProject() {
           src="/projects/dispatchAI/demo/dispatchDemo_confirmAction.mov"
           alt="Dispatch AI Platform Thumbnail"
           caption=""
+          gridSpan="2/3"
         />
       </ProjectSection>
       <ProjectSection title="03 Resolving alerts" layout="row">
@@ -154,6 +156,7 @@ export default function DispatchAIProject() {
           src="/projects/dispatchAI/demo/alertsDemoDispatch.mov"
           alt="Dispatch AI Platform Thumbnail"
           caption=""
+          gridSpan="2/3"
         />
       </ProjectSection>
       <ProjectSection title="04 Customizable modules" layout="row">
@@ -168,6 +171,7 @@ export default function DispatchAIProject() {
           alt="Dispatch AI Platform Thumbnail"
           caption=""
           maxHeight="800px"
+          gridSpan="2/3"
         />
       </ProjectSection>
       <ProjectSection title="05 Pathfinding" layout="row">
@@ -364,6 +368,20 @@ export default function DispatchAIProject() {
       <div style={{ padding: "0 8vw" }}>
         <Divider />
       </div>
+
+      <ProjectSection title="the tradeoff between accuracy & speed">
+        <div>
+          <p>
+            Response time is the immediate thing holding dispatchers back, but
+            forgoing accuracy for speed could be more costly. 
+          </p>
+        </div>
+        <ProjectImage
+          src="/projects/dispatchAI/dispatchAIWorkflow.png"
+          alt="Dispatch AI Platform Thumbnail"
+          caption=""
+        />
+      </ProjectSection>
 
       {/* appendix */}
       <ProjectSection title="">

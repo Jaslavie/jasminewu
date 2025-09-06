@@ -73,9 +73,9 @@ export default function ProjectSection({
     >
       <div className="mx-auto">
         {layout === "row" ? (
-          <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-12 items-center min-h-[60vh]">
+          <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-12 items-start min-h-[60vh]">
             {/* Left Container - Title + Text Content (1/3 width) */}
-            <div className="lg:col-span-1 flex flex-col justify-center">
+            <div className="lg:col-span-1 flex flex-col justify-start">
               {/* Section Title */}
               <h2 className="text-[18px] text-white mb-6 font-sans font-light tracking-wide">
                 {title}
@@ -88,8 +88,8 @@ export default function ProjectSection({
             </div>
 
             {/* Right Container - Project Images (2/3 width) */}
-            <div className="lg:col-span-2 flex justify-center items-center">
-              <div className="w-full max-w-4xl">{imageContent}</div>
+            <div className="lg:col-span-2 w-full">
+              <div className="w-full">{imageContent}</div>
             </div>
           </div>
         ) : (
