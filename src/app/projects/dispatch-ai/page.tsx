@@ -3,6 +3,7 @@
 import React from "react";
 import ProjectHeader from "@/components/work/ProjectHeader";
 import ProjectSection from "@/components/work/ProjectSection";
+import ProjectSectionRow from "@/components/work/ProjectSectionRow";
 import ProjectImage from "@/components/work/ProjectImage";
 import Divider from "@/components/global/Divider";
 
@@ -41,11 +42,11 @@ export default function DispatchAIProject() {
       <ProjectSection title="winning the largest AI hackathon in the world">
         <div>
           <p>
-            Dispatch AI started from a spontaneous trip with 3 friends at
-            the Berkeley AI Hackathon. We won the Grand Prize and $18,000 in
-            credits from Intel and OpenAI. Post-Hackathon, we decided to take
-            this project further and launched a venture with Berkley Skydeck
-            with $50,000 in investment. I worked as the solo designer.
+            Dispatch AI started from a spontaneous trip with 3 friends at the
+            Berkeley AI Hackathon. We won the Grand Prize and $18,000 in credits
+            from Intel and OpenAI. Post-Hackathon, we decided to take this
+            project further and launched a venture with Berkley Skydeck with
+            $50,000 in investment. I worked as the solo designer.
           </p>
 
           <ProjectImage
@@ -105,7 +106,7 @@ export default function DispatchAIProject() {
           </p>
           <p>
             I designed Dispatch on a continuous operational loop that decides
-            which agent should “take over” at each decision point (see model
+            which agent should "take over" at each decision point (see model
             design for more details). Each session data is logged to inform
             future decisions.
           </p>
@@ -118,102 +119,125 @@ export default function DispatchAIProject() {
       />
 
       {/* main features */}
-      <ProjectSection title="01 live incident monitoring" layout="row">
+      <ProjectSectionRow
+        title="01 live incident monitoring"
+        image={
+          <ProjectImage
+            src="/projects/dispatchAI/demo/dispatchDemo_liveEmergency.mov"
+            alt="Dispatch AI Platform Thumbnail"
+            caption=""
+          />
+        }
+      >
         <p>
           Operationalize transcripts by supporting live language translation and
           dynamic script recommendations. Trained on 1000s of emergency call
           data.
         </p>
+      </ProjectSectionRow>
 
-        <ProjectImage
-          src="/projects/dispatchAI/demo/dispatchDemo_liveEmergency.mov"
-          alt="Dispatch AI Platform Thumbnail"
-          caption=""
-          gridSpan="2/3"
-        />
-      </ProjectSection>
-      <ProjectSection title="02 dispatching units" layout="row">
+      <ProjectSectionRow
+        title="02 dispatching units"
+        image={
+          <ProjectImage
+            src="/projects/dispatchAI/demo/dispatchDemo_confirmAction.mov"
+            alt="Dispatch AI Platform Thumbnail"
+            caption=""
+          />
+        }
+      >
         <p>
           Select and dispatch units on-platform. Select from pre-designed
           emergency procedures to reduce on-site decision-making.
         </p>
+      </ProjectSectionRow>
 
-        <ProjectImage
-          src="/projects/dispatchAI/demo/dispatchDemo_confirmAction.mov"
-          alt="Dispatch AI Platform Thumbnail"
-          caption=""
-          gridSpan="2/3"
-        />
-      </ProjectSection>
-      <ProjectSection title="03 Resolving alerts" layout="row">
+      <ProjectSectionRow
+        title="03 Resolving alerts"
+        image={
+          <ProjectImage
+            src="/projects/dispatchAI/demo/alertsDemoDispatch.mov"
+            alt="Dispatch AI Platform Thumbnail"
+            caption=""
+          />
+        }
+      >
         <p>
           Currently, calls themselves act as decentralized alerts. We dedicated
           a separate tab for alerts, alongside details and checklists, into a
           single pane-of-glass.
         </p>
+      </ProjectSectionRow>
 
-        <ProjectImage
-          src="/projects/dispatchAI/demo/alertsDemoDispatch.mov"
-          alt="Dispatch AI Platform Thumbnail"
-          caption=""
-          gridSpan="2/3"
-        />
-      </ProjectSection>
-      <ProjectSection title="04 Customizable modules" layout="row">
+      <ProjectSectionRow
+        title="04 Customizable modules"
+        image={
+          <ProjectImage
+            src="/projects/dispatchAI/demo/dispatchDemo_modular.mov"
+            alt="Dispatch AI Platform Thumbnail"
+            caption=""
+            maxHeight="800px"
+          />
+        }
+      >
         <p>
           Currently, dispatchers navigate across multiple static interfaces. We
           allow them to toggle on-off modules based on the data they need to
           surface during the current stage of operations.
         </p>
+      </ProjectSectionRow>
 
-        <ProjectImage
-          src="/projects/dispatchAI/demo/dispatchDemo_modular.mov"
-          alt="Dispatch AI Platform Thumbnail"
-          caption=""
-          maxHeight="800px"
-          gridSpan="2/3"
-        />
-      </ProjectSection>
-      <ProjectSection title="05 Pathfinding" layout="row">
+      <ProjectSectionRow
+        title="05 Pathfinding"
+        image={
+          <ProjectImage
+            src="/projects/dispatchAI/demo/dispatchDemo_route.mov"
+            alt="Dispatch AI Platform Thumbnail"
+            caption=""
+          />
+        }
+      >
         <p>
           Operators can monitor the path first-responders will travel based on
           live google maps data. They can see the traffic between each waypoint,
           view status updates, and recommend changes.
         </p>
+      </ProjectSectionRow>
 
-        <ProjectImage
-          src="/projects/dispatchAI/demo/dispatchDemo_route.mov"
-          alt="Dispatch AI Platform Thumbnail"
-          caption=""
-        />
-      </ProjectSection>
-      <ProjectSection title="06 Historic call data" layout="row">
+      <ProjectSectionRow
+        title="06 Historic call data"
+        image={
+          <ProjectImage
+            src="/projects/dispatchAI/demo/dispatchDemo_log.mov"
+            alt="Dispatch AI Platform Thumbnail"
+            caption=""
+          />
+        }
+      >
         <p>
           Previously, dispatch centers store old call scripts in thousand-page
           albums. We created a first-class solution that stores all previous
           call in a central database. Operators can change security settings to
           configure visibility.
         </p>
+      </ProjectSectionRow>
 
-        <ProjectImage
-          src="/projects/dispatchAI/demo/dispatchDemo_log.mov"
-          alt="Dispatch AI Platform Thumbnail"
-          caption=""
-        />
-      </ProjectSection>
-      <ProjectSection title="07 Forecast future call volumes" layout="row">
+      <ProjectSectionRow
+        title="07 Forecast future call volumes"
+        image={
+          <ProjectImage
+            src="/projects/dispatchAI/demo/dispatchDemo_stats.mov"
+            alt="Dispatch AI Platform Thumbnail"
+            caption=""
+          />
+        }
+      >
         <p>
           Provide dispatchers with projected call volumes in the following weeks
           to help anticipate spikes in calls. Based on historic call volumes,
           which dispatch centers already collect.
         </p>
-
-        <ProjectImage
-          src="/projects/dispatchAI/demo/dispatchDemo_stats.mov"
-          alt="Dispatch AI Platform Thumbnail"
-          caption=""
-        />
-      </ProjectSection>
+      </ProjectSectionRow>
 
       <div style={{ padding: "0 8vw" }}>
         <Divider />
@@ -410,31 +434,39 @@ export default function DispatchAIProject() {
           micro-interactions
         </h2>
       </ProjectSection>
-      <ProjectSection title="Incorporating user feedback" layout="row">
+      <ProjectSectionRow
+        title="Incorporating user feedback"
+        image={
+          <ProjectImage
+            src="/projects/dispatchAI/demo/dispatchDemo_feedback.mov"
+            alt="Dispatch AI Platform Thumbnail"
+            caption=""
+            maxHeight="400px"
+          />
+        }
+      >
         <p>
           Early exploration for operators to share feedback progressively during
           a live call without interrupting the workflow.
         </p>
-        <ProjectImage
-          src="/projects/dispatchAI/demo/dispatchDemo_feedback.mov"
-          alt="Dispatch AI Platform Thumbnail"
-          caption=""
-          maxHeight="400px"
-        />
-      </ProjectSection>
-      <ProjectSection title="Drag & Drop configuration" layout="row">
+      </ProjectSectionRow>
+      <ProjectSectionRow
+        title="Drag & Drop configuration"
+        image={
+          <ProjectImage
+            src="/projects/dispatchAI/dragAndDropDispatch.png"
+            alt="Dispatch AI Platform Thumbnail"
+            caption=""
+            maxHeight="640px"
+          />
+        }
+      >
         <p>
           The workflow needed to flex to different scenarios. Drag and drop
           allows users to surface info they need on-the-fly without interacting
           with the config panel.
         </p>
-        <ProjectImage
-          src="/projects/dispatchAI/dragAndDropDispatch.png"
-          alt="Dispatch AI Platform Thumbnail"
-          caption=""
-          maxHeight="640px"
-        />
-      </ProjectSection>
+      </ProjectSectionRow>
 
       <div style={{ padding: "0 8vw" }}>
         <Divider />
@@ -478,19 +510,23 @@ export default function DispatchAIProject() {
         <div>
           <ol>
             <li>
-              <div className="text-white">Over-optimized UX can be a disease.</div> Humans are wired to
-              crave familiarity and even slight deviations (for better or worse)
-              can cause a net reduction in user experience. We chose to keep the long transcripts over truncating them because
-              this was a long-standing structure dispatchers were used to engage
-              with.
+              <span className="text-white font-semibold">
+                Over-optimized UX can be a disease.
+              </span>{" "}
+              Humans are wired to crave familiarity and even slight deviations
+              (for better or worse) can cause a net reduction in user
+              experience. We chose to keep the long transcripts over truncating
+              them because this was a long-standing structure dispatchers were
+              used to engage with.
             </li>
             <li>
-              <p>
-                <div className="text-white">Trust in human intuition.</div> It's better to forgo accuracy
-                for speed than the other way around. It's better to correct
-                wrong info than to falsely expect answers in a life-or-death
-                situation. Use explicit cards to reconcile the transparency issue.
-              </p>
+              <span className="text-white font-semibold">
+                Trust in human intuition.
+              </span>{" "}
+              It's better to forgo accuracy for speed than the other way around.
+              It's better to correct wrong info than to falsely expect answers
+              in a life-or-death situation. Use explicit cards to reconcile the
+              transparency issue.
             </li>
           </ol>
         </div>
