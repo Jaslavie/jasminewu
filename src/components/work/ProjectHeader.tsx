@@ -10,11 +10,11 @@ interface ProjectHeaderProps {
   title: string;
   description: string;
   logo?: string;
-  metadata: {
-    role: string[];
-    duration: string;
-    team: string[];
-    results: string[];
+  metadata?: {
+    role?: string[];
+    duration?: string;
+    team?: string[];
+    results?: string[];
   };
   className?: string;
 }
@@ -83,46 +83,56 @@ export default function ProjectHeader({
         {/* Project Metadata */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Role */}
-          <div>
-            <h3 className="font-serif text-white mb-2">Role</h3>
-            <ul>
-              {metadata.role.map((role, index) => (
-                <li key={index} className="text-[rgba(255,255,255,0.5)] mb-1">
-                  {role}
-                </li>
-              ))}
-            </ul>
-          </div>
+          {metadata?.role && metadata.role.length > 0 && (
+            <div>
+              <h3 className="font-serif text-white mb-2">Role</h3>
+              <ul>
+                {metadata.role.map((role, index) => (
+                  <li key={index} className="text-[rgba(255,255,255,0.5)] mb-1">
+                    {role}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           {/* Duration */}
-          <div>
-            <h3 className="font-serif text-white mb-2">Duration</h3>
-            <p className="text-[rgba(255,255,255,0.5)]">{metadata.duration}</p>
-          </div>
+          {metadata?.duration && (
+            <div>
+              <h3 className="font-serif text-white mb-2">Duration</h3>
+              <p className="text-[rgba(255,255,255,0.5)]">
+                {metadata.duration}
+              </p>
+            </div>
+          )}
 
           {/* Team */}
-          <div>
-            <h3 className="font-serif text-white mb-2">Team</h3>
-            <ul>
-              {metadata.team.map((member, index) => (
-                <li key={index} className="text-[rgba(255,255,255,0.5)] mb-1">
-                  {member}
-                </li>
-              ))}
-            </ul>
-          </div>
+          {metadata?.team && metadata.team.length > 0 && (
+            <div>
+              <h3 className="font-serif text-white mb-2">Team</h3>
+              <ul>
+                {metadata.team.map((member, index) => (
+                  <li key={index} className="text-[rgba(255,255,255,0.5)] mb-1">
+                    {member}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           {/* Results */}
-          <div>
-            <h3 className="font-serif text-white mb-2">Results</h3>
-            <ul>
-              {metadata.results.map((result, index) => (
-                <li key={index} className="text-[rgba(255,255,255,0.5)] mb-1">
-                  {result}
-                </li>
-              ))}
-            </ul>
-          </div>
+          {metadata?.results && metadata.results.length > 0 && (
+            <div>
+              <h3 className="font-serif text-white mb-2">Results</h3>
+              <ul>
+                {metadata.results.map((result, index) => (
+                  <li key={index} className="text-[rgba(255,255,255,0.5)] mb-1">
+                    {result}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </div>
     </header>
