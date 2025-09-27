@@ -9,13 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@sanity/image-url": "^1.2.0",
+    "@sanity/vision": "^4.10.1",
     "@types/scrollreveal": "^0.0.11",
     "autoprefixer": "10.4.17",
     "next": "14.1.0",
+    "next-sanity": "^11.4.2",
     "postcss": "8.4.35",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "sanity": "^4.10.1",
     "scrollreveal": "^4.0.9",
+    "styled-components": "^6.1.19",
     "tailwindcss": "3.4.1"
   },
   "devDependencies": {

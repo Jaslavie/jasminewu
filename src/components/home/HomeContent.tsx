@@ -53,16 +53,16 @@ export default function HomeContent() {
             }}
           >
             <h2>
-              Jasmine Wu designs human-AI interfaces for decision-making on
-              spacewalks and the battlefield. Currently at{" "}
+              Jasmine is currently tinkering with fluid interfaces. Previously
+              designed for spacewalks and the battlefield at{" "}
               <StyledLink href="https://www.palantir.com/platforms/gotham/">
                 Palantir
-              </StyledLink>{" "}
-              &{" "}
+              </StyledLink>
+              ,{" "}
               <StyledLink href="https://www.gallatin.ai/">
                 Gallatin AI
               </StyledLink>
-              . Previously built navigation tools for astronauts with{" "}
+              , and{" "}
               <StyledLink href="https://www.nasa.gov/">NASA</StyledLink>.
             </h2>
           </div>

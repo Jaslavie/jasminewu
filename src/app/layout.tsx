@@ -10,7 +10,7 @@ import CustomCursor from "@/components/ui/CustomCursor";
 export const metadata: Metadata = {
   title: "Jasmine Wu",
   description:
-    "Jasmine Wu is an interdisciplinary designer who designs Human-AI interfaces for spacewalks and the battlefield.",
+    "Jasmine is a designer, researcher, and experimentalist building tools for human-AI collaboration. Previously designed for spacewalks and the battlefield at NASA, Palantir, and Gallatin AI.",
   icons: {
     icon: "/Jasmine_Wu_Logo_Square.png",
     shortcut: "/Jasmine_Wu_Logo_Square.png",

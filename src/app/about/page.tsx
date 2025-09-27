@@ -49,7 +49,7 @@ export default function About() {
               research the AI that drives them. The hardest problems demand
               clarity under chaos. The next frontier isn't smarter AI. It's
               radically fluid interfaces where humans and machines think and
-              decide together. I build these systems at{" "}
+              decide together. I built these systems at{" "}
               <Link href="https://www.palantir.com/platforms/gotham/">
                 Palantir
               </Link>{" "}
@@ -104,19 +104,16 @@ export default function About() {
                 transition: "opacity 0.5s ease-in-out",
               }}
             >
-              In my free time, I rabbit hole into{" "}
-              <Link href="https://www.pinterest.com/Jaslavie/wwii/">
-                WW2 history
-              </Link>
-              ,{" "}
+              You can find me sampling cortados at coffee shops,
+              {" "}
               <Link href="https://substack.com/home/post/p-156802970">
-                write
+                writing
               </Link>
-              , and linger in classical art museums. My favorite painting is{" "}
+              , or lingering on an portrait at a museum. My favorite painting is{" "}
               <i>
                 <Link href="https://docs.google.com/document/d/1CzlYHEmkBuTxmPa-5-PeTGrjZgd06Puz3gIr9QQ1f1c/edit?tab=t.0">
-                  the Blue Boy.
-                </Link>
+                  the Blue Boy. 
+                </Link> 
               </i>{" "}
               Grew up in Orange County with short stints in DC and LA.
             </h3>

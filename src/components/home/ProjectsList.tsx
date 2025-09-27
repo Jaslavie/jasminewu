@@ -38,7 +38,7 @@ const projects: Project[] = [
     number: "03",
     imageBefore: "/projects/spaceCHI_hover.png",
     imageAfter: "/projects/spaceCHI_hover_after.png",
-    link: "https://drive.google.com/file/d/1iQ2fm9aBCSS3OgeBD4rz7U4PUgjuU8ZG/view",
+    link: "https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.SpaceCHI.2025.25",
   },
   {
     title: "Anticipatory heads-up displays for spacesuits",

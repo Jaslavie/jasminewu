@@ -6,22 +6,22 @@ import { useEffect, useState } from "react";
 
 export default function Sidebar() {
   const pathname = usePathname();
-  const [dcTime, setDcTime] = useState("");
+  const [Time, setTime] = useState("");
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     function updateTime() {
       const now = new Date();
-      // Convert to Washington, DC time (America/New_York)
+      // Convert to current time 
       const options = {
         hour: "2-digit" as const,
         minute: "2-digit" as const,
         second: "2-digit" as const,
         hour12: true,
-        timeZone: "America/New_York",
+        timeZone: "America/Los_Angeles",
       };
-      setDcTime(now.toLocaleTimeString("en-US", options));
+      setTime(now.toLocaleTimeString("en-US", options));
     }
     updateTime();
     const interval = setInterval(updateTime, 1000);
@@ -67,7 +67,7 @@ export default function Sidebar() {
         </div>
         <div className="h-6 border-r border-gray-700"></div>
         <div className="text-sm text-[rgba(255,255,255,0.75)] font-serif">
-          currently it's {dcTime} in Washington, DC
+          currently it's {Time} in Los Angeles
         </div>
         <div className="h-6 border-r border-gray-700"></div>
       </div>
