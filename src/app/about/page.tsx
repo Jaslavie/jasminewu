@@ -109,7 +109,7 @@ export default function About() {
               <Link href="https://substack.com/home/post/p-156802970">
                 writing
               </Link>
-              , or lingering on an portrait at a museum. My favorite painting is{" "}
+              , or lingering on a portrait at a museum. My favorite painting is{" "}
               <i>
                 <Link href="https://docs.google.com/document/d/1CzlYHEmkBuTxmPa-5-PeTGrjZgd06Puz3gIr9QQ1f1c/edit?tab=t.0">
                   the Blue Boy. 

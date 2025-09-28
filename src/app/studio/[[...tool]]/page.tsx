@@ -1,19 +1,45 @@
-/**
- * This route is responsible for the built-in authoring environment using Sanity Studio.
- * All routes under your studio path is handled by this file using Next.js' catch-all routes:
- * https://nextjs.org/docs/routing/dynamic-routes#catch-all-routes
- *
- * You can learn more about the next-sanity package here:
- * https://github.com/sanity-io/next-sanity
- */
+"use client";
 
-import { NextStudio } from 'next-sanity/studio'
-import config from '../../../../sanity.config'
+import dynamic from "next/dynamic";
+import { useEffect, useState } from "react";
 
-export const dynamic = 'force-static'
-
-export { metadata, viewport } from 'next-sanity/studio'
+const NextStudio = dynamic(
+  () => import("next-sanity/studio").then((mod) => mod.NextStudio),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="min-h-screen bg-gray-900 text-white p-8 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4"></div>
+          <p>Loading Sanity Studio...</p>
+        </div>
+      </div>
+    ),
+  }
+);
 
 export default function StudioPage() {
-  return <NextStudio config={config} />
+  const [config, setConfig] = useState(null);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+    // Dynamically import the config
+    import("../../../../sanity.config").then((configModule) => {
+      setConfig(configModule.default);
+    });
+  }, []);
+
+  if (!isClient || !config) {
+    return (
+      <div className="min-h-screen bg-gray-900 text-white p-8 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4"></div>
+          <p>Loading Sanity Studio...</p>
+        </div>
+      </div>
+    );
+  }
+
+  return <NextStudio config={config} />;
 }
