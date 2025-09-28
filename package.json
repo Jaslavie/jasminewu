@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@portabletext/react": "^4.0.3",
     "@sanity/image-url": "^1.2.0",
     "@sanity/vision": "^4.10.1",
     "@types/scrollreveal": "^0.0.11",
