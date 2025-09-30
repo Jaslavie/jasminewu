@@ -19,7 +19,7 @@ const NextStudio = dynamic(
 );
 
 export default function StudioPage() {
-  const [config, setConfig] = useState(null);
+  const [config, setConfig] = useState<any>(null);
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {

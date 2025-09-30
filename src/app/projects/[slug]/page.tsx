@@ -7,15 +7,21 @@ import Divider from "@/components/global/Divider";
 import { notFound } from "next/navigation";
 
 interface ProjectPageProps {
-  params: {
+  params: Promise<{
     slug: string;
+  }>;
+}
+
+interface Project {
+  slug: {
+    current: string;
   };
 }
 
 export async function generateStaticParams() {
   const projects = await getProjects();
 
-  return projects.map((project) => ({
+  return projects.map((project: Project) => ({
     slug: project.slug.current,
   }));
 }
@@ -92,7 +98,8 @@ const portableTextComponents = {
 };
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
-  const project = await getProjectBySlug(params.slug);
+  const { slug } = await params;
+  const project = await getProjectBySlug(slug);
 
   if (!project) {
     notFound();
