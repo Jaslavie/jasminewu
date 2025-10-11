@@ -39,6 +39,15 @@ export default function CascadeReveal({
               transform: translateY(0);
             }
           }
+          
+          .cascade-reveal-container {
+            transition: filter 0.3s ease, opacity 0.3s ease;
+          }
+          
+          .cascade-reveal-container:hover {
+            filter: blur(1px);
+            opacity: 0.8;
+          }
         `;
       document.head.appendChild(style);
     }

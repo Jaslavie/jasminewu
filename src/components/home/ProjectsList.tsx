@@ -2,6 +2,7 @@
 
 import React from "react";
 import ProjectCard from "@/components/ui/ProjectCard";
+import { useFadeInOnScroll } from "@/hooks/useFadeInOnScroll";
 
 interface Project {
   title: string;
@@ -16,7 +17,7 @@ const projects: Project[] = [
   {
     title: "Palantir",
     description:
-      "Building workflows for targeting analysis and wargaming simulation.",
+      "Building workflows for intelligence analysis and wargaming simulations.",
     number: "01",
     imageBefore: "/projects/palantir_hover.png",
     imageAfter: "/projects/palantir_hover_after.png",
@@ -63,18 +64,26 @@ export default function ProjectsList() {
   return (
     <div className="space-y-4 sm:space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-6">
-        {projects.map((project, index) => (
-          <ProjectCard
-            key={index}
-            title={project.title}
-            description={project.description}
-            number={project.number}
-            imageBefore={project.imageBefore}
-            imageAfter={project.imageAfter}
-            link={project.link}
-            className="hover:scale-105 transition-transform duration-300"
-          />
-        ))}
+        {projects.map((project, index) => {
+          const fadeIn = useFadeInOnScroll({
+            delay: index * 100, // Stagger the animations
+            threshold: 0.1,
+          });
+
+          return (
+            <ProjectCard
+              key={index}
+              title={project.title}
+              description={project.description}
+              number={project.number}
+              imageBefore={project.imageBefore}
+              imageAfter={project.imageAfter}
+              link={project.link}
+              ref={fadeIn.elementRef}
+              style={fadeIn.fadeInStyle}
+            />
+          );
+        })}
       </div>
     </div>
   );

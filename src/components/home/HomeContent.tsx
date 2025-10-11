@@ -3,6 +3,7 @@
 import Link from "@/components/ui/Link";
 import Planet from "@/components/misc/Planet";
 import ProjectsList from "@/components/home/ProjectsList";
+import { useFadeInOnScroll } from "@/hooks/useFadeInOnScroll";
 import React, { useEffect, useState } from "react";
 
 // Wrapper component for header links
@@ -26,6 +27,8 @@ const StyledLink = ({
 
 export default function HomeContent() {
   const [showVideo, setShowVideo] = useState(false);
+  const heroFade = useFadeInOnScroll({ delay: 0 });
+  const planetFade = useFadeInOnScroll({ delay: 200 });
 
   useEffect(() => {
     // Automatically show video after the planet appears (1400ms + 200ms buffer)
@@ -46,10 +49,12 @@ export default function HomeContent() {
         >
           {/* Thesis Content */}
           <div
+            ref={heroFade.elementRef}
             className="space-y-3 sm:space-y-4 lg:space-y-4 xl:space-y-6 max-w-full lg:max-w-2xl w-full lg:w-[40vw] text-sm sm:text-base lg:text-base xl:text-lg 2xl:text-lg px-2 sm:px-4 lg:px-6"
             style={{
               fontSize: "clamp(0.875rem, 1.2vw, 1.125rem)",
               lineHeight: "clamp(1.4, 1.6, 1.7)",
+              ...heroFade.fadeInStyle,
             }}
           >
             <h2>
@@ -68,8 +73,9 @@ export default function HomeContent() {
         </div>
         {/* Right Side ASCII Art */}
         <div
+          ref={planetFade.elementRef}
           className="hidden lg:flex items-center justify-center lg:pr-[8%] relative"
-          style={{ marginTop: 0 }}
+          style={{ marginTop: 0, ...planetFade.fadeInStyle }}
         >
           <div id="Planet" className="relative z-10">
             {/* Video Background - Shows after planet appears, desktop only */}

@@ -128,7 +128,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       )}
 
       {/* Rich Content */}
-      <div className="px-8vw">
+      <div className="px-12vw">
         <PortableText
           value={project.content}
           components={portableTextComponents}
