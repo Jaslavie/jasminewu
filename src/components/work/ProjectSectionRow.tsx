@@ -21,10 +21,10 @@ export default function ProjectSectionRow({
         <div className="flex flex-row gap-12">
           {/* Left Container - Title + Text Content (1/3 width) */}
           <div className="w-1/3">
-            <h2 className="text-[18px] text-white mb-6 font-sans font-light tracking-wide">
+            <h2 className=" text-white mb-6 font-sans font-light tracking-wide">
               {title}
             </h2>
-            <div className="prose prose-invert max-w-none [&>p]:text-sm [&>p]:leading-relaxed [&>p]:mb-4 [&>div>h2]:font-semibold [&>div>h2]:mb-4 [&>div>ul]:space-y-3 [&>div>ul>li]:flex [&>div>ul>li]:items-start [&>div>ul>li]:gap-3">
+            <div className="prose prose-invert max-w-none  [&>p]:mb-4 [&>div>h2]:font-semibold [&>div>h2]:mb-4 [&>div>ul]:space-y-3 [&>div>ul>li]:flex [&>div>ul>li]:items-start [&>div>ul>li]:gap-3">
               {children}
             </div>
           </div>

@@ -16,8 +16,7 @@ interface Project {
 const projects: Project[] = [
   {
     title: "Military intelligence analysis",
-    description:
-      "Building workflows for intelligence analysis.",
+    description: "Building workflows for intelligence analysis.",
     number: "01",
     imageBefore: "/projects/palantir_hover.png",
     imageAfter: "/projects/palantir_hover_after.png",

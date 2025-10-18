@@ -1,6 +1,6 @@
 "use client";
 
-import ChaosLink from "@/components/ui/Link";
+import Link from "next/link";
 import { useState } from "react";
 
 interface WritingLinkProps {
@@ -15,6 +15,7 @@ export default function WritingLink({
   className = "",
 }: WritingLinkProps) {
   const [isHovered, setIsHovered] = useState(false);
+  const isExternal = href.startsWith("http") || href.startsWith("https");
 
   return (
     <div
@@ -22,20 +23,33 @@ export default function WritingLink({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Fixed space for the diamond - always present but opacity controlled */}
-      <div className="w-6 flex justify-start mr-2">
+      {/* square animation */}
+      <div className="w-6 flex justify-start">
         <span
-          className="text-gray-600 text-sm group-hover:text-gray-400 transition-all duration-500 ease-in-out"
+          className="text-gray-500 text-[16px] group-hover:text-gray-400 transition-all duration-500 ease-in-out"
           style={{
             opacity: isHovered ? 1 : 0,
-            transform: isHovered ? "rotate(0deg)" : "rotate(45deg)",
+            transform: isHovered ? "rotate(45deg)" : "rotate(0deg)",
           }}
         >
-          ◆
+          ■
         </span>
       </div>
-      <div className="text-gray-400 hover:text-white text-sm transition-colors">
-        <ChaosLink href={href}>{children} →</ChaosLink>
+      <div className="text-gray-400 hover:text-white text-[18px] transition-colors">
+        {isExternal ? (
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link"
+          >
+            {children} →
+          </a>
+        ) : (
+          <Link href={href} className="link">
+            {children} →
+          </Link>
+        )}
       </div>
     </div>
   );

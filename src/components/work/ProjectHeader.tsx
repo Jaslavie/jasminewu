@@ -45,7 +45,7 @@ export default function ProjectHeader({
 
         {/* Project Title Section */}
         <div className="mb-8">
-          <p className="text-[rgba(255,255,255,0.5)] text-sm mb-2">
+          <p className="text-[rgba(255,255,255,0.7)] text-base mb-2">
             {category}
           </p>
           <h1 className="text-3xl sm:text-4xl lg:text-3xl text-white mb-6 leading-tight font-light font-[helvetica]">
@@ -88,7 +88,10 @@ export default function ProjectHeader({
               <h3 className="font-serif text-white mb-2">Role</h3>
               <ul>
                 {metadata.role.map((role, index) => (
-                  <li key={index} className="text-[rgba(255,255,255,0.5)] mb-1">
+                  <li
+                    key={index}
+                    className="text-[rgba(255,255,255,0.7)] mb-1 text-base"
+                  >
                     {role}
                   </li>
                 ))}
@@ -100,7 +103,7 @@ export default function ProjectHeader({
           {metadata?.duration && (
             <div>
               <h3 className="font-serif text-white mb-2">Duration</h3>
-              <p className="text-[rgba(255,255,255,0.5)]">
+              <p className="text-[rgba(255,255,255,0.7)] text-base">
                 {metadata.duration}
               </p>
             </div>
@@ -112,7 +115,10 @@ export default function ProjectHeader({
               <h3 className="font-serif text-white mb-2">Team</h3>
               <ul>
                 {metadata.team.map((member, index) => (
-                  <li key={index} className="text-[rgba(255,255,255,0.5)] mb-1">
+                  <li
+                    key={index}
+                    className="text-[rgba(255,255,255,0.7)] mb-1 text-base"
+                  >
                     {member}
                   </li>
                 ))}
@@ -126,7 +132,10 @@ export default function ProjectHeader({
               <h3 className="font-serif text-white mb-2">Results</h3>
               <ul>
                 {metadata.results.map((result, index) => (
-                  <li key={index} className="text-[rgba(255,255,255,0.5)] mb-1">
+                  <li
+                    key={index}
+                    className="text-[rgba(255,255,255,0.7)] mb-1 text-base"
+                  >
                     {result}
                   </li>
                 ))}

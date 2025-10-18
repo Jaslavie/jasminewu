@@ -167,6 +167,164 @@ export const postType = defineType({
             },
           ],
         },
+        {
+          type: "object",
+          name: "projectSection",
+          title: "Project Section",
+          fields: [
+            {
+              name: "title",
+              type: "string",
+              title: "Section Title",
+            },
+            {
+              name: "content",
+              type: "array",
+              title: "Section Content",
+              of: [
+                {
+                  type: "block",
+                  styles: [
+                    { title: "Normal", value: "normal" },
+                    { title: "H1", value: "h1" },
+                    { title: "H2", value: "h2" },
+                    { title: "H3", value: "h3" },
+                    { title: "H4", value: "h4" },
+                    { title: "Quote", value: "blockquote" },
+                  ],
+                  lists: [
+                    { title: "Bullet", value: "bullet" },
+                    { title: "Number", value: "number" },
+                  ],
+                  marks: {
+                    decorators: [
+                      { title: "Strong", value: "strong" },
+                      { title: "Emphasis", value: "em" },
+                    ],
+                    annotations: [
+                      {
+                        name: "link",
+                        type: "object",
+                        title: "Link",
+                        fields: [
+                          {
+                            name: "href",
+                            type: "url",
+                            title: "URL",
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                },
+                {
+                  type: "image",
+                  name: "image",
+                  title: "Image",
+                  options: {
+                    hotspot: true,
+                  },
+                  fields: [
+                    {
+                      name: "alt",
+                      type: "string",
+                      title: "Alt Text",
+                    },
+                    {
+                      name: "caption",
+                      type: "string",
+                      title: "Caption",
+                    },
+                    {
+                      name: "maxHeight",
+                      type: "string",
+                      title: "Max Height (CSS)",
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          type: "object",
+          name: "projectSectionRow",
+          title: "Project Section Row",
+          fields: [
+            {
+              name: "title",
+              type: "string",
+              title: "Section Title",
+            },
+            {
+              name: "content",
+              type: "array",
+              title: "Section Content",
+              of: [
+                {
+                  type: "block",
+                  styles: [
+                    { title: "Normal", value: "normal" },
+                    { title: "H1", value: "h1" },
+                    { title: "H2", value: "h2" },
+                    { title: "H3", value: "h3" },
+                    { title: "H4", value: "h4" },
+                    { title: "Quote", value: "blockquote" },
+                  ],
+                  lists: [
+                    { title: "Bullet", value: "bullet" },
+                    { title: "Number", value: "number" },
+                  ],
+                  marks: {
+                    decorators: [
+                      { title: "Strong", value: "strong" },
+                      { title: "Emphasis", value: "em" },
+                    ],
+                    annotations: [
+                      {
+                        name: "link",
+                        type: "object",
+                        title: "Link",
+                        fields: [
+                          {
+                            name: "href",
+                            type: "url",
+                            title: "URL",
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+            {
+              name: "image",
+              type: "image",
+              title: "Section Image",
+              options: {
+                hotspot: true,
+              },
+              fields: [
+                {
+                  name: "alt",
+                  type: "string",
+                  title: "Alt Text",
+                },
+                {
+                  name: "caption",
+                  type: "string",
+                  title: "Caption",
+                },
+                {
+                  name: "maxHeight",
+                  type: "string",
+                  title: "Max Height (CSS)",
+                },
+              ],
+            },
+          ],
+        },
       ],
     }),
     defineField({

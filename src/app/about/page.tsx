@@ -17,14 +17,15 @@ export default function About() {
       {/* Hero Section */}
       <div className="flex flex-col lg:flex-row min-h-screen">
         {/* Left Section - Text Content */}
-        <div className="flex-1 flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 py-8 lg:py-0 sm:mt-12 lg:mt-0">
+        <div className="flex-1 flex flex-col justify-center items-center sm:px-4 lg:px-4 py-8 lg:py-0 sm:mt-12 lg:mt-0">
           <div
             ref={heroFade.elementRef}
-            className="space-y-4 sm:space-y-6 max-w-2xl mx-auto lg:mx-0"
+            className="space-y-4 sm:space-y-6 w-[50vw] mx-auto lg:mx-0"
             style={{
               fontFamily: "'EB Garamond', serif",
               fontWeight: 300,
               ...heroFade.fadeInStyle,
+              fontSize: "20px",
             }}
           >
             <h3>
@@ -32,10 +33,10 @@ export default function About() {
               and research the AI that drives them. The hardest problems demand
               clarity under chaos. The next frontier isn't smarter AI. It's
               radically fluid interfaces where humans and machines think and
-              decide together. I experimented with this at{" "}
+              decide together. I experimented with these at{" "}
               <Link href="https://www.palantir.com/platforms/gotham/">
                 Palantir
-              </Link>{" "}
+              </Link>
               ,{" "}
               <Link href="https://www.nasa.gov/johnson/exhibits/extravehicular-activities/">
                 NASA
@@ -58,11 +59,11 @@ export default function About() {
               </Link>
               , prototyped spacesuit displays with NASA, and{" "}
               <Link href="https://spacechi.media.mit.edu/">presented</Link>{" "}
-              adaptive navigation{" "}
+              lunar route-planning{" "}
               <Link href="https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.SpaceCHI.2025.25">
                 simulations
               </Link>{" "}
-              for astronauts to the European Space Agency.
+              to the European Space Agency.
             </h3>
 
             <h3>

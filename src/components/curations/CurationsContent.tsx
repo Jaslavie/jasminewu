@@ -26,7 +26,7 @@ function CurationColumn({ title, items, isVisible }: CurationColumnProps) {
         {items.map((item, index) => (
           <div
             key={index}
-            className="flex items-center gap-2 text-[14px]"
+            className="flex items-center gap-2"
             style={{ color: "rgba(255, 255, 255, 0.65)" }}
           >
             <ChaosLink href={item.link}>{item.title.toLowerCase()} →</ChaosLink>

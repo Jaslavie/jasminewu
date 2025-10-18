@@ -11,7 +11,7 @@ export default function DispatchAIProject() {
   const headerData = {
     category: "DECISION SUPPORT TOOL",
     title:
-      "Designing a platform for AI Agents to offload 911 calls for emergency responders",
+      "AI Agents to offload 911 calls for emergency responders",
     description:
       "I worked with dispatchers to design a platform to handoff non-emergency calls between human operator and AI agent. Won the largest AI hackathon in the world and received $68,000 in grants from Skydeck, Intel, and OpenAI.",
     logo: "/projects/dispatchAI/skydeck.png",

@@ -86,3 +86,64 @@ export async function getFeaturedProjects() {
   return await client.fetch(query);
 }
 
+export async function getWritingPosts() {
+  const query = `*[_type == "writing"] | order(date desc) {
+    _id,
+    slug,
+    title,
+    date,
+    excerpt,
+    featuredImage {
+      asset-> {
+        url
+      },
+      alt
+    },
+    content,
+    featured,
+    order
+  }`;
+
+  return await client.fetch(query);
+}
+
+export async function getWritingPostBySlug(slug: string) {
+  const query = `*[_type == "writing" && slug.current == $slug][0] {
+    _id,
+    slug,
+    title,
+    date,
+    excerpt,
+    featuredImage {
+      asset-> {
+        url
+      },
+      alt
+    },
+    content,
+    featured,
+    order
+  }`;
+
+  return await client.fetch(query, { slug });
+}
+
+export async function getFeaturedWritingPosts() {
+  const query = `*[_type == "writing" && featured == true] | order(date desc) {
+    _id,
+    slug,
+    title,
+    date,
+    excerpt,
+    featuredImage {
+      asset-> {
+        url
+      },
+      alt
+    },
+    featured,
+    order
+  }`;
+
+  return await client.fetch(query);
+}

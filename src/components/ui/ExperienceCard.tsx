@@ -22,14 +22,14 @@ export default function ExperienceCard({
         <h2 className="text-white mb-1 text-[16px] sm:text-[18px] lg:text-[20px]">
           {title}
         </h2>
-        <p className="text-gray-500 text-[10px] sm:text-[12px] lg:text-[14px]">
+        <p className="sm:text-[14px] lg:text-[14px]">
           {date}
         </p>
       </div>
 
       {/* Right side - Description */}
       <div className="flex-1 lg:w-2/3">
-        <p className="text-gray-400 text-[12px] sm:text-[14px] lg:text-[16px] leading-relaxed">
+        <p>
           {description}
         </p>
       </div>

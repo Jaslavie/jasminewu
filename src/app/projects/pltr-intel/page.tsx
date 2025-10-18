@@ -3,11 +3,11 @@ import ProjectImage from "@/components/work/ProjectImage";
 
 export default function Project() {
   const headerData = {
-    category: "Palantir Technologies",
+    category: "Target Workbench",
     title:
       "Analysis framework to reveal hidden dependencies between intelligence nodes",
     description:
-      "Designed V1 of analysis workflow for building and enriching relationships between intelligence data. Simulates how a disruption to a single node can cascade through the network and degrade the entire system — often orders of magnitude larger than local failures.",
+      "Designed V1 of analysis workflow for building and enriching relationships between intelligence data. Simulates how a disruption to a single node can cascade through the network and degrade the entire system — often orders of magnitude larger than local failures.\n\nPlease reach out if you'd like to learn more.",
     logo: "./pltr/pltr.png",
     metadata: {
       role: ["Product Design Intern"],
@@ -27,8 +27,8 @@ export default function Project() {
 
       {/* Main Project Thumbnail */}
       <ProjectImage
-        src="/palantir_hover_after.png" 
-        alt="Palantir Technologies Project"
+        src="./palantir_hover.png"
+        alt=""
         caption=""
       />
     </div>

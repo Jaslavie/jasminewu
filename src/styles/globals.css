@@ -90,7 +90,7 @@
   --font-mono: var(--font-geist-mono);
   --font-serif: "EB Garamond", serif;
   --font-subheading: "Inconsolata", sans-serif;
-  --font-body: "Inter", sans-serif;
+  --font-body: "EB Garamond", serif;
 
   /* ----- Colors ----- */
   --color-background: #0d0d0d;
@@ -100,8 +100,8 @@
 
   /* Text Colors */
   --color-text-heading: #ffffff;
-  --color-text-body: rgba(255, 255, 255, 0.65);
-  --color-text-subheading: rgba(255, 255, 255, 0.395);
+  --color-text-body: rgba(255, 255, 255, 0.8);
+  --color-text-subheading: rgba(255, 255, 255, 0.5);
   --color-text-active: #ffffff;
 }
 
@@ -114,10 +114,11 @@
 
   html {
     @apply scroll-smooth bg-background;
+    cursor: none !important;
   }
 
   body {
-    @apply bg-background text-text-body font-sans min-h-screen w-full overflow-x-hidden leading-[1.25];
+    @apply bg-background text-text-body font-sans min-h-screen w-full overflow-x-hidden;
     cursor: none !important;
   }
 
@@ -146,21 +147,21 @@
     font-weight: 400;
   }
   h3 {
-    @apply text-text-heading text-[18px] mb-3 font-light leading-8;
+    @apply text-text-heading text-[20px] mb-3 font-light leading-8;
     font-family: "EB Garamond", serif;
     font-weight: 300;
   }
 
   p {
-    @apply text-text-body font-normal text-[14px]/[1.5] leading-[1.5];
+    @apply text-text-body font-normal text-[18px] leading-[1.75rem];
   }
 
   ol {
-    @apply text-text-body font-normal text-[14px]/[1.5] list-decimal pl-6;
+    @apply text-text-body font-normal text-[18px]/[1.75] list-decimal pl-6;
   }
 
   li {
-    @apply text-text-body font-normal text-[14px]/[1.5] mb-2;
+    @apply text-text-body font-normal text-[18px]/[1.5] mb-2;
   }
 
   /* Target ChaosLink components inside paragraph tags */

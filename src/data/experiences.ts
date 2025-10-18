@@ -30,6 +30,12 @@ export const experiences: Experience[] = [
       "Started first NASA SUITS team at UCI. Presented to Astronauts and Flight Director. Designed and programmed HMD display on XR glasses + task workflows for lunar surface operations (e.g. geological sampling, navigation, surfacing procedures). Underwent simulation testing at NASA JSC.",
   },
   {
+    title: "Research Fellow @ Contrary",
+    date: "2024 - 2025",
+    description:
+      "Wrote 4 startup investment memos for firm creating more than $10 billion in value through companies like Ramp and Anduril. Published to over 100,000 subscribers.",
+  },
+  {
     title: "Co-Founder @ Dispatch AI (Skydeck 24')",
     date: "2024",
     description:

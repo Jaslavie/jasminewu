@@ -3,6 +3,8 @@ import { PortableText } from "@portabletext/react";
 import { urlFor } from "@/sanity/lib/image";
 import ProjectHeader from "@/components/work/ProjectHeader";
 import ProjectImage from "@/components/work/ProjectImage";
+import ProjectSection from "@/components/work/ProjectSection";
+import ProjectSectionRow from "@/components/work/ProjectSectionRow";
 import Divider from "@/components/global/Divider";
 import { notFound } from "next/navigation";
 
@@ -49,6 +51,20 @@ const portableTextComponents = {
         />
       );
     },
+    projectSection: ({ value }: any) => {
+      return (
+        <ProjectSection title={value.title}>
+          <div>{value.content}</div>
+        </ProjectSection>
+      );
+    },
+    projectSectionRow: ({ value }: any) => {
+      return (
+        <ProjectSectionRow title={value.title} image={value.image}>
+          {value.content}
+        </ProjectSectionRow>
+      );
+    },
   },
   block: {
     h1: ({ children }: any) => (
@@ -68,7 +84,7 @@ const portableTextComponents = {
         {children}
       </blockquote>
     ),
-    normal: ({ children }: any) => <p>{children}</p>,
+    normal: ({ children }: any) => <p className="text-medium">{children}</p>,
   },
   list: {
     bullet: ({ children }: any) => (
@@ -129,7 +145,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       )}
 
       {/* Rich Content */}
-      <div className="px-12vw">
+      <div className="px-8vw">
         <PortableText
           value={project.content}
           components={portableTextComponents}
