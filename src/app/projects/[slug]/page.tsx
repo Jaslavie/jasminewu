@@ -18,13 +18,14 @@ interface Project {
   };
 }
 
-export async function generateStaticParams() {
-  const projects = await getProjects();
+// Temporarily disabled for testing
+// export async function generateStaticParams() {
+//   const projects = await getProjects();
 
-  return projects.map((project: Project) => ({
-    slug: project.slug.current,
-  }));
-}
+//   return projects.map((project: Project) => ({
+//     slug: project.slug.current,
+//   }));
+// }
 
 const portableTextComponents = {
   types: {

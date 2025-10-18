@@ -71,7 +71,7 @@ export default function ProjectHeader({
 
           {/* Right - Description */}
           <div className="lg:w-2/3">
-            <p className="text-[rgba(255,255,255,0.75)] text-sm leading-relaxed">
+            <p className="text-[rgba(255,255,255,0.75)] text-base leading-relaxed">
               {description}
             </p>
           </div>

@@ -85,3 +85,4 @@ export async function getFeaturedProjects() {
 
   return await client.fetch(query);
 }
+

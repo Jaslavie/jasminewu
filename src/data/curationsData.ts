@@ -11,24 +11,9 @@ export interface CurationData {
 }
 
 export const curationsData: CurationData = {
-  //* ========== Curations ==========
-//   curations: [
-//     {
-//       title: "Interstellar",
-//       link: "https://www.imdb.com/title/tt0816692/",
-//     },
-//     {
-//       title: "Ralph Lauren",
-//       link: "https://www.ralphlauren.com/",
-//     },
-//   ],
 
   //* ========== History ==========
   history: [
-    {
-      title: "The Blue Boy",
-      link: "https://www.huntington.org/blue-boy",
-    },
     {
       title: "D-Day FDR Prayer",
       link: "https://www.youtube.com/watch?v=IMy1ZLyaSqk&list=PLrvljGPnb6yWcRrURLXtfkWlN3J5MswoP&index=3",
@@ -62,8 +47,12 @@ export const curationsData: CurationData = {
       link: "https://ckrybus.com/static/papers/Bainbridge_1983_Automatica.pdf",
     },
     {
-      title: "Effortless Action",
-      link: "https://www.edwardslingerland.com/academic-books/effortless-action",
+      title: "Frankenstein - Mary Shelley",
+      link: "https://en.wikipedia.org/wiki/Frankenstein",
+    },
+    {
+      title: "Moth Fund Manifesto",
+      link: "https://www.mothfund.com/manifesto",
     },
     {
       title: "Julius Caesar - Shakespeare",
@@ -78,17 +67,9 @@ export const curationsData: CurationData = {
       link: "https://samoburja.com/live-versus-dead-players/",
     },
     {
-      title: "Moth Fund Manifesto",
-      link: "https://www.mothfund.com/manifesto",
-    },
-    {
       title: "Childhoods of Exceptional People",
       link: "https://substack.com/inbox/post/82323090",
-    },
-    {
-      title: "The Science of Genius",
-      link: "https://www.scientificamerican.com/article/the-science-of-genius2/",
-    },
+    }
   ],
 
   //* ========== Media ==========
@@ -110,10 +91,6 @@ export const curationsData: CurationData = {
       link: "https://www.imdb.com/title/tt3581920/",
     },
     {
-      title: "The Pianist",
-      link: "https://www.imdb.com/title/tt0253474/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_the%2520pian",
-    },
-    {
       title: "Dune II",
       link: "https://www.imdb.com/title/tt15239678/?ref_=nv_sr_srsg_2_tt_5_nm_1_in_0_q_Dune%2520ii",
     },
@@ -124,10 +101,6 @@ export const curationsData: CurationData = {
     {
       title: "Pride and Prejudice",
       link: "https://www.imdb.com/title/tt0414387/",
-    },
-    {
-      title: "Romeo and Juliet 2013 film score",
-      link: "https://open.spotify.com/album/2QENswe8i7Uaqgn9zbRKz3",
     },
   ],
 };

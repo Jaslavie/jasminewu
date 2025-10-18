@@ -15,13 +15,13 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Palantir",
+    title: "Military intelligence analysis",
     description:
-      "Building workflows for intelligence analysis and wargaming simulations.",
+      "Building workflows for intelligence analysis.",
     number: "01",
     imageBefore: "/projects/palantir_hover.png",
     imageAfter: "/projects/palantir_hover_after.png",
-    link: "https://time.com/6691662/ai-ukraine-war-palantir/",
+    link: "/projects/pltr-intel",
   },
   {
     title: "Emergency triage system for 911 dispatchers",
@@ -44,7 +44,7 @@ const projects: Project[] = [
   {
     title: "Anticipatory heads-up displays for spacesuits",
     description:
-      "XR displays for EVA operations. Simulation testing at NASA JSC. Presented to Astronauts.",
+      "XR displays for EVA operations (spacewalks). Tested at NASA JSC lunar facilities. Presented to Astronauts.",
     number: "04",
     imageBefore: "/projects/nasaSUITS_hover.png",
     imageAfter: "/projects/nasaSUITS_hover_after.png",
@@ -52,7 +52,7 @@ const projects: Project[] = [
   },
   //   {
   //     title: "Gallatin AI",
-  //     description: "Advanced AI systems for complex decision-making scenarios.",
+  //     description: "Explainable AI framework for exposing model reasoning behind resupply forecasts.",
   //     number: "03",
   //     imageBefore: "/images/gallatin_hover.png",
   //     imageAfter: "/images/gallatin_hover_after.png",

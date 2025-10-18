@@ -15,7 +15,7 @@ export default function NasaProject() {
       "I designed and built a heads up display interface to support astronauts in operational procedures on the moon. Tested simulation with NASA engineers at the Johnson Space Center.",
     logo: "/projects/nasa/nasaLogoWorm.png",
     metadata: {
-      role: ["HCI Research", "Product Design"],
+      role: ["HCI Research", "Product Design", "XR Engineering"],
       duration: "10 months",
       team: ["2 Engineers", "1 Designer"],
       results: ["Presented to NASA review panel", "Top 10 Finalist"],
