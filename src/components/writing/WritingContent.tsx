@@ -18,9 +18,14 @@ export default function WritingContent() {
 
   const writings = [
     {
-      title: "curation and taste",
+      title: "thought engine",
       link: "https://www.notion.so/thought-engine-17574d39a483809680f8e416bab5d4dd",
       publishDate: "ongoing",
+    },
+    {
+      title: "how to design living ecosystems",
+      link: "/writing/living-ecosystems",
+      publishDate: "2025-10-18",
     },
     {
       title: "principles",

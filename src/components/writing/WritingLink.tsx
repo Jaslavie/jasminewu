@@ -41,12 +41,12 @@ export default function WritingLink({
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="link"
+            className="link no-underline hover:no-underline"
           >
             {children} →
           </a>
         ) : (
-          <Link href={href} className="link">
+          <Link href={href} className="link no-underline hover:no-underline">
             {children} →
           </Link>
         )}

@@ -91,7 +91,7 @@ export default function CurationsContent() {
         </p>
         <p>
           I enjoy curating experiences the most — be it places traveled,
-          historical documents, or 1940s era photographs.
+          hackathons, or 1940s era photographs.
         </p>
         <p>
           I like things that are slightly out of our attention, stripped to its
