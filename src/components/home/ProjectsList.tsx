@@ -43,7 +43,7 @@ const projects: Project[] = [
   {
     title: "Anticipatory heads-up displays for spacesuits",
     description:
-      "XR displays for EVA operations (spacewalks). Tested at NASA JSC lunar facilities. Presented to Astronauts.",
+      "XR displays for EVA operations (spacewalks). Tested at NASA JSC lunar facilities.",
     number: "04",
     imageBefore: "/projects/nasaSUITS_hover.png",
     imageAfter: "/projects/nasaSUITS_hover_after.png",

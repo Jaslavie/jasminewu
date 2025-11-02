@@ -5,7 +5,6 @@ export default function Writing() {
   return (
     <div className="h-full relative">
       <WritingContent />
-      {/* <SocialLinks /> */}
     </div>
   );
 }

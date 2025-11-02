@@ -29,26 +29,29 @@ export default function About() {
             }}
           >
             <h3>
-              I design environments for humans to co-reason with intelligence
-              and research the AI that drives them. The hardest problems demand
-              clarity under chaos. The next frontier isn't smarter AI. It's
-              radically fluid interfaces where humans and machines think and
-              decide together. I experimented with these at{" "}
+              I design simulation environments for humans to co-reason with
+              machines and research the AI that drives them. The hardest
+              problems demand clarity under chaos. I believe this clarity comes
+              from radically fluid interfaces where humans can role-play the
+              future before it happens.
+            </h3>
+            <h3>
+              Currently, I work on battlefield sims at{" "}
+              <Link href="https://www.gallatin.ai/">Gallatin</Link> and study CS
+              & Neuroscience at UCI. Before this, I spent a stint at{" "}
               <Link href="https://www.palantir.com/platforms/gotham/">
                 Palantir
-              </Link>
-              ,{" "}
+              </Link>{" "}
+              and{" "}
               <Link href="https://www.nasa.gov/johnson/exhibits/extravehicular-activities/">
                 NASA
               </Link>
-              , and <Link href="https://www.gallatin.ai/">Gallatin AI</Link>.
-              I'm a <Link href="https://contrary.com/">Contrary</Link> and{" "}
-              <Link href="https://www.8vc.com/fellowships">8VC Fellow</Link>,
-              studying CS & Neuroscience at UCI.
+              , and dabbled in startups at{" "}
+              <Link href="https://contrary.com/">Contrary</Link> and{" "}
+              <Link href="https://www.8vc.com/">8VC</Link>.
             </h3>
-
             <h3>
-              Previously, I won 15{" "}
+              I'm an experimentalist at heart. I've won 15{" "}
               <Link href="https://devpost.com/jaslavie">hackathons</Link>{" "}
               including the world's largest AI hackathon, built 911 dispatch
               agents at{" "}
@@ -57,13 +60,13 @@ export default function About() {
               <Link href="https://designatuci.com/designathon/24">
                 designathon
               </Link>
-              , prototyped spacesuit displays with NASA, and{" "}
+              , prototyped spacesuit displays, and{" "}
               <Link href="https://spacechi.media.mit.edu/">presented</Link>{" "}
               lunar route-planning{" "}
               <Link href="https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.SpaceCHI.2025.25">
                 simulations
               </Link>{" "}
-              to the European Space Agency.
+              at the European Space Agency.
             </h3>
 
             <h3>
@@ -81,10 +84,9 @@ export default function About() {
               , or lingering on a portrait at a museum. My favorite painting is{" "}
               <i>
                 <Link href="https://docs.google.com/document/d/1CzlYHEmkBuTxmPa-5-PeTGrjZgd06Puz3gIr9QQ1f1c/edit?tab=t.0">
-                  the Blue Boy.
+                  the Blue Boy
                 </Link>
-              </i>{" "}
-              Grew up in Orange County with short stints in DC and LA.
+              </i>.
             </h3>
 
             {/* Footer Links */}

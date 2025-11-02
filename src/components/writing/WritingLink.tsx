@@ -43,11 +43,13 @@ export default function WritingLink({
             rel="noopener noreferrer"
             className="link no-underline hover:no-underline"
           >
-            {children} →
+            {children} 
+            {/* → */}
           </a>
         ) : (
           <Link href={href} className="link no-underline hover:no-underline">
-            {children} →
+            {children} 
+            {/* → */}
           </Link>
         )}
       </div>

@@ -7,7 +7,8 @@ export interface CurationData {
 //   curations: CurationItem[];
   history: CurationItem[];
   writing: CurationItem[];
-  media: CurationItem[];
+  films: CurationItem[];
+  places: CurationItem[];
 }
 
 export const curationsData: CurationData = {
@@ -19,11 +20,15 @@ export const curationsData: CurationData = {
       link: "https://www.youtube.com/watch?v=IMy1ZLyaSqk&list=PLrvljGPnb6yWcRrURLXtfkWlN3J5MswoP&index=3",
     },
     {
-      title: "The Genius of Napoleon",
-      link: "https://towardsdatascience.com/napoleon-was-the-best-general-ever-and-the-math-proves-it-86efed303eeb",
+      title: "Downfall (film)",
+      link: "https://en.wikipedia.org/wiki/Downfall_(2004_film)",
     },
     {
-      title: "Rise and Fall of the Third Reich",
+      title: "Hacksaw Ridge (film)",
+      link: "https://www.imdb.com/title/tt2119532/?ref_=nv_sr_srsg_1_tt_5_nm_2_in_0_q_hacksa",
+    },
+    {
+      title: "Rise and Fall of the 3rd Reich",
       link: "https://www.amazon.com/Rise-Fall-Third-Reich-ebook/dp/B07XD76H41/",
     },
     {
@@ -39,9 +44,10 @@ export const curationsData: CurationData = {
   //* ========== Writing ==========
   writing: [
     {
-      title: "Mastery",
+      title: "Mastery - robert greene",
       link: "https://www.amazon.com/Mastery-Robert-Greene/dp/014312417X",
     },
+    
     {
       title: "Ironies of Automation",
       link: "https://ckrybus.com/static/papers/Bainbridge_1983_Automatica.pdf",
@@ -49,6 +55,10 @@ export const curationsData: CurationData = {
     {
       title: "Frankenstein - Mary Shelley",
       link: "https://en.wikipedia.org/wiki/Frankenstein",
+    },
+    {
+      title: "Simulation Inferences",
+      link: "https://gwern.net/simulation-inference",
     },
     {
       title: "Moth Fund Manifesto",
@@ -61,26 +71,14 @@ export const curationsData: CurationData = {
     {
       title: "How to do Great Work",
       link: "https://paulgraham.com/greatwork.html",
-    },
-    {
-      title: "Live vs Dead Players",
-      link: "https://samoburja.com/live-versus-dead-players/",
-    },
-    {
-      title: "Childhoods of Exceptional People",
-      link: "https://substack.com/inbox/post/82323090",
     }
   ],
 
-  //* ========== Media ==========
-  media: [
+  //* ========== Films ==========
+  films: [
     {
       title: "Interstellar",
       link: "https://www.imdb.com/title/tt0816692/",
-    },
-    {
-      title: "Hacksaw Ridge",
-      link: "https://www.imdb.com/title/tt2119532/?ref_=nv_sr_srsg_1_tt_5_nm_2_in_0_q_hacksa",
     },
     {
       title: "The Fault in our Stars",
@@ -91,16 +89,36 @@ export const curationsData: CurationData = {
       link: "https://www.imdb.com/title/tt3581920/",
     },
     {
-      title: "Dune II",
-      link: "https://www.imdb.com/title/tt15239678/?ref_=nv_sr_srsg_2_tt_5_nm_1_in_0_q_Dune%2520ii",
-    },
-    {
       title: "Imitation Game",
       link: "https://www.imdb.com/title/tt2084970/",
     },
     {
       title: "Pride and Prejudice",
       link: "https://www.imdb.com/title/tt0414387/",
+    },
+  ],
+
+  //* ========== Places ==========
+  places: [
+    {
+      title: "La Cabra, Soho",
+      link: "https://us.lacabra.com/pages/soho",
+    },
+    {
+      title: "Ichimiann, Torrance",
+      link: "https://www.ichimiann.com/",
+    },
+    {
+      title: "Blues Alley Club, DC",
+      link: "https://www.bluesalley.com/",
+    },
+    {
+      title: "Del Cerro Park, Palos Verdes",
+      link: "/",
+    },
+    {
+      title: "The Huntington, San Marino",
+      link: "https://www.huntington.org/",
     },
   ],
 };

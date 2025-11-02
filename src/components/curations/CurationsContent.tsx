@@ -29,7 +29,7 @@ function CurationColumn({ title, items, isVisible }: CurationColumnProps) {
             className="flex items-center gap-2"
             style={{ color: "rgba(255, 255, 255, 0.65)" }}
           >
-            <ChaosLink href={item.link}>{item.title.toLowerCase()} →</ChaosLink>
+            <ChaosLink href={item.link}>{item.title.toLowerCase()}</ChaosLink>
           </div>
         ))}
       </div>

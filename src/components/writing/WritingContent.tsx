@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import WritingLink from "./WritingLink";
+import ChaosLink from "@/components/ui/Link";
 
 export default function WritingContent() {
   const [showWritingList, setShowWritingList] = useState(false);
@@ -22,6 +23,11 @@ export default function WritingContent() {
       link: "https://www.notion.so/thought-engine-17574d39a483809680f8e416bab5d4dd",
       publishDate: "ongoing",
     },
+    // {
+    //   title: "the art of rehearsal",
+    //   link: "/writing/rehersal",
+    //   publishDate: "2025-10-30",
+    // },
     {
       title: "how to design living ecosystems",
       link: "/writing/living-ecosystems",
@@ -96,6 +102,11 @@ export default function WritingContent() {
 
   return (
     <div className="pt-[14vh] px-[4vw] max-w-full md:max-w-4xl">
+      {/* <p>
+        occasionally, I write my streams of thought{" "}
+        <ChaosLink href="https://substack.com/@jaslavie">here</ChaosLink>.
+      </p> */}
+
       {/* Writing List */}
       <div
         className="writing-list space-y-8"
@@ -114,12 +125,12 @@ export default function WritingContent() {
           .map(([year, yearWritings]) => (
             <div key={year} className="space-y-4">
               {year !== "ongoing" && (
-                <h2
-                  className="text-white font-semibold text-[24px] mb-6 pl-6"
+                <h3
+                  className="text-white pl-6"
                   style={{ fontFamily: "'EB Garamond', serif" }}
                 >
                   {year}
-                </h2>
+                </h3>
               )}
               <div className="space-y-3">
                 {yearWritings.map((writing, index) => (

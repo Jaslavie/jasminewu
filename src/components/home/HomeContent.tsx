@@ -58,16 +58,15 @@ export default function HomeContent() {
             }}
           >
             <h2>
-              Jasmine is currently tinkering with fluid interfaces & building
-              software for the battlefield at{" "}
+              simulating the future & building software for the battlefield at{" "}
               <StyledLink href="https://www.gallatin.ai/">
                 Gallatin AI
               </StyledLink>
-              . Previously designed at{" "}
+              . previously {" "}@
               <StyledLink href="https://www.palantir.com/platforms/gotham/">
                 Palantir
-              </StyledLink>{" "}
-              and <StyledLink href="https://www.nasa.gov/">NASA</StyledLink>.
+              </StyledLink>{" "}@
+              <StyledLink href="https://www.nasa.gov/">NASA</StyledLink>.
             </h2>
           </div>
         </div>

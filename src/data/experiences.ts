@@ -6,51 +6,39 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
-    title: "Product Designer @ Gallatin AI",
+    title: "Design Engineer, Gallatin AI",
     date: "Fall 2024",
     description:
-      "Explainable AI for battlefield logistics. Built interface tracing data sources and exposing model reasoning behind resupply forecasts. New UI primitive adopted across the platform. Collaborated closely with military logisticians. First design intern.",
+      "Collaborating with military logisticians to design and deploy predictive resupply forecasts and combat simulations for battlefield logistics. Built new UX promitive for exposing model reasoning. Wrote full-stack production code. First design intern.",
   },
   {
-    title: "Product Designer @ Palantir",
+    title: "Product Designer, Palantir",
     date: "Summer 2024",
     description:
-      "Designed V1 of intelligence analysis system to surface hidden dependencies across nodes and visualize cascading effects. Proposed V1 of entity-based knowledge sharing system in simulation platform. Deployed in active combat and used by 2,000 government officials.",
+      "Designing the V1 intelligence analysis framework to surface hidden dependencies across nodes and visualize cascading effects + V1 for entity-based knowledge sharing system in simulation platform. Deployed in active combat and used by 2,000 government officials.",
   },
   {
-    title: "Founding a Research Lab",
+    title: "Researcher, NASA JSC",
     date: "2025",
     description:
-      "Built simulation software for adaptive navigation and route planning on the lunar surface. First author of a paper presented to the European Space Agency at the MIT Space CHI conference in Germany. $20,000 in funding from the UCI CS department.",
+      "Researching and deploying simulation software and HMDs for lunar route planning, presented to NASA astronauts & flight director. Wrote first author paper presented at the European Space Agency. $20,000 in funding from the UCI CS department.",
   },
   {
-    title: "Product Designer @ NASA SUITS",
+    title: "Researcher, Contrary",
     date: "2024 - 2025",
     description:
-      "Started first NASA SUITS team at UCI. Presented to Astronauts and Flight Director. Designed and programmed HMD display on XR glasses + task workflows for lunar surface operations (e.g. geological sampling, navigation, surfacing procedures). Underwent simulation testing at NASA JSC.",
+      "Contrary is a venture firm creating more than $10 billion in value through companies like Ramp and Anduril. Wrote 4 startup investment memos published to over 100,000 subscribers.",
   },
   {
-    title: "Research Fellow @ Contrary",
-    date: "2024 - 2025",
-    description:
-      "Wrote 4 startup investment memos for firm creating more than $10 billion in value through companies like Ramp and Anduril. Published to over 100,000 subscribers.",
-  },
-  {
-    title: "Co-Founder @ Dispatch AI (Skydeck 24')",
+    title: "Co-Founder, Dispatch AI (Skydeck 24')",
     date: "2024",
     description:
-      "$68,000 in funding. Solo designer. Built V1 of triage system for non-emergency 911 calls and interaction workflow with AI Dispatch agents. Worked with dispatchers and police chiefs across the U.S.",
+      "Designing and building the V1 of triage system for non-emergency 911 calls and interaction workflow with AI Dispatch agents. Worked with dispatchers and police chiefs across the U.S.",
   },
   {
-    title: "Project Manager @ NASA L'SPACE",
-    date: "2024",
-    description:
-      "Managed a 14 person student team. Co-authored a 244 page preliminary design review for landing a semi-autonomous rover on the lunar south poles.",
-  },
-  {
-    title: "Director @ UCI Designathon",
+    title: "Director, UCI Designathon",
     date: "2023 - 2025",
     description:
-      "Largest in-person Designathon in the United States. Scaled from 1 person to a 40 member team. Raised $20,000 in funding from Figma and Notion. Put on every hat.",
+      "Leading the largest design hackathon in the United States. Scaled from 1 to a 40 member team. Raised $20,000 in funding from Figma and Notion. Put on every hat.",
   },
 ];

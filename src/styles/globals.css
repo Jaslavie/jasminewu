@@ -166,7 +166,7 @@
 
   /* Target ChaosLink components inside paragraph tags */
   p .link span {
-    margin-bottom: -5px !important;
+    margin-bottom: -8px !important;
   }
 
   ::selection {

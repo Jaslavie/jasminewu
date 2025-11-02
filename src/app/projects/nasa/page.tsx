@@ -60,13 +60,12 @@ export default function NasaProject() {
       </ProjectSection>
 
       {/* Starting the first SUITS research lab */}
-      <ProjectSection title="Starting the first SUITS research lab">
+      <ProjectSection title="Starting the first space hci research lab">
         <div>
           <p>
-            I founded the first NASA SUITS research team at UC Irvine comprising
-            of 3 individuals. We were invited to present our work to the dean's
-            council 2x and were awarded $20,000 in research funding from the
-            university.
+            I founded the first space hci research team at UC Irvine. We were
+            invited to present our work to the dean of the CS school and were
+            awarded $20,000 in research funding from the university.
           </p>
 
           {/* Dean's Council Presentation */}
@@ -98,13 +97,13 @@ export default function NasaProject() {
             "Operators need the right data at the right time, with zero
             friction. If they can't find it instantly, they default to paper."
           </p>
-          <p style={{ fontSize: "12px" }}>NASA Senior UX Designer at Ames</p>
+          <p style={{ fontSize: "14px" }}>NASA Senior UX Designer at Ames</p>
           {/* quote 2 */}
           <p style={{ color: "white", marginTop: "8px" }}>
             "The suit moves differently from natural human mobility. Every extra
             action is a cognitive burden."
           </p>
-          <p style={{ fontSize: "12px" }}>Astronaut Trainee</p>
+          <p style={{ fontSize: "14px" }}>Astronaut Trainee</p>
 
           <ProjectImage
             src="/projects/nasa/testingRockyard.png"
