@@ -9,7 +9,7 @@ import {
   WritingSection,
 } from "@/components/writing/WritingComponents";
 
-export default function Rehersal() {
+export default function Rehearsal() {
   const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {

@@ -75,7 +75,7 @@ export default function Principles() {
 
             <p>
               This is a core ethos I want to bring into my work. I want to build
-              systems that endure beyond myself: wether that be software
+              systems that endure beyond myself: whether that be software
               products, new human-ai collaboration frameworks, or the first{" "}
               <ChaosLink href="https://www.nasa.gov/learning-resources/spacesuit-user-interface-technologies-for-students/">
                 NASA SUITS
@@ -231,7 +231,7 @@ export default function Principles() {
                 If you're not naturally good at something, don't do it. Some
                 people are born with exceptional talent & intuition and they
                 will outperform you. Instead, find the thing you are
-                assymetrically good at (based on talk from Alex Karp).
+                asymmetrically good at (based on talk from Alex Karp).
               </li>
             </ol>
           </WritingSection>

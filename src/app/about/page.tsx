@@ -37,7 +37,7 @@ export default function About() {
             </h3>
             <h3>
               Currently, I work on battlefield sims at{" "}
-              <Link href="https://www.gallatin.ai/">Gallatin</Link> and study CS
+              <Link href="https://www.gallatin.ai/">Gallatin AI</Link> and study CS
               & Neuroscience at UCI. Before this, I spent a stint at{" "}
               <Link href="https://www.palantir.com/platforms/gotham/">
                 Palantir
@@ -85,8 +85,8 @@ export default function About() {
               <i>
                 <Link href="https://docs.google.com/document/d/1CzlYHEmkBuTxmPa-5-PeTGrjZgd06Puz3gIr9QQ1f1c/edit?tab=t.0">
                   the Blue Boy
-                </Link>
-              </i>.
+                </Link>.
+              </i>
             </h3>
 
             {/* Footer Links */}
@@ -97,7 +97,7 @@ export default function About() {
                 <Link href="https://linkedin.com/in/jaslavie">Linkedin</Link>
                 <Link href="https://x.com/jaslavie">X</Link>
                 <Link href="https://github.com/jaslavie">Github</Link>
-                <Link href="https://drive.google.com/file/d/1ZqEjzoXT9Cpe5SW3cZgU9FQGLCu8q8AA/view?usp=sharing">
+                <Link href="https://drive.google.com/file/d/1GFYYerZ8WhEhmKfzEGtuSIy1p_QbUD5g/view?usp=sharing">
                   Resume
                 </Link>
               </h3>

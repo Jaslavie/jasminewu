@@ -4,11 +4,11 @@ export interface CurationItem {
 }
 
 export interface CurationData {
-//   curations: CurationItem[];
   history: CurationItem[];
   writing: CurationItem[];
   films: CurationItem[];
   places: CurationItem[];
+  // blogs: CurationItem[];
 }
 
 export const curationsData: CurationData = {
@@ -44,34 +44,33 @@ export const curationsData: CurationData = {
   //* ========== Writing ==========
   writing: [
     {
-      title: "Mastery - robert greene",
+      title: "Mastery - Robert Greene",
       link: "https://www.amazon.com/Mastery-Robert-Greene/dp/014312417X",
-    },
-    
-    {
-      title: "Ironies of Automation",
-      link: "https://ckrybus.com/static/papers/Bainbridge_1983_Automatica.pdf",
     },
     {
       title: "Frankenstein - Mary Shelley",
       link: "https://en.wikipedia.org/wiki/Frankenstein",
     },
     {
-      title: "Simulation Inferences",
-      link: "https://gwern.net/simulation-inference",
+      title: "Julius Caesar - Shakespeare",
+      link: "https://www.amazon.com/Julius-Caesar-Folger-Shakespeare-Library/dp/0743482743/",
     },
     {
       title: "Moth Fund Manifesto",
       link: "https://www.mothfund.com/manifesto",
     },
     {
-      title: "Julius Caesar - Shakespeare",
-      link: "https://www.amazon.com/Julius-Caesar-Folger-Shakespeare-Library/dp/0743482743/",
+      title: "The Republic Journal",
+      link: "https://therepublicjournal.com/",
     },
     {
-      title: "How to do Great Work",
-      link: "https://paulgraham.com/greatwork.html",
-    }
+      title: "Ironies of Automation",
+      link: "https://ckrybus.com/static/papers/Bainbridge_1983_Automatica.pdf",
+    },
+    // {
+    //   title: "How to do Great Work",
+    //   link: "https://paulgraham.com/greatwork.html",
+    // }
   ],
 
   //* ========== Films ==========
@@ -81,16 +80,20 @@ export const curationsData: CurationData = {
       link: "https://www.imdb.com/title/tt0816692/",
     },
     {
+      title: "Dune II",
+      link: "https://www.imdb.com/title/tt15239678/",
+    },
+    {
+      title: "Imitation Game",
+      link: "https://www.imdb.com/title/tt2084970/",
+    },
+    {
       title: "The Fault in our Stars",
       link: "https://www.imdb.com/title/tt2582846/",
     },
     {
       title: "The Last of Us",
       link: "https://www.imdb.com/title/tt3581920/",
-    },
-    {
-      title: "Imitation Game",
-      link: "https://www.imdb.com/title/tt2084970/",
     },
     {
       title: "Pride and Prejudice",
@@ -121,4 +124,23 @@ export const curationsData: CurationData = {
       link: "https://www.huntington.org/",
     },
   ],
+  //* ========== Blogs ==========
+  // blogs: [
+  //   {
+  //     title: "Nicky Case",
+  //     link: "https://ncase.me/",
+  //   },
+  //   {
+  //     title: "Gwern Branwen",
+  //     link: "https://gwern.net/",
+  //   },
+  //   {
+  //     title: "Shan Carter",
+  //     link: "http://shancarter.com/",
+  //   },
+  //   {
+  //     title: "Geoffrey Litt",
+  //     link: "https://www.geoffreylitt.com/",
+  //   }
+  // ],
 };
