@@ -99,6 +99,10 @@ export const curationsData: CurationData = {
       title: "Pride and Prejudice",
       link: "https://www.imdb.com/title/tt0414387/",
     },
+    {
+      title: "Tron: Ares",
+      link: "https://www.imdb.com/title/tt6604188/"
+    }
   ],
 
   //* ========== Places ==========

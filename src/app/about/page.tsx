@@ -36,8 +36,8 @@ export default function About() {
               future before it happens.
             </h3>
             <h3>
-              Currently, I work on battlefield sims at{" "}
-              <Link href="https://www.gallatin.ai/">Gallatin AI</Link> and study CS
+              Currently engineering ML models for battlefield simulations at{" "}
+              <Link href="https://www.gallatin.ai/">Gallatin AI</Link> and studying CS
               & Neuroscience at UCI. Before this, I spent a stint at{" "}
               <Link href="https://www.palantir.com/platforms/gotham/">
                 Palantir
@@ -97,7 +97,7 @@ export default function About() {
                 <Link href="https://linkedin.com/in/jaslavie">Linkedin</Link>
                 <Link href="https://x.com/jaslavie">X</Link>
                 <Link href="https://github.com/jaslavie">Github</Link>
-                <Link href="https://drive.google.com/file/d/1GFYYerZ8WhEhmKfzEGtuSIy1p_QbUD5g/view?usp=sharing">
+                <Link href="https://drive.google.com/file/d/1q3_SWKf6QXmLmmfI0TeOVNipnBiXw10k/view?usp=sharing">
                   Resume
                 </Link>
               </h3>
