@@ -9,7 +9,7 @@ export const experiences: Experience[] = [
     title: "Product Engineer, Gallatin AI",
     date: "Fall 2024",
     description:
-      "Builing machine learning systems and interfaces for simulating supply levels on the battlefiled & designing explainability interface to expose model reasoning. Wrote fullstack production code. First intern.",
+      "Building machine learning systems for simulating supply levels on the battlefield & designing the explainability interface to expose its reasoning. Wrote fullstack production code. First intern.",
   },
   {
     title: "Product Designer, Palantir",
