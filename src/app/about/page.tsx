@@ -36,9 +36,9 @@ export default function About() {
               future before it happens.
             </h3>
             <h3>
-              Currently engineering ML models for battlefield simulations at{" "}
-              <Link href="https://www.gallatin.ai/">Gallatin AI</Link> and studying CS
-              & Neuroscience at UCI. Before this, I spent a stint at{" "}
+              Currently engineering ML systems for battlefield sims at {" "}
+              <Link href="https://www.gallatin.ai/">Gallatin</Link> and studying CS
+              & computational neuroscience at UCI. Before this, I spent a stint at {" "}
               <Link href="https://www.palantir.com/platforms/gotham/">
                 Palantir
               </Link>{" "}
@@ -97,7 +97,7 @@ export default function About() {
                 <Link href="https://linkedin.com/in/jaslavie">Linkedin</Link>
                 <Link href="https://x.com/jaslavie">X</Link>
                 <Link href="https://github.com/jaslavie">Github</Link>
-                <Link href="https://drive.google.com/file/d/1q3_SWKf6QXmLmmfI0TeOVNipnBiXw10k/view?usp=sharing">
+                <Link href="https://drive.google.com/file/d/1GwnN269vEkCpKu3ZGxNPWhVRkGVzbMxZ/view?usp=sharing">
                   Resume
                 </Link>
               </h3>

@@ -58,11 +58,13 @@ export default function HomeContent() {
             }}
           >
             <h2>
-              simulating the future & building software for the battlefield at{" "}
+              Currently: Engineering battlefield simulations @
               <StyledLink href="https://www.gallatin.ai/">
                 Gallatin AI
-              </StyledLink>
-              . previously {" "}@
+              </StyledLink>.
+              <br />
+              Previously: {" "} 
+              @
               <StyledLink href="https://www.palantir.com/platforms/gotham/">
                 Palantir
               </StyledLink>{" "}@
