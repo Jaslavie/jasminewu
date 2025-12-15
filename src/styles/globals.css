@@ -170,7 +170,8 @@
   }
 
   ::selection {
-    @apply bg-[#3639f8ed] z-10 text-white;
+    /* @apply bg-[#3639f8ed] z-10 text-white; */
+    @apply bg-[#00ff00] z-10 text-black;
   }
 }
 
@@ -215,6 +216,21 @@
 
   .link:hover {
     @apply underline decoration-solid decoration-white text-white;
+  }
+
+  /* Superscript Citation */
+  .citation {
+    @apply text-[0.65em] align-super no-underline text-text-subheading transition-all duration-200;
+    font-family: var(--font-subheading);
+    letter-spacing: 0.02em;
+    margin-left: 0.2em;
+    padding: 4px;
+    border: 1px solid transparent;
+  }
+
+  .citation:hover {
+    @apply text-white;
+    border: 1px solid white;
   }
 }
 

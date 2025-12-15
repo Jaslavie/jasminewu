@@ -14,7 +14,7 @@ export function WritingContainer({
     <div
       className={`min-h-screen relative flex justify-center px-[20vw] md:px-0 ${className}`}
     >
-      <div className="p-16 md:p-[12%] max-w-full md:max-w-4xl w-full md:w-[60vw]">
+      <div className="p-16 md:p-[12%] max-w-full md:max-w-5xl w-full md:w-[70vw]">
         {children}
       </div>
     </div>

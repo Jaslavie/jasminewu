@@ -89,15 +89,27 @@ export default function CurationsContent() {
           I like to think of things like a scrapbook: nodes of artifacts to be
           observed, collected, then organized into a network.
         </p>
-        <p>
+        {/* <p>
           I enjoy curating experiences the most — be it places traveled,
           hackathons, or 1940s era photographs.
-        </p>
+        </p> */}
         <p>
           I like things that are slightly out of our attention, stripped to its
-          essence, and raw.
+          essence, and mechanically raw.
         </p>
-        <p>This is a collection of artifacts that resonate with me.</p>
+        <p>
+          Recently have been obsessed with sci-fi terminals and other
+          analog/primitive systems
+          <a
+            href="https://www.pinterest.com/Jaslavie/curations/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="citation"
+          >
+            [1]
+          </a>.
+        </p>
+        <p>This is a [growing] collection of artifacts that resonate with me.</p>
       </div>
 
       {/* Four Column Layout - Responsive Grid */}

@@ -12,12 +12,12 @@ export default function Footer() {
               <span className="hidden md:inline">•</span>
               <span>listening to</span>
               <a
-                href="https://open.spotify.com/track/5Tk40lTBPdaNe74hOJdVC2"
+                href="https://open.spotify.com/album/47pjW3XDPW99NShtkeewxl?si=Q4BX3GfeTj6rA06cOLT0SA"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline hover:text-white transition-colors"
               >
-                Radio, Lana Del Rey
+                TRON: Ares, Album
               </a>
             </div>
 
@@ -51,7 +51,7 @@ export default function Footer() {
 
         {/* Right side - Copyright */}
         <div className="text-left md:text-right">
-          <span>© 2025 made by jaslavie</span>
+          <span>© 2025 made by jasmine</span>
         </div>
       </div>
     </footer>

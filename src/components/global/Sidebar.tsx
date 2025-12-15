@@ -67,7 +67,7 @@ export default function Sidebar() {
         </div>
         <div className="h-6 border-r border-gray-700"></div>
         <div className="text-sm text-[rgba(255,255,255,0.75)] font-serif">
-          currently it's {Time} in Los Angeles
+          it's currently {Time} in Los Angeles
         </div>
         <div className="h-6 border-r border-gray-700"></div>
       </div>

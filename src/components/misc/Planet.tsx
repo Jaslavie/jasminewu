@@ -17,8 +17,9 @@ interface ASCIIArtAnimationProps {
 const ASCIIArtAnimation: React.FC<ASCIIArtAnimationProps> = ({
   className = "",
   fontSize = 18,
-  color = "rgba(255, 255, 255, 0.506)",
-  activeColor = "#fff",
+  // color = "rgba(255, 255, 255, 0.506)",
+  color = "rgba(255, 255, 255, 1)",
+  activeColor = "#rgba(255, 255, 255, 1)",
   opacity = 0.85,
   rippleRadius = 50,
   glitchDuration = 1000,
@@ -115,7 +116,7 @@ const ASCIIArtAnimation: React.FC<ASCIIArtAnimationProps> = ({
       (element as any).isGlitching = true;
 
       // Turn text white on hover
-      element.style.color = "#ffffff";
+      element.style.color = "#00ff00";
 
       const glitchChars = "!@#$%^&*()_+:,.";
       const originalChar = element.getAttribute("data-original") || "";
@@ -201,7 +202,7 @@ const ASCIIArtAnimation: React.FC<ASCIIArtAnimationProps> = ({
 
   //*----- styling for the hover effect -------
   const styles: React.CSSProperties = {
-    color: "rgba(255, 255, 255, 0.506)",
+    color: "rgba(255, 255, 255, 1)",
     whiteSpace: "pre",
     fontSize: `${fontSize}px`,
     lineHeight: 1,

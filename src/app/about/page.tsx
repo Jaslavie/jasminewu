@@ -30,25 +30,19 @@ export default function About() {
           >
             <h3>
               I design simulation environments for humans to co-reason with
-              machines and research the AI that drives them. The hardest
-              problems demand clarity under chaos. I believe this clarity comes
-              from radically fluid interfaces where humans can role-play the
-              future before it happens.
+              machines. My main focus is in adversarial attack modeling and
+              simulating human decision-making from neurological first principles.
             </h3>
             <h3>
-              Currently engineering ML systems for battlefield sims at {" "}
-              <Link href="https://www.gallatin.ai/">Gallatin</Link> and studying CS
-              & computational neuroscience at UCI. Before this, I spent a stint at {" "}
+              Currently engineering models for battlefield sims at{" "}
+              <Link href="https://www.gallatin.ai/">Gallatin</Link> and studying
+              CS & computational neuroscience at UCI. Before this, I helped
+              design early simulation systems at{" "}
               <Link href="https://www.palantir.com/platforms/gotham/">
                 Palantir
               </Link>{" "}
               and{" "}
-              <Link href="https://www.nasa.gov/johnson/exhibits/extravehicular-activities/">
-                NASA
-              </Link>
-              , and dabbled in startups at{" "}
-              <Link href="https://contrary.com/">Contrary</Link> and{" "}
-              <Link href="https://www.8vc.com/">8VC</Link>.
+              <Link href="https://www.nasa.gov/suits-and-rovers/">NASA</Link>.
             </h3>
             <h3>
               I'm an experimentalist at heart. I've won 15{" "}
@@ -62,19 +56,15 @@ export default function About() {
               </Link>
               , prototyped spacesuit displays, and{" "}
               <Link href="https://spacechi.media.mit.edu/">presented</Link>{" "}
-              lunar route-planning{" "}
-              <Link href="https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.SpaceCHI.2025.25">
-                simulations
-              </Link>{" "}
-              at the European Space Agency.
+              lunar route-planning simulations at the European Space Agency.
             </h3>
 
-            <h3>
+            {/* <h3>
               As a kid I built cardboard claw machines and sold handmade clothes
               in my living room. Augmenting perception and beauty felt like
               alchemy. Henceforth, I made it my life's mission to master (and
               elevate) the art of human experience.
-            </h3>
+            </h3> */}
 
             <h3>
               You can find me sampling cortados at coffee shops,{" "}
@@ -85,7 +75,8 @@ export default function About() {
               <i>
                 <Link href="https://docs.google.com/document/d/1CzlYHEmkBuTxmPa-5-PeTGrjZgd06Puz3gIr9QQ1f1c/edit?tab=t.0">
                   the Blue Boy
-                </Link>.
+                </Link>
+                .
               </i>
             </h3>
 
