@@ -30,11 +30,12 @@ export default function About() {
           >
             <h3>
               I design simulation environments for humans to co-reason with
-              machines. My main focus is in adversarial attack modeling and
-              simulating human decision-making from neurological first principles.
+              machines. My main focus is on adversarial attack modeling and
+              simulating human decision-making from neurological first
+              principles.
             </h3>
             <h3>
-              Currently engineering models for battlefield sims at{" "}
+              Currently engineering models for battlefield simulations at{" "}
               <Link href="https://www.gallatin.ai/">Gallatin</Link> and studying
               CS & computational neuroscience at UCI. Before this, I helped
               design early simulation systems at{" "}
@@ -67,11 +68,9 @@ export default function About() {
             </h3> */}
 
             <h3>
-              You can find me sampling cortados at coffee shops,{" "}
-              <Link href="https://substack.com/home/post/p-156802970">
-                writing
-              </Link>
-              , or lingering on a portrait at a museum. My favorite painting is{" "}
+              You can find me sampling cortados at coffee shops, rabbit holing
+              into military history at 3am, or lingering on a portrait at a
+              museum. My favorite painting is{" "}
               <i>
                 <Link href="https://docs.google.com/document/d/1CzlYHEmkBuTxmPa-5-PeTGrjZgd06Puz3gIr9QQ1f1c/edit?tab=t.0">
                   the Blue Boy

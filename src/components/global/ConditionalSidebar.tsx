@@ -2,7 +2,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import Sidebar from "./Sidebar";
+import Header from "./Header";
 
 export default function ConditionalSidebar() {
   const pathname = usePathname();
@@ -16,7 +16,7 @@ export default function ConditionalSidebar() {
   // Only render sidebar on desktop
   return (
     <div className="hidden md:block">
-      <Sidebar />
+      <Header />
     </div>
   );
 }
