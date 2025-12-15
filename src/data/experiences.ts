@@ -7,13 +7,13 @@ export interface Experience {
 export const experiences: Experience[] = [
   {
     title: "AI/ML Engineer, Gallatin AI",
-    date: "Fall 2024",
+    date: "2025 - 2026",
     description:
       "Building machine learning systems to simulate supply combat scenarios & designing interfaces to manipulate variables & wargame outcomes. First intern.",
   },
   {
     title: "Product Designer, Palantir",
-    date: "Summer 2024",
+    date: "Summer 2025",
     description:
       "Designing intelligence analysis framework to surface hidden dependencies across nodes and visualize cascading effects + entity-based knowledge sharing system in simulation platform. Deployed in active combat and used by 2,000 government officials.",
   },
