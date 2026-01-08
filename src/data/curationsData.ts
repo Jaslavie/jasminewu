@@ -127,6 +127,10 @@ export const curationsData: CurationData = {
       title: "The Huntington, San Marino",
       link: "https://www.huntington.org/",
     },
+    {
+      title: "Berth Coffee basement, tokyo",
+      link: "https://www.instagram.com/berthcoffee_tokyo/",
+    },
   ],
   //* ========== Blogs ==========
   // blogs: [
