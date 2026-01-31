@@ -11,13 +11,17 @@ export default function HomeLeftNav() {
     { href: "/writing", label: "writing" },
   ];
 
+  const isHomePage = pathname === "/";
+
   return (
     <nav className="hidden md:flex md:flex-col md:space-y-1 md:h-full">
       {/* Name/Logo */}
       <p>
         <Link
             href="/"
-            className="text-white hover:text-white transition-colors mb-2"
+            className={`transition-colors mb-2 ${
+              isHomePage ? "text-white" : "text-[var(--color-text-muted)] hover:text-white"
+            }`}
         >
             Jasmine Wu
         </Link>
@@ -31,7 +35,7 @@ export default function HomeLeftNav() {
                 <Link
                     href={item.href}
                     className={`transition-colors ${
-                    isActive ? "text-white" : "hover:text-white"
+                      isActive ? "text-white" : "text-[var(--color-text-muted)] hover:text-white"
                     }`}
                 >
                     {item.label}
