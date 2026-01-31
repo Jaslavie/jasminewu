@@ -8,8 +8,7 @@ export default function Footer() {
 
           {/* Mobile: Column layout, Desktop: Inline */}
           <div className="flex flex-col md:flex-row md:items-center space-y-1 md:space-y-0 md:space-x-2">
-            <div className="flex items-center space-x-1">
-              {/* <span className="hidden md:inline">•</span> */}
+            <div className="flex flex-wrap items-center gap-x-1">
               <span>listening to</span>
               <a
                 href="https://open.spotify.com/album/2ANVost0y2y52ema1E9xAZ"
@@ -45,8 +44,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Right side - Copyright */}
-        <div className="text-left md:text-right">
+        {/* Right side - Copyright - hidden on mobile */}
+        <div className="hidden md:block text-right">
           <span>© 2025 made by jasmine</span>
         </div>
       </div>

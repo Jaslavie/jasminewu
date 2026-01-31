@@ -104,9 +104,9 @@ export default function WritingContent() {
                 items={itemsForNavigation}
               >
                 <div
-                  className="flex flex-col"
+                  className="flex flex-col gap-3"
                   style={{
-                    opacity: showWritingList ? 1 : 0,
+                  opacity: showWritingList ? 1 : 0,
                     filter: showWritingList ? "blur(0px)" : "blur(4px)",
                     transition: "opacity 600ms ease-out, filter 600ms ease-out",
                   }}

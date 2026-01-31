@@ -94,12 +94,12 @@ export default function CurationsContent() {
 
             {/* Main Content */}
             <div
-              className="flex-1 flex flex-col md:flex-row gap-12 overflow-y-auto h-full"
+              className="flex-1 flex flex-col md:flex-row gap-8 md:gap-12 overflow-y-auto h-full"
               style={pageContentStyle}
             >
               {/* Description */}
               <div
-                className="curations-description w-[18vw] flex flex-col gap-3 flex-shrink-0"
+                className="curations-description w-full md:w-[18vw] flex flex-col gap-3 flex-shrink-0"
                 style={{
                   opacity: showDescription ? 1 : 0,
                   filter: showDescription ? "blur(0px)" : "blur(4px)",
@@ -130,7 +130,7 @@ export default function CurationsContent() {
               </div>
 
               {/* Four Column Layout */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:flex md:flex-row gap-auto flex-1 w-full">
+              <div className="grid grid-cols-2 gap-6 md:flex md:flex-row md:gap-auto flex-1 w-full">
                 {categories.map((category, index) => (
                   <CurationColumn
                     key={category}

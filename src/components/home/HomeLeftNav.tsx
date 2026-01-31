@@ -12,7 +12,7 @@ export default function HomeLeftNav() {
   ];
 
   return (
-    <nav className="flex flex-col space-y-1 h-full">
+    <nav className="hidden md:flex md:flex-col md:space-y-1 md:h-full">
       {/* Name/Logo */}
       <p>
         <Link
@@ -27,9 +27,8 @@ export default function HomeLeftNav() {
       {navItems.map((item) => {
         const isActive = pathname === item.href;
         return (
-            <p>
+            <p key={item.href}>
                 <Link
-                    key={item.href}
                     href={item.href}
                     className={`transition-colors ${
                     isActive ? "text-white" : "hover:text-white"

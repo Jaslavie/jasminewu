@@ -67,7 +67,7 @@ export default function HomeContentSinglePage() {
 
             {/* Content */}
             <div 
-              className={`max-w-[29vw] ${pageLayoutClasses.contentContainer}`} 
+              className={`w-full md:max-w-[29vw] ${pageLayoutClasses.contentContainer}`} 
               style={{
                 ...pageContentStyle,
                 opacity: showContent ? 1 : 0,
@@ -142,9 +142,9 @@ export default function HomeContentSinglePage() {
                 coffee shops.
                 </p>
                 {/* Social Links */}
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 font-serif">
+                <div className="flex flex-row items-center gap-2 font-serif">
                 <p>Elsewhere &nbsp; / &nbsp;</p>
-                <p className="flex flex-col sm:flex-row gap-4">
+                <p className="flex flex-row gap-4">
                     <Link href="mailto:jasminqw@uci.edu">Mail</Link>
                     <Link href="https://linkedin.com/in/jaslavie">Linkedin</Link>
                     <Link href="https://x.com/jaslavie">X</Link>
@@ -156,9 +156,9 @@ export default function HomeContentSinglePage() {
                 </div>
             </div>
 
-            {/* Right Side - ASCII Art - aligned with content row */}
+            {/* Right Side - ASCII Art - aligned with content row, hidden on mobile */}
             <div 
-              className="flex items-center justify-center"
+              className="hidden md:flex items-center justify-center"
               style={{
                 opacity: showPlanet ? 1 : 0,
                 filter: showPlanet ? "blur(0px)" : "blur(4px)",

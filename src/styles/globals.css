@@ -110,17 +110,14 @@
 @layer base {
   * {
     @apply m-0 p-0 box-border;
-    cursor: none !important;
   }
 
   html {
     @apply scroll-smooth bg-background;
-    cursor: none !important;
   }
 
   body {
     @apply bg-background text-text-body font-sans min-h-screen w-full overflow-x-hidden;
-    cursor: none !important;
   }
 
   /* Text hover effects */
@@ -135,7 +132,13 @@
   div,
   li {
     transition: color 0.3s ease;
-    cursor: none !important;
+  }
+
+  /* Custom cursor only on desktop (non-touch devices) */
+  @media (pointer: fine) and (min-width: 768px) {
+    *, html, body, h1, h2, h3, h4, h5, h6, p, span, div, li {
+      cursor: none !important;
+    }
   }
 
   h1 {
