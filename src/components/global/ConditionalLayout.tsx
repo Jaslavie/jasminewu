@@ -24,11 +24,7 @@ export default function ConditionalLayout({
 
   return (
     <div
-      className={` ${
-        isWritingPage
-          ? "py-[8vh] pt-16 md:pt-0" // Writing pages
-          : "py-[8vh] pt-16 md:pt-0" // Other pages
-      }`}
+      
     >
       {children}
     </div>
