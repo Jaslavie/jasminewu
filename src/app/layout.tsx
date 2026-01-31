@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="min-h-screen flex flex-col">
+        <div className="flex flex-col">
           {/* Custom Cursor */}
           <CustomCursor />
 
@@ -43,7 +43,7 @@ export default function RootLayout({
           <MobileNav />
 
           {/* Main Content Container - Mobile responsive */}
-          <div className="relative flex-1 min-h-screen md:h-[calc(100vh-2.5rem)]">
+          <div>
             {/* Conditional Left Sidebar - Hidden on writing pages and mobile */}
             <ConditionalSidebar />
 

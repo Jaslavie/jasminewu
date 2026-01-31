@@ -22,6 +22,9 @@ export default function BackgroundNoise() {
 
     // Generate subtle noise that won't interfere with text
     const generateNoise = () => {
+      // Guard against zero dimensions
+      if (canvas.width === 0 || canvas.height === 0) return;
+      
       const imageData = ctx.createImageData(canvas.width, canvas.height);
       const data = imageData.data;
 

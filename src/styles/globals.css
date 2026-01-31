@@ -103,6 +103,7 @@
   --color-text-body: rgba(255, 255, 255, 0.8);
   --color-text-subheading: rgba(255, 255, 255, 0.5);
   --color-text-active: #ffffff;
+  --color-text-muted: #6f6f6f;
 }
 
 /* ----- Base Styles ----- */
@@ -153,15 +154,15 @@
   }
 
   p {
-    @apply text-text-body font-normal text-[18px] leading-[1.75rem];
+    @apply text-text-body font-thin text-[16px]/[1.5] leading-[1.75rem];
   }
 
   ol {
-    @apply text-text-body font-normal text-[18px]/[1.75] list-decimal pl-6;
+    @apply text-text-body font-normal text-[16px]/[1.75] list-decimal pl-6;
   }
 
   li {
-    @apply text-text-body font-normal text-[18px]/[1.5] mb-2;
+    @apply text-text-body font-normal text-[16px]/[1.5] mb-2;
   }
 
   /* Target ChaosLink components inside paragraph tags */
@@ -199,6 +200,21 @@
     }
   }
 
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateX(-50%) translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.15s ease-out forwards;
+  }
+
   .text-gradient {
     @apply bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent;
   }
@@ -220,7 +236,8 @@
 
   /* Superscript Citation */
   .citation {
-    @apply text-[0.65em] align-super no-underline text-text-subheading transition-all duration-200;
+    @apply text-[0.65em] align-super no-underline transition-all duration-200;
+    color: var(--color-text-muted);
     font-family: var(--font-subheading);
     letter-spacing: 0.02em;
     margin-left: 0.2em;

@@ -8,8 +8,11 @@ export default function MobileNav() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
 
-  //* ==== Add all future writing pages here ====
-  const isWritingPage = pathname.includes("/principles");
+  //* ==== Page-specific visibility ====
+  const isHomePage = pathname === "/";
+  const isCurationsPage = pathname === "/curations";
+  const isWritingListPage = pathname === "/writing";
+  const isPrinciplesPage = pathname.includes("/principles");
 
   // Handle scroll effect
   useEffect(() => {
@@ -22,8 +25,8 @@ export default function MobileNav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Hide on writing pages (same pattern as sidebar and footer)
-  if (isWritingPage) {
+  // Hide on home, curations, writing list pages (have integrated nav) and principles page
+  if (isHomePage || isCurationsPage || isWritingListPage || isPrinciplesPage) {
     return null;
   }
 
@@ -31,7 +34,7 @@ export default function MobileNav() {
     { href: "/", label: "home" },
     { href: "/curations", label: "curations" },
     { href: "/writing", label: "writing" },
-    { href: "/about", label: "about" },
+    // { href: "/about", label: "about" },
   ];
 
   return (

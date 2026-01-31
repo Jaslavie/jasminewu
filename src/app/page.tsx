@@ -1,13 +1,7 @@
 "use client";
 
-import HomeContent from "@/components/home/HomeContent";
+import HomeContentSinglePage from "@/components/home/HomeContentSinglePage";
 
 export default function Home() {
-  return (
-    <div className="h-full relative">
-      <div className="relative z-10">
-        <HomeContent />
-      </div>
-    </div>
-  );
+  return <HomeContentSinglePage />;
 }

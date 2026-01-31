@@ -35,7 +35,7 @@ export default function WritingLink({
           ■
         </span>
       </div>
-      <div className="text-gray-400 hover:text-white text-[18px] transition-colors">
+      <div className="text-gray-400 hover:text-white text-[16px] transition-colors">
         {isExternal ? (
           <a
             href={href}

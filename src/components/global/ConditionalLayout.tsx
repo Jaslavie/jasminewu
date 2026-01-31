@@ -3,7 +3,6 @@
 
 import { usePathname } from "next/navigation";
 import { ReactNode } from "react";
-import SocialLinks from "./SocialLinks";
 
 interface ConditionalLayoutProps {
   children: ReactNode;
@@ -14,19 +13,24 @@ export default function ConditionalLayout({
 }: ConditionalLayoutProps) {
   const pathname = usePathname();
 
-  //* ==== Add all future writing pages here ====
+  //* ==== Page-specific layout logic ====
+  const isHomePage = pathname === "/";
   const isWritingPage = pathname.startsWith("/writing");
+
+  // Home page has its own integrated layout - no padding needed
+  if (isHomePage) {
+    return <div className="min-h-screen">{children}</div>;
+  }
 
   return (
     <div
-      className={`min-h-screen md:h-full ${
+      className={` ${
         isWritingPage
-          ? "py-[8vh] px-[5vw] pt-16 md:pt-0" // Writing pages: same layout as other pages with header/footer
-          : "py-[8vh] px-[5vw] pt-16 md:pt-0" // Other pages: mobile nav padding on mobile, sidebar margin on desktop
+          ? "py-[8vh] pt-16 md:pt-0" // Writing pages
+          : "py-[8vh] pt-16 md:pt-0" // Other pages
       }`}
     >
       {children}
-      {isWritingPage}
     </div>
   );
 }

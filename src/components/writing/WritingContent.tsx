@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from "react";
 import WritingLink from "./WritingLink";
-import ChaosLink from "@/components/ui/Link";
+import HomeLeftNav from "@/components/home/HomeLeftNav";
+import Footer from "@/components/global/Footer";
+import { pageContentStyle, pageLayoutClasses } from "@/components/home/pageStyles";
 
 export default function WritingContent() {
   const [showWritingList, setShowWritingList] = useState(false);
@@ -23,11 +25,6 @@ export default function WritingContent() {
       link: "https://www.notion.so/thought-engine-17574d39a483809680f8e416bab5d4dd",
       publishDate: "ongoing",
     },
-    // {
-    //   title: "the art of rehearsal",
-    //   link: "/writing/rehersal",
-    //   publishDate: "2025-10-30",
-    // },
     {
       title: "how to design living ecosystems",
       link: "/writing/living-ecosystems",
@@ -58,7 +55,6 @@ export default function WritingContent() {
       link: "https://research.contrary.com/company/overland-ai",
       publishDate: "2024-08-25",
     },
-    // { title: "paradigm shifts", link: "#" },
   ];
 
   // Sort writings by publish date (newest first), with "ongoing" at the top
@@ -101,55 +97,63 @@ export default function WritingContent() {
   };
 
   return (
-    <div className="pt-[14vh] px-[4vw] max-w-full md:max-w-4xl">
-      {/* <p>
-        occasionally, I write my streams of thought{" "}
-        <ChaosLink href="https://substack.com/@jaslavie">here</ChaosLink>.
-      </p> */}
+    <div className={pageLayoutClasses.screenSpace}>
+      <div className={`flex-1 flex flex-col ${pageLayoutClasses.screenPadding}`}>
+        {/* Main Content Area */}
+        <div className="flex-1 flex items-center justify-center min-h-0">
+          {/* Centered Container - nav + divider + content */}
+          <div className={`${pageLayoutClasses.innerWrapper} my-auto`}>
+            {/* Left Nav */}
+            <div className={pageLayoutClasses.navWidth}>
+              <HomeLeftNav />
+            </div>
 
-      {/* Writing List */}
-      <div
-        className="writing-list space-y-8"
-        style={{
-          opacity: showWritingList ? 1 : 0,
-          visibility: showWritingList ? "visible" : "hidden",
-          transition: "opacity 0.5s ease-in-out",
-        }}
-      >
-        {Object.entries(writingsByYear)
-          .sort(([a], [b]) => {
-            if (a === "ongoing") return -1;
-            if (b === "ongoing") return 1;
-            return parseInt(b) - parseInt(a);
-          })
-          .map(([year, yearWritings]) => (
-            <div key={year} className="space-y-4">
-              {year !== "ongoing" && (
-                <h3
-                  className="text-white pl-6"
-                  style={{ fontFamily: "'EB Garamond', serif" }}
-                >
-                  {year}
-                </h3>
-              )}
-              <div className="space-y-3">
-                {yearWritings.map((writing, index) => (
-                  <div key={index} className="space-y-1">
-                    <WritingLink href={writing.link}>
-                      {writing.title}
-                    </WritingLink>
-                    <p
-                      className="text-gray-400 text-sm pl-6"
-                      style={{ fontFamily: "'EB Garamond', serif" }}
-                    >
-                      {formatDate(writing.publishDate)}
-                    </p>
-                  </div>
-                ))}
+            {/* Vertical Divider */}
+            <div className={pageLayoutClasses.divider} />
+
+            {/* Main Content */}
+            <div style={pageContentStyle}>
+              {/* Writing List */}
+              <div
+                className="writing-list flex flex-col gap-3"
+                style={{
+                  opacity: showWritingList ? 1 : 0,
+                  filter: showWritingList ? "blur(0px)" : "blur(4px)",
+                  transition: "opacity 600ms ease-out, filter 600ms ease-out",
+                }}
+              >
+                {Object.entries(writingsByYear)
+                  .sort(([a], [b]) => {
+                    if (a === "ongoing") return -1;
+                    if (b === "ongoing") return 1;
+                    return parseInt(b) - parseInt(a);
+                  })
+                  .map(([year, yearWritings]) => (
+                    <div key={year} className="flex flex-col gap-3">
+                      {year !== "ongoing" && (
+                        <h3 style={{ color: "var(--color-text-muted)" }}>{year}</h3>
+                      )}
+                      <div className="flex flex-col gap-2 ml-4">
+                        {yearWritings.map((writing, index) => (
+                          <div key={index} className="flex flex-col gap-1">
+                            <WritingLink href={writing.link}>
+                              {writing.title}
+                            </WritingLink>
+                            <p className="text-sm ml-5" style={{ color: "#9A9A9A" }}>
+                              {formatDate(writing.publishDate)}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
               </div>
             </div>
-          ))}
+          </div>
+        </div>
       </div>
+
+      <Footer />
     </div>
   );
 }
