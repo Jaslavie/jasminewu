@@ -11,7 +11,7 @@ export const pageContentStyle = {
 export const pageLayoutClasses = {
   screenSpace: "h-screen overflow-hidden flex flex-col",
   container: "min-h-screen flex flex-col",
-  screenPadding: "px-[16vw] pt-[3vh]",
+  screenPadding: "px-[16vw] pt-[3vh] h-full",
   contentWrapper: "flex-1 flex justify-center py-[8vh]",
   innerWrapper: "flex flex-row gap-6 items-center h-[800px] py-[12vh] w-full",
   navWidth: "w-[100px] h-full",
