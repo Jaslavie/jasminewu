@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import WritingLink from "./WritingLink";
+import { WritingListBox, WritingItemBox } from "./WritingListBox";
 import HomeLeftNav from "@/components/home/HomeLeftNav";
 import Footer from "@/components/global/Footer";
 import { pageContentStyle, pageLayoutClasses } from "@/components/home/pageStyles";
@@ -66,24 +66,6 @@ export default function WritingContent() {
     );
   });
 
-  // Group writings by year
-  const writingsByYear = sortedWritings.reduce(
-    (acc, writing) => {
-      let year;
-      if (writing.publishDate === "ongoing") {
-        year = "ongoing";
-      } else {
-        year = new Date(writing.publishDate).getFullYear();
-      }
-      if (!acc[year]) {
-        acc[year] = [];
-      }
-      acc[year].push(writing);
-      return acc;
-    },
-    {} as Record<string | number, typeof writings>
-  );
-
   // Format date for display
   const formatDate = (dateString: string) => {
     if (dateString === "ongoing") {
@@ -95,6 +77,9 @@ export default function WritingContent() {
       year: "numeric",
     });
   };
+
+  // Prepare items for arrow key navigation
+  const itemsForNavigation = sortedWritings.map((w) => ({ href: w.link }));
 
   return (
     <div className={pageLayoutClasses.screenSpace}>
@@ -112,42 +97,31 @@ export default function WritingContent() {
             <div className={pageLayoutClasses.divider} />
 
             {/* Main Content */}
-            <div style={pageContentStyle}>
-              {/* Writing List */}
-              <div
-                className="writing-list flex flex-col gap-3"
-                style={{
-                  opacity: showWritingList ? 1 : 0,
-                  filter: showWritingList ? "blur(0px)" : "blur(4px)",
-                  transition: "opacity 600ms ease-out, filter 600ms ease-out",
-                }}
+            <div style={pageContentStyle} className="h-full">
+              {/* Writing List with box hover effect */}
+              <WritingListBox
+                className="writing-list flex flex-col h-full"
+                items={itemsForNavigation}
               >
-                {Object.entries(writingsByYear)
-                  .sort(([a], [b]) => {
-                    if (a === "ongoing") return -1;
-                    if (b === "ongoing") return 1;
-                    return parseInt(b) - parseInt(a);
-                  })
-                  .map(([year, yearWritings]) => (
-                    <div key={year} className="flex flex-col gap-3">
-                      {year !== "ongoing" && (
-                        <h3 style={{ color: "var(--color-text-muted)" }}>{year}</h3>
-                      )}
-                      <div className="flex flex-col gap-2 ml-4">
-                        {yearWritings.map((writing, index) => (
-                          <div key={index} className="flex flex-col gap-1">
-                            <WritingLink href={writing.link}>
-                              {writing.title}
-                            </WritingLink>
-                            <p className="text-sm ml-5" style={{ color: "#9A9A9A" }}>
-                              {formatDate(writing.publishDate)}
-                            </p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+                <div
+                  className="flex flex-col"
+                  style={{
+                    opacity: showWritingList ? 1 : 0,
+                    filter: showWritingList ? "blur(0px)" : "blur(4px)",
+                    transition: "opacity 600ms ease-out, filter 600ms ease-out",
+                  }}
+                >
+                  {sortedWritings.map((writing, index) => (
+                    <WritingItemBox
+                      key={index}
+                      href={writing.link}
+                      title={writing.title}
+                      date={formatDate(writing.publishDate)}
+                      index={index}
+                    />
                   ))}
-              </div>
+                </div>
+              </WritingListBox>
             </div>
           </div>
         </div>

@@ -130,7 +130,7 @@ export default function CurationsContent() {
               </div>
 
               {/* Four Column Layout */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:flex md:flex-row gap-10 md:gap-12 flex-1">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:flex md:flex-row gap-auto flex-1 w-full">
                 {categories.map((category, index) => (
                   <CurationColumn
                     key={category}
