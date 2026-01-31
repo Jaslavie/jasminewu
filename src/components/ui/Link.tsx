@@ -8,6 +8,7 @@ interface GlitchEffectOptions {
   speed?: number;
   duration?: number;
   fadeSpeed?: number;
+  marginBottom?: string;
 }
 
 interface GlitchEffectProps {
@@ -26,6 +27,7 @@ class GlitchEffect {
     speed: number;
     duration: number;
     fadeSpeed: number;
+    marginBottom: string;
   };
   private isGlitching: boolean;
   private originalWidth: number;
@@ -42,6 +44,7 @@ class GlitchEffect {
       speed: options.speed || 50,
       duration: options.duration || 150,
       fadeSpeed: options.fadeSpeed || 100,
+      marginBottom: options.marginBottom || "-6px",
     };
 
     // Check if window is available (client-side)
@@ -78,7 +81,7 @@ class GlitchEffect {
     this.wrapper.style.textAlign = "left";
     this.wrapper.style.overflow = "hidden";
     this.wrapper.style.whiteSpace = "nowrap";
-    this.wrapper.style.marginBottom = "-10px";
+    this.wrapper.style.marginBottom = this.options.marginBottom;
 
     // Initialize wrapper - ensure we don't duplicate if it already exists
     const existingWrapper = element.querySelector("span[data-glitch-wrapper]");
@@ -178,9 +181,13 @@ class GlitchEffect {
 export default function ChaosLink({
   href,
   children,
+  style,
+  marginBottom = "-6px",
 }: {
   href: string;
   children: React.ReactNode;
+  style?: React.CSSProperties;
+  marginBottom?: string;
 }) {
   const linkRef = useRef<HTMLAnchorElement>(null); // ref to the link element
   const glitchEffectRef = useRef<GlitchEffect | null>(null); // ref to the glitch effect
@@ -193,7 +200,7 @@ export default function ChaosLink({
       // Small delay to ensure styles are fully computed and cascade reveal is done
       const initTimer = setTimeout(() => {
         if (linkRef.current) {
-          glitchEffectRef.current = new GlitchEffect(linkRef.current);
+          glitchEffectRef.current = new GlitchEffect(linkRef.current, { marginBottom });
         }
       }, 50);
 
@@ -231,6 +238,7 @@ export default function ChaosLink({
         target="_blank"
         rel="noopener noreferrer"
         className="link"
+        style={style}
         ref={linkRef}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -244,6 +252,7 @@ export default function ChaosLink({
     <NextLink
       href={href}
       className="link"
+      style={style}
       ref={linkRef}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}

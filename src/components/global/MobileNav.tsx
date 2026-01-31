@@ -8,8 +8,8 @@ export default function MobileNav() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
 
-  //* ==== Add all future writing pages here ====
-  const isWritingPage = pathname.includes("/principles");
+  //* ==== Page-specific visibility ====
+  const isPrinciplesPage = pathname.includes("/principles");
 
   // Handle scroll effect
   useEffect(() => {
@@ -22,8 +22,8 @@ export default function MobileNav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Hide on writing pages (same pattern as sidebar and footer)
-  if (isWritingPage) {
+  // Hide on principles page only
+  if (isPrinciplesPage) {
     return null;
   }
 
@@ -31,13 +31,12 @@ export default function MobileNav() {
     { href: "/", label: "home" },
     { href: "/curations", label: "curations" },
     { href: "/writing", label: "writing" },
-    { href: "/about", label: "about" },
   ];
 
   return (
     <nav
       className={`md:hidden fixed top-0 left-0 right-0 border-b border-gray-800 z-30 transition-all duration-300 ${
-        isScrolled ? "bg-blue-900/20 backdrop-blur-sm" : "bg-transparent"
+        isScrolled ? "bg-background/90 backdrop-blur-sm" : "bg-background"
       }`}
     >
       <div className="flex justify-start items-center py-4 px-6">

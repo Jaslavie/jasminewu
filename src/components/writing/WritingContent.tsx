@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import WritingLink from "./WritingLink";
-import ChaosLink from "@/components/ui/Link";
+import { WritingListBox, WritingItemBox } from "./WritingListBox";
+import HomeLeftNav from "@/components/home/HomeLeftNav";
+import Footer from "@/components/global/Footer";
+import { pageContentStyle, pageLayoutClasses } from "@/components/home/pageStyles";
 
 export default function WritingContent() {
   const [showWritingList, setShowWritingList] = useState(false);
@@ -24,20 +26,15 @@ export default function WritingContent() {
       publishDate: "ongoing",
     },
     // {
-    //   title: "the art of rehearsal",
-    //   link: "/writing/rehersal",
-    //   publishDate: "2025-10-30",
+    //   title: "how to design living ecosystems",
+    //   link: "/writing/living-ecosystems",
+    //   publishDate: "2025-10-18",
     // },
-    {
-      title: "how to design living ecosystems",
-      link: "/writing/living-ecosystems",
-      publishDate: "2025-10-18",
-    },
-    {
-      title: "principles",
-      link: "/writing/principles",
-      publishDate: "2025-02-18",
-    },
+    // {
+    //   title: "principles",
+    //   link: "/writing/principles",
+    //   publishDate: "2025-02-18",
+    // },
     {
       title: "how to make outsized bets",
       link: "https://substack.com/home/post/p-156802970",
@@ -58,7 +55,6 @@ export default function WritingContent() {
       link: "https://research.contrary.com/company/overland-ai",
       publishDate: "2024-08-25",
     },
-    // { title: "paradigm shifts", link: "#" },
   ];
 
   // Sort writings by publish date (newest first), with "ongoing" at the top
@@ -69,24 +65,6 @@ export default function WritingContent() {
       new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime()
     );
   });
-
-  // Group writings by year
-  const writingsByYear = sortedWritings.reduce(
-    (acc, writing) => {
-      let year;
-      if (writing.publishDate === "ongoing") {
-        year = "ongoing";
-      } else {
-        year = new Date(writing.publishDate).getFullYear();
-      }
-      if (!acc[year]) {
-        acc[year] = [];
-      }
-      acc[year].push(writing);
-      return acc;
-    },
-    {} as Record<string | number, typeof writings>
-  );
 
   // Format date for display
   const formatDate = (dateString: string) => {
@@ -100,56 +78,56 @@ export default function WritingContent() {
     });
   };
 
-  return (
-    <div className="pt-[14vh] px-[4vw] max-w-full md:max-w-4xl">
-      {/* <p>
-        occasionally, I write my streams of thought{" "}
-        <ChaosLink href="https://substack.com/@jaslavie">here</ChaosLink>.
-      </p> */}
+  // Prepare items for arrow key navigation
+  const itemsForNavigation = sortedWritings.map((w) => ({ href: w.link }));
 
-      {/* Writing List */}
-      <div
-        className="writing-list space-y-8"
-        style={{
-          opacity: showWritingList ? 1 : 0,
-          visibility: showWritingList ? "visible" : "hidden",
-          transition: "opacity 0.5s ease-in-out",
-        }}
-      >
-        {Object.entries(writingsByYear)
-          .sort(([a], [b]) => {
-            if (a === "ongoing") return -1;
-            if (b === "ongoing") return 1;
-            return parseInt(b) - parseInt(a);
-          })
-          .map(([year, yearWritings]) => (
-            <div key={year} className="space-y-4">
-              {year !== "ongoing" && (
-                <h3
-                  className="text-white pl-6"
-                  style={{ fontFamily: "'EB Garamond', serif" }}
-                >
-                  {year}
-                </h3>
-              )}
-              <div className="space-y-3">
-                {yearWritings.map((writing, index) => (
-                  <div key={index} className="space-y-1">
-                    <WritingLink href={writing.link}>
-                      {writing.title}
-                    </WritingLink>
-                    <p
-                      className="text-gray-400 text-sm pl-6"
-                      style={{ fontFamily: "'EB Garamond', serif" }}
-                    >
-                      {formatDate(writing.publishDate)}
-                    </p>
-                  </div>
-                ))}
-              </div>
+  return (
+    <div className={pageLayoutClasses.screenSpace}>
+      <div className={`flex-1 flex flex-col ${pageLayoutClasses.screenPadding}`}>
+        {/* Main Content Area */}
+        <div className="flex-1 flex items-center justify-center min-h-0">
+          {/* Centered Container - nav + divider + content */}
+          <div className={`${pageLayoutClasses.innerWrapper} my-auto`}>
+            {/* Left Nav */}
+            <div className={pageLayoutClasses.navWidth}>
+              <HomeLeftNav />
             </div>
-          ))}
+
+            {/* Vertical Divider */}
+            <div className={pageLayoutClasses.divider} />
+
+            {/* Main Content */}
+            <div style={pageContentStyle} className="h-full">
+              {/* Writing List with box hover effect */}
+              <WritingListBox
+                className="writing-list flex flex-col h-full"
+                items={itemsForNavigation}
+              >
+                <div
+                  className="flex flex-col gap-3"
+                  style={{
+                  opacity: showWritingList ? 1 : 0,
+                    filter: showWritingList ? "blur(0px)" : "blur(4px)",
+                    transition: "opacity 600ms ease-out, filter 600ms ease-out",
+                  }}
+                >
+                  {sortedWritings.map((writing, index) => (
+                    <WritingItemBox
+                      key={index}
+                      href={writing.link}
+                      title={writing.title}
+                      date={formatDate(writing.publishDate)}
+                      index={index}
+                    />
+                  ))}
+                </div>
+              </WritingListBox>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <Footer />
     </div>
   );
 }

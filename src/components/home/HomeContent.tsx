@@ -29,6 +29,14 @@ export default function HomeContent() {
   const heroFade = useFadeInOnScroll({ delay: 0 });
   const planetFade = useFadeInOnScroll({ delay: 200 });
 
+  // useEffect(() => {
+  //   // Automatically show video after the planet appears (1400ms + 200ms buffer)
+  //   setTimeout(() => {
+  //     console.log("Setting showVideo to true - planet should be visible");
+  //     setShowVideo(true);
+  //   }, 1600);
+  // }, []);
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -70,6 +78,7 @@ export default function HomeContent() {
           style={{ marginTop: 0, ...planetFade.fadeInStyle }}
         >
           <div id="Planet" className="relative z-10">
+            \
             <Planet />
           </div>
         </div>

@@ -4,7 +4,7 @@ export interface CurationItem {
 }
 
 export interface CurationData {
-  history: CurationItem[];
+  // history: CurationItem[];
   writing: CurationItem[];
   films: CurationItem[];
   places: CurationItem[];
@@ -14,32 +14,32 @@ export interface CurationData {
 export const curationsData: CurationData = {
 
   //* ========== History ==========
-  history: [
-    {
-      title: "D-Day FDR Prayer",
-      link: "https://www.youtube.com/watch?v=IMy1ZLyaSqk&list=PLrvljGPnb6yWcRrURLXtfkWlN3J5MswoP&index=3",
-    },
-    {
-      title: "Downfall (film)",
-      link: "https://en.wikipedia.org/wiki/Downfall_(2004_film)",
-    },
-    {
-      title: "Hacksaw Ridge (film)",
-      link: "https://www.imdb.com/title/tt2119532/?ref_=nv_sr_srsg_1_tt_5_nm_2_in_0_q_hacksa",
-    },
-    {
-      title: "Rise and Fall of the 3rd Reich",
-      link: "https://www.amazon.com/Rise-Fall-Third-Reich-ebook/dp/B07XD76H41/",
-    },
-    {
-      title: "The Diary of Anne Frank",
-      link: "https://www.amazon.com/Anne-Frank-Diary-Young-Girl/dp/B007Z332A0/",
-    },
-    {
-      title: "Flight 93 Revolt",
-      link: "https://www.youtube.com/watch?v=x5i-tvvHX68",
-    },
-  ],
+  // history: [
+  //   {
+  //     title: "D-Day FDR Prayer",
+  //     link: "https://www.youtube.com/watch?v=IMy1ZLyaSqk&list=PLrvljGPnb6yWcRrURLXtfkWlN3J5MswoP&index=3",
+  //   },
+  //   {
+  //     title: "Downfall (film)",
+  //     link: "https://en.wikipedia.org/wiki/Downfall_(2004_film)",
+  //   },
+  //   {
+  //     title: "Hacksaw Ridge (film)",
+  //     link: "https://www.imdb.com/title/tt2119532/?ref_=nv_sr_srsg_1_tt_5_nm_2_in_0_q_hacksa",
+  //   },
+  //   {
+  //     title: "Rise and Fall of the 3rd Reich",
+  //     link: "https://www.amazon.com/Rise-Fall-Third-Reich-ebook/dp/B07XD76H41/",
+  //   },
+  //   {
+  //     title: "The Diary of Anne Frank",
+  //     link: "https://www.amazon.com/Anne-Frank-Diary-Young-Girl/dp/B007Z332A0/",
+  //   },
+  //   {
+  //     title: "Flight 93 Revolt",
+  //     link: "https://www.youtube.com/watch?v=x5i-tvvHX68",
+  //   },
+  // ],
 
   //* ========== Writing ==========
   writing: [
@@ -95,9 +95,13 @@ export const curationsData: CurationData = {
       title: "The Last of Us",
       link: "https://www.imdb.com/title/tt3581920/",
     },
+    // {
+    //   title: "Pride and Prejudice",
+    //   link: "https://www.imdb.com/title/tt0414387/",
+    // },
     {
-      title: "Pride and Prejudice",
-      link: "https://www.imdb.com/title/tt0414387/",
+      title: "Hacksaw Ridge",
+      link: "https://www.imdb.com/title/tt2119532/?ref_=nv_sr_srsg_1_tt_5_nm_2_in_0_q_hacksa",
     },
     {
       title: "Tron: Ares",

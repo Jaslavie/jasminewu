@@ -2,21 +2,25 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import Sidebar from "./Sidebar";
+import Header from "./Header";
 
 export default function ConditionalSidebar() {
   const pathname = usePathname();
 
-  //* ==== Add all future writing pages here ====
-  const isWritingPage = pathname.startsWith("/writing");
+  //* ==== Hide header on pages with integrated nav ====
+  const isHomePage = pathname === "/";
+  const isCurationsPage = pathname === "/curations";
+  const isWritingPage = pathname === "/writing";
 
-  // Show sidebar on all pages including writing pages (desktop only)
-  // Mobile navigation is handled separately
+  // Don't show header on home, curations, or writing pages - they have their own integrated nav
+  if (isHomePage || isCurationsPage || isWritingPage) {
+    return null;
+  }
 
-  // Only render sidebar on desktop
+  // Only render sidebar on desktop for other pages
   return (
     <div className="hidden md:block">
-      <Sidebar />
+      <Header />
     </div>
   );
 }

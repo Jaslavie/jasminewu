@@ -103,23 +103,21 @@
   --color-text-body: rgba(255, 255, 255, 0.8);
   --color-text-subheading: rgba(255, 255, 255, 0.5);
   --color-text-active: #ffffff;
+  --color-text-muted: #6f6f6f;
 }
 
 /* ----- Base Styles ----- */
 @layer base {
   * {
     @apply m-0 p-0 box-border;
-    cursor: none !important;
   }
 
   html {
     @apply scroll-smooth bg-background;
-    cursor: none !important;
   }
 
   body {
     @apply bg-background text-text-body font-sans min-h-screen w-full overflow-x-hidden;
-    cursor: none !important;
   }
 
   /* Text hover effects */
@@ -134,7 +132,13 @@
   div,
   li {
     transition: color 0.3s ease;
-    cursor: none !important;
+  }
+
+  /* Custom cursor only on desktop (non-touch devices) */
+  @media (pointer: fine) and (min-width: 768px) {
+    *, html, body, h1, h2, h3, h4, h5, h6, p, span, div, li {
+      cursor: none !important;
+    }
   }
 
   h1 {
@@ -153,15 +157,15 @@
   }
 
   p {
-    @apply text-text-body font-normal text-[18px] leading-[1.75rem];
+    @apply text-text-body font-thin text-[16px]/[1.5] leading-[1.75rem];
   }
 
   ol {
-    @apply text-text-body font-normal text-[18px]/[1.75] list-decimal pl-6;
+    @apply text-text-body font-normal text-[16px]/[1.75] list-decimal pl-6;
   }
 
   li {
-    @apply text-text-body font-normal text-[18px]/[1.5] mb-2;
+    @apply text-text-body font-normal text-[16px]/[1.5] mb-2;
   }
 
   /* Target ChaosLink components inside paragraph tags */
@@ -170,8 +174,7 @@
   }
 
   ::selection {
-    /* @apply bg-[#3639f8ed] z-10 text-white; */
-    @apply bg-[#00ff00] z-10 text-black;
+    @apply bg-[#00ff00] text-black;
   }
 }
 
@@ -199,6 +202,21 @@
     }
   }
 
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateX(-50%) translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.15s ease-out forwards;
+  }
+
   .text-gradient {
     @apply bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent;
   }
@@ -220,11 +238,12 @@
 
   /* Superscript Citation */
   .citation {
-    @apply text-[0.65em] align-super no-underline text-text-subheading transition-all duration-200;
+    @apply text-[0.65em] align-super no-underline transition-all duration-200;
+    color: var(--color-text-muted);
     font-family: var(--font-subheading);
     letter-spacing: 0.02em;
     margin-left: 0.2em;
-    padding: 4px;
+    padding: 2px;
     border: 1px solid transparent;
   }
 

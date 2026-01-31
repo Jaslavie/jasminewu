@@ -5,6 +5,23 @@ import React, { useEffect, useState, useCallback } from "react";
 export default function CustomCursor() {
   const [cursorStyle, setCursorStyle] = useState("retro");
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+  // Check if device is touch-enabled
+  useEffect(() => {
+    const checkTouchDevice = () => {
+      setIsTouchDevice(
+        'ontouchstart' in window || 
+        navigator.maxTouchPoints > 0 ||
+        window.matchMedia('(pointer: coarse)').matches
+      );
+    };
+    checkTouchDevice();
+    
+    // Also check on resize in case of device orientation changes
+    window.addEventListener('resize', checkTouchDevice);
+    return () => window.removeEventListener('resize', checkTouchDevice);
+  }, []);
 
   const updateCursorPosition = useCallback((e: MouseEvent) => {
     setPosition({ x: e.clientX, y: e.clientY });
@@ -35,6 +52,12 @@ export default function CustomCursor() {
   }, []);
 
   useEffect(() => {
+    // Don't apply custom cursor on touch devices
+    if (isTouchDevice) {
+      document.body.style.cursor = "auto";
+      return;
+    }
+
     // Hide default cursor
     document.body.style.cursor = "none";
 
@@ -51,11 +74,16 @@ export default function CustomCursor() {
       document.removeEventListener("mouseout", handleMouseOut);
       document.body.style.cursor = "auto";
     };
-  }, [updateCursorPosition, handleMouseOver, handleMouseOut]);
+  }, [updateCursorPosition, handleMouseOver, handleMouseOut, isTouchDevice]);
+
+  // Don't render custom cursor on touch devices
+  if (isTouchDevice) {
+    return null;
+  }
 
   return (
     <div
-      className="fixed pointer-events-none z-[9999]"
+      className="fixed pointer-events-none z-[9999] hidden md:block"
       style={{
         left: position.x,
         top: position.y,

@@ -3,7 +3,7 @@ import WritingContent from "@/components/writing/WritingContent";
 
 export default function Writing() {
   return (
-    <div className="h-full relative">
+    <div>
       <WritingContent />
     </div>
   );
