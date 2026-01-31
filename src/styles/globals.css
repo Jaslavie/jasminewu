@@ -171,8 +171,7 @@
   }
 
   ::selection {
-    /* @apply bg-[#3639f8ed] z-10 text-white; */
-    @apply bg-[#00ff00] z-10 text-black;
+    @apply bg-[#00ff00] text-black;
   }
 }
 

@@ -37,13 +37,15 @@ export function WritingListBox({ children, className = "", items }: WritingListB
         e.preventDefault();
         setFocusedIndex((prev) => {
           if (prev === null) return 0;
-          return Math.min(prev + 1, items.length - 1);
+          // Wrap around to start when reaching end
+          return prev >= items.length - 1 ? 0 : prev + 1;
         });
       } else if (e.key === "ArrowUp") {
         e.preventDefault();
         setFocusedIndex((prev) => {
           if (prev === null) return items.length - 1;
-          return Math.max(prev - 1, 0);
+          // Wrap around to end when reaching start
+          return prev <= 0 ? items.length - 1 : prev - 1;
         });
       } else if (e.key === "Enter" && focusedIndex !== null) {
         e.preventDefault();
@@ -123,10 +125,10 @@ export function WritingItemBox({ href, title, date, index }: WritingItemBoxProps
 
   return (
     <div
-      className="px-2 py-1.5 transition-all duration-200 cursor-pointer"
+      className="px-3 py-2 transition-all duration-200 cursor-pointer"
       style={{
         border: isFocused ? "1px solid rgba(255, 255, 255, 0.6)" : "1px solid transparent",
-        opacity: isOtherFocused ? 0.4 : 1,
+        opacity: isOtherFocused ? 0.6 : 1,
       }}
       onMouseEnter={() => setFocusedIndex(index)}
       onMouseLeave={() => setFocusedIndex(null)}
