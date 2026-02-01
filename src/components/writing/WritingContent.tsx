@@ -85,9 +85,9 @@ export default function WritingContent() {
     <div className={pageLayoutClasses.screenSpace}>
       <div className={`flex-1 flex flex-col ${pageLayoutClasses.screenPadding}`}>
         {/* Main Content Area */}
-        <div className="flex-1 flex items-center justify-center min-h-0">
+        <div className="flex-1 flex items-start lg:items-center justify-center min-h-0 overflow-hidden">
           {/* Centered Container - nav + divider + content */}
-          <div className={`${pageLayoutClasses.innerWrapper} my-auto`}>
+          <div className={`${pageLayoutClasses.innerWrapper}`}>
             {/* Left Nav */}
             <div className={pageLayoutClasses.navWidth}>
               <HomeLeftNav />

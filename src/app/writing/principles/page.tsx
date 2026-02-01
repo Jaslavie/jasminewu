@@ -55,7 +55,7 @@ export default function Principles() {
         }}
       >
         {/* Main content - centered */}
-        <div className="w-full max-w-3xl p-16 md:py-[8%] md:px-[6%]">
+        <div className="w-full max-w-3xl p-16 lg:py-[8%] lg:px-[6%]">
           {/* Header with integrated back navigation */}
           <WritingHeader
             title={postData.title}

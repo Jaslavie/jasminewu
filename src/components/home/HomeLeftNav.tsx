@@ -14,7 +14,7 @@ export default function HomeLeftNav() {
   const isHomePage = pathname === "/";
 
   return (
-    <nav className="hidden md:flex md:flex-col md:space-y-1 md:h-full">
+    <nav className="hidden lg:flex lg:flex-col lg:space-y-1 h-full items-start justify-start">
       {/* Name/Logo */}
       <p>
         <Link

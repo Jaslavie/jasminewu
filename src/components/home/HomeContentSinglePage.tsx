@@ -54,9 +54,9 @@ export default function HomeContentSinglePage() {
     <div className={pageLayoutClasses.screenSpace}>
         <div className={`flex flex-col ${pageLayoutClasses.screenPadding}`}>
         {/* Main Content Area */}
-        <div className="flex-1 flex items-center justify-center min-h-0">
+        <div className="flex-1 flex items-start lg:items-center justify-center min-h-0 overflow-hidden">
             {/* Centered Container - nav + divider + content + planet */}
-            <div className={`${pageLayoutClasses.innerWrapper} my-auto`}>
+            <div className={`${pageLayoutClasses.innerWrapper}`}>
             {/* Left Nav - Aligned to top of content */}
             <div className={pageLayoutClasses.navWidth}>
                 <HomeLeftNav />
@@ -67,7 +67,7 @@ export default function HomeContentSinglePage() {
 
             {/* Content */}
             <div 
-              className={`w-full md:max-w-[29vw] ${pageLayoutClasses.contentContainer}`} 
+              className={`w-full lg:max-w-[29vw] ${pageLayoutClasses.contentContainer}`} 
               style={{
                 ...pageContentStyle,
                 opacity: showContent ? 1 : 0,
@@ -123,17 +123,17 @@ export default function HomeContentSinglePage() {
                     <Link href="https://www.nasa.gov/suits-and-rovers/">NASA</Link>
                 </li>
                 <li>
+                    Presented{" "} 
+                    <Link href="https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.SpaceCHI.2025.25">research</Link>{" "} 
+                    on lunar navigation tooling at the European Space Agency
+                </li>
+                <li>
                     Built 911 dispatch agents at{" "}
                     <Link href="/projects/dispatch-ai">Berkeley Skydeck</Link>
                 </li>
                 <li>
                     Won 15 national{" "}
                     <Link href="https://devpost.com/jaslavie">hackathons</Link>
-                </li>
-                <li>
-                    Presented{" "} 
-                    <Link href="https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.SpaceCHI.2025.25">research</Link>{" "} 
-                    at the European Space Agency
                 </li>
                 </ul>
                 <p>
@@ -158,7 +158,7 @@ export default function HomeContentSinglePage() {
 
             {/* Right Side - ASCII Art - aligned with content row, hidden on mobile */}
             <div 
-              className="hidden md:flex items-center justify-center"
+              className="hidden lg:flex items-center justify-center"
               style={{
                 opacity: showPlanet ? 1 : 0,
                 filter: showPlanet ? "blur(0px)" : "blur(4px)",

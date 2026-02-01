@@ -135,8 +135,8 @@ export default async function WritingPostPage({
   };
 
   return (
-    <div className="min-h-screen relative flex justify-center px-8 md:px-0">
-      <div className="p-8 md:p-[6%] max-w-full md:max-w-4xl w-full md:w-[60vw]">
+    <div className="min-h-screen relative flex justify-center px-8 lg:px-0">
+      <div className="p-8 lg:p-[6%] max-w-full lg:max-w-4xl w-full lg:w-[60vw]">
         {/* Back Navigation */}
         <Link
           href="/writing"

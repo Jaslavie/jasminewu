@@ -11,7 +11,7 @@ export default function SocialLinks() {
   ];
 
   return (
-    <div className="hidden md:flex fixed top-[4%] md:top-[4%] right-[6%] md:right-[4%] flex-col items-end space-y-2 z-20">
+    <div className="hidden lg:flex fixed top-[4%] lg:top-[4%] right-[6%] lg:right-[4%] flex-col items-end space-y-2 z-20">
       {/* Social links */}
       <div className="flex flex-col items-end space-y-1">
         {socialLinks.map((link) => (

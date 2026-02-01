@@ -19,7 +19,7 @@ export default function ConditionalSidebar() {
 
   // Only render sidebar on desktop for other pages
   return (
-    <div className="hidden md:block">
+    <div className="hidden lg:block">
       <Header />
     </div>
   );

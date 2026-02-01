@@ -110,14 +110,17 @@
 @layer base {
   * {
     @apply m-0 p-0 box-border;
+    cursor: none !important;
   }
 
   html {
     @apply scroll-smooth bg-background;
+    cursor: none !important;
   }
 
   body {
     @apply bg-background text-text-body font-sans min-h-screen w-full overflow-x-hidden;
+    cursor: none !important;
   }
 
   /* Text hover effects */
@@ -132,12 +135,13 @@
   div,
   li {
     transition: color 0.3s ease;
+    cursor: none !important;
   }
 
-  /* Custom cursor only on desktop (non-touch devices) */
-  @media (pointer: fine) and (min-width: 768px) {
+  /* Restore default cursor on touch devices */
+  @media (pointer: coarse) {
     *, html, body, h1, h2, h3, h4, h5, h6, p, span, div, li {
-      cursor: none !important;
+      cursor: auto !important;
     }
   }
 
@@ -254,7 +258,7 @@
 }
 
 /* Mobile responsive typography */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   h1 {
     @apply text-[28px] leading-[1.2];
   }
@@ -264,14 +268,14 @@
   }
 
   p {
-    @apply text-[14px]/[1.6];
+    @apply text-[16px]/[1.6];
   }
 
   ol {
-    @apply text-[14px]/[1.6];
+    @apply text-[16px]/[1.6];
   }
 
   li {
-    @apply text-[14px]/[1.6] mb-3;
+    @apply text-[16px]/[1.6] mb-3;
   }
 }

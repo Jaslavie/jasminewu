@@ -35,7 +35,7 @@ export default function MobileNav() {
 
   return (
     <nav
-      className={`md:hidden fixed top-0 left-0 right-0 border-b border-gray-800 z-30 transition-all duration-300 ${
+      className={`lg:hidden fixed top-0 left-0 right-0 border-b border-gray-800 z-30 transition-all duration-300 ${
         isScrolled ? "bg-background/90 backdrop-blur-sm" : "bg-background"
       }`}
     >
