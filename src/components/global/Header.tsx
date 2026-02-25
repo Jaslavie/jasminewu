@@ -50,7 +50,7 @@ export default function Header() {
 
   const navItems = [
     { href: "/curations", label: "curations" },
-    { href: "/writing", label: "writing" },
+    // { href: "/writing", label: "writing" },
     // { href: "/about", label: "about" },
   ];
 

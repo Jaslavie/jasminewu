@@ -30,7 +30,7 @@ export default function MobileNav() {
   const navItems = [
     { href: "/", label: "home" },
     { href: "/curations", label: "curations" },
-    { href: "/writing", label: "writing" },
+    // { href: "/writing", label: "writing" },
   ];
 
   return (
