@@ -93,7 +93,7 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className={`text-base font-serif transition-colors px-4 py-3 ${isActive ? "text-white" : "text-gray-400 hover:text-white"}`}
+              className={`text-base font-serif transition-colors px-4 py-3 ${isActive ? "text-white" : "text-[var(--color-text-subheading)] hover:text-white"}`}
             >
               {item.label}
             </Link>

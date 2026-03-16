@@ -20,7 +20,7 @@ export default function SocialLinks() {
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white text-sm transition-colors"
+            className="text-[var(--color-text-subheading)] hover:text-white text-sm transition-colors"
           >
             {link.label}
           </Link>

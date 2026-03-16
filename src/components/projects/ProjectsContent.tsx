@@ -5,6 +5,7 @@ import { ListBox, ListItemBox } from "@/components/ui/ListBox";
 import HomeLeftNav from "@/components/home/HomeLeftNav";
 import Footer from "@/components/global/Footer";
 import { pageContentStyle, pageLayoutClasses } from "@/components/home/pageStyles";
+import NavHint from "@/components/ui/NavHint";
 
 export default function ProjectsContent() {
   const [showList, setShowList] = useState(false);
@@ -25,12 +26,18 @@ export default function ProjectsContent() {
       description: "A spacesuit display to help astronauts make autonomous decisions on the moon",
       link: "/projects/nasa",
     },
+    {
+      title: "Decision support system for lunar traversal",
+      description: "SpaceCHI 2025 paper on autonomous decision-making during extravehicular activities",
+      link: "https://doi.org/10.4230/OASIcs.SpaceCHI.2025.25",
+    },
   ];
 
   const itemsForNavigation = projects.map((p) => ({ href: p.link }));
 
   return (
     <div className={pageLayoutClasses.screenSpace}>
+      <NavHint label={{ normal: "to navigate", observing: "to escape" }} />
       <div className={`flex-1 flex flex-col ${pageLayoutClasses.screenPadding}`}>
         {/* Main Content Area */}
         <div className="flex-1 flex items-start lg:items-center justify-center min-h-0 overflow-hidden">

@@ -1,6 +1,15 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useCallback, useState } from "react";
+import { createPortal } from "react-dom";
+import planetLinks from "@/data/planetLinks.json";
+
+interface PlanetLink {
+  title: string;
+  url: string;
+  description: string;
+  image: string | null;
+}
 
 interface ASCIIArtAnimationProps {
   className?: string;
@@ -27,6 +36,39 @@ const ASCIIArtAnimation: React.FC<ASCIIArtAnimationProps> = ({
   zIndex = 10,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [hoveredLink, setHoveredLink] = useState<PlanetLink | null>(null);
+  const [cardPos, setCardPos] = useState({ top: 0, left: 0 });
+  const [mounted, setMounted] = useState(false);
+  const hoverTimeout = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => { setMounted(true); }, []);
+
+  const pickRandomLink = useCallback(() => {
+    return planetLinks[Math.floor(Math.random() * planetLinks.length)] as PlanetLink;
+  }, []);
+
+  const handlePlanetEnter = useCallback(() => {
+    if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
+    const link = pickRandomLink();
+    setHoveredLink(link);
+
+    if (containerRef.current) {
+      const rect = containerRef.current.getBoundingClientRect();
+      setCardPos({
+        top: rect.top + rect.height / 2,
+        left: rect.left + rect.width / 2,
+      });
+    }
+  }, [pickRandomLink]);
+
+  const handlePlanetLeave = useCallback(() => {
+    hoverTimeout.current = setTimeout(() => setHoveredLink(null), 150);
+  }, []);
+
+  const handlePlanetClick = useCallback(() => {
+    const link = hoveredLink || pickRandomLink();
+    window.open(link.url, "_blank", "noopener,noreferrer");
+  }, [hoveredLink, pickRandomLink]);
 
   const art = `                                                                                       _.oo.
                                       _ .u [[/;:,.                     _.odMMM'
@@ -84,12 +126,11 @@ const ASCIIArtAnimation: React.FC<ASCIIArtAnimationProps> = ({
         // Measure the original character width
         const charWidth = context.measureText(originalChar).width;
 
-        // Create a wrapper with fixed width
         const wrapper = document.createElement("span");
         wrapper.className = "char-wrapper";
         wrapper.style.display = "inline-block";
-        wrapper.style.width = `${Math.max(charWidth, 8)}px`; // Minimum 8px width
-        wrapper.style.overflow = "hidden";
+        wrapper.style.width = `${Math.max(charWidth, 8)}px`;
+        wrapper.style.overflow = "visible";
         wrapper.style.textAlign = "center";
         wrapper.style.position = "relative";
 
@@ -111,14 +152,16 @@ const ASCIIArtAnimation: React.FC<ASCIIArtAnimationProps> = ({
       ".char"
     ) as NodeListOf<HTMLSpanElement>;
 
+    // Gray color matching observation text dimming
+    const glitchColor = "rgba(255, 255, 255, 0.35)";
+
     function simpleGlitch(element: HTMLSpanElement): void {
       if ((element as any).isGlitching) return;
       (element as any).isGlitching = true;
 
-      // Turn text white on hover
-      element.style.color = "#00ff00";
+      element.style.color = glitchColor;
 
-      const glitchChars = "!@#$%^&*()_+:,.";
+      const glitchChars = "ψℏ∂∇∫∞λξφπεΩΣΔμδ";
       const originalChar = element.getAttribute("data-original") || "";
       let iterations = 0;
       const maxIterations = 4;
@@ -137,11 +180,10 @@ const ASCIIArtAnimation: React.FC<ASCIIArtAnimationProps> = ({
         if (iterations >= maxIterations) {
           clearInterval(interval);
           element.textContent = originalChar;
-          // Reset color after glitch
           element.style.color = "";
           (element as any).isGlitching = false;
         }
-      }, 120); // speed of the glitch
+      }, 120);
     }
 
     function findNearbyChars(
@@ -169,13 +211,10 @@ const ASCIIArtAnimation: React.FC<ASCIIArtAnimationProps> = ({
       }) as HTMLSpanElement[];
     }
 
-    // Add event listeners to each character
     wrappedChars.forEach((char) => {
       const handleMouseEnter = () => {
-        // Glitch the hovered character
         simpleGlitch(char);
 
-        // Glitch nearby characters with delay
         const nearbyChars = findNearbyChars(char, rippleRadius);
         nearbyChars.forEach((nearChar, index) => {
           setTimeout(() => {
@@ -185,12 +224,9 @@ const ASCIIArtAnimation: React.FC<ASCIIArtAnimationProps> = ({
       };
 
       char.addEventListener("mouseenter", handleMouseEnter);
-
-      // Store the listener for cleanup
       (char as any)._listener = handleMouseEnter;
     });
 
-    // Cleanup function
     return () => {
       wrappedChars.forEach((char) => {
         if ((char as any)._listener) {
@@ -214,10 +250,85 @@ const ASCIIArtAnimation: React.FC<ASCIIArtAnimationProps> = ({
     transition: "opacity 0.5s ease-in-out",
   };
 
+  const hoverCard = hoveredLink && mounted ? createPortal(
+    <div
+      className="fixed z-[10000] pointer-events-none"
+      style={{
+        top: cardPos.top,
+        left: cardPos.left,
+        transform: "translate(-50%, -110%)",
+      }}
+    >
+      <div
+        style={{
+          width: 180,
+          maxWidth: 180,
+          background: "#0d0d0d",
+          border: "1px solid rgba(255,255,255,0.15)",
+          boxShadow: "0 4px 16px rgba(0,0,0,0.5)",
+          fontFamily: "'EB Garamond', serif",
+          overflow: "hidden",
+        }}
+      >
+        {hoveredLink.image && (
+          <img
+            src={hoveredLink.image}
+            alt=""
+            style={{
+              width: "100%",
+              height: 72,
+              maxHeight: 72,
+              objectFit: "cover",
+              display: "block",
+            }}
+          />
+        )}
+        <div style={{ padding: "8px 12px" }}>
+          <div
+            style={{
+              color: "#fff",
+              fontSize: 13,
+              lineHeight: 1.4,
+              fontWeight: 500,
+            }}
+          >
+            {hoveredLink.title}
+          </div>
+          {hoveredLink.description && (
+            <div
+              style={{
+                color: "rgba(255,255,255,0.6)",
+                fontSize: 11,
+                lineHeight: 1.4,
+                marginTop: 4,
+              }}
+            >
+              {hoveredLink.description}
+            </div>
+          )}
+        </div>
+      </div>
+    </div>,
+    document.body
+  ) : null;
+
   return (
-    <div ref={containerRef} style={styles} className={className}>
-      {art}
-    </div>
+    <>
+      <div
+        ref={containerRef}
+        style={styles}
+        className={className}
+        onClick={handlePlanetClick}
+        onMouseEnter={handlePlanetEnter}
+        onMouseLeave={handlePlanetLeave}
+        role="link"
+        tabIndex={0}
+        onKeyDown={(e) => { if (e.key === "Enter") handlePlanetClick(); }}
+      >
+        {art}
+      </div>
+      {hoverCard}
+    </>
   );
 };
 

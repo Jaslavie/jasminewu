@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import Link from "@/components/ui/Link";
 import Planet from "@/components/misc/Planet";
 import HomeLeftNav from "./HomeLeftNav";
 import { Citation } from "@/components/ui/Tooltip";
 import Footer from "@/components/global/Footer";
 import { pageContentStyle, pageLayoutClasses } from "./pageStyles";
+import NavHint from "@/components/ui/NavHint";
 
 export default function HomeContentSinglePage() {
   const [time, setTime] = useState("");
@@ -50,8 +51,78 @@ export default function HomeContentSinglePage() {
     };
   }, []);
 
+  // Hidden paragraph navigation via arrow keys
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [focusedParagraph, setFocusedParagraph] = useState<number | null>(null);
+
+  const getParagraphs = useCallback(() => {
+    if (!contentRef.current) return [];
+    return Array.from(
+      contentRef.current.querySelectorAll<HTMLElement>(":scope > p, :scope > h3, :scope > ul, :scope > div.flex")
+    );
+  }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const paragraphs = getParagraphs();
+      if (paragraphs.length === 0) return;
+
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        setFocusedParagraph((prev) =>
+          prev === null ? 0 : (prev + 1) % paragraphs.length
+        );
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        setFocusedParagraph((prev) =>
+          prev === null ? paragraphs.length - 1 : (prev - 1 + paragraphs.length) % paragraphs.length
+        );
+      } else if (e.key === "Escape") {
+        setFocusedParagraph(null);
+      }
+    };
+
+    const handleClick = () => {
+      setFocusedParagraph(null);
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("click", handleClick);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("click", handleClick);
+    };
+  }, [getParagraphs]);
+
+  useEffect(() => {
+    const paragraphs = getParagraphs();
+    paragraphs.forEach((el, i) => {
+      const allChildren = el.querySelectorAll<HTMLElement>("*");
+      if (focusedParagraph === null) {
+        el.style.opacity = "";
+        el.style.filter = "";
+        el.style.transition = "opacity 0.3s ease, filter 0.3s ease";
+        allChildren.forEach((child) => { child.style.opacity = ""; });
+      } else if (i === focusedParagraph) {
+        el.style.opacity = "1";
+        el.style.filter = "blur(0px)";
+        el.style.transition = "opacity 0.3s ease, filter 0.3s ease";
+        allChildren.forEach((child) => { child.style.opacity = ""; });
+      } else {
+        el.style.opacity = "0.15";
+        el.style.filter = "blur(1.5px)";
+        el.style.transition = "opacity 0.3s ease, filter 0.3s ease";
+        allChildren.forEach((child) => { child.style.opacity = "0.15"; });
+      }
+    });
+  }, [focusedParagraph, getParagraphs]);
+
+  const isObserving = focusedParagraph !== null;
+
   return (
     <div className={pageLayoutClasses.screenSpace}>
+      <NavHint isObserving={isObserving} />
+
       <div className={`flex flex-col ${pageLayoutClasses.screenPadding}`}>
         {/* Main Content Area */}
         <div className="flex-1 flex items-start lg:items-center justify-center min-h-0 overflow-hidden">
@@ -67,6 +138,7 @@ export default function HomeContentSinglePage() {
 
             {/* Content */}
             <div
+              ref={contentRef}
               className={`w-full lg:max-w-[29vw] ${pageLayoutClasses.contentContainer}`}
               style={{
                 ...pageContentStyle,

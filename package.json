@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "scrape-links": "node scripts/scrape-planet-links.mjs",
+    "dev": "node scripts/scrape-planet-links.mjs && next dev",
+    "build": "node scripts/scrape-planet-links.mjs && next build",
     "start": "next start",
     "lint": "next lint"
   },

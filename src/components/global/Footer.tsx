@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="relative bg-background text-gray-400 text-[16px] border-t border-gray-800 z-20 mt-auto">
+    <footer className="relative bg-background text-[var(--color-text-subheading)] text-[16px] border-t border-[var(--color-card-border)] z-20 mt-auto">
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center px-6 py-4 space-y-3 lg:space-y-0">
         {/* Left side - Currently info */}
         <div className="flex flex-col lg:flex-row lg:flex-wrap lg:items-center lg:justify-start space-y-1 lg:space-y-0 lg:space-x-2 text-left">
@@ -31,7 +31,7 @@ export default function Footer() {
 
         {/* Right side - Copyright - hidden on mobile */}
         <div className="hidden lg:block text-right">
-          <span>© 2025 made by jasmine</span>
+          <span>© 2026 made by jasmine</span>
         </div>
       </div>
     </footer>

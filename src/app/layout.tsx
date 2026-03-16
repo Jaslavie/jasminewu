@@ -6,6 +6,7 @@ import BackgroundNoise from "@/components/global/BackgroundNoise";
 import ConditionalFooter from "@/components/global/ConditionalFooter";
 import MobileNav from "@/components/global/MobileNav";
 import CustomCursor from "@/components/ui/CustomCursor";
+import ObservationCollapse from "@/components/ui/ObservationCollapse";
 
 export const metadata: Metadata = {
   title: "Jasmine Wu",
@@ -33,8 +34,8 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div className="flex flex-col">
-          {/* Custom Cursor */}
           <CustomCursor />
+          <ObservationCollapse />
 
           {/* Background Noise Effect */}
           <BackgroundNoise />

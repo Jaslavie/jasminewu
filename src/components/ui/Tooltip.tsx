@@ -47,7 +47,7 @@ export default function Tooltip({ children, content }: TooltipProps) {
     <div
       ref={tooltipRef}
       className="fixed z-[10000] px-4 py-3 
-        bg-[#0d0d0d] border border-gray-500 
+        bg-[#0d0d0d] border border-[var(--color-card-border)] 
         text-white text-[15px] leading-[1.6] font-serif
         w-[260px]"
       style={{

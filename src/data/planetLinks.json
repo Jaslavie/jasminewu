@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Evolution as backstop for reinforcement learning",
+    "url": "https://gwern.net/backstop",
+    "description": "Multi-level optimization problems with competing timescales, and why the slow, painful ground truth (ex: evolution) is always better than efficient/sophisticated systems (ex: the brain).",
+    "image": null
+  },
+  {
+    "title": "No Solvency, No Security",
+    "url": "https://americanaffairsjournal.org/2025/11/no-solvency-no-security/",
+    "description": "The budgetary dimensions of deterrence matter. Production is deterrence, the factory is the weapon.",
+    "image": "https://americanaffairsjournal.org/wp-content/uploads/2025/11/Stephens.jpg"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=ef568d0CrRY",
+    "title": "1000 Players Simulate Civilization: Rich & Poor",
+    "description": "Simulating civilization in minecraft. Not a technical simulation, but I thought this has interesting storytelling.",
+    "image": "https://img.youtube.com/vi/ef568d0CrRY/hqdefault.jpg"
+  },
+  {
+    "url": "https://www.notion.com/blog/steam-steel-and-infinite-minds-ai",
+    "title": "Steam, Steel, and Infinite Minds",
+    "description": "Every era is shaped by its miracle material. Steel forged the Gilded Age. Semiconductors switched o…",
+    "image": "https://images.ctfassets.net/spoqsaf9291f/uts9aElqOyfc4aimLyfZk/091341e0a6a10be1a99eb42b5b280993/Steam__Steel__and_Infinite_Minds.png"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=oRdxUFDoQe0",
+    "title": "Michael Jackson - Beat It",
+    "description": "Generational song.",
+    "image": "https://img.youtube.com/vi/oRdxUFDoQe0/hqdefault.jpg"
+  }
+]

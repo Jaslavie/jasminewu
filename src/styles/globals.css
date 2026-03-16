@@ -178,7 +178,16 @@
   }
 
   ::selection {
-    @apply bg-[#00ff00] text-black;
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+  }
+
+  .observation-active {
+    color: rgba(255, 255, 255, 0.35);
+    transition: color 0.2s ease;
+  }
+  .observation-active ::selection {
+    color: #ffffff;
   }
 }
 

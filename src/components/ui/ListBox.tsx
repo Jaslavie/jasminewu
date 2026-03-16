@@ -93,7 +93,7 @@ export function ListItemBox({ href, title, subtitle, index }: ListItemBoxProps) 
       style={{ fontFamily: "'EB Garamond', serif" }}
     >
       <span className="text-[16px] text-white">{title}</span>
-      <span className="text-sm" style={{ color: isFocused ? "#d1d5db" : "var(--color-text-subheading)" }}>
+      <span className="text-sm" style={{ color: isFocused ? "var(--color-text-body)" : "var(--color-text-subheading)" }}>
         {subtitle}
       </span>
     </div>
