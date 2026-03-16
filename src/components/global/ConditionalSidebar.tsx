@@ -9,11 +9,12 @@ export default function ConditionalSidebar() {
 
   //* ==== Hide header on pages with integrated nav ====
   const isHomePage = pathname === "/";
+  const isProjectsPage = pathname === "/projects";
   const isCurationsPage = pathname === "/curations";
   const isWritingPage = pathname === "/writing";
 
-  // Don't show header on home, curations, or writing pages - they have their own integrated nav
-  if (isHomePage || isCurationsPage || isWritingPage) {
+  // Don't show header on pages that have their own integrated nav
+  if (isHomePage || isProjectsPage || isCurationsPage || isWritingPage) {
     return null;
   }
 

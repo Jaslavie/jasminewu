@@ -134,7 +134,7 @@ export const writingPost = defineType({
       return {
         title: title,
         subtitle: new Date(subtitle).toLocaleDateString(),
-        media: media,
+      media: media,
       };
     },
   },

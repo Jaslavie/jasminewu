@@ -49,6 +49,7 @@ export default function Header() {
   }, [lastScrollY]);
 
   const navItems = [
+    { href: "/projects", label: "projects" },
     { href: "/curations", label: "curations" },
     // { href: "/writing", label: "writing" },
     // { href: "/about", label: "about" },

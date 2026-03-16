@@ -7,6 +7,7 @@ export default function HomeLeftNav() {
   const pathname = usePathname();
 
   const navItems = [
+    { href: "/projects", label: "projects" },
     { href: "/curations", label: "curations" },
     // { href: "/writing", label: "writing" },
   ];

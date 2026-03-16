@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { WritingListBox, WritingItemBox } from "./WritingListBox";
+import { ListBox, ListItemBox } from "@/components/ui/ListBox";
 import HomeLeftNav from "@/components/home/HomeLeftNav";
 import Footer from "@/components/global/Footer";
 import { pageContentStyle, pageLayoutClasses } from "@/components/home/pageStyles";
@@ -99,29 +99,29 @@ export default function WritingContent() {
             {/* Main Content */}
             <div style={pageContentStyle} className="h-full">
               {/* Writing List with box hover effect */}
-              <WritingListBox
-                className="writing-list flex flex-col h-full"
+              <ListBox
+                className="flex flex-col h-full"
                 items={itemsForNavigation}
               >
                 <div
                   className="flex flex-col gap-3"
                   style={{
-                  opacity: showWritingList ? 1 : 0,
+                    opacity: showWritingList ? 1 : 0,
                     filter: showWritingList ? "blur(0px)" : "blur(4px)",
                     transition: "opacity 600ms ease-out, filter 600ms ease-out",
                   }}
                 >
                   {sortedWritings.map((writing, index) => (
-                    <WritingItemBox
+                    <ListItemBox
                       key={index}
                       href={writing.link}
                       title={writing.title}
-                      date={formatDate(writing.publishDate)}
+                      subtitle={formatDate(writing.publishDate)}
                       index={index}
                     />
                   ))}
                 </div>
-              </WritingListBox>
+              </ListBox>
             </div>
           </div>
         </div>

@@ -29,6 +29,7 @@ export default function MobileNav() {
 
   const navItems = [
     { href: "/", label: "home" },
+    { href: "/projects", label: "projects" },
     { href: "/curations", label: "curations" },
     // { href: "/writing", label: "writing" },
   ];

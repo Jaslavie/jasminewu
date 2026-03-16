@@ -8,11 +8,12 @@ export default function ConditionalFooter() {
 
   //* ==== Page-specific footer visibility ====
   const isHomePage = pathname === "/";
+  const isProjectsPage = pathname === "/projects";
   const isCurationsPage = pathname === "/curations";
   const isWritingPage = pathname === "/writing";
 
-  // Home, curations, and writing pages have their own integrated footer
-  if (isHomePage || isCurationsPage || isWritingPage) {
+  // Pages with their own integrated footer
+  if (isHomePage || isProjectsPage || isCurationsPage || isWritingPage) {
     return null;
   }
 
