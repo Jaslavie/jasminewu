@@ -9,11 +9,18 @@ export default function ConditionalFooter() {
   //* ==== Page-specific footer visibility ====
   const isHomePage = pathname === "/";
   const isProjectsPage = pathname === "/projects";
+  const isProjectDetailPage = pathname.startsWith("/projects/");
   const isCurationsPage = pathname === "/curations";
   const isWritingPage = pathname === "/writing";
 
   // Pages with their own integrated footer
-  if (isHomePage || isProjectsPage || isCurationsPage || isWritingPage) {
+  if (
+    isHomePage ||
+    isProjectsPage ||
+    isProjectDetailPage ||
+    isCurationsPage ||
+    isWritingPage
+  ) {
     return null;
   }
 

@@ -154,10 +154,7 @@ export default function HomeContentSinglePage() {
 
                 {/* Headline with typing cursor */}
                 <h3>
-                  &gt; Currently: engineering battlefield simulations @
-                  <Link href="https://www.gallatin.ai/" marginBottom="-10px">
-                    Gallatin
-                  </Link>
+                  &gt; Hi, I'm Jasmine. 
                   <span
                     className="inline-block w-[2px] h-[0.9em] bg-white ml-1 align-middle"
                     style={{ opacity: showCursor ? 1 : 0 }}
@@ -167,41 +164,30 @@ export default function HomeContentSinglePage() {
 
               <p>
                 I design and deploy simulations to study how humans and machines
-                adapt in uncertain and adversarial environments
+                make decisions in uncertain and adversarial environments
                 <Citation
                   number={1}
-                  content="Most recently worked on red teaming and simulation-based analysis for military wargames"
+                  content="Most recently worked on simulation-based analysis and optimization models for military wargames."
                 />
                 .{" "}
-                {/* My main focus is in adversarial attack
-                modeling
-                <Citation
-                  number={1}
-                  content="Primarily worked on red teaming and other predictive models for wargames"
-                />{" "}
-                and explainability
-                <Citation
-                  number={2}
-                  content="Exposing chain of thought reasoning behind said prediction models"
-                />.  */}
                 I also study CS and computational neuroscience at UCI.
               </p>
 
               <p>
                 I am an experimentalist at heart and think by building.
-                Recently:
+                Previously:
               </p>
               <ul className="list-disc space-y-1 ml-5">
+                <li>
+                  Spent 6 months deploying models for battlefield logistics at{" "}
+                  <Link href="https://www.gallatin.ai/">
+                  Gallatin
+                  </Link>
+                </li>
                 <li>
                   Designed a system for analyzing military intel at{" "}
                   <Link href="https://time.com/6691662/ai-ukraine-war-palantir/">
                     Palantir
-                  </Link>
-                </li>
-                <li>
-                  Built spacesuit interfaces with{" "}
-                  <Link href="https://www.nasa.gov/suits-and-rovers/">
-                    NASA
                   </Link>
                 </li>
                 <li>
@@ -212,14 +198,20 @@ export default function HomeContentSinglePage() {
                   on lunar navigation tooling at the European Space Agency
                 </li>
                 <li>
+                  Built spacesuit interfaces with{" "}
+                  <Link href="https://www.nasa.gov/suits-and-rovers/">
+                    NASA
+                  </Link>
+                </li>
+                {/* <li>
                   Built 911 dispatch agents at{" "}
                   <Link href="/projects/dispatch-ai">Berkeley Skydeck</Link>
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                   Attended a{" "}
                   <Link href="https://devpost.com/jaslavie">hackathon</Link>{" "}
                   every weekend and won 15{" "}
-                </li>
+                </li> */}
               </ul>
               <p>
                 I often think about how intelligence emerges from simple systems,

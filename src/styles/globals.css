@@ -104,6 +104,33 @@
   --color-text-subheading: rgba(255, 255, 255, 0.5);
   --color-text-active: #ffffff;
   --color-text-muted: #6f6f6f;
+
+  /* Theme interaction tokens */
+  --selection-background: rgba(255, 255, 255, 0.15);
+  --selection-color: #ffffff;
+  --observation-dim: rgba(255, 255, 255, 0.35);
+  --observation-selection-color: #ffffff;
+  --theme-link-color: rgb(243 244 246);
+  --theme-link-decoration: rgb(75 85 99);
+  --theme-link-hover-color: #ffffff;
+  --theme-link-hover-decoration: #ffffff;
+  --theme-citation-color: var(--color-text-muted);
+  --theme-citation-hover-color: #ffffff;
+  --theme-citation-hover-border: #ffffff;
+}
+
+.theme-light {
+  --selection-background: rgba(0, 0, 0, 0.12);
+  --selection-color: rgba(0, 0, 0, 0.85);
+  --observation-dim: rgba(0, 0, 0, 0.22);
+  --observation-selection-color: #000000;
+  --theme-link-color: #000000;
+  --theme-link-decoration: rgba(0, 0, 0, 0.45);
+  --theme-link-hover-color: #6c665f;
+  --theme-link-hover-decoration: #6c665f;
+  --theme-citation-color: rgba(0, 0, 0, 0.45);
+  --theme-citation-hover-color: #6c665f;
+  --theme-citation-hover-border: #6c665f;
 }
 
 /* ----- Base Styles ----- */
@@ -178,16 +205,38 @@
   }
 
   ::selection {
-    background: rgba(255, 255, 255, 0.15);
-    color: #ffffff;
+    background: var(--selection-background);
+    color: var(--selection-color);
+  }
+
+  ::-moz-selection {
+    background: var(--selection-background);
+    color: var(--selection-color);
   }
 
   .observation-active {
-    color: rgba(255, 255, 255, 0.35);
+    color: var(--observation-dim);
     transition: color 0.2s ease;
   }
   .observation-active ::selection {
-    color: #ffffff;
+    background: var(--selection-background);
+    color: var(--observation-selection-color);
+  }
+  .observation-active ::-moz-selection {
+    background: var(--selection-background);
+    color: var(--observation-selection-color);
+  }
+
+  .theme-light .observation-active,
+  .theme-light .observation-active .link,
+  .theme-light .observation-active .citation,
+  .theme-light .observation-active a,
+  .theme-light .observation-active span {
+    color: var(--observation-dim) !important;
+  }
+
+  .theme-light .observation-active .citation {
+    border-color: rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -235,7 +284,9 @@
   }
 
   .link {
-    @apply text-gray-100 underline-offset-4 relative  decoration-dotted decoration-gray-600 underline;
+    @apply underline-offset-4 relative underline;
+    color: var(--theme-link-color);
+    text-decoration-color: var(--theme-link-decoration);
 
     /* inherit from parent */
     font-size: inherit;
@@ -246,13 +297,15 @@
   }
 
   .link:hover {
-    @apply underline decoration-solid decoration-white text-white;
+    @apply underline decoration-solid;
+    color: var(--theme-link-hover-color);
+    text-decoration-color: var(--theme-link-hover-decoration);
   }
 
   /* Superscript Citation */
   .citation {
     @apply text-[0.65em] align-super no-underline transition-all duration-200;
-    color: var(--color-text-muted);
+    color: var(--theme-citation-color);
     font-family: var(--font-subheading);
     letter-spacing: 0.02em;
     margin-left: 0.2em;
@@ -261,8 +314,8 @@
   }
 
   .citation:hover {
-    @apply text-white;
-    border: 1px solid white;
+    color: var(--theme-citation-hover-color);
+    border: 1px solid var(--theme-citation-hover-border);
   }
 }
 

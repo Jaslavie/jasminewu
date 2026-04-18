@@ -10,6 +10,7 @@ export default function MobileNav() {
 
   //* ==== Page-specific visibility ====
   const isPrinciplesPage = pathname.includes("/principles");
+  const isProjectDetailPage = pathname.startsWith("/projects/");
 
   // Handle scroll effect
   useEffect(() => {
@@ -22,8 +23,8 @@ export default function MobileNav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Hide on principles page only
-  if (isPrinciplesPage) {
+  // Hide on pages with custom top navigation
+  if (isPrinciplesPage || isProjectDetailPage) {
     return null;
   }
 

@@ -129,7 +129,7 @@ class GlitchEffect {
 
     // Add hover styles
     this.wrapper.style.textDecoration = "underline";
-    this.wrapper.style.textDecorationColor = "white";
+    this.wrapper.style.textDecorationColor = this.originalStyles.color;
     this.wrapper.style.textDecorationStyle = "solid";
 
     let iterations = 0;
@@ -193,7 +193,11 @@ export default function ChaosLink({
   const glitchEffectRef = useRef<GlitchEffect | null>(null); // ref to the glitch effect
 
   // Check if the link is external
-  const isExternal = href.startsWith("http") || href.startsWith("https");
+  const isExternal =
+    href.startsWith("http") ||
+    href.startsWith("https") ||
+    href.startsWith("mailto:") ||
+    href.startsWith("tel:");
 
   useEffect(() => {
     if (linkRef.current && !glitchEffectRef.current) {

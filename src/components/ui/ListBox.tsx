@@ -1,6 +1,13 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect, useCallback, ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useCallback,
+  ReactNode,
+} from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -17,6 +24,10 @@ const ListHoverContext = createContext<ListHoverContextType>({
   totalItems: 0,
   items: [],
 });
+
+export function useListHover() {
+  return useContext(ListHoverContext);
+}
 
 interface ListBoxProps {
   children: ReactNode;
@@ -81,7 +92,7 @@ interface ListItemBoxProps {
 }
 
 export function ListItemBox({ href, title, subtitle, index }: ListItemBoxProps) {
-  const { focusedIndex, setFocusedIndex } = useContext(ListHoverContext);
+  const { focusedIndex, setFocusedIndex } = useListHover();
   const isExternal = href.startsWith("http") || href.startsWith("https");
 
   const isFocused = focusedIndex === index;
@@ -89,11 +100,18 @@ export function ListItemBox({ href, title, subtitle, index }: ListItemBoxProps) 
 
   const content = (
     <div
-      className="flex flex-col gap-0"
+      className="flex flex-col gap-[1px]"
       style={{ fontFamily: "'EB Garamond', serif" }}
     >
       <span className="text-[16px] text-white">{title}</span>
-      <span className="text-sm" style={{ color: isFocused ? "var(--color-text-body)" : "var(--color-text-subheading)" }}>
+      <span
+        className="text-sm leading-tight"
+        style={{
+          color: isFocused
+            ? "var(--color-text-body)"
+            : "var(--color-text-subheading)",
+        }}
+      >
         {subtitle}
       </span>
     </div>

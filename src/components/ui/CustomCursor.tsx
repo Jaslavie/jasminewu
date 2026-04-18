@@ -6,6 +6,7 @@ export default function CustomCursor() {
   const [cursorStyle, setCursorStyle] = useState("retro");
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [isLightTheme, setIsLightTheme] = useState(false);
 
   // Check if device is touch-enabled
   useEffect(() => {
@@ -29,6 +30,7 @@ export default function CustomCursor() {
 
   const handleMouseOver = useCallback((e: MouseEvent) => {
     const target = e.target as HTMLElement;
+    setIsLightTheme(Boolean(target.closest(".theme-light")));
 
     // Check if hovering over text elements
     if (
@@ -83,7 +85,7 @@ export default function CustomCursor() {
 
   return (
     <div
-      className="fixed pointer-events-none z-[9999]"
+      className="fixed pointer-events-none z-[10001]"
       style={{
         left: position.x,
         top: position.y,
@@ -95,14 +97,14 @@ export default function CustomCursor() {
       {cursorStyle === "retro" ? (
         <div className="w-6 h-6">
           <img
-            src="/cursorRetro.svg"
+            src={isLightTheme ? "/cursorRetroBlack.svg" : "/cursorRetro.svg"}
             alt="cursor"
             className="w-[25px] h-[25px]"
           />
         </div>
       ) : (
         // text cursor
-        <div className="w-0.5 h-5 bg-white shadow-lg" />
+        <div className={`w-0.5 h-5 shadow-lg ${isLightTheme ? "bg-black" : "bg-white"}`} />
       )}
     </div>
   );
