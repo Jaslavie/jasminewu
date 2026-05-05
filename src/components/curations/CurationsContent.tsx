@@ -143,7 +143,7 @@ export default function CurationsContent() {
                 </p>
                 <p>
                   This is a [growing] collection of artifacts that resonate with
-                  me.
+                  me, and humans that inspire me.
                 </p>
               </div>
 

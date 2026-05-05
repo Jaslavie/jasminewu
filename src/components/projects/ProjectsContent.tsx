@@ -81,7 +81,7 @@ export default function ProjectsContent() {
       link: "/projects/pltr",
       hoverImage: "/projects/palantir_hover.png",
       hoverCaption:
-        "Interned with Palantir US Gov (Gotham) over the summer in D.C. to design workflows for an active conflict.",
+        "Interned with Palantir US Gov (Gotham) over the summer in D.C. to design workflows for a live operational theater.",
     },
     {
       title: "Anticipatory heads up display for spacesuits",

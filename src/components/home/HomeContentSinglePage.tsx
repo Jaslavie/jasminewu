@@ -58,7 +58,9 @@ export default function HomeContentSinglePage() {
   const getParagraphs = useCallback(() => {
     if (!contentRef.current) return [];
     return Array.from(
-      contentRef.current.querySelectorAll<HTMLElement>(":scope > p, :scope > h3, :scope > ul, :scope > div.flex")
+      contentRef.current.querySelectorAll<HTMLElement>(
+        ":scope > p, :scope > h3, :scope > ul, :scope > div.flex",
+      ),
     );
   }, []);
 
@@ -70,12 +72,14 @@ export default function HomeContentSinglePage() {
       if (e.key === "ArrowDown") {
         e.preventDefault();
         setFocusedParagraph((prev) =>
-          prev === null ? 0 : (prev + 1) % paragraphs.length
+          prev === null ? 0 : (prev + 1) % paragraphs.length,
         );
       } else if (e.key === "ArrowUp") {
         e.preventDefault();
         setFocusedParagraph((prev) =>
-          prev === null ? paragraphs.length - 1 : (prev - 1 + paragraphs.length) % paragraphs.length
+          prev === null
+            ? paragraphs.length - 1
+            : (prev - 1 + paragraphs.length) % paragraphs.length,
         );
       } else if (e.key === "Escape") {
         setFocusedParagraph(null);
@@ -102,17 +106,23 @@ export default function HomeContentSinglePage() {
         el.style.opacity = "";
         el.style.filter = "";
         el.style.transition = "opacity 0.3s ease, filter 0.3s ease";
-        allChildren.forEach((child) => { child.style.opacity = ""; });
+        allChildren.forEach((child) => {
+          child.style.opacity = "";
+        });
       } else if (i === focusedParagraph) {
         el.style.opacity = "1";
         el.style.filter = "blur(0px)";
         el.style.transition = "opacity 0.3s ease, filter 0.3s ease";
-        allChildren.forEach((child) => { child.style.opacity = ""; });
+        allChildren.forEach((child) => {
+          child.style.opacity = "";
+        });
       } else {
         el.style.opacity = "0.15";
         el.style.filter = "blur(1.5px)";
         el.style.transition = "opacity 0.3s ease, filter 0.3s ease";
-        allChildren.forEach((child) => { child.style.opacity = "0.15"; });
+        allChildren.forEach((child) => {
+          child.style.opacity = "0.15";
+        });
       }
     });
   }, [focusedParagraph, getParagraphs]);
@@ -154,7 +164,7 @@ export default function HomeContentSinglePage() {
 
                 {/* Headline with typing cursor */}
                 <h3>
-                  &gt; Hi, I'm Jasmine. 
+                  &gt; Hi, I'm Jasmine.
                   <span
                     className="inline-block w-[2px] h-[0.9em] bg-white ml-1 align-middle"
                     style={{ opacity: showCursor ? 1 : 0 }}
@@ -163,26 +173,24 @@ export default function HomeContentSinglePage() {
               </div>
 
               <p>
-                I design and deploy simulations to study how humans and machines
-                make decisions in uncertain and adversarial environments
+                I work on simulations to study how humans and machines make
+                decisions in uncertain and adversarial environments
                 <Citation
                   number={1}
                   content="Most recently worked on simulation-based analysis and optimization models for military wargames."
                 />
-                .{" "}
-                I also study CS and computational neuroscience at UCI.
+                . Currently{" "}
+                <Link href="https://robotics.eng.uci.edu/">researching</Link>{" "}
+                world models for autonomous drones and studying CS &
+                neuroscience at UCI.
               </p>
 
-              <p>
-                I am an experimentalist at heart and think by building.
-                Previously:
-              </p>
+              <p>Most recently:</p>
               <ul className="list-disc space-y-1 ml-5">
                 <li>
-                  Spent 6 months deploying models for battlefield logistics at{" "}
-                  <Link href="https://www.gallatin.ai/">
-                  Gallatin
-                  </Link>
+                  Spent 6 months deploying models to optimize battlefield
+                  logistics at{" "}
+                  <Link href="https://www.gallatin.ai/">Gallatin</Link>
                 </li>
                 <li>
                   Designed a system for analyzing military intel at{" "}
@@ -213,15 +221,20 @@ export default function HomeContentSinglePage() {
                   every weekend and won 15{" "}
                 </li> */}
               </ul>
+              {/* I often think about how intelligence emerges from simple
+                systems, games, and biological evolution. */}
               <p>
-                I often think about how intelligence emerges from simple systems,
-                games, and biological evolution. Other times, you will find me
-                sampling cortados at coffee shops and{" "}
+                I see myself as an artist. I want to master perception: the
+                medium through which we can unravel the universe and human
+                consciousness. I plan to dedicate the next decade to designing
+                agents that can perceive the physical world.
+              </p>
+              <p>
+                You'll find me sampling cortados and{" "}
                 <Link href="https://www.notion.so/bookshelf-31274d39a48380c1a3edf6d3eeab9f50?showMoveTo=true&saveParent=true">
-                  reading
-                </Link>
-                /<Link href="https://substack.com/@jaslavie">pondering</Link> over
-                life's infinite puzzles.
+                  rabbit-holing
+                </Link>{" "}
+                down life's infinite puzzles.
               </p>
               {/* Social Links */}
               <div className="flex flex-row items-center gap-2 font-serif">
