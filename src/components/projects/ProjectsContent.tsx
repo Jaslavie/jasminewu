@@ -31,7 +31,7 @@ function ProjectHoverPreview({ projects }: { projects: ProjectItem[] }) {
       {activeProject ? (
         <div
           key={activeProject.hoverImage}
-          className="flex flex-col"
+          className="flex flex-col gap-1"
           style={{ animation: "previewFadeIn 280ms ease-out" }}
         >
           <div className="relative w-full aspect-[4/3] overflow-hidden">
@@ -43,7 +43,7 @@ function ProjectHoverPreview({ projects }: { projects: ProjectItem[] }) {
               sizes="(min-width: 1024px) 30vw, 100vw"
             />
           </div>
-          <p className="text-sm leading-tight text-[var(--color-text-body)]">
+          <p className="m-0 text-sm leading-tight text-[var(--color-text-body)]">
             {activeProject.hoverCaption}
           </p>
         </div>

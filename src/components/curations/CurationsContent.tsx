@@ -129,8 +129,7 @@ export default function CurationsContent() {
                   to its essence, and mechanically raw.
                 </p>
                 <p>
-                  Recently have been obsessed with sci-fi terminals and other
-                  analog/primitive systems
+                  Appreciator of sci-fi terminals
                   <a
                     href="https://www.pinterest.com/Jaslavie/curations/"
                     target="_blank"
@@ -139,7 +138,7 @@ export default function CurationsContent() {
                   >
                     [1]
                   </a>
-                  .
+                  , scandinavian architecture, and avatar-esque cinematography.
                 </p>
                 <p>
                   This is a [growing] collection of artifacts that resonate with
@@ -215,25 +214,22 @@ export default function CurationsContent() {
                     >
                       hayao miyazaki{" "}
                     </a>
-                    {/* <a href="https://en.wikipedia.org/wiki/Alexander_Hamilton" target="_blank" rel="noopener noreferrer">alexander hamilton</a> */}
                   </div>
                   <div className="flex flex-col">
                     <a
-                      href="https://thefutureofsocial.co/mrbeast"
+                      href="https://www.youtube.com/watch?v=cLRLEnPaJLM"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       jimmy donaldson
                     </a>
                     <a
-                      href="#"
+                      href="https://hamiltonmusical.com/new-york/"
                       target="_blank"
-                      style={{ pointerEvents: "none" }}
                       rel="noopener noreferrer"
                     >
                       alexander hamilton
                     </a>
-                    {/* <a href="https://en.wikipedia.org/wiki/Jane_Austen" target="_blank" rel="noopener noreferrer">jane austen</a> */}
                     <a
                       href="#"
                       target="_blank"

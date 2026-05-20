@@ -9,6 +9,60 @@ import Footer from "@/components/global/Footer";
 import { pageContentStyle, pageLayoutClasses } from "./pageStyles";
 import NavHint from "@/components/ui/NavHint";
 
+const NAME_LEAVE_DELAY_MS = 1500;
+
+function NameHoverSwap() {
+  const [showAlt, setShowAlt] = useState(false);
+  const leaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const handleEnter = () => {
+    if (leaveTimerRef.current) {
+      clearTimeout(leaveTimerRef.current);
+      leaveTimerRef.current = null;
+    }
+    setShowAlt(true);
+  };
+
+  const handleLeave = () => {
+    leaveTimerRef.current = setTimeout(() => {
+      setShowAlt(false);
+      leaveTimerRef.current = null;
+    }, NAME_LEAVE_DELAY_MS);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (leaveTimerRef.current) clearTimeout(leaveTimerRef.current);
+    };
+  }, []);
+
+  return (
+    <span
+      className="inline-grid cursor-default [grid-template-areas:'stack']"
+      onMouseEnter={handleEnter}
+      onMouseLeave={handleLeave}
+    >
+      <span
+        className={`[grid-area:stack] transition-[opacity,filter] duration-[1000ms] ease-in-out ${
+          showAlt ? "opacity-0 blur-[2px]" : "opacity-100 blur-0"
+        }`}
+        aria-hidden={showAlt}
+      >
+        Jasmine.
+      </span>
+      <span
+        className={`[grid-area:stack] text-[rgba(255,255,255,0.5)] transition-[opacity,filter] duration-[800ms] ease-in-out ${
+          showAlt ? "opacity-100 blur-0" : "opacity-0 blur-[2px]"
+        }`}
+        aria-hidden={!showAlt}
+      >
+        吴其圆 (harmony)
+      </span>
+      <span className="sr-only">Jasmine · 吴其圆 (harmony)</span>
+    </span>
+  );
+}
+
 export default function HomeContentSinglePage() {
   const [time, setTime] = useState("");
   const [showCursor, setShowCursor] = useState(true);
@@ -24,7 +78,7 @@ export default function HomeContentSinglePage() {
         minute: "2-digit",
         second: "2-digit",
         hour12: true,
-        timeZone: "America/Los_Angeles",
+        timeZone: "America/New_York",
       };
       setTime(now.toLocaleTimeString("en-US", options));
     }
@@ -160,32 +214,33 @@ export default function HomeContentSinglePage() {
               {/* Header section - Time + Headline */}
               <div className="flex flex-col gap-0 mb-0">
                 {/* Time Display */}
-                <p>it's {time} in Los Angeles</p>
+                <p>it's {time} in New York City</p>
 
                 {/* Headline with typing cursor */}
                 <h3>
-                  &gt; Hi, I'm Jasmine.
-                  <span
+                  &gt; Hi, I&apos;m <NameHoverSwap />
+                  {/* <span
                     className="inline-block w-[2px] h-[0.9em] bg-white ml-1 align-middle"
                     style={{ opacity: showCursor ? 1 : 0 }}
-                  />
+                  /> */}
                 </h3>
               </div>
 
               <p>
-                I work on simulations to study how humans and machines make
-                decisions in uncertain and adversarial environments
+                I work on systems for humans & agents to act in
+                partially-observable worlds, particularly in adversarial domains
                 <Citation
                   number={1}
-                  content="Most recently worked on simulation-based analysis and optimization models for military wargames."
+                  content="Most recently in defense & space."
                 />
-                . Currently{" "}
-                <Link href="https://robotics.eng.uci.edu/">researching</Link>{" "}
-                world models for autonomous drones and studying CS &
-                neuroscience at UCI.
+                . Currently I'm{" "}
+                <Link href="https://robotics.eng.uci.edu/">teaching</Link>{" "}
+                robots to perform surgeries and studying CS & neuroscience at
+                UCI. I will be in NYC this summer building privacy preserving
+                software at <Link href="https://hoth.com/">Hoth</Link>.
               </p>
 
-              <p>Most recently:</p>
+              <p>Recently:</p>
               <ul className="list-disc space-y-1 ml-5">
                 <li>
                   Spent 6 months deploying models to optimize battlefield
@@ -206,7 +261,7 @@ export default function HomeContentSinglePage() {
                   on lunar navigation tooling at the European Space Agency
                 </li>
                 <li>
-                  Built spacesuit interfaces with{" "}
+                  Prototyped spacesuit interfaces with{" "}
                   <Link href="https://www.nasa.gov/suits-and-rovers/">
                     NASA
                   </Link>
@@ -223,12 +278,12 @@ export default function HomeContentSinglePage() {
               </ul>
               {/* I often think about how intelligence emerges from simple
                 systems, games, and biological evolution. */}
-              <p>
+              {/* <p>
                 I see myself as an artist. I want to master perception: the
                 medium through which we can unravel the universe and human
                 consciousness. I plan to dedicate the next decade to designing
                 agents that can perceive the physical world.
-              </p>
+              </p> */}
               <p>
                 You'll find me sampling cortados and{" "}
                 <Link href="https://www.notion.so/bookshelf-31274d39a48380c1a3edf6d3eeab9f50?showMoveTo=true&saveParent=true">

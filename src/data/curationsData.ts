@@ -83,10 +83,10 @@ export const curationsData: CurationData = {
       title: "Dune II",
       link: "https://www.imdb.com/title/tt15239678/",
     },
-    {
-      title: "Imitation Game",
-      link: "https://www.imdb.com/title/tt2084970/",
-    },
+    // {
+    //   title: "Imitation Game",
+    //   link: "https://www.imdb.com/title/tt2084970/",
+    // },
     {
       title: "The Fault in our Stars",
       link: "https://www.imdb.com/title/tt2582846/",
