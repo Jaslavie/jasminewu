@@ -7,16 +7,17 @@ export default function Footer() {
           {/* Mobile: Column layout, Desktop: Inline */}
           <div className="flex flex-col lg:flex-row lg:items-center space-y-1 lg:space-y-0 lg:space-x-2">
             <div className="flex flex-wrap items-center gap-x-1">
-              <span>listening to</span>
+              <span>currently listening to the </span>
               <a
                 href="https://open.spotify.com/album/2ANVost0y2y52ema1E9xAZ"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline hover:text-white transition-colors"
               >
-                Thriller, Album
+                Thriller album
               </a>
-              <span>& reading</span>
+              <span>on repeat</span>
+              {/* <span>& reading</span>
               <a
                 href="https://www.amazon.com/Heretics-Heroes-Renaissance-Artists-Reformation/dp/0385495587"
                 target="_blank"
@@ -24,7 +25,7 @@ export default function Footer() {
                 className="underline hover:text-white transition-colors"
               >
                 Heretics and Heroes
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

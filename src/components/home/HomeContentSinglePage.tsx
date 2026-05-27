@@ -10,6 +10,9 @@ import { pageContentStyle, pageLayoutClasses } from "./pageStyles";
 import NavHint from "@/components/ui/NavHint";
 
 const NAME_LEAVE_DELAY_MS = 1500;
+const mutedWhiteClass = "text-[rgba(255,255,255,0.5)]";
+const tabHoverClass =
+  "transition-colors duration-300 hover:text-[rgba(255,255,255,0.85)]";
 
 function NameHoverSwap() {
   const [showAlt, setShowAlt] = useState(false);
@@ -51,15 +54,57 @@ function NameHoverSwap() {
         Jasmine.
       </span>
       <span
-        className={`[grid-area:stack] text-[rgba(255,255,255,0.5)] transition-[opacity,filter] duration-[800ms] ease-in-out ${
+        className={`[grid-area:stack] ${mutedWhiteClass} transition-[opacity,filter] duration-[800ms] ease-in-out ${
           showAlt ? "opacity-100 blur-0" : "opacity-0 blur-[2px]"
         }`}
         aria-hidden={!showAlt}
       >
         吴其圆 (harmony)
       </span>
-      <span className="sr-only">Jasmine · 吴其圆 (harmony)</span>
     </span>
+  );
+}
+
+function RecentSectionTabs({
+  showPast,
+  onSelect,
+}: {
+  showPast: boolean;
+  onSelect: (past: boolean) => void;
+}) {
+  const tabOptionClass = (active: boolean) =>
+    `cursor-pointer border-0 bg-transparent p-0 font-inherit ${tabHoverClass} ${
+      active
+        ? "text-text-body underline underline-offset-4 decoration-1 decoration-[rgba(255,255,255,0.5)]"
+        : `${mutedWhiteClass} no-underline`
+    }`;
+
+  return (
+    <p className="flex flex-wrap items-baseline gap-x-1">
+      <button
+        type="button"
+        aria-pressed={!showPast}
+        className={tabOptionClass(!showPast)}
+        onClick={(e) => {
+          e.stopPropagation();
+          onSelect(false);
+        }}
+      >
+        Recently
+      </button>
+      <span className={`${mutedWhiteClass} ${tabHoverClass}`}>or</span>
+      <button
+        type="button"
+        aria-pressed={showPast}
+        className={tabOptionClass(showPast)}
+        onClick={(e) => {
+          e.stopPropagation();
+          onSelect(true);
+        }}
+      >
+        in the distant past
+      </button>
+    </p>
   );
 }
 
@@ -68,6 +113,7 @@ export default function HomeContentSinglePage() {
   const [showCursor, setShowCursor] = useState(true);
   const [showContent, setShowContent] = useState(false);
   const [showPlanet, setShowPlanet] = useState(false);
+  const [showPast, setShowPast] = useState(false);
 
   // Live time in Los Angeles
   useEffect(() => {
@@ -214,7 +260,7 @@ export default function HomeContentSinglePage() {
               {/* Header section - Time + Headline */}
               <div className="flex flex-col gap-0 mb-0">
                 {/* Time Display */}
-                <p>it's {time} in New York City</p>
+                <p className={mutedWhiteClass}>it&apos;s {time} in New York City</p>
 
                 {/* Headline with typing cursor */}
                 <h3>
@@ -231,7 +277,36 @@ export default function HomeContentSinglePage() {
                 partially-observable worlds, particularly in adversarial domains
                 <Citation
                   number={1}
-                  content="Most recently in defense & space."
+                  content={
+                    <>
+                      I believe the hardest problems are solved in the most high
+                      pressure environments. I'm a strong believer in the ethos
+                      of wartime resolve. I'm deeply drawn to WW2 — which
+                      revealed to us the impossible magnitude of human
+                      potential. See{" "}
+                      <a
+                        href="https://www.npr.org/2016/11/04/500548745/the-real-hacksaw-ridge-soldier-saved-75-souls-without-ever-carrying-a-gun"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        [1]
+                      </a>
+                      <a
+                        href="https://www.iwm.org.uk/history/second-world-war/intelligence/how-alan-turing-cracked-the-enigma-code"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        [2]
+                      </a>{" "}
+                      <a
+                        href="https://www.nationalww2museum.org/war/articles/making-the-atomic-bomb-trinity-test"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        [3]
+                      </a>
+                    </>
+                  }
                 />
                 . Currently I'm{" "}
                 <Link href="https://robotics.eng.uci.edu/">teaching</Link>{" "}
@@ -240,50 +315,45 @@ export default function HomeContentSinglePage() {
                 software at <Link href="https://hoth.com/">Hoth</Link>.
               </p>
 
-              <p>Recently:</p>
-              <ul className="list-disc space-y-1 ml-5">
-                <li>
-                  Spent 6 months deploying models to optimize battlefield
-                  logistics at{" "}
-                  <Link href="https://www.gallatin.ai/">Gallatin</Link>
-                </li>
-                <li>
-                  Designed a system for analyzing military intel at{" "}
-                  <Link href="https://time.com/6691662/ai-ukraine-war-palantir/">
-                    Palantir
-                  </Link>
-                </li>
-                <li>
-                  Presented{" "}
-                  <Link href="https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.SpaceCHI.2025.25">
-                    research
-                  </Link>{" "}
-                  on lunar navigation tooling at the European Space Agency
-                </li>
-                <li>
-                  Prototyped spacesuit interfaces with{" "}
-                  <Link href="https://www.nasa.gov/suits-and-rovers/">
-                    NASA
-                  </Link>
-                </li>
-                {/* <li>
-                  Built 911 dispatch agents at{" "}
-                  <Link href="/projects/dispatch-ai">Berkeley Skydeck</Link>
-                </li> */}
-                {/* <li>
-                  Attended a{" "}
+              <RecentSectionTabs showPast={showPast} onSelect={setShowPast} />
+              {showPast ? (
+                <p>
+                  I attended a {" "}
                   <Link href="https://devpost.com/jaslavie">hackathon</Link>{" "}
-                  every weekend and won 15{" "}
-                </li> */}
-              </ul>
-              {/* I often think about how intelligence emerges from simple
-                systems, games, and biological evolution. */}
-              {/* <p>
-                I see myself as an artist. I want to master perception: the
-                medium through which we can unravel the universe and human
-                consciousness. I plan to dedicate the next decade to designing
-                agents that can perceive the physical world.
-              </p> */}
+                  every weekend of freshman year as my only source of income and
+                  wrote about deep tech at{" "}
+                  <Link href="https://research.contrary.com/">Contrary</Link>. I
+                  was a devout Minecraft kid and spent my childhood building
+                  neighborhoods and hacking bed wars.
+                </p>
+              ) : (
+                <ul className="list-disc space-y-1 ml-5">
+                  <li>
+                    Spent 6 months deploying models to optimize battlefield
+                    logistics at{" "}
+                    <Link href="https://www.gallatin.ai/">Gallatin</Link>
+                  </li>
+                  <li>
+                    Designed a system for analyzing military intel at{" "}
+                    <Link href="https://time.com/6691662/ai-ukraine-war-palantir/">
+                      Palantir
+                    </Link>
+                  </li>
+                  <li>
+                    Presented{" "}
+                    <Link href="https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.SpaceCHI.2025.25">
+                      research
+                    </Link>{" "}
+                    on lunar navigation tooling at the European Space Agency
+                  </li>
+                  <li>
+                    Prototyped spacesuit interfaces with{" "}
+                    <Link href="https://www.nasa.gov/suits-and-rovers/">
+                      NASA
+                    </Link>
+                  </li>
+                </ul>
+              )}
               <p>
                 You'll find me sampling cortados and{" "}
                 <Link href="https://www.notion.so/bookshelf-31274d39a48380c1a3edf6d3eeab9f50?showMoveTo=true&saveParent=true">

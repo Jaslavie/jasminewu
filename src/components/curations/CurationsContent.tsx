@@ -130,14 +130,14 @@ export default function CurationsContent() {
                 </p>
                 <p>
                   Appreciator of sci-fi terminals
-                  <a
+                  {/* <a
                     href="https://www.pinterest.com/Jaslavie/curations/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="citation"
                   >
                     [1]
-                  </a>
+                  </a> */}
                   , scandinavian architecture, and avatar-esque cinematography.
                 </p>
                 <p>

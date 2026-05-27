@@ -45,16 +45,16 @@ export default function WritingContent() {
       link: "https://research.contrary.com/company/orca-security",
       publishDate: "2024-10-08",
     },
-    {
-      title: "contrary: saildrone memo",
-      link: "https://research.contrary.com/company/saildrone",
-      publishDate: "2024-09-12",
-    },
-    {
-      title: "contrary: overland ai memo",
-      link: "https://research.contrary.com/company/overland-ai",
-      publishDate: "2024-08-25",
-    },
+    // {
+    //   title: "contrary: saildrone memo",
+    //   link: "https://research.contrary.com/company/saildrone",
+    //   publishDate: "2024-09-12",
+    // },
+    // {
+    //   title: "contrary: overland ai memo",
+    //   link: "https://research.contrary.com/company/overland-ai",
+    //   publishDate: "2024-08-25",
+    // },
   ];
 
   // Sort writings by publish date (newest first), with "ongoing" at the top

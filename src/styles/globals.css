@@ -167,7 +167,19 @@
 
   /* Restore default cursor on touch devices */
   @media (pointer: coarse) {
-    *, html, body, h1, h2, h3, h4, h5, h6, p, span, div, li {
+    *,
+    html,
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span,
+    div,
+    li {
       cursor: auto !important;
     }
   }
@@ -285,8 +297,8 @@
 
   .link {
     @apply underline-offset-4 relative underline;
-    color: var(--theme-link-color);
-    text-decoration-color: var(--theme-link-decoration);
+    color: inherit;
+    text-decoration-color: rgba(255, 255, 255, 0.15);
 
     /* inherit from parent */
     font-size: inherit;
@@ -298,8 +310,8 @@
 
   .link:hover {
     @apply underline decoration-solid;
-    color: var(--theme-link-hover-color);
-    text-decoration-color: var(--theme-link-hover-decoration);
+    color: inherit;
+    text-decoration-color: rgba(255, 255, 255, 0.5);
   }
 
   /* Superscript Citation */
@@ -316,6 +328,20 @@
   .citation:hover {
     color: var(--theme-citation-hover-color);
     border: 1px solid var(--theme-citation-hover-border);
+  }
+
+  .citation-tooltip a {
+    color: var(--theme-citation-color);
+    text-decoration: none;
+    transition: color 200ms ease;
+  }
+
+  .citation-tooltip a:hover {
+    color: var(--theme-citation-hover-color);
+  }
+
+  .theme-light .citation-tooltip {
+    color: inherit;
   }
 }
 

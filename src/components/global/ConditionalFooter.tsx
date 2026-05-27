@@ -12,6 +12,7 @@ export default function ConditionalFooter() {
   const isProjectDetailPage = pathname.startsWith("/projects/");
   const isCurationsPage = pathname === "/curations";
   const isWritingPage = pathname === "/writing";
+  const isNotesPage = pathname === "/notes";
 
   // Pages with their own integrated footer
   if (
@@ -19,7 +20,8 @@ export default function ConditionalFooter() {
     isProjectsPage ||
     isProjectDetailPage ||
     isCurationsPage ||
-    isWritingPage
+    isWritingPage ||
+    isNotesPage
   ) {
     return null;
   }

@@ -13,6 +13,7 @@ export default function ConditionalSidebar() {
   const isProjectDetailPage = pathname.startsWith("/projects/");
   const isCurationsPage = pathname === "/curations";
   const isWritingPage = pathname === "/writing";
+  const isNotesPage = pathname === "/notes";
 
   // Don't show header on pages that have their own integrated nav
   if (
@@ -20,7 +21,8 @@ export default function ConditionalSidebar() {
     isProjectsPage ||
     isProjectDetailPage ||
     isCurationsPage ||
-    isWritingPage
+    isWritingPage ||
+    isNotesPage
   ) {
     return null;
   }

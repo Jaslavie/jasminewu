@@ -10,6 +10,7 @@ import {
 } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import NavHint from "@/components/ui/NavHint";
 
 interface ListHoverContextType {
   focusedIndex: number | null;
@@ -29,13 +30,30 @@ export function useListHover() {
   return useContext(ListHoverContext);
 }
 
+export function ListNavHint({ alsoObserving = false }: { alsoObserving?: boolean }) {
+  const { focusedIndex } = useListHover();
+  return <NavHint isObserving={alsoObserving || focusedIndex !== null} />;
+}
+
 interface ListBoxProps {
   children: ReactNode;
   className?: string;
   items: { href: string }[];
+  selectionMode?: boolean;
+  selectedIndex?: number | null;
+  onSelect?: (index: number) => void;
+  onEscape?: () => void;
 }
 
-export function ListBox({ children, className = "", items }: ListBoxProps) {
+export function ListBox({
+  children,
+  className = "",
+  items,
+  selectionMode = false,
+  selectedIndex = null,
+  onSelect,
+  onEscape,
+}: ListBoxProps) {
   const [focusedIndex, setFocusedIndex] = useState<number | null>(null);
   const router = useRouter();
 
@@ -55,6 +73,10 @@ export function ListBox({ children, className = "", items }: ListBoxProps) {
         });
       } else if (e.key === "Enter" && focusedIndex !== null) {
         e.preventDefault();
+        if (selectionMode && onSelect) {
+          onSelect(focusedIndex);
+          return;
+        }
         const item = items[focusedIndex];
         if (item) {
           if (item.href.startsWith("http")) {
@@ -65,9 +87,10 @@ export function ListBox({ children, className = "", items }: ListBoxProps) {
         }
       } else if (e.key === "Escape") {
         setFocusedIndex(null);
+        onEscape?.();
       }
     },
-    [focusedIndex, items, router]
+    [focusedIndex, items, onEscape, onSelect, router, selectionMode]
   );
 
   useEffect(() => {

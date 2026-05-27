@@ -2,11 +2,10 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { ListBox, ListItemBox, useListHover } from "@/components/ui/ListBox";
+import { ListBox, ListItemBox, ListNavHint, useListHover } from "@/components/ui/ListBox";
 import HomeLeftNav from "@/components/home/HomeLeftNav";
 import Footer from "@/components/global/Footer";
 import { pageContentStyle, pageLayoutClasses } from "@/components/home/pageStyles";
-import NavHint from "@/components/ui/NavHint";
 
 type ProjectItem = {
   title: string;
@@ -31,7 +30,7 @@ function ProjectHoverPreview({ projects }: { projects: ProjectItem[] }) {
       {activeProject ? (
         <div
           key={activeProject.hoverImage}
-          className="flex flex-col gap-1"
+          className="flex flex-col"
           style={{ animation: "previewFadeIn 280ms ease-out" }}
         >
           <div className="relative w-full aspect-[4/3] overflow-hidden">
@@ -112,7 +111,6 @@ export default function ProjectsContent() {
 
   return (
     <div className={pageLayoutClasses.screenSpace}>
-      <NavHint label={{ normal: "to navigate", observing: "to escape" }} />
       <div className={`flex-1 flex flex-col ${pageLayoutClasses.screenPadding}`}>
         {/* Main Content Area */}
         <div className="flex-1 flex items-start lg:items-center justify-center min-h-0 overflow-hidden">
@@ -129,6 +127,7 @@ export default function ProjectsContent() {
             {/* Main Content */}
             <div style={pageContentStyle} className="h-full w-full">
               <ListBox className="flex h-full w-full" items={itemsForNavigation}>
+                <ListNavHint />
                 <div
                   className="flex h-full w-full flex-col gap-8 lg:flex-row lg:items-start"
                   style={{

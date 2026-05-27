@@ -71,7 +71,7 @@ class GlitchEffect {
     // Measure original text width using canvas
     this.originalWidth = this.measureTextWidth(
       this.originalText,
-      computedStyle
+      computedStyle,
     );
 
     // Create wrapper with fixed width
@@ -101,7 +101,7 @@ class GlitchEffect {
   //---- helper functions ----//
   private measureTextWidth(
     text: string,
-    computedStyle: CSSStyleDeclaration
+    computedStyle: CSSStyleDeclaration,
   ): number {
     // Create canvas for text measurement
     const canvas = document.createElement("canvas");
@@ -129,7 +129,7 @@ class GlitchEffect {
 
     // Add hover styles
     this.wrapper.style.textDecoration = "underline";
-    this.wrapper.style.textDecorationColor = this.originalStyles.color;
+    this.wrapper.style.textDecorationColor = "rgba(255, 255, 255, 0.5)";
     this.wrapper.style.textDecorationStyle = "solid";
 
     let iterations = 0;
@@ -149,7 +149,7 @@ class GlitchEffect {
             ? char
             : this.options.characters[
                 Math.floor(Math.random() * this.options.characters.length)
-              ]
+              ],
         )
         .join("");
 
@@ -204,7 +204,9 @@ export default function ChaosLink({
       // Small delay to ensure styles are fully computed and cascade reveal is done
       const initTimer = setTimeout(() => {
         if (linkRef.current) {
-          glitchEffectRef.current = new GlitchEffect(linkRef.current, { marginBottom });
+          glitchEffectRef.current = new GlitchEffect(linkRef.current, {
+            marginBottom,
+          });
         }
       }, 50);
 

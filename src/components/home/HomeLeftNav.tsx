@@ -8,6 +8,7 @@ export default function HomeLeftNav() {
 
   const navItems = [
     { href: "/projects", label: "projects" },
+    { href: "/notes", label: "notes" },
     { href: "/curations", label: "curations" },
     // { href: "/writing", label: "writing" },
   ];
