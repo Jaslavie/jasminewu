@@ -90,14 +90,12 @@ export default function CurationsContent() {
   }, [categories.length]);
 
   return (
-    <div className={pageLayoutClasses.screenSpace}>
-      <div
-        className={`flex-1 flex flex-col ${pageLayoutClasses.screenPadding}`}
-      >
+    <div className="min-h-screen flex flex-col lg:h-screen lg:overflow-hidden lg:overscroll-none">
+      <div className="flex-1 flex flex-col px-4 sm:px-6 lg:px-[16vw] pt-[12vh] lg:pt-[3vh] pb-4 lg:pb-0 overflow-visible lg:overflow-hidden">
         {/* Main Content Area */}
-        <div className="flex-1 flex items-start lg:items-center justify-center min-h-0 overflow-hidden">
+        <div className="flex-1 flex items-start lg:items-center justify-center lg:min-h-0 lg:overflow-hidden">
           {/* Centered Container - nav + divider + content */}
-          <div className={`${pageLayoutClasses.innerWrapper}`}>
+          <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 items-start lg:items-center py-4 lg:py-[14vh] w-full lg:h-full">
             {/* Left Nav */}
             <div className={pageLayoutClasses.navWidth}>
               <HomeLeftNav />
@@ -108,7 +106,7 @@ export default function CurationsContent() {
 
             {/* Main Content */}
             <div
-              className="flex-1 flex flex-col lg:flex-row gap-8 lg:gap-12 overflow-hidden h-full"
+              className="flex-1 flex flex-col lg:flex-row gap-8 lg:gap-12 lg:overflow-hidden lg:h-full"
               style={pageContentStyle}
             >
               {/* Description */}
@@ -147,7 +145,7 @@ export default function CurationsContent() {
               </div>
 
               {/* Right side: curations + names stacked vertically */}
-              <div className="flex-1 flex flex-col gap-8 min-w-0 overflow-y-auto overscroll-none">
+              <div className="flex-1 flex flex-col gap-8 min-w-0 lg:overflow-y-auto lg:overscroll-none">
                 {/* Curations columns */}
                 <div className="grid grid-cols-2 gap-6 lg:flex lg:flex-row lg:gap-auto w-full">
                   {categories.map((category, index) => (

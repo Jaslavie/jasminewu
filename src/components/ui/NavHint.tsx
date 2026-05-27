@@ -22,10 +22,7 @@ export default function NavHint({ isObserving = false }: NavHintProps) {
     >
       <span>{isObserving ? "to escape" : "to focus"}</span>
       {isObserving ? (
-        <span
-          className="border px-2 py-0.5 text-[11px]"
-          style={keyStyle}
-        >
+        <span className="border px-2 py-0.5 text-[11px]" style={keyStyle}>
           esc
         </span>
       ) : (

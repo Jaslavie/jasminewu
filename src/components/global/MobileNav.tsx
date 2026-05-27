@@ -11,7 +11,6 @@ export default function MobileNav() {
   //* ==== Page-specific visibility ====
   const isPrinciplesPage = pathname.includes("/principles");
   const isProjectDetailPage = pathname.startsWith("/projects/");
-  const isNotesPage = pathname === "/notes";
 
   // Handle scroll effect
   useEffect(() => {
@@ -25,7 +24,7 @@ export default function MobileNav() {
   }, []);
 
   // Hide on pages with custom top navigation
-  if (isPrinciplesPage || isProjectDetailPage || isNotesPage) {
+  if (isPrinciplesPage || isProjectDetailPage) {
     return null;
   }
 
@@ -33,7 +32,7 @@ export default function MobileNav() {
     { href: "/", label: "home" },
     { href: "/projects", label: "projects" },
     { href: "/curations", label: "curations" },
-    { href: "/writing", label: "writing" },
+    { href: "/notes", label: "notes" },
   ];
 
   return (
@@ -52,7 +51,9 @@ export default function MobileNav() {
                 key={item.href}
                 href={item.href}
                 className={`text-sm transition-colors ${
-                  isActive ? "text-white" : "text-[var(--color-text-subheading)] hover:text-white"
+                  isActive
+                    ? "text-white"
+                    : "text-[var(--color-text-subheading)] hover:text-white"
                 }`}
               >
                 {item.label}

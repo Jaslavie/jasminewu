@@ -324,7 +324,7 @@ export default function HomeContentSinglePage() {
                   wrote about deep tech at{" "}
                   <Link href="https://research.contrary.com/">Contrary</Link>. I
                   was a devout Minecraft kid and spent my childhood building
-                  neighborhoods and hacking bed wars.
+                  neighborhoods and exploiting bed wars games.
                 </p>
               ) : (
                 <ul className="list-disc space-y-1 ml-5">

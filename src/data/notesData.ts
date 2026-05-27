@@ -6,8 +6,8 @@ export type NoteMeta = {
 
 export const notes: NoteMeta[] = [
   {
-    id: "bucketlist",
-    title: "bucketlist",
+    id: "Bucketlist",
+    title: "Bucketlist",
     subtitle: "05-27-26",
   },
 ];

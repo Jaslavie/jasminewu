@@ -20,12 +20,14 @@ export default function HomeLeftNav() {
       {/* Name/Logo */}
       <p>
         <Link
-            href="/"
-            className={`transition-colors mb-2 ${
-              isHomePage ? "text-white" : "text-[var(--color-text-muted)] hover:text-white"
-            }`}
+          href="/"
+          className={`transition-colors mb-2 ${
+            isHomePage
+              ? "text-white"
+              : "text-[var(--color-text-muted)] hover:text-white"
+          }`}
         >
-            Jasmine Wu
+          Jasmine Wu
         </Link>
       </p>
 
@@ -33,16 +35,18 @@ export default function HomeLeftNav() {
       {navItems.map((item) => {
         const isActive = pathname === item.href;
         return (
-            <p key={item.href}>
-                <Link
-                    href={item.href}
-                    className={`transition-colors ${
-                      isActive ? "text-white" : "text-[var(--color-text-muted)] hover:text-white"
-                    }`}
-                >
-                    {item.label}
-                </Link>
-            </p>
+          <p key={item.href}>
+            <Link
+              href={item.href}
+              className={`transition-colors ${
+                isActive
+                  ? "text-white"
+                  : "text-[var(--color-text-muted)] hover:text-white"
+              }`}
+            >
+              {item.label}
+            </Link>
+          </p>
         );
       })}
     </nav>

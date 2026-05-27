@@ -364,6 +364,6 @@
   }
 
   li {
-    @apply text-[16px]/[1.6] mb-3;
+    @apply text-[16px]/[1.5] mb-2;
   }
 }
