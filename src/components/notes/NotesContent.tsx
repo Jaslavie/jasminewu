@@ -99,7 +99,7 @@ function NotePreviewPanel({
         {displayIndex !== null && activeNote && NoteContent ? (
           <div
             key={`${activeNote.id}-toolbar`}
-            className="note-content-fade-in pointer-events-none z-30 flex shrink-0 justify-end pb-5 pr-1 transition-[filter,transform] duration-300 ease-out"
+            className="note-content-fade-in pointer-events-none z-30 flex shrink-0 justify-start pb-5 pr-1 transition-[filter,transform] duration-300 ease-out lg:justify-end"
           >
             <div
               className={[
@@ -109,11 +109,22 @@ function NotePreviewPanel({
                 .filter(Boolean)
                 .join(" ")}
             >
-              <NotePanelToolbar
-                isExpanded={isExpanded}
-                onToggleExpand={() => onToggleExpand(displayIndex)}
-                onClose={handleClose}
-              />
+              <div className="pointer-events-auto lg:hidden">
+                <button
+                  type="button"
+                  onClick={handleClose}
+                  className="text-sm text-[var(--color-text-muted)] transition-colors hover:text-white"
+                >
+                  ← back to writing
+                </button>
+              </div>
+              <div className="hidden lg:block">
+                <NotePanelToolbar
+                  isExpanded={isExpanded}
+                  onToggleExpand={() => onToggleExpand(displayIndex)}
+                  onClose={handleClose}
+                />
+              </div>
             </div>
           </div>
         ) : null}
@@ -198,7 +209,14 @@ export default function NotesContent() {
       return;
     }
 
+    const shouldOpenExpanded =
+      typeof window !== "undefined" &&
+      window.matchMedia("(max-width: 1023px)").matches;
+
     setSelectedIndex((prev) => (prev === index ? null : index));
+    if (shouldOpenExpanded) {
+      setIsExpanded(true);
+    }
   };
 
   const handleClose = () => {
@@ -257,7 +275,7 @@ export default function NotesContent() {
                     <div
                       ref={listColumnRef}
                       className={[
-                        "w-full shrink-0 overflow-hidden transition-[width,max-height,opacity,filter] duration-300 ease-out",
+                        "w-screen shrink-0 overflow-hidden transition-[width,max-height,opacity,filter] duration-300 ease-out lg:w-full",
                         isExpanded
                           ? "pointer-events-none max-h-0 opacity-0 blur-[4px] lg:w-0 lg:max-h-none"
                           : "max-h-[40vh] opacity-100 blur-0 lg:w-1/2 lg:max-h-none",
@@ -265,7 +283,7 @@ export default function NotesContent() {
                         .filter(Boolean)
                         .join(" ")}
                     >
-                      <div className="flex flex-col gap-2">
+                      <div className="flex w-full flex-col gap-2">
                         {notes.map((note, index) => (
                           <NoteListItem
                             key={note.id}
