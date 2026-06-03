@@ -275,7 +275,7 @@ export default function NotesContent() {
                     <div
                       ref={listColumnRef}
                       className={[
-                        "w-screen shrink-0 overflow-hidden transition-[width,max-height,opacity,filter] duration-300 ease-out lg:w-full",
+                        "w-full shrink-0 overflow-hidden transition-[width,max-height,opacity,filter] duration-300 ease-out",
                         isExpanded
                           ? "pointer-events-none max-h-0 opacity-0 blur-[4px] lg:w-0 lg:max-h-none"
                           : "max-h-[40vh] opacity-100 blur-0 lg:w-1/2 lg:max-h-none",
