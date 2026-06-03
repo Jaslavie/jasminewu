@@ -1,3 +1,7 @@
 export default function Divider() {
-  return <div className="border-t border-[var(--color-card-border)] mt-8 w-full"></div>;
+  return (
+    <div data-note-divider className="!my-0 w-full py-10">
+      <div className="w-full border-t border-[var(--color-card-border)]" />
+    </div>
+  );
 }

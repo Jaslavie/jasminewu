@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { isNavActive, NAV_ITEMS, ROUTES } from "@/lib/routes";
 
 export default function Header() {
   const pathname = usePathname();
@@ -48,11 +49,7 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  const navItems = [
-    { href: "/projects", label: "projects" },
-    { href: "/curations", label: "curations" },
-    { href: "/writing", label: "writing" },
-  ];
+  const navItems = NAV_ITEMS.filter((item) => item.href !== ROUTES.home);
 
   return (
     <header
@@ -64,7 +61,7 @@ export default function Header() {
       {/* Left: Name and time */}
       <div className="flex flex-row items-stretch">
         <div className="font-serif text-1xl font-light text-white px-6 py-3 flex items-center">
-          <Link href="/">Jasmine Wu</Link>
+          <Link href={ROUTES.home}>Jasmine Wu</Link>
         </div>
         <div
           className="h-full"
@@ -87,7 +84,7 @@ export default function Header() {
           style={{ borderRight: "1px solid rgba(255, 255, 255, 0.25)" }}
         ></div>
         {navItems.map((item) => {
-          const isActive = pathname === item.href;
+          const isActive = isNavActive(pathname, item.href);
           return (
             <Link
               key={item.href}

@@ -20,6 +20,7 @@ import {
 import {
   pageContentStyle,
   pageLayoutClasses,
+  pageCaptionClass,
 } from "@/components/home/pageStyles";
 
 function ProjectHoverPreview({ projects }: { projects: Project[] }) {
@@ -40,16 +41,16 @@ function ProjectHoverPreview({ projects }: { projects: Project[] }) {
           className="flex flex-col"
           style={{ animation: "previewFadeIn 280ms ease-out" }}
         >
-          <div className="relative w-full aspect-[4/3] overflow-hidden">
+          <div className="relative w-full aspect-[4/2.5] overflow-hidden">
             <Image
               src={activeProject.hoverImage}
               alt={activeProject.title}
               fill
               className="object-contain"
-              sizes="(min-width: 1024px) 30vw, 100vw"
+              sizes="(min-width: 1024px)"
             />
           </div>
-          <p className="m-0 text-sm leading-tight text-[var(--color-text-body)]">
+          <p className={pageCaptionClass}>
             {activeProject.hoverCaption}
           </p>
         </div>
@@ -107,7 +108,7 @@ export default function ProjectsContent() {
             <div className={pageLayoutClasses.divider} />
 
             {/* Main Content */}
-            <div style={pageContentStyle} className="h-full w-full">
+            <div style={pageContentStyle} className={pageLayoutClasses.mainContent}>
               <ListBox
                 key={listKey}
                 className="flex h-full w-full"
@@ -127,7 +128,7 @@ export default function ProjectsContent() {
                       selectedTags={selectedTags}
                       onChange={setSelectedTags}
                     />
-                    <div className="flex flex-col gap-3">
+                    <div className="flex flex-col gap-2">
                       {filteredProjects.map((project, index) => (
                         <ListItemBox
                           key={project.id}

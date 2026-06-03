@@ -3,48 +3,35 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { isNavActive, NAV_ITEMS, shouldHideMobileNav } from "@/lib/routes";
 
 export default function MobileNav() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
 
-  //* ==== Page-specific visibility ====
-  const isPrinciplesPage = pathname.includes("/principles");
-  const isProjectDetailPage = pathname.startsWith("/projects/");
-
-  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      setIsScrolled(scrollTop > 10);
+      setIsScrolled(window.scrollY > 10);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Hide on pages with custom top navigation
-  if (isPrinciplesPage || isProjectDetailPage) {
+  if (shouldHideMobileNav(pathname)) {
     return null;
   }
 
-  const navItems = [
-    { href: "/", label: "home" },
-    { href: "/projects", label: "projects" },
-    { href: "/curations", label: "curations" },
-    { href: "/notes", label: "notes" },
-  ];
-
   return (
     <nav
-      className={`lg:hidden fixed top-0 left-0 right-0 border-b border-[var(--color-card-border)] z-30 transition-all duration-300 ${
+      className={`fixed left-0 right-0 top-0 z-30 border-b border-[var(--color-card-border)] transition-all duration-300 lg:hidden ${
         isScrolled ? "bg-background/90 backdrop-blur-sm" : "bg-background"
       }`}
     >
-      <div className="flex justify-start items-center py-4 px-6">
+      <div className="flex items-center justify-start px-6 py-4">
         <div className="flex space-x-8">
-          {navItems.map((item) => {
-            const isActive = pathname === item.href;
+          {NAV_ITEMS.map((item) => {
+            const isActive = isNavActive(pathname, item.href);
 
             return (
               <Link

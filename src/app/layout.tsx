@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
 import ConditionalSidebar from "@/components/global/ConditionalSidebar";
-import ConditionalLayout from "@/components/global/ConditionalLayout";
 import BackgroundNoise from "@/components/global/BackgroundNoise";
 import ConditionalFooter from "@/components/global/ConditionalFooter";
 import MobileNav from "@/components/global/MobileNav";
@@ -48,8 +47,7 @@ export default function RootLayout({
             {/* Conditional Left Sidebar - Hidden on writing pages and mobile */}
             <ConditionalSidebar />
 
-            {/* Main Content Area - Adjusts layout based on sidebar presence */}
-            <ConditionalLayout>{children}</ConditionalLayout>
+            {children}
           </div>
 
           {/* Conditional Footer - Hidden on writing pages */}

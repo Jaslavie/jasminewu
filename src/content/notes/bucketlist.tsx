@@ -1,4 +1,4 @@
-import Link from "@/components/ui/Link";
+import NoteLink from "@/components/notes/NoteLink";
 
 export default function BucketlistContent() {
   return (
@@ -11,9 +11,9 @@ export default function BucketlistContent() {
       <li>live in sweden</li>
       <li>
         I want to{" "}
-        <Link href="https://www.youtube.com/watch?v=4JZ-o3iAJv4">
+        <NoteLink href="https://www.youtube.com/watch?v=4JZ-o3iAJv4">
           hear the music
-        </Link>{" "}
+        </NoteLink>{" "}
         in my work
       </li>
       <li>work on the world&apos;s hardest, most existential problems</li>

@@ -10,7 +10,7 @@ import { pageContentStyle, pageLayoutClasses } from "./pageStyles";
 import NavHint from "@/components/ui/NavHint";
 
 const NAME_LEAVE_DELAY_MS = 1500;
-const mutedWhiteClass = "text-[rgba(255,255,255,0.5)]";
+const mutedTextClass = "text-[var(--color-text-muted)]";
 const tabHoverClass =
   "transition-colors duration-300 hover:text-[rgba(255,255,255,0.85)]";
 
@@ -54,7 +54,7 @@ function NameHoverSwap() {
         Jasmine.
       </span>
       <span
-        className={`[grid-area:stack] ${mutedWhiteClass} transition-[opacity,filter] duration-[800ms] ease-in-out ${
+        className={`[grid-area:stack] ${mutedTextClass} transition-[opacity,filter] duration-[800ms] ease-in-out ${
           showAlt ? "opacity-100 blur-0" : "opacity-0 blur-[2px]"
         }`}
         aria-hidden={!showAlt}
@@ -75,8 +75,8 @@ function RecentSectionTabs({
   const tabOptionClass = (active: boolean) =>
     `cursor-pointer border-0 bg-transparent p-0 font-inherit ${tabHoverClass} ${
       active
-        ? "text-text-body underline underline-offset-4 decoration-1 decoration-[rgba(255,255,255,0.5)]"
-        : `${mutedWhiteClass} no-underline`
+        ? "text-text-body underline underline-offset-4 decoration-1 decoration-[var(--color-text-muted)]"
+        : `${mutedTextClass} no-underline`
     }`;
 
   return (
@@ -92,7 +92,7 @@ function RecentSectionTabs({
       >
         Recently
       </button>
-      <span className={`${mutedWhiteClass} ${tabHoverClass}`}>or</span>
+      <span className={`${mutedTextClass} ${tabHoverClass}`}>or</span>
       <button
         type="button"
         aria-pressed={showPast}
@@ -260,7 +260,7 @@ export default function HomeContentSinglePage() {
               {/* Header section - Time + Headline */}
               <div className="flex flex-col gap-0 mb-0">
                 {/* Time Display */}
-                <p className={mutedWhiteClass}>it&apos;s {time} in New York City</p>
+                <p className={mutedTextClass}>it&apos;s {time} in NYC</p>
 
                 {/* Headline with typing cursor */}
                 <h3>

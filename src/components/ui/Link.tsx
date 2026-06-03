@@ -2,6 +2,9 @@
 
 import React, { useEffect, useRef } from "react";
 import NextLink from "next/link";
+import { usePathname } from "next/navigation";
+import { getLinkIconProps } from "@/components/ui/linkIcons";
+import { shouldShowExternalLinkIcons } from "@/lib/routes";
 
 interface GlitchEffectOptions {
   characters?: string;
@@ -129,7 +132,7 @@ class GlitchEffect {
 
     // Add hover styles
     this.wrapper.style.textDecoration = "underline";
-    this.wrapper.style.textDecorationColor = "rgba(255, 255, 255, 0.5)";
+    this.wrapper.style.textDecorationColor = "var(--theme-link-hover-decoration)";
     this.wrapper.style.textDecorationStyle = "solid";
 
     let iterations = 0;
@@ -191,6 +194,8 @@ export default function ChaosLink({
 }) {
   const linkRef = useRef<HTMLAnchorElement>(null); // ref to the link element
   const glitchEffectRef = useRef<GlitchEffect | null>(null); // ref to the glitch effect
+  const pathname = usePathname();
+  const shouldShowIcon = shouldShowExternalLinkIcons(pathname);
 
   // Check if the link is external
   const isExternal =
@@ -238,13 +243,16 @@ export default function ChaosLink({
   };
 
   if (isExternal) {
+    const iconProps = shouldShowIcon ? getLinkIconProps(href) : {};
+
     return (
       <a
         href={href}
         target="_blank"
         rel="noopener noreferrer"
         className="link"
-        style={style}
+        style={{ ...style, ...iconProps.style }}
+        data-link-icon={iconProps["data-link-icon"]}
         ref={linkRef}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}

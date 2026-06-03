@@ -42,6 +42,7 @@ interface ListBoxProps {
   selectionMode?: boolean;
   selectedIndex?: number | null;
   onSelect?: (index: number) => void;
+  onNavigate?: (index: number) => void;
   onEscape?: () => void;
 }
 
@@ -52,6 +53,7 @@ export function ListBox({
   selectionMode = false,
   selectedIndex = null,
   onSelect,
+  onNavigate,
   onEscape,
 }: ListBoxProps) {
   const [focusedIndex, setFocusedIndex] = useState<number | null>(null);
@@ -61,16 +63,24 @@ export function ListBox({
     (e: KeyboardEvent) => {
       if (e.key === "ArrowDown") {
         e.preventDefault();
-        setFocusedIndex((prev) => {
-          if (prev === null) return 0;
-          return prev >= items.length - 1 ? 0 : prev + 1;
-        });
+        const next =
+          focusedIndex === null
+            ? 0
+            : focusedIndex >= items.length - 1
+              ? 0
+              : focusedIndex + 1;
+        setFocusedIndex(next);
+        if (selectionMode && onNavigate) onNavigate(next);
       } else if (e.key === "ArrowUp") {
         e.preventDefault();
-        setFocusedIndex((prev) => {
-          if (prev === null) return items.length - 1;
-          return prev <= 0 ? items.length - 1 : prev - 1;
-        });
+        const next =
+          focusedIndex === null
+            ? items.length - 1
+            : focusedIndex <= 0
+              ? items.length - 1
+              : focusedIndex - 1;
+        setFocusedIndex(next);
+        if (selectionMode && onNavigate) onNavigate(next);
       } else if (e.key === "Enter" && focusedIndex !== null) {
         e.preventDefault();
         if (selectionMode && onSelect) {
@@ -90,7 +100,7 @@ export function ListBox({
         onEscape?.();
       }
     },
-    [focusedIndex, items, onEscape, onSelect, router, selectionMode]
+    [focusedIndex, items, onEscape, onNavigate, onSelect, router, selectionMode]
   );
 
   useEffect(() => {
@@ -157,7 +167,7 @@ export function ListItemBox({ href, title, subtitle, index }: ListItemBoxProps) 
 
   return (
     <div
-      className="px-3 py-2 transition-all duration-200 cursor-pointer"
+      className="px-3 py-1 transition-all duration-200 cursor-pointer"
       style={{
         border: isFocused ? "1px solid rgba(255, 255, 255, 0.6)" : "1px solid transparent",
         opacity: isOtherFocused ? 0.6 : 1,

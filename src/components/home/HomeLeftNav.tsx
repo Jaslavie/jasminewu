@@ -2,25 +2,21 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { isNavActive, NAV_ITEMS, ROUTES } from "@/lib/routes";
 
 export default function HomeLeftNav() {
   const pathname = usePathname();
 
-  const navItems = [
-    { href: "/projects", label: "projects" },
-    { href: "/notes", label: "notes" },
-    { href: "/curations", label: "curations" },
-    // { href: "/writing", label: "writing" },
-  ];
+  const navItems = NAV_ITEMS.filter((item) => item.href !== ROUTES.home);
 
-  const isHomePage = pathname === "/";
+  const isHomePage = pathname === ROUTES.home;
 
   return (
     <nav className="hidden lg:flex lg:flex-col lg:space-y-1 h-full items-start justify-start">
       {/* Name/Logo */}
       <p>
         <Link
-          href="/"
+          href={ROUTES.home}
           className={`transition-colors mb-2 ${
             isHomePage
               ? "text-white"
@@ -33,7 +29,7 @@ export default function HomeLeftNav() {
 
       {/* Navigation Links */}
       {navItems.map((item) => {
-        const isActive = pathname === item.href;
+        const isActive = isNavActive(pathname, item.href);
         return (
           <p key={item.href}>
             <Link

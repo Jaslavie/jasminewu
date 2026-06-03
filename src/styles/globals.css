@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@property --note-fade-top {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+
+@property --note-fade-bottom {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+
 /* ----- Font Face Declarations ----- */
 @font-face {
   font-family: "EB Garamond";
@@ -101,9 +113,10 @@
   /* Text Colors */
   --color-text-heading: #ffffff;
   --color-text-body: rgba(255, 255, 255, 0.8);
+  --color-text-section: #606060;
   --color-text-subheading: rgba(255, 255, 255, 0.5);
   --color-text-active: #ffffff;
-  --color-text-muted: #6f6f6f;
+  --color-text-muted: #787878;
 
   /* Theme interaction tokens */
   --selection-background: rgba(255, 255, 255, 0.15);
@@ -111,7 +124,7 @@
   --observation-dim: rgba(255, 255, 255, 0.35);
   --observation-selection-color: #ffffff;
   --theme-link-color: rgb(243 244 246);
-  --theme-link-decoration: rgb(75 85 99);
+  --theme-link-decoration: var(--color-text-muted);
   --theme-link-hover-color: #ffffff;
   --theme-link-hover-decoration: #ffffff;
   --theme-citation-color: var(--color-text-muted);
@@ -197,6 +210,40 @@
     @apply text-text-heading text-[20px] mb-3 font-light leading-8;
     font-family: "EB Garamond", serif;
     font-weight: 300;
+  }
+
+  .article-prose h3 {
+    @apply mb-1 mt-6 text-[22px] font-thin leading-[1.55] text-white;
+    font-family: "EB Garamond", serif;
+    font-weight: 100;
+  }
+
+  .article-prose h3 + p {
+    margin-top: 0.25rem !important;
+  }
+
+  .article-prose p {
+    line-height: 1.58;
+  }
+
+  .article-prose > ul,
+  .article-prose > ol {
+    margin-top: 0.5rem !important;
+  }
+
+  .article-prose li {
+    line-height: 1.5;
+    margin-bottom: 0.25rem;
+  }
+
+  .article-prose ul > li + li,
+  .article-prose ol > li + li {
+    margin-top: 0.25rem !important;
+  }
+
+  .article-prose li > ul,
+  .article-prose li > ol {
+    margin-top: 0.25rem !important;
   }
 
   p {
@@ -298,7 +345,7 @@
   .link {
     @apply underline-offset-4 relative underline;
     color: inherit;
-    text-decoration-color: rgba(255, 255, 255, 0.15);
+    text-decoration-color: var(--theme-link-decoration);
 
     /* inherit from parent */
     font-size: inherit;
@@ -308,10 +355,44 @@
     line-height: inherit;
   }
 
+  .link[data-link-icon="true"]::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.62em;
+    display: block;
+    width: 0.78em;
+    height: 0.78em;
+    transform: translateY(-50%);
+    background-image: var(--link-icon-url);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    filter: grayscale(1) saturate(0) contrast(1.3);
+    opacity: var(--link-icon-opacity, 1);
+  }
+
+  .link[data-link-icon="true"] {
+    --link-icon-opacity: 1;
+    display: inline;
+    padding-left: 0.94em;
+    text-decoration: none;
+    border-bottom: 1px solid var(--theme-link-decoration);
+  }
+
+  [data-note-muted="true"] .link[data-link-icon="true"] {
+    --link-icon-opacity: 0.15;
+  }
+
   .link:hover {
     @apply underline decoration-solid;
     color: inherit;
-    text-decoration-color: rgba(255, 255, 255, 0.5);
+    text-decoration-color: var(--theme-link-hover-decoration);
+  }
+
+  .link[data-link-icon="true"]:hover {
+    text-decoration: none;
+    border-bottom-color: var(--theme-link-hover-decoration);
   }
 
   /* Superscript Citation */
@@ -323,6 +404,10 @@
     margin-left: 0.2em;
     padding: 2px;
     border: 1px solid transparent;
+  }
+
+  .citation + .citation {
+    margin-left: 0;
   }
 
   .citation:hover {
@@ -342,6 +427,91 @@
 
   .theme-light .citation-tooltip {
     color: inherit;
+  }
+
+  .scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  @keyframes noteFadeIn {
+    from {
+      opacity: 0;
+      filter: blur(6px);
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      filter: blur(0);
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes noteFadeOut {
+    from {
+      opacity: 1;
+      filter: blur(0);
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      filter: blur(6px);
+      transform: translateY(6px);
+    }
+  }
+
+  .note-content-fade-in {
+    animation: noteFadeIn 280ms ease-out forwards;
+  }
+
+  .note-content-fade-out {
+    animation: noteFadeOut 280ms ease-out forwards;
+  }
+
+  .note-scroll-panel {
+    overflow-y: auto;
+    overscroll-behavior: none;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    --note-fade-top: 0px;
+    --note-fade-bottom: 0px;
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0,
+      #000 var(--note-fade-top),
+      #000 calc(100% - var(--note-fade-bottom)),
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0,
+      #000 var(--note-fade-top),
+      #000 calc(100% - var(--note-fade-bottom)),
+      transparent 100%
+    );
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    transition:
+      --note-fade-top 520ms cubic-bezier(0.22, 1, 0.36, 1),
+      --note-fade-bottom 520ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .note-scroll-panel.note-fade-top-on {
+    --note-fade-top: 88px;
+  }
+
+  .note-scroll-panel.note-fade-bottom-on {
+    --note-fade-bottom: 88px;
+  }
+
+  .note-scroll-panel::-webkit-scrollbar {
+    display: none;
   }
 }
 

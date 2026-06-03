@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { getLinkIconProps } from "@/components/ui/linkIcons";
 
 interface WritingLinkProps {
   href: string;
@@ -16,6 +17,7 @@ export default function WritingLink({
 }: WritingLinkProps) {
   const [isHovered, setIsHovered] = useState(false);
   const isExternal = href.startsWith("http") || href.startsWith("https");
+  const iconProps = getLinkIconProps(href);
 
   return (
     <div
@@ -42,6 +44,8 @@ export default function WritingLink({
             target="_blank"
             rel="noopener noreferrer"
             className="link no-underline hover:no-underline"
+            style={iconProps.style}
+            data-link-icon={iconProps["data-link-icon"]}
           >
             {children} 
             {/* → */}

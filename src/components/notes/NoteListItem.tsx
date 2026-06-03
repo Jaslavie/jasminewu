@@ -21,16 +21,16 @@ export default function NoteListItem({
   const isFocused = focusedIndex === index;
   const isOtherFocused = focusedIndex !== null && focusedIndex !== index;
 
+  const isActive = isFocused || isSelected;
+
   return (
     <button
       type="button"
-      className="block w-full px-3 py-2 text-left transition-all duration-200 cursor-pointer"
+      className="block w-full cursor-pointer px-3 py-1 text-left outline-none transition-all duration-200 focus:outline-none focus-visible:outline-none"
       style={{
-        border: isSelected
-          ? "1px solid rgba(255, 255, 255, 0.5)"
-          : isFocused
-            ? "1px solid rgba(255, 255, 255, 0.6)"
-            : "1px solid transparent",
+        border: isActive
+          ? "1px solid rgba(255, 255, 255, 0.6)"
+          : "1px solid transparent",
         opacity: isOtherFocused && !isSelected ? 0.6 : 1,
       }}
       onMouseEnter={() => setFocusedIndex(index)}
@@ -45,7 +45,7 @@ export default function NoteListItem({
         <span
           className="text-sm leading-tight"
           style={{
-            color: isFocused || isSelected
+            color: isActive
               ? "var(--color-text-body)"
               : "var(--color-text-subheading)",
           }}

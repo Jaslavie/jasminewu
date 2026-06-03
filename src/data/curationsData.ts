@@ -12,7 +12,6 @@ export interface CurationData {
 }
 
 export const curationsData: CurationData = {
-
   //* ========== History ==========
   // history: [
   //   {
@@ -67,14 +66,18 @@ export const curationsData: CurationData = {
       title: "Ironies of Automation",
       link: "https://ckrybus.com/static/papers/Bainbridge_1983_Automatica.pdf",
     },
-    // {
-    //   title: "How to do Great Work",
-    //   link: "https://paulgraham.com/greatwork.html",
-    // }
+    {
+      title: "How to do Great Work",
+      link: "https://paulgraham.com/greatwork.html",
+    }
   ],
 
   //* ========== Films ==========
   films: [
+    {
+      title: "Hacksaw Ridge",
+      link: "https://www.imdb.com/title/tt2119532/?ref_=nv_sr_srsg_1_tt_5_nm_2_in_0_q_hacksa",
+    },
     {
       title: "Interstellar",
       link: "https://www.imdb.com/title/tt0816692/",
@@ -82,6 +85,10 @@ export const curationsData: CurationData = {
     {
       title: "Dune II",
       link: "https://www.imdb.com/title/tt15239678/",
+    },
+    {
+      title: "Backrooms",
+      link: "https://www.imdb.com/title/tt26657236/",
     },
     // {
     //   title: "Imitation Game",
@@ -99,14 +106,11 @@ export const curationsData: CurationData = {
     //   title: "Pride and Prejudice",
     //   link: "https://www.imdb.com/title/tt0414387/",
     // },
-    {
-      title: "Hacksaw Ridge",
-      link: "https://www.imdb.com/title/tt2119532/?ref_=nv_sr_srsg_1_tt_5_nm_2_in_0_q_hacksa",
-    },
+
     {
       title: "Tron: Ares",
-      link: "https://www.imdb.com/title/tt6604188/"
-    }
+      link: "https://www.imdb.com/title/tt6604188/",
+    },
   ],
 
   //* ========== Places ==========
@@ -136,23 +140,4 @@ export const curationsData: CurationData = {
       link: "https://www.instagram.com/berthcoffee_tokyo/",
     },
   ],
-  //* ========== Blogs ==========
-  // blogs: [
-  //   {
-  //     title: "Nicky Case",
-  //     link: "https://ncase.me/",
-  //   },
-  //   {
-  //     title: "Gwern Branwen",
-  //     link: "https://gwern.net/",
-  //   },
-  //   {
-  //     title: "Shan Carter",
-  //     link: "http://shancarter.com/",
-  //   },
-  //   {
-  //     title: "Geoffrey Litt",
-  //     link: "https://www.geoffreylitt.com/",
-  //   }
-  // ],
 };

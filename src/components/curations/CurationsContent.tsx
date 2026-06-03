@@ -19,6 +19,8 @@ interface CurationColumnProps {
 }
 
 function CurationColumn({ title, items, isVisible }: CurationColumnProps) {
+  const displayTitle = title.charAt(0).toUpperCase() + title.slice(1);
+
   return (
     <div
       className="curations-column w-full"
@@ -28,7 +30,9 @@ function CurationColumn({ title, items, isVisible }: CurationColumnProps) {
         transition: "opacity 600ms ease-out, filter 600ms ease-out",
       }}
     >
-      <h2 className="text-white font-serif italic text-[22px] mb-8">{title}</h2>
+      <h2 className="text-white font-serif italic text-[22px] mb-8">
+        {displayTitle}
+      </h2>
       <div className="space-y-3">
         {items.map((item, index) => (
           <div
@@ -95,7 +99,7 @@ export default function CurationsContent() {
         {/* Main Content Area */}
         <div className="flex-1 flex items-start lg:items-center justify-center lg:min-h-0 lg:overflow-hidden">
           {/* Centered Container - nav + divider + content */}
-          <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 items-start lg:items-center py-4 lg:py-[14vh] w-full lg:h-full">
+          <div className={pageLayoutClasses.innerWrapper}>
             {/* Left Nav */}
             <div className={pageLayoutClasses.navWidth}>
               <HomeLeftNav />
@@ -106,7 +110,7 @@ export default function CurationsContent() {
 
             {/* Main Content */}
             <div
-              className="flex-1 flex flex-col lg:flex-row gap-8 lg:gap-12 lg:overflow-hidden lg:h-full"
+              className={`${pageLayoutClasses.mainContent} flex flex-col gap-8 lg:flex-row lg:gap-12 lg:overflow-hidden`}
               style={pageContentStyle}
             >
               {/* Description */}
@@ -185,18 +189,18 @@ export default function CurationsContent() {
                 >
                   <div className="flex flex-col">
                     <a
+                        href="https://www.truemichaeljackson.com/art/on-production-and-work/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        michael jackson
+                    </a>
+                    <a
                       href="https://www.americanscientist.org/article/random-paths-to-frequency-hopping"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       hedy lamarr
-                    </a>
-                    <a
-                      href="https://www.truemichaeljackson.com/art/on-production-and-work/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      michael jackson
                     </a>
                     <a
                       href="https://www.nationalww2museum.org/war/articles/private-first-class-desmond-thomas-doss-medal-of-honor"
@@ -229,12 +233,11 @@ export default function CurationsContent() {
                       alexander hamilton
                     </a>
                     <a
-                      href="#"
+                      href="https://www.youtube.com/watch?v=UC6kSseNkV0"
                       target="_blank"
-                      style={{ pointerEvents: "none" }}
                       rel="noopener noreferrer"
                     >
-                      alan turing
+                      bridgit mendler
                     </a>{" "}
                   </div>
                   <div className="flex flex-col">

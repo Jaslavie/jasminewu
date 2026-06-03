@@ -3,5 +3,9 @@
 import HomeContentSinglePage from "@/components/home/HomeContentSinglePage";
 
 export default function Home() {
-  return <HomeContentSinglePage />;
+  return (
+    <div className="min-h-screen">
+      <HomeContentSinglePage />
+    </div>
+  );
 }

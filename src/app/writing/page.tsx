@@ -1,10 +1,5 @@
-import SocialLinks from "@/components/global/SocialLinks";
-import WritingContent from "@/components/writing/WritingContent";
+import NotesContent from "@/components/notes/NotesContent";
 
 export default function Writing() {
-  return (
-    <div>
-      <WritingContent />
-    </div>
-  );
+  return <NotesContent />;
 }

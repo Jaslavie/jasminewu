@@ -27,12 +27,12 @@ export default function WritingContent() {
     // },
     // {
     //   title: "how to design living ecosystems",
-    //   link: "/writing/living-ecosystems",
+    //   link: "/writing-old/living-ecosystems",
     //   publishDate: "2025-10-18",
     // },
     // {
     //   title: "principles",
-    //   link: "/writing/principles",
+    //   link: "/writing-old/principles",
     //   publishDate: "2025-02-18",
     // },
     {
@@ -97,7 +97,7 @@ export default function WritingContent() {
             <div className={pageLayoutClasses.divider} />
 
             {/* Main Content */}
-            <div style={pageContentStyle} className="h-full">
+            <div style={pageContentStyle} className={pageLayoutClasses.mainContent}>
               {/* Writing List with box hover effect */}
               <ListBox
                 className="flex flex-col h-full"

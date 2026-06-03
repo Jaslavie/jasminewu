@@ -1,19 +1,31 @@
 import type { ReactNode } from "react";
+import ArticleHeader from "@/components/ui/ArticleHeader";
 import { pageContentStyle } from "@/components/home/pageStyles";
 
 interface NoteArticleProps {
   title: string;
   subtitle: string;
+  readingTime?: string;
+  featuredImage?: {
+    url: string;
+    alt?: string;
+    caption?: string;
+  };
   children: ReactNode;
   muted?: boolean;
 }
 
 const noteProseClass =
-  "[&_ul]:list-disc [&_ul]:ml-5 [&_ul]:space-y-1 [&_.citation]:font-[inherit] [&_.citation]:text-[0.65em] [&_.citation]:align-super [&_.citation]:text-inherit [&_.citation]:border-transparent [&_.citation:hover]:text-inherit [&_.citation:hover]:border-transparent";
+  "[&_ul]:list-disc [&_ul]:ml-5 [&_ul]:space-y-1 [&_ul_ul]:mt-1 [&_ul_ul]:ml-4 [&_p]:m-0 [&_h2]:mt-0 [&_h2]:mb-6 [&_h2]:text-[24px] [&_h2]:font-semibold [&_h2]:text-white [&_section]:space-y-4 [&_.note-caption_a.link]:mb-0 [&_[data-note-divider]]:!my-0";
+
+const noteMutedClass =
+  "text-white/[0.15] [&_*]:text-white/[0.15] [&_h3]:text-white/[0.15] [&_img]:opacity-[0.15] [&_video]:opacity-[0.15] [&_.note-caption]:text-white/[0.15] [&_.citation]:border-transparent [&_.link[data-link-icon='true']]:border-white/[0.15] [&_.link[data-link-icon='true']:hover]:border-white/[0.15]";
 
 export default function NoteArticle({
   title,
   subtitle,
+  readingTime,
+  featuredImage,
   children,
   muted = false,
 }: NoteArticleProps) {
@@ -27,35 +39,35 @@ export default function NoteArticle({
   if (muted) {
     return (
       <article
-        className={`w-full text-white/[0.15] [&_*]:text-white/[0.15] [&_.citation]:border-transparent ${noteProseClass}`}
+        data-note-muted="true"
+        className={`w-full ${noteMutedClass} ${noteProseClass}`}
         style={{ fontFamily: pageContentStyle.fontFamily }}
       >
-        <h1 className="text-[30px] italic lowercase leading-none md:text-[36px]">
-          {title}
-        </h1>
-        <p className="mt-1 text-[15px]">{subtitle}</p>
-        <div className="mt-8 space-y-5 text-[15px] leading-[1.55]">{children}</div>
+        <ArticleHeader
+          title={title}
+          date={subtitle}
+          readingTime={readingTime}
+          featuredImage={featuredImage}
+          muted
+          titleLowercase={false}
+        />
+        <div className="article-prose relative space-y-4 text-[15px] leading-[1.55]">{children}</div>
       </article>
     );
   }
 
   return (
     <article className="w-full">
-      <h1
-        className="text-[30px] italic lowercase leading-none text-white md:text-[36px]"
-        style={{ fontFamily: pageContentStyle.fontFamily }}
-      >
-        {title}
-      </h1>
-      <p
-        className="mt-1 text-[15px] text-white/75"
-        style={{ fontFamily: pageContentStyle.fontFamily }}
-      >
-        {subtitle}
-      </p>
+      <ArticleHeader
+        title={title}
+        date={subtitle}
+        readingTime={readingTime}
+        featuredImage={featuredImage}
+        titleLowercase={false}
+      />
 
       <div
-        className={`mt-8 space-y-5 leading-[1.55] ${noteProseClass}`}
+        className={`article-prose relative mt-8 space-y-4 leading-[1.55] ${noteProseClass}`}
         style={bodyStyle}
       >
         {children}

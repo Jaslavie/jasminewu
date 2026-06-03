@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import ArticleHeader from "@/components/ui/ArticleHeader";
 
 interface WritingContainerProps {
   children: React.ReactNode;
@@ -28,6 +28,7 @@ interface WritingHeaderProps {
   featuredImage?: {
     url: string;
     alt?: string;
+    caption?: string;
   };
   backHref: string;
   backText: string;
@@ -52,39 +53,12 @@ export function WritingHeader({
       </Link>
 
       {/* Title and Date */}
-      <div className="mb-12">
-        <h1
-          className="font-serif italic text-[32px] text-white mb-4"
-          style={{ fontFamily: "'EB Garamond', serif" }}
-        >
-          {title}
-        </h1>
-        <div
-          className="flex items-center gap-4 text-gray-500 text-md"
-          style={{ fontFamily: "'EB Garamond', serif" }}
-        >
-          <p>{date}</p>
-          {readingTime && (
-            <>
-              <span>•</span>
-              <p>{readingTime} min read</p>
-            </>
-          )}
-        </div>
-      </div>
-
-      {/* Featured Image */}
-      {featuredImage && (
-        <div className="mb-8">
-          <Image
-            src={featuredImage.url}
-            alt={featuredImage.alt || title}
-            width={1000}
-            height={1000}
-            className="w-full h-auto"
-          />
-        </div>
-      )}
+      <ArticleHeader
+        title={title}
+        date={date}
+        readingTime={readingTime}
+        featuredImage={featuredImage}
+      />
     </>
   );
 }
@@ -95,7 +69,7 @@ interface WritingContentProps {
 
 export function WritingContent({ children }: WritingContentProps) {
   return (
-    <div className="prose prose-invert max-w-none space-y-8">{children}</div>
+    <div className="article-prose prose prose-invert max-w-none space-y-8">{children}</div>
   );
 }
 
