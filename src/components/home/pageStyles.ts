@@ -5,7 +5,7 @@ export const pageContentStyle = {
   fontWeight: 400,
   fontSize: "16px",
   lineHeight: "1.25",
-  color: "#9A9A9A",
+  color: "var(--color-text-muted)",
 } as const;
 
 /** Date line under note/article titles */

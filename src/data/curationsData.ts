@@ -95,7 +95,7 @@ export const curationsData: CurationData = {
     //   link: "https://www.imdb.com/title/tt2084970/",
     // },
     {
-      title: "the pursuit of happyness",
+      title: "The Pursuit of Happyness",
       link: "https://www.imdb.com/title/tt0454921/",
     },
     {

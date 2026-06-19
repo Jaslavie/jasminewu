@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   ListBox,
   ListItemBox,
@@ -10,18 +10,33 @@ import {
 } from "@/components/ui/ListBox";
 import HomeLeftNav from "@/components/home/HomeLeftNav";
 import Footer from "@/components/global/Footer";
-import ProjectFilter from "@/components/projects/ProjectFilter";
+// import ProjectFilter from "@/components/projects/ProjectFilter";
 import {
-  filterProjectsByTags,
+  // filterProjectsByTags,
   projects,
   type Project,
-  type ProjectTag,
+  // type ProjectTag,
 } from "@/data/projectsData";
 import {
   pageContentStyle,
   pageLayoutClasses,
   pageCaptionClass,
 } from "@/components/home/pageStyles";
+
+function ExternalRedirectHint({ projects }: { projects: Project[] }) {
+  const { focusedIndex } = useListHover();
+  const link = focusedIndex !== null ? projects[focusedIndex]?.link : null;
+  if (!link?.startsWith("http")) return null;
+
+  return (
+    <p
+      className="fixed bottom-4 left-4 z-50 hidden lg:block text-[13px] text-white/50"
+      style={{ fontFamily: "'EB Garamond', serif", letterSpacing: "0.04em" }}
+    >
+      {link}
+    </p>
+  );
+}
 
 function ProjectHoverPreview({ projects }: { projects: Project[] }) {
   const { focusedIndex } = useListHover();
@@ -75,20 +90,22 @@ function ProjectHoverPreview({ projects }: { projects: Project[] }) {
 
 export default function ProjectsContent() {
   const [showList, setShowList] = useState(false);
-  const [selectedTags, setSelectedTags] = useState<ProjectTag[]>([]);
+  // const [selectedTags, setSelectedTags] = useState<ProjectTag[]>([]);
 
   useEffect(() => {
     const timer = setTimeout(() => setShowList(true), 200);
     return () => clearTimeout(timer);
   }, []);
 
-  const filteredProjects = useMemo(
-    () => filterProjectsByTags(projects, selectedTags),
-    [selectedTags],
-  );
+  // const filteredProjects = useMemo(
+  //   () => filterProjectsByTags(projects, selectedTags),
+  //   [selectedTags],
+  // );
+  const filteredProjects = projects;
 
   const itemsForNavigation = filteredProjects.map((p) => ({ href: p.link }));
-  const listKey = selectedTags.slice().sort().join("-") || "all";
+  const listKey = "all";
+  // const listKey = selectedTags.slice().sort().join("-") || "all";
 
   return (
     <div className={pageLayoutClasses.screenSpace}>
@@ -115,6 +132,7 @@ export default function ProjectsContent() {
                 items={itemsForNavigation}
               >
                 <ListNavHint />
+                <ExternalRedirectHint projects={filteredProjects} />
                 <div
                   className="flex h-full w-full flex-col gap-8 lg:flex-row lg:items-start"
                   style={{
@@ -124,10 +142,10 @@ export default function ProjectsContent() {
                   }}
                 >
                   <div className="w-full lg:w-1/2">
-                    <ProjectFilter
+                    {/* <ProjectFilter
                       selectedTags={selectedTags}
                       onChange={setSelectedTags}
-                    />
+                    /> */}
                     <div className="flex flex-col gap-2">
                       {filteredProjects.map((project, index) => (
                         <ListItemBox

@@ -124,7 +124,7 @@ export default function CurationsContent() {
               >
                 <p>
                   I like to think of things like a scrapbook: nodes of artifacts
-                  to be observed, collected, then organized into a network.
+                  to be observed, collected, then pieced together like a puzzle.
                 </p>
                 <p>
                   I like things that are slightly out of our attention, stripped
@@ -142,9 +142,27 @@ export default function CurationsContent() {
                   </a> */}
                   , scandinavian architecture, and avatar-esque cinematography.
                 </p>
-                <p>
+                <p className="[&_.citation]:ml-0">
                   This is a [growing] collection of artifacts that resonate with
-                  me, and humans that inspire me.
+                  me, and humans that inspire me
+                  {' '}<Citation
+                    number={1}
+                    content={
+                      <>
+                        I value sustained patience: the decade-long quiet work
+                        without recognition. 
+                        <br />
+                        The greatest artists and thinkers
+                        create beyond the spotlight, but then are heard all at
+                        once like{" "}
+                        <ChaosLink href="https://www.mothfund.com/manifesto">
+                          moths
+                        </ChaosLink>
+                        . Nearly all these individuals fit this mold.
+                      </>
+                    }
+                  />
+                  .
                 </p>
               </div>
 
@@ -189,11 +207,11 @@ export default function CurationsContent() {
                 >
                   <div className="flex flex-col">
                     <a
-                        href="https://www.truemichaeljackson.com/art/on-production-and-work/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        michael jackson
+                      href="https://www.truemichaeljackson.com/art/on-production-and-work/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      michael jackson
                     </a>
                     <a
                       href="https://www.americanscientist.org/article/random-paths-to-frequency-hopping"

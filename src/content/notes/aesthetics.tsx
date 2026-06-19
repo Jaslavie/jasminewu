@@ -106,12 +106,11 @@ export default function AestheticsContent() {
         </li>
         <li>
           Classical art movements — baroque and the weaponization of art as a
-          method of influence and spiritual zeal to rally the masses. What is
-          the human idea of perfection? How did we define the
-          &ldquo;ideal&rdquo; during that period of time?
+          method of influence and spiritual zeal to rally the masses. What was
+          the human ideal for perfection?
         </li>
         <li>
-          Hidden nooks — Lake Tahoe during sunset. Orange orchard at the
+          Hidden nooks: Lake Tahoe during sunset, orange orchard at the
           Huntington Gardens.
         </li>
         <li>The thought taken to type or handwrite old notes and documents.</li>
@@ -119,6 +118,9 @@ export default function AestheticsContent() {
           I like when people perform tasks with traditional practices: coffee
           shop owners brewing pour-over coffee instead of using massive
           machines. Coffee that keeps its original bean flavor.
+        </li>
+        <li>
+          Dog-eared pages in books.
         </li>
       </ul>
 

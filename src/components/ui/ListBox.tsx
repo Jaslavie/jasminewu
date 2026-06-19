@@ -30,7 +30,11 @@ export function useListHover() {
   return useContext(ListHoverContext);
 }
 
-export function ListNavHint({ alsoObserving = false }: { alsoObserving?: boolean }) {
+export function ListNavHint({
+  alsoObserving = false,
+}: {
+  alsoObserving?: boolean;
+}) {
   const { focusedIndex } = useListHover();
   return <NavHint isObserving={alsoObserving || focusedIndex !== null} />;
 }
@@ -100,7 +104,15 @@ export function ListBox({
         onEscape?.();
       }
     },
-    [focusedIndex, items, onEscape, onNavigate, onSelect, router, selectionMode]
+    [
+      focusedIndex,
+      items,
+      onEscape,
+      onNavigate,
+      onSelect,
+      router,
+      selectionMode,
+    ],
   );
 
   useEffect(() => {
@@ -124,7 +136,12 @@ interface ListItemBoxProps {
   index: number;
 }
 
-export function ListItemBox({ href, title, subtitle, index }: ListItemBoxProps) {
+export function ListItemBox({
+  href,
+  title,
+  subtitle,
+  index,
+}: ListItemBoxProps) {
   const { focusedIndex, setFocusedIndex } = useListHover();
   const isExternal = href.startsWith("http") || href.startsWith("https");
 
@@ -169,7 +186,9 @@ export function ListItemBox({ href, title, subtitle, index }: ListItemBoxProps) 
     <div
       className="px-3 py-1 transition-all duration-200 cursor-pointer"
       style={{
-        border: isFocused ? "1px solid rgba(255, 255, 255, 0.6)" : "1px solid transparent",
+        border: isFocused
+          ? "1px solid rgba(255, 255, 255, 0.6)"
+          : "1px solid transparent",
         opacity: isOtherFocused ? 0.6 : 1,
       }}
       onMouseEnter={() => setFocusedIndex(index)}

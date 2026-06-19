@@ -273,7 +273,7 @@ export default function HomeContentSinglePage() {
               </div>
 
               <p>
-                I research & build systems for humans & agents to act in
+                I work on research & product for humans & agents to act in
                 partially-observable worlds, particularly in adversarial domains
                 <Citation
                   number={1}
@@ -309,10 +309,9 @@ export default function HomeContentSinglePage() {
                   }
                 />
                 . Currently I'm{" "}
-                <Link href="https://robotics.eng.uci.edu/">teaching</Link>{" "}
-                robots to perform surgeries and studying CS & neuroscience at
-                UCI. I will be in NYC this summer building privacy preserving
-                software at <Link href="https://hoth.com/">Hoth</Link>.
+                <Link href="https://robotics.eng.uci.edu/">researching</Link>{" "}
+                VLA models for dexterous robotic manipulation and studying CS & neuroscience at
+                UCI. I am in NYC this summer working on applied cryptography at <Link href="https://hoth.com/">Hoth</Link>.
               </p>
 
               <RecentSectionTabs showPast={showPast} onSelect={setShowPast} />
@@ -334,7 +333,7 @@ export default function HomeContentSinglePage() {
                     <Link href="https://www.gallatin.ai/">Gallatin</Link>
                   </li>
                   <li>
-                    Created framework for analyzing military intel at{" "}
+                    Created a framework for analyzing military intel at{" "}
                     <Link href="https://time.com/6691662/ai-ukraine-war-palantir/">
                       Palantir
                     </Link>
