@@ -239,6 +239,13 @@ export default function CurationsContent() {
                     >
                       bridgit mendler
                     </a>{" "}
+                    <a
+                      href="https://www.cafonline.com/fifa-world-cup/news/from-world-cup-inspiration-to-world-cup-hero-the-extraordinary-story-behind-cape-verdes-vozinha/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      vozinha
+                    </a>{" "}
                   </div>
                   <div className="flex flex-col">
                     <a

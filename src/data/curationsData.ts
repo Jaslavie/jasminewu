@@ -95,6 +95,10 @@ export const curationsData: CurationData = {
     //   link: "https://www.imdb.com/title/tt2084970/",
     // },
     {
+      title: "the pursuit of happyness",
+      link: "https://www.imdb.com/title/tt0454921/",
+    },
+    {
       title: "The Fault in our Stars",
       link: "https://www.imdb.com/title/tt2582846/",
     },
@@ -107,10 +111,6 @@ export const curationsData: CurationData = {
     //   link: "https://www.imdb.com/title/tt0414387/",
     // },
 
-    {
-      title: "Tron: Ares",
-      link: "https://www.imdb.com/title/tt6604188/",
-    },
   ],
 
   //* ========== Places ==========

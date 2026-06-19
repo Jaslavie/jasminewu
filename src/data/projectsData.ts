@@ -21,6 +21,16 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: "le-wm-minecraft",
+    title: "LeWorldModel for Minecraft",
+    description: "Physics-grounded world model for 3D Minecraft tasks",
+    link: "https://github.com/Jaslavie/le-wm-minecraft",
+    hoverImage: "/projects/lewm_hover.png",
+    hoverCaption:
+      "Reimplemented LeWorldModel from scratch to learn Minecraft dynamics in latent space.",
+    tags: ["ai-research", "software-engineering"],
+  },
+  {
     id: "pltr",
     title: "Military Intelligence Analysis",
     description: "Summer 2025 internship @ Palantir",

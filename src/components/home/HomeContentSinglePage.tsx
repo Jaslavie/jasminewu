@@ -273,7 +273,7 @@ export default function HomeContentSinglePage() {
               </div>
 
               <p>
-                I work on systems for humans & agents to act in
+                I research & build systems for humans & agents to act in
                 partially-observable worlds, particularly in adversarial domains
                 <Citation
                   number={1}
@@ -334,7 +334,7 @@ export default function HomeContentSinglePage() {
                     <Link href="https://www.gallatin.ai/">Gallatin</Link>
                   </li>
                   <li>
-                    Designed a system for analyzing military intel at{" "}
+                    Created framework for analyzing military intel at{" "}
                     <Link href="https://time.com/6691662/ai-ukraine-war-palantir/">
                       Palantir
                     </Link>
@@ -347,9 +347,9 @@ export default function HomeContentSinglePage() {
                     on lunar navigation tooling at the European Space Agency
                   </li>
                   <li>
-                    Prototyped spacesuit interfaces with{" "}
+                    Programmed spacesuit interfaces with{" "}
                     <Link href="https://www.nasa.gov/suits-and-rovers/">
-                      NASA
+                      NASA JSC
                     </Link>
                   </li>
                 </ul>
