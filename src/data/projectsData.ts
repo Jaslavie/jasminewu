@@ -21,6 +21,16 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: "world-gen",
+    title: "Verifiable 2D game generation",
+    description: "Text-to-game worlds with queryable, verifiable game states",
+    link: "https://github.com/Jaslavie/world-gen",
+    hoverImage: "/projects/worldgen_hover.gif",
+    hoverCaption:
+      "Agent harness to generate 2D game worlds with queryable, verifiable states.",
+    tags: ["ai-research", "software-engineering"],
+  },
+  {
     id: "le-wm-minecraft",
     title: "LeWorldModel for Minecraft",
     description: "Physics-grounded world model for 3D Minecraft tasks",
@@ -57,7 +67,7 @@ export const projects: Project[] = [
     link: "https://doi.org/10.4230/OASIcs.SpaceCHI.2025.25",
     hoverImage: "/projects/spaceCHI_hover.png",
     hoverCaption:
-      "Wrote independent research paper with UCI presented to the European Space Agency.",
+      "Wrote independent research paper on a formalized decision framework for lunar navigation with UCI, presented to the European Space Agency.",
     tags: ["ai-research"],
   },
   {

@@ -63,6 +63,7 @@ function ProjectHoverPreview({ projects }: { projects: Project[] }) {
               fill
               className="object-contain"
               sizes="(min-width: 1024px)"
+              unoptimized={activeProject.hoverImage.endsWith(".gif")}
             />
           </div>
           <p className={pageCaptionClass}>

@@ -310,14 +310,16 @@ export default function HomeContentSinglePage() {
                 />
                 . Currently I'm{" "}
                 <Link href="https://robotics.eng.uci.edu/">researching</Link>{" "}
-                VLA models for dexterous robotic manipulation and studying CS & neuroscience at
-                UCI. I am in NYC this summer working on applied cryptography at <Link href="https://hoth.com/">Hoth</Link>.
+                VLA models for dexterous robotic manipulation and studying CS &
+                neuroscience at UCI. I am in NYC this summer working on
+                privacy-preserving AI at{" "}
+                <Link href="https://hoth.com/">Hoth</Link>.
               </p>
 
               <RecentSectionTabs showPast={showPast} onSelect={setShowPast} />
               {showPast ? (
                 <p>
-                  I attended a {" "}
+                  I attended a{" "}
                   <Link href="https://devpost.com/jaslavie">hackathon</Link>{" "}
                   every weekend of freshman year as my only source of income and
                   wrote about deep tech at{" "}
@@ -326,32 +328,49 @@ export default function HomeContentSinglePage() {
                   neighborhoods and exploiting bed wars games.
                 </p>
               ) : (
-                <ul className="list-disc space-y-1 ml-5">
-                  <li>
-                    Spent 6 months deploying models to optimize battlefield
-                    logistics at{" "}
-                    <Link href="https://www.gallatin.ai/">Gallatin</Link>
-                  </li>
-                  <li>
-                    Created a framework for analyzing military intel at{" "}
-                    <Link href="https://time.com/6691662/ai-ukraine-war-palantir/">
-                      Palantir
-                    </Link>
-                  </li>
-                  <li>
-                    Presented{" "}
-                    <Link href="https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.SpaceCHI.2025.25">
-                      research
-                    </Link>{" "}
-                    on lunar navigation tooling at the European Space Agency
-                  </li>
-                  <li>
-                    Programmed spacesuit interfaces with{" "}
-                    <Link href="https://www.nasa.gov/suits-and-rovers/">
-                      NASA JSC
-                    </Link>
-                  </li>
-                </ul>
+                <p>
+                  I spent a year working on{" "}
+                  <Link href="https://en.wikipedia.org/wiki/Wargame">
+                    wargaming simulations
+                  </Link>{" "}
+                  at{" "}
+                  <Link href="https://time.com/6691662/ai-ukraine-war-palantir/">
+                    Palantir
+                  </Link>{" "}
+                  and <Link href="https://www.gallatin.ai/">Gallatin</Link>.
+                  Before that, I spent a stint researching lunar navigation
+                  tooling with NASA JSC. I'm most interested in{" "}
+                  <Link href="https://www.bbc.com/news/articles/cj6gr0xkyr3o#:~:text=%22mechanistic%20world%20model%22">
+                    mechanistic world modeling
+                  </Link>
+                  , generalist game agents, and ultimately simulating consciousness.
+                </p>
+                // <ul className="list-disc space-y-1 ml-5">
+                //   <li>
+                //     Spent 6 months deploying models to optimize battlefield
+                //     logistics at{" "}
+                //     <Link href="https://www.gallatin.ai/">Gallatin</Link>
+                //   </li>
+                //   <li>
+                //     Created a framework for analyzing military intel at{" "}
+                //     <Link href="https://time.com/6691662/ai-ukraine-war-palantir/">
+                //       Palantir
+                //     </Link>
+                //   </li>
+                //   <li>
+                //     Presented{" "}
+                //     <Link href="https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.SpaceCHI.2025.25">
+                //       research
+                //     </Link>{" "}
+                //     on lunar navigation tooling at the European Space Agency
+                //   </li>
+                //   <li>
+                //     Programmed spacesuit interfaces with{" "}
+                //     <Link href="https://www.nasa.gov/suits-and-rovers/">
+                //       NASA JSC
+                //     </Link>
+                //   </li>
+                // </ul>
               )}
               <p>
                 You'll find me sampling cortados and{" "}

@@ -55,6 +55,10 @@ export const curationsData: CurationData = {
       link: "https://www.amazon.com/Julius-Caesar-Folger-Shakespeare-Library/dp/0743482743/",
     },
     {
+      title: "Minecraft: End Poem",
+      link: "https://theendpoem.com/",
+    },
+    {
       title: "Moth Fund Manifesto",
       link: "https://www.mothfund.com/manifesto",
     },
@@ -62,10 +66,10 @@ export const curationsData: CurationData = {
       title: "The Republic Journal",
       link: "https://therepublicjournal.com/",
     },
-    {
-      title: "Ironies of Automation",
-      link: "https://ckrybus.com/static/papers/Bainbridge_1983_Automatica.pdf",
-    },
+    // {
+    //   title: "Ironies of Automation",
+    //   link: "https://ckrybus.com/static/papers/Bainbridge_1983_Automatica.pdf",
+    // },
     {
       title: "How to do Great Work",
       link: "https://paulgraham.com/greatwork.html",
