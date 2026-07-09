@@ -16,13 +16,13 @@ export const notes: NoteMeta[] = [
     id: "aesthetics",
     title: "Aesthetics",
     subtitle: "06-02-26",
-    readingTime: "8",
+    readingTime: "2",
   },
   {
     id: "bucketlist",
     title: "Bucketlist",
     subtitle: "05-27-26",
-    readingTime: "2",
+    readingTime: "1",
   },
   {
     id: "living-ecosystems",
@@ -33,6 +33,12 @@ export const notes: NoteMeta[] = [
       url: "/writing/ecosystemThumbnail.png",
       caption: "",
     },
+  },
+  {
+    id: "principles",
+    title: "Principles",
+    subtitle: "02-18-25",
+    readingTime: "4",
   },
   {
     id: "outsized-bets",
