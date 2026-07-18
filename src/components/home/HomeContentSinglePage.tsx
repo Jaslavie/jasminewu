@@ -273,8 +273,8 @@ export default function HomeContentSinglePage() {
               </div>
 
               <p>
-                I work on research & product for humans & agents to act in
-                partially-observable worlds, particularly in adversarial domains
+                I work on research to understand how agents build and 
+                reason over internal models of the world, particularly in adversarial domains
                 <Citation
                   number={1}
                   content={
@@ -310,7 +310,7 @@ export default function HomeContentSinglePage() {
                 />
                 . Currently I'm{" "}
                 <Link href="https://robotics.eng.uci.edu/">researching</Link>{" "}
-                VLA models for dexterous robotic manipulation and studying CS &
+                VLA models for dexterous robotic manipulation and studying CS, cognition, and
                 neuroscience at UCI. I am in NYC this summer working on
                 privacy-preserving AI at{" "}
                 <Link href="https://hoth.com/">Hoth</Link>.
@@ -342,8 +342,8 @@ export default function HomeContentSinglePage() {
                   tooling with NASA JSC. I'm most interested in{" "}
                   <Link href="https://www.bbc.com/news/articles/cj6gr0xkyr3o#:~:text=%22mechanistic%20world%20model%22">
                     mechanistic world modeling
-                  </Link>
-                  , generalist game agents, and ultimately simulating consciousness.
+                  </Link>{" "}
+                  and consciousness.
                 </p>
                 // <ul className="list-disc space-y-1 ml-5">
                 //   <li>

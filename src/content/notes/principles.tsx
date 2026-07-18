@@ -24,8 +24,9 @@ export default function PrinciplesContent() {
         ripples beyond their generation.
       </p>
       <p>
-        This is a core ethos I want to bring into my work. I want to build
-        systems that endure beyond myself.
+        I'm interested in what gives certain works this kind of longevity, and
+        why some individuals devote their lives to building something they may
+        never live to see fully realized.
       </p>
 
       <Divider />
@@ -37,21 +38,12 @@ export default function PrinciplesContent() {
           Mastery
         </NoteLink>
         . In a culture that glorifies prestige, quick wins, and flamboyant
-        displays of accomplishment, I firmly believe the next era will elevate
-        deep thinkers, masters of their field, and enduring systems (see{" "}
+        displays of accomplishment, I deeply appreciate deep thinkers and
+        masters who sustain decades-long relationships with a problem (see{" "}
         <NoteLink href="https://www.mothfund.com/manifesto">
           Moth Fund Manifesto
         </NoteLink>
         ).
-      </p>
-      <p>
-        We should promote commitment over optionality, specialism over
-        generalism, and focus over shallow achievement, while still maintaining
-        enough adaptability to survive.
-      </p>
-      <p>
-        Currently my goal is to master the art of human experience by deriving
-        physical reality from first principles (via mechanistic world models).
       </p>
 
       <Divider />
@@ -63,15 +55,11 @@ export default function PrinciplesContent() {
         <NoteLink href="https://boyle.substack.com/p/on-seriousness">
           shields of irony
         </NoteLink>{" "}
-        captures how often irony dulls seriousness and lets people hide from
-        commitment.
+        captures how often irony dulls seriousness to defend against "caring too
+        much".
       </p>
       <p>
-        I strongly believe that once you enter a venture, you should fully
-        commit to it and treat it as your life&apos;s mission, even if it fails.
-        I don&apos;t treat work as a fun game to optimize. What I work on is an
-        extension of what I value and who I am. I want to cultivate this like a
-        garden, not a forest left to grow wild without care.
+        I think all great work is approached with unusual conviction and caring.
       </p>
 
       <Divider />
@@ -79,9 +67,9 @@ export default function PrinciplesContent() {
       <h3>Obsession</h3>
       <p>
         Self-made success is one of the most peculiar and incredible human
-        phenomena. Growing up without a silver spoon, money, connections, or
-        successful parents, puts your odds of success at near zero. Yet some of
-        the most exceptional people in history rose from nothing.
+        phenomena. Growing up without a silver spoon puts your odds of success
+        at near zero. Yet some of the most exceptional people in history rose
+        from nothing.
       </p>
       <p>
         This deeply fascinates me. I think this is one of the root nodes of what
@@ -108,24 +96,13 @@ export default function PrinciplesContent() {
           expectations by at least 2x.
         </li>
         <li>
-          Regret is an intoxicating force. It can either kill you or push you to
-          prove yourself. Always choose the latter.
+          Get really good at reading bullshit. It is often disguised as prestige
+          and status.
         </li>
+        <li>You know much less than you think. Always assume this baseline.</li>
         <li>
-          Get really good at reading b.s. in people. It is often disguised as
-          prestige and status.
-        </li>
-        <li>
-          You know much less than you think. You only realize this when you
-          start surrounding yourself with the top 1%.
-        </li>
-        <li>
-          Chasing achievement and quick wins is a losing game people learn too
-          late. Always aim for the long term.
-        </li>
-        <li>
-          Select close friends with the same level of scrutiny you would use to
-          evaluate a romantic partner.
+          Ride the intoxicating force (anger, regret, etc.) to push yourself to
+          work harder.
         </li>
         <li>
           Stick with your convictions ruthlessly. If the group does not align,

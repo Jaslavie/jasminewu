@@ -10,7 +10,7 @@ import ObservationCollapse from "@/components/ui/ObservationCollapse";
 export const metadata: Metadata = {
   title: "Jasmine Wu",
   description:
-    "AI Researcher & Product Engineer, currently deploying world models and designing environments for human-AI co-reasoning. Previously at Palantir.",
+    "Researcher focused on building internal models of reality for agents to reason over.",
   icons: {
     icon: "/Jasmine_Wu_Logo_Square.png",
     shortcut: "/Jasmine_Wu_Logo_Square.png",
