@@ -264,7 +264,7 @@ export default function HomeContentSinglePage() {
 
                 {/* Headline with typing cursor */}
                 <h3>
-                  &gt; Hi, I&apos;m <NameHoverSwap />
+                  Hi, I&apos;m <NameHoverSwap />
                   {/* <span
                     className="inline-block w-[2px] h-[0.9em] bg-white ml-1 align-middle"
                     style={{ opacity: showCursor ? 1 : 0 }}
@@ -273,8 +273,9 @@ export default function HomeContentSinglePage() {
               </div>
 
               <p>
-                I work on research to understand how agents build and 
-                reason over internal models of the world, particularly in adversarial domains
+                I work on research to understand how agents build and reason
+                over internal models of the physical world, particularly in
+                adversarial domains
                 <Citation
                   number={1}
                   content={
@@ -282,7 +283,7 @@ export default function HomeContentSinglePage() {
                       I believe the hardest problems are solved in the most high
                       pressure environments. I'm a strong believer in the ethos
                       of wartime resolve. I'm deeply drawn to WW2 — which
-                      revealed to us the impossible magnitude of human
+                      revealed to us the incredible magnitude of human
                       potential. See{" "}
                       <a
                         href="https://www.npr.org/2016/11/04/500548745/the-real-hacksaw-ridge-soldier-saved-75-souls-without-ever-carrying-a-gun"
@@ -308,24 +309,24 @@ export default function HomeContentSinglePage() {
                     </>
                   }
                 />
-                . Currently I'm{" "}
-                <Link href="https://robotics.eng.uci.edu/">researching</Link>{" "}
-                VLA models for dexterous robotic manipulation and studying CS, cognition, and
-                neuroscience at UCI. I am in NYC this summer working on
-                privacy-preserving AI at{" "}
-                <Link href="https://hoth.com/">Hoth</Link>.
+                . I'm currently working on spatial reasoning models in{" "}
+                <Link href="https://robotics.eng.uci.edu/">
+                  robot manipulation
+                </Link>{" "}
+                and{" "}
+                <Link href="https://systems.mit.edu/">lunar simulation</Link>,
+                and studying cs and cognitive neuroscience at UC Irvine.
               </p>
 
               <RecentSectionTabs showPast={showPast} onSelect={setShowPast} />
               {showPast ? (
                 <p>
-                  I attended a{" "}
-                  <Link href="https://devpost.com/jaslavie">hackathon</Link>{" "}
-                  every weekend of freshman year as my only source of income and
-                  wrote about deep tech at{" "}
-                  <Link href="https://research.contrary.com/">Contrary</Link>. I
-                  was a devout Minecraft kid and spent my childhood building
-                  neighborhoods and exploiting bed wars games.
+                  I spent most weekends of freshman year at{" "}
+                  <Link href="https://devpost.com/jaslavie">hackathons</Link>{" "}
+                  where I developed a serial obsession with experimentation.
+                  Before that, I was a devout Minecraft kid, spending my
+                  childhood building neighborhoods and exploiting bed wars
+                  games.
                 </p>
               ) : (
                 <p>
@@ -338,12 +339,10 @@ export default function HomeContentSinglePage() {
                     Palantir
                   </Link>{" "}
                   and <Link href="https://www.gallatin.ai/">Gallatin</Link>.
-                  Before that, I spent a stint researching lunar navigation
-                  tooling with NASA JSC. I'm most interested in{" "}
-                  <Link href="https://www.bbc.com/news/articles/cj6gr0xkyr3o#:~:text=%22mechanistic%20world%20model%22">
-                    mechanistic world modeling
-                  </Link>{" "}
-                  and consciousness.
+                  Before that, I spent a stint researching decision-making
+                  frameworks for lunar navigation with NASA JSC. Recently, I've
+                  been thinking a lot about computational models of perception,
+                  decision-making, and consciousness.
                 </p>
                 // <ul className="list-disc space-y-1 ml-5">
                 //   <li>

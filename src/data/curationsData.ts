@@ -55,25 +55,25 @@ export const curationsData: CurationData = {
       link: "https://www.amazon.com/Julius-Caesar-Folger-Shakespeare-Library/dp/0743482743/",
     },
     {
-      title: "Minecraft: End Poem",
+      title: "Flowers for Algernon - Daniel Keyes",
+      link: "https://www.amazon.com/Flowers-Algernon-Daniel-Keyes/dp/0156030306/",
+    },
+    {
+      title: "The Fault in Our Stars - John Green",
+      link: "https://www.amazon.com/Fault-Our-Stars-John-Green/dp/1455869929/",
+    },
+    {
+      title: "Minecraft End Poem",
       link: "https://theendpoem.com/",
-    },
-    {
-      title: "Moth Fund Manifesto",
-      link: "https://www.mothfund.com/manifesto",
-    },
-    {
-      title: "The Republic Journal",
-      link: "https://therepublicjournal.com/",
     },
     // {
     //   title: "Ironies of Automation",
     //   link: "https://ckrybus.com/static/papers/Bainbridge_1983_Automatica.pdf",
     // },
-    {
-      title: "How to do Great Work",
-      link: "https://paulgraham.com/greatwork.html",
-    }
+    // {
+    //   title: "How to do Great Work",
+    //   link: "https://paulgraham.com/greatwork.html",
+    // }
   ],
 
   //* ========== Films ==========
@@ -102,10 +102,10 @@ export const curationsData: CurationData = {
       title: "The Pursuit of Happyness",
       link: "https://www.imdb.com/title/tt0454921/",
     },
-    {
-      title: "The Fault in our Stars",
-      link: "https://www.imdb.com/title/tt2582846/",
-    },
+    // {
+    //   title: "The Fault in our Stars",
+    //   link: "https://www.imdb.com/title/tt2582846/",
+    // },
     {
       title: "The Last of Us",
       link: "https://www.imdb.com/title/tt3581920/",

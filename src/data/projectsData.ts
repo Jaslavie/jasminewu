@@ -67,7 +67,7 @@ export const projects: Project[] = [
     link: "https://doi.org/10.4230/OASIcs.SpaceCHI.2025.25",
     hoverImage: "/projects/spaceCHI_hover.png",
     hoverCaption:
-      "Wrote independent research paper on a formalized decision framework for lunar navigation with UCI, presented to the European Space Agency.",
+      "Formalized decision framework for lunar navigation, presented at the European Space Agency (Astronaut Centre) in Germany.",
     tags: ["ai-research"],
   },
   {
