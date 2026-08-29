@@ -1,6 +1,6 @@
 import Divider from "@/components/global/Divider";
 
-export default function SampleLibraryNote() {
+export default function FrankensteinNote() {
   return (
     <>
       <p>
@@ -35,8 +35,8 @@ export default function SampleLibraryNote() {
       </p>
       <ol>
         <li>
-          Consectetur adipiscing elit integer nec odio praesent libero sed cursus
-          ante.
+          Consectetur adipiscing elit integer nec odio praesent libero sed
+          cursus ante.
         </li>
         <li>
           Fusce nec tellus sed augue semper porta maecenas vestibulum mollis

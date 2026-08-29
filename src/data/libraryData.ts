@@ -4,6 +4,7 @@ export interface Book {
   author: string;
   year?: string;
   link?: string;
+  coverImage?: string;
   noteTitle?: string;
   subtitle: string; // Date string e.g. "08-28-26"
   readingTime?: string;
@@ -22,12 +23,11 @@ export interface Book {
 
 export const books: Book[] = [
   {
-    id: "book-01",
-    title: "Placeholder Title 01",
-    author: "Author Name",
-    year: "2026",
-    link: "https://example.com",
-    subtitle: "08-28-26",
+    id: "coming-soon-01",
+    title: "coming soon.",
+    author: "",
+    subtitle: "—",
+    coverImage: "/library/coming-soon.png",
     layout: {
       x: 10,
       y: 22,
@@ -39,12 +39,11 @@ export const books: Book[] = [
     },
   },
   {
-    id: "book-02",
-    title: "Placeholder Title 02",
-    author: "Author Name",
-    year: "2026",
-    link: "https://example.com",
-    subtitle: "08-20-26",
+    id: "coming-soon-02",
+    title: "coming soon.",
+    author: "",
+    subtitle: "—",
+    coverImage: "/library/coming-soon.png",
     layout: {
       x: 32,
       y: 19,
@@ -56,12 +55,11 @@ export const books: Book[] = [
     },
   },
   {
-    id: "book-03",
-    title: "Placeholder Title 03",
-    author: "Author Name",
-    year: "2026",
-    link: "https://example.com",
-    subtitle: "08-14-26",
+    id: "coming-soon-03",
+    title: "coming soon.",
+    author: "",
+    subtitle: "—",
+    coverImage: "/library/coming-soon.png",
     layout: {
       x: 56,
       y: 18,
@@ -73,12 +71,11 @@ export const books: Book[] = [
     },
   },
   {
-    id: "book-04",
-    title: "Placeholder Title 04",
-    author: "Author Name",
-    year: "2026",
-    link: "https://example.com",
-    subtitle: "08-01-26",
+    id: "coming-soon-04",
+    title: "coming soon.",
+    author: "",
+    subtitle: "—",
+    coverImage: "/library/coming-soon.png",
     layout: {
       x: 82,
       y: 21,
@@ -90,12 +87,13 @@ export const books: Book[] = [
     },
   },
   {
-    id: "book-05",
-    title: "Placeholder Title 05",
-    author: "Author Name",
-    year: "2026",
+    id: "frankenstein",
+    title: "Frankenstein",
+    author: "Mary Shelley",
+    year: "1818",
     link: "https://example.com",
-    noteTitle: "Notes on Placeholder Title 05",
+    coverImage: "/library/frankenstein.png",
+    noteTitle: "Frankenstein",
     subtitle: "07-22-26",
     readingTime: "3",
     isActive: true,
@@ -110,12 +108,11 @@ export const books: Book[] = [
     },
   },
   {
-    id: "book-06",
-    title: "Placeholder Title 06",
-    author: "Author Name",
-    year: "2026",
-    link: "https://example.com",
-    subtitle: "07-15-26",
+    id: "coming-soon-06",
+    title: "coming soon.",
+    author: "",
+    subtitle: "—",
+    coverImage: "/library/coming-soon.png",
     layout: {
       x: 43,
       y: 46,
@@ -127,12 +124,15 @@ export const books: Book[] = [
     },
   },
   {
-    id: "book-07",
-    title: "Placeholder Title 07",
-    author: "Author Name",
-    year: "2026",
+    id: "simulacra",
+    title: "Simulacra and Simulation",
+    author: "Jean Baudrillard",
+    year: "1981",
     link: "https://example.com",
+    coverImage: "/library/simulacra.png",
+    noteTitle: "Simulacra and Simulation",
     subtitle: "07-02-26",
+    readingTime: "4",
     layout: {
       x: 63,
       y: 44,
@@ -144,12 +144,11 @@ export const books: Book[] = [
     },
   },
   {
-    id: "book-08",
-    title: "Placeholder Title 08",
-    author: "Author Name",
-    year: "2026",
-    link: "https://example.com",
-    subtitle: "06-18-26",
+    id: "coming-soon-08",
+    title: "coming soon.",
+    author: "",
+    subtitle: "—",
+    coverImage: "/library/coming-soon.png",
     layout: {
       x: 84,
       y: 49,
@@ -161,12 +160,11 @@ export const books: Book[] = [
     },
   },
   {
-    id: "book-09",
-    title: "Placeholder Title 09",
-    author: "Author Name",
-    year: "2026",
-    link: "https://example.com",
-    subtitle: "06-05-26",
+    id: "coming-soon-09",
+    title: "coming soon.",
+    author: "",
+    subtitle: "—",
+    coverImage: "/library/coming-soon.png",
     layout: {
       x: 37,
       y: 76,
@@ -178,12 +176,11 @@ export const books: Book[] = [
     },
   },
   {
-    id: "book-10",
-    title: "Placeholder Title 10",
-    author: "Author Name",
-    year: "2026",
-    link: "https://example.com",
-    subtitle: "05-28-26",
+    id: "coming-soon-10",
+    title: "coming soon.",
+    author: "",
+    subtitle: "—",
+    coverImage: "/library/coming-soon.png",
     layout: {
       x: 67,
       y: 74,

@@ -64,9 +64,14 @@ export default function LibraryContent() {
                     const isOtherHovered = hoveredBookId !== null && !isHovered;
                     const { x, y, rotation, scale = 1, floatDelay, floatDuration, floatVariant } = book.layout;
 
-                    // Base opacity: 1.0 for active book, 0.45 for unlinked placeholder books
-                    const baseOpacity = isMock ? 1 : 0.45;
-                    const displayOpacity = isOtherHovered ? 0.12 : baseOpacity;
+                    // Calculate dim overlay: keeps images 100% opaque, dims via top-level dark overlay
+                    let overlayOpacity = isMock ? 0 : 0.6;
+                    if (isOtherHovered) {
+                      overlayOpacity = 0.85;
+                    } else if (isHovered) {
+                      overlayOpacity = 0;
+                    }
+
                     const displayFilter = isOtherHovered ? "blur(1.5px)" : "blur(0px)";
 
                     return (
@@ -77,11 +82,10 @@ export default function LibraryContent() {
                           left: `${x}%`,
                           top: `${y}%`,
                           zIndex: isHovered ? 30 : 10,
-                          opacity: displayOpacity,
                           filter: displayFilter,
                           transform: "translate(-50%, -50%)",
                           transition:
-                            "opacity 300ms ease, filter 300ms ease, z-index 300ms ease",
+                            "filter 300ms ease, z-index 300ms ease",
                         }}
                         onMouseEnter={() => {
                           if (isMock) setHoveredBookId(book.id);
@@ -111,6 +115,7 @@ export default function LibraryContent() {
                               book={book}
                               isSelected={isHovered}
                               interactive={isMock}
+                              overlayOpacity={overlayOpacity}
                             />
                           </div>
                         </div>

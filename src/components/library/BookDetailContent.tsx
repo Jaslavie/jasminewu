@@ -20,7 +20,6 @@ interface BookDetailContentProps {
   book: Book;
 }
 
-// Render page based on book name/id
 export default function BookDetailContent({ book }: BookDetailContentProps) {
   const router = useRouter();
   const [showContent, setShowContent] = useState(false);
@@ -42,6 +41,18 @@ export default function BookDetailContent({ book }: BookDetailContentProps) {
     const timer = setTimeout(() => setShowContent(true), 150);
     return () => clearTimeout(timer);
   }, []);
+
+  // Escape key to close/return to library
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        router.push("/library");
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [router]);
 
   useEffect(() => {
     const panel = panelRef.current;
@@ -120,7 +131,7 @@ export default function BookDetailContent({ book }: BookDetailContentProps) {
                     .filter(Boolean)
                     .join(" ")}
                 >
-                  {/* Left Column (50% on desktop, hidden on mobile for exact writing UX): Centered Book Page */}
+                  {/* Left Column (50% on desktop, hidden on mobile): Centered Book Page */}
                   <div
                     className={[
                       "hidden lg:flex w-full shrink-0 overflow-hidden transition-[width,max-height,opacity,filter] duration-300 ease-out items-center justify-center",
@@ -166,7 +177,7 @@ export default function BookDetailContent({ book }: BookDetailContentProps) {
                         </div>
                       </div>
 
-                      {/* Scrollable Note Content matching Writing / NoteArticle structure */}
+                      {/* Scrollable Note Content */}
                       <div
                         ref={panelRef}
                         className={[
