@@ -4,6 +4,7 @@ export type NoteMeta = {
   subtitle: string;
   readingTime?: string;
   externalUrl?: string;
+  isPinned?: boolean;
   featuredImage?: {
     url: string;
     alt?: string;
@@ -12,6 +13,13 @@ export type NoteMeta = {
 };
 
 export const notes: NoteMeta[] = [
+  // {
+  //   id: "principles",
+  //   title: "Principles",
+  //   subtitle: "02-18-25",
+  //   readingTime: "4",
+  //   isPinned: true,
+  // },
   {
     id: "aesthetics",
     title: "Aesthetics",
@@ -39,6 +47,7 @@ export const notes: NoteMeta[] = [
     title: "Principles",
     subtitle: "02-18-25",
     readingTime: "4",
+    // isPinned: true,
   },
   {
     id: "outsized-bets",

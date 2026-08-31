@@ -38,12 +38,12 @@ export default function FrankensteinNote() {
         />
         , websites, and cultural artifacts. When endowing it with faculties for
         reason, we do so by emulating (or attempting to emulate) the human brain
-        exactly &ndash; hence, neural networks. Yet even though we aspire to
-        equip it with all faculties that make us human, we still want to treat
-        it like an object? As we endeavor to create a consciousness akin to our
-        own &ndash; yet one we want to control, suppress, and isolate from our
-        own intelligence &mdash; we should first consider the consequences our
-        attitude may deliver.
+        exactly &ndash; hence, neural networks. Yet, though we aspire to
+        equip it with all faculties that make us human, why then do we still
+        treat it like an object? As we endeavor to create a consciousness akin
+        to our own &ndash; yet one we want to control, suppress, and isolate
+        from our own intelligence &mdash; we should first consider the
+        consequences our attitude may deliver.
       </p>
 
       <p>

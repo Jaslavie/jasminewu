@@ -246,6 +246,19 @@
     margin-top: 0.25rem !important;
   }
 
+  blockquote,
+  .article-prose blockquote {
+    @apply my-3.5 pl-3.5 ml-1 italic border-l-2;
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+  }
+
+  .theme-light blockquote,
+  .theme-light .article-prose blockquote {
+    border-color: rgba(0, 0, 0, 0.25);
+    color: rgba(0, 0, 0, 0.9);
+  }
+
   p {
     @apply text-text-body font-thin text-[16px]/[1.5] leading-[1.75rem];
   }

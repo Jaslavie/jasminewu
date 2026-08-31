@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import HomeLeftNav from "@/components/home/HomeLeftNav";
 import Footer from "@/components/global/Footer";
+import NavHint from "@/components/ui/NavHint";
 import BookCover from "./BookCover";
 import { books, type Book } from "@/data/libraryData";
 import {
@@ -41,6 +42,50 @@ export default function LibraryContent() {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const activeBooks = sortedListBooks;
+      if (activeBooks.length === 0) return;
+
+      if (e.key === "ArrowDown" || (e.key === "Tab" && !e.shiftKey)) {
+        e.preventDefault();
+        setHoveredBookId((prev) => {
+          const currentIndex = prev
+            ? activeBooks.findIndex((b) => b.id === prev)
+            : -1;
+          const nextIndex =
+            currentIndex === -1 || currentIndex >= activeBooks.length - 1
+              ? 0
+              : currentIndex + 1;
+          return activeBooks[nextIndex].id;
+        });
+      } else if (e.key === "ArrowUp" || (e.key === "Tab" && e.shiftKey)) {
+        e.preventDefault();
+        setHoveredBookId((prev) => {
+          const currentIndex = prev
+            ? activeBooks.findIndex((b) => b.id === prev)
+            : -1;
+          const nextIndex =
+            currentIndex <= 0 ? activeBooks.length - 1 : currentIndex - 1;
+          return activeBooks[nextIndex].id;
+        });
+      } else if (e.key === "Enter") {
+        if (hoveredBookId) {
+          const target = books.find((b) => b.id === hoveredBookId);
+          if (target && target.isActive) {
+            e.preventDefault();
+            router.push(`/library/${target.id}`);
+          }
+        }
+      } else if (e.key === "Escape") {
+        setHoveredBookId(null);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [sortedListBooks, hoveredBookId, router]);
+
   const handleBookClick = (book: Book) => {
     if (!book.isActive) return;
     router.push(`/library/${book.id}`);
@@ -48,6 +93,7 @@ export default function LibraryContent() {
 
   return (
     <div className={pageLayoutClasses.screenSpace}>
+      <NavHint isObserving={hoveredBookId !== null} />
       <div
         className={`flex-1 flex flex-col ${pageLayoutClasses.screenPadding}`}
       >

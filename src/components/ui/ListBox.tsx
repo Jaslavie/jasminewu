@@ -65,38 +65,53 @@ export function ListBox({
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
-      if (e.key === "ArrowDown") {
+      if (e.key === "ArrowDown" || (e.key === "Tab" && !e.shiftKey)) {
         e.preventDefault();
+        const currentIndex =
+          focusedIndex !== null
+            ? focusedIndex
+            : selectedIndex !== null
+              ? selectedIndex
+              : null;
         const next =
-          focusedIndex === null
+          currentIndex === null
             ? 0
-            : focusedIndex >= items.length - 1
+            : currentIndex >= items.length - 1
               ? 0
-              : focusedIndex + 1;
+              : currentIndex + 1;
         setFocusedIndex(next);
         if (selectionMode && onNavigate) onNavigate(next);
-      } else if (e.key === "ArrowUp") {
+      } else if (e.key === "ArrowUp" || (e.key === "Tab" && e.shiftKey)) {
         e.preventDefault();
+        const currentIndex =
+          focusedIndex !== null
+            ? focusedIndex
+            : selectedIndex !== null
+              ? selectedIndex
+              : null;
         const next =
-          focusedIndex === null
+          currentIndex === null
             ? items.length - 1
-            : focusedIndex <= 0
+            : currentIndex <= 0
               ? items.length - 1
-              : focusedIndex - 1;
+              : currentIndex - 1;
         setFocusedIndex(next);
         if (selectionMode && onNavigate) onNavigate(next);
-      } else if (e.key === "Enter" && focusedIndex !== null) {
-        e.preventDefault();
-        if (selectionMode && onSelect) {
-          onSelect(focusedIndex);
-          return;
-        }
-        const item = items[focusedIndex];
-        if (item) {
-          if (item.href.startsWith("http")) {
-            window.open(item.href, "_blank");
-          } else {
-            router.push(item.href);
+      } else if (e.key === "Enter") {
+        const activeIdx = focusedIndex !== null ? focusedIndex : selectedIndex;
+        if (activeIdx !== null) {
+          e.preventDefault();
+          if (selectionMode && onSelect) {
+            onSelect(activeIdx);
+            return;
+          }
+          const item = items[activeIdx];
+          if (item) {
+            if (item.href.startsWith("http")) {
+              window.open(item.href, "_blank");
+            } else {
+              router.push(item.href);
+            }
           }
         }
       } else if (e.key === "Escape") {
@@ -106,6 +121,7 @@ export function ListBox({
     },
     [
       focusedIndex,
+      selectedIndex,
       items,
       onEscape,
       onNavigate,
@@ -184,7 +200,7 @@ export function ListItemBox({
 
   return (
     <div
-      className="px-3 py-1 transition-all duration-200 cursor-pointer"
+      className="block w-full px-3 py-1 transition-all duration-200 cursor-pointer"
       style={{
         border: isFocused
           ? "1px solid rgba(255, 255, 255, 0.6)"

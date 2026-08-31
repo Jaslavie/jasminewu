@@ -33,17 +33,33 @@ export default function PrinciplesContent() {
 
       <h3>Mastery</h3>
       <p>
-        My favorite book is{" "}
+        {" "}
         <NoteLink href="https://www.amazon.com/Mastery-Robert-Greene/dp/014312417X">
           Mastery
-        </NoteLink>
-        . In a culture that glorifies prestige, quick wins, and flamboyant
-        displays of accomplishment, I deeply appreciate deep thinkers and
-        masters who sustain decades-long relationships with a problem (see{" "}
-        <NoteLink href="https://www.mothfund.com/manifesto">
-          Moth Fund Manifesto
-        </NoteLink>
-        ).
+        </NoteLink>{" "}
+        opens with a quote from Von Goethe:
+        <blockquote>
+          Everyone holds his fortune in his own hands, like a sculptor the raw
+          material he will fashion into a figure. But it’s the same with that
+          type of artistic activity as with all others: We are merely born with
+          the capability to do it. The skill to mold the material into what we
+          want must be learned and attentively cultivated.
+        </blockquote>
+        We are all born with an innate inclination toward something. I believe
+        the chief objective of life is to discover and cultivate this.
+        <br />
+        <br />
+        However, our culture glorifies prestige, quick wins, and flamboyant
+        displays of accomplishment, which increasingly blur our true desires
+        from childhood. To spend long stretches of unfruitful work on something
+        is quietly scorned. It is unusual to sustain decades-long relationships
+        with something with no immediate payoff.
+        <br />
+        <br />
+        It's necessary to tease out distractions and rekindle our relationship
+        with intuition, and subjects that bring out an "emotional quality" in
+        its intensity. Mastery is a critical and overlooked aspect of
+        fulfillment.
       </p>
 
       <Divider />
@@ -124,7 +140,8 @@ export default function PrinciplesContent() {
         </li>
         <li>
           Don&apos;t feel compelled to market yourself without substance. Trust
-          that the quality of your work will bring the right people to you.
+          that the quality of your work will bring the right people to you. If
+          you are not at that point yet, focus on your work, not your marketing.
         </li>
         <li>
           From Alex Karp: If you are not naturally good at something, don&apos;t

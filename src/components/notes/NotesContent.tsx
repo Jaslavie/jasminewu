@@ -165,18 +165,44 @@ function NotePreviewPanel({
   );
 }
 
-export default function NotesContent() {
+interface NotesContentProps {
+  activeNoteId?: string;
+}
+
+export default function NotesContent({ activeNoteId }: NotesContentProps = {}) {
   const [showList, setShowList] = useState(false);
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
+  const initialIndex = activeNoteId
+    ? notes.findIndex((n) => n.id === activeNoteId)
+    : null;
+
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(
+    initialIndex !== null && initialIndex !== -1 ? initialIndex : null
+  );
   const [isExpanded, setIsExpanded] = useState(false);
   const listColumnRef = useRef<HTMLDivElement>(null);
   const notePanelContainerRef = useRef<HTMLDivElement>(null);
   const notePanelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowList(true), 200);
+    const timer = setTimeout(() => setShowList(true), 150);
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    if (activeNoteId) {
+      const idx = notes.findIndex((n) => n.id === activeNoteId);
+      if (idx !== -1) {
+        setSelectedIndex(idx);
+        const isMobile =
+          typeof window !== "undefined" &&
+          window.matchMedia("(max-width: 1023px)").matches;
+        if (isMobile) {
+          setIsExpanded(true);
+        }
+      }
+    }
+  }, [activeNoteId]);
 
   useEffect(() => {
     if (selectedIndex === null) {
@@ -184,22 +210,61 @@ export default function NotesContent() {
     }
   }, [selectedIndex]);
 
+  // Handle escape key
   useEffect(() => {
-    if (selectedIndex === null) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        handleClose();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
+  // Handle browser back/forward buttons
+  useEffect(() => {
+    const handlePopState = () => {
+      const pathname = window.location.pathname;
+      const match = pathname.match(/^\/writing\/([^/]+)/);
+      if (match) {
+        const id = match[1];
+        const idx = notes.findIndex((n) => n.id === id);
+        if (idx !== -1) {
+          setSelectedIndex(idx);
+          const isMobile =
+            typeof window !== "undefined" &&
+            window.matchMedia("(max-width: 1023px)").matches;
+          if (isMobile) {
+            setIsExpanded(true);
+          }
+          return;
+        }
+      }
+      setSelectedIndex(null);
+      setIsExpanded(false);
+    };
+
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
+  useEffect(() => {
+    if (selectedIndex === null || isExpanded) return;
 
     const handlePointerDown = (event: MouseEvent) => {
       const target = event.target as Node;
       if (notePanelContainerRef.current?.contains(target)) return;
       if (listColumnRef.current?.contains(target)) return;
-      setSelectedIndex(null);
+      handleClose();
     };
 
     document.addEventListener("mousedown", handlePointerDown);
     return () => document.removeEventListener("mousedown", handlePointerDown);
-  }, [selectedIndex]);
+  }, [selectedIndex, isExpanded]);
 
   const itemsForNavigation = notes.map((note) => ({
-    href: note.externalUrl ?? `/writing#${note.id}`,
+    href: note.externalUrl ?? `/writing/${note.id}`,
   }));
 
   const handleSelect = (index: number) => {
@@ -213,21 +278,40 @@ export default function NotesContent() {
       typeof window !== "undefined" &&
       window.matchMedia("(max-width: 1023px)").matches;
 
-    setSelectedIndex((prev) => (prev === index ? null : index));
-    if (shouldOpenExpanded) {
+    const newIndex = selectedIndex === index ? null : index;
+    setSelectedIndex(newIndex);
+    if (shouldOpenExpanded && newIndex !== null) {
       setIsExpanded(true);
+    }
+
+    if (newIndex !== null) {
+      window.history.pushState(null, "", `/writing/${notes[newIndex].id}`);
+    } else {
+      window.history.pushState(null, "", "/writing");
     }
   };
 
   const handleClose = () => {
     setSelectedIndex(null);
     setIsExpanded(false);
+    window.history.pushState(null, "", "/writing");
+  };
+
+  const handleNavigate = (index: number) => {
+    const note = notes[index];
+    setSelectedIndex(index);
+    if (note && !note.externalUrl) {
+      window.history.pushState(null, "", `/writing/${note.id}`);
+    } else {
+      window.history.pushState(null, "", "/writing");
+    }
   };
 
   const handleToggleExpand = (index: number) => {
     if (selectedIndex === null) {
       setSelectedIndex(index);
       setIsExpanded(true);
+      window.history.pushState(null, "", `/writing/${notes[index].id}`);
       return;
     }
 
@@ -252,7 +336,7 @@ export default function NotesContent() {
                 selectionMode
                 selectedIndex={selectedIndex}
                 onSelect={handleSelect}
-                onNavigate={setSelectedIndex}
+                onNavigate={handleNavigate}
                 onEscape={handleClose}
               >
                 <ListNavHint alsoObserving={selectedIndex !== null} />
@@ -260,7 +344,7 @@ export default function NotesContent() {
                   style={{
                     opacity: showList ? 1 : 0,
                     filter: showList ? "blur(0px)" : "blur(4px)",
-                    transition: "opacity 600ms ease-out, filter 600ms ease-out",
+                    transition: "opacity 500ms ease-out, filter 500ms ease-out",
                   }}
                   className="flex h-full min-h-0 w-full"
                 >
@@ -291,6 +375,7 @@ export default function NotesContent() {
                             subtitle={note.subtitle}
                             index={index}
                             isSelected={selectedIndex === index}
+                            isPinned={note.isPinned}
                             onSelect={handleSelect}
                           />
                         ))}

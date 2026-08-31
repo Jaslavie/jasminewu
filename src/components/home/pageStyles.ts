@@ -37,6 +37,6 @@ export const pageLayoutClasses = {
   innerWrapper: "flex flex-col lg:flex-row gap-4 lg:gap-6 items-start lg:items-center py-4 lg:py-[14vh] w-full h-full",
   navWidth: "hidden h-full lg:block lg:w-[100px] lg:min-w-[100px] lg:max-w-[100px] lg:shrink-0 lg:self-start",
   divider: "hidden lg:block w-px bg-[rgba(255,255,255,0.15)] self-stretch",
-  mainContent: "h-full min-h-0 flex-1 min-w-0",
+  mainContent: "h-full min-h-0 flex-1 min-w-0 w-full self-stretch",
   contentContainer: "flex-1 flex flex-col gap-3 w-full overflow-y-auto overscroll-none",
 } as const;

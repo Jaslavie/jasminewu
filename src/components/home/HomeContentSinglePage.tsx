@@ -169,12 +169,12 @@ export default function HomeContentSinglePage() {
       const paragraphs = getParagraphs();
       if (paragraphs.length === 0) return;
 
-      if (e.key === "ArrowDown") {
+      if (e.key === "ArrowDown" || (e.key === "Tab" && !e.shiftKey)) {
         e.preventDefault();
         setFocusedParagraph((prev) =>
           prev === null ? 0 : (prev + 1) % paragraphs.length,
         );
-      } else if (e.key === "ArrowUp") {
+      } else if (e.key === "ArrowUp" || (e.key === "Tab" && e.shiftKey)) {
         e.preventDefault();
         setFocusedParagraph((prev) =>
           prev === null
@@ -341,35 +341,9 @@ export default function HomeContentSinglePage() {
                   and <Link href="https://www.gallatin.ai/">Gallatin</Link>.
                   Before that, I spent a stint researching decision-making
                   frameworks for lunar navigation with NASA JSC. Recently, I've
-                  been thinking a lot about computational models of perception,
-                  decision-making, and consciousness.
+                  been thinking a lot about the fundamental mechanics of
+                  perception, decision-making, and consciousness.
                 </p>
-                // <ul className="list-disc space-y-1 ml-5">
-                //   <li>
-                //     Spent 6 months deploying models to optimize battlefield
-                //     logistics at{" "}
-                //     <Link href="https://www.gallatin.ai/">Gallatin</Link>
-                //   </li>
-                //   <li>
-                //     Created a framework for analyzing military intel at{" "}
-                //     <Link href="https://time.com/6691662/ai-ukraine-war-palantir/">
-                //       Palantir
-                //     </Link>
-                //   </li>
-                //   <li>
-                //     Presented{" "}
-                //     <Link href="https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.SpaceCHI.2025.25">
-                //       research
-                //     </Link>{" "}
-                //     on lunar navigation tooling at the European Space Agency
-                //   </li>
-                //   <li>
-                //     Programmed spacesuit interfaces with{" "}
-                //     <Link href="https://www.nasa.gov/suits-and-rovers/">
-                //       NASA JSC
-                //     </Link>
-                //   </li>
-                // </ul>
               )}
               <p>
                 You'll find me sampling cortados and{" "}

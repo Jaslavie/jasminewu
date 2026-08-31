@@ -6,7 +6,7 @@ export default function BucketlistContent() {
       <li>work on crime investigations to solve impossible cold cases</li>
       <li>work on AI NPCs/world creation for video games</li>
       <li>military history research for justifiable rabbit holes</li>
-      <li>visit every starbucks reserve (4/6 so far!)</li>
+      <li>collect all starbucks reserve bottles (4/6 so far!)</li>
       <li>architect my own house</li>
       <li>live in sweden</li>
       <li>

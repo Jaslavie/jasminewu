@@ -48,12 +48,18 @@ export function usesIntegratedChrome(pathname: string): boolean {
 }
 
 export function shouldHideMobileNav(pathname: string): boolean {
-  if (pathname.startsWith(`${ROUTES.writing}/`)) return true;
   if (pathname.startsWith(`${ROUTES.writingOld}/`)) return true;
   if (pathname.startsWith(`${ROUTES.projects}/`)) return true;
   return false;
 }
 
 export function shouldShowExternalLinkIcons(pathname: string): boolean {
-  return pathname !== ROUTES.home && pathname !== ROUTES.curations && pathname !== ROUTES.library;
+  return (
+    pathname !== ROUTES.home &&
+    pathname !== ROUTES.curations &&
+    pathname !== ROUTES.library &&
+    !pathname.startsWith(`${ROUTES.library}/`) &&
+    pathname !== ROUTES.writing &&
+    !pathname.startsWith(`${ROUTES.writing}/`)
+  );
 }
