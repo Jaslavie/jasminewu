@@ -17,7 +17,7 @@ export default function SingleBookPage({
 
   return (
     <div
-      className={`relative w-full max-w-[280px] sm:max-w-[320px] aspect-[1/1.48] rounded-[2px] overflow-hidden shadow-2xl select-none shrink-0 border border-[rgba(255,255,255,0.12)] bg-neutral-900 ${className}`}
+      className={`relative w-[260px] sm:w-[280px] lg:w-[290px] aspect-[1/1.48] rounded-[2px] overflow-hidden shadow-2xl select-none shrink-0 border border-[rgba(255,255,255,0.12)] bg-neutral-900 ${className}`}
     >
       <img
         src={imageSrc}

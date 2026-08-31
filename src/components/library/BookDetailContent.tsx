@@ -30,7 +30,10 @@ export default function BookDetailContent({ book }: BookDetailContentProps) {
   const BookNoteContent = getLibraryBookContent(book.id);
 
   const handleClose = () => {
-    router.push("/library");
+    setShowContent(false);
+    setTimeout(() => {
+      router.push("/library");
+    }, 200);
   };
 
   const handleToggleExpand = () => {
@@ -46,13 +49,13 @@ export default function BookDetailContent({ book }: BookDetailContentProps) {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        router.push("/library");
+        handleClose();
       }
     };
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [router]);
+  }, []);
 
   useEffect(() => {
     const panel = panelRef.current;
@@ -134,20 +137,22 @@ export default function BookDetailContent({ book }: BookDetailContentProps) {
                   {/* Left Column (50% on desktop, hidden on mobile): Centered Book Page */}
                   <div
                     className={[
-                      "hidden lg:flex w-full shrink-0 overflow-hidden transition-[width,max-height,opacity,filter] duration-300 ease-out items-center justify-center",
+                      "hidden lg:flex shrink-0 overflow-hidden transition-[width,opacity,filter] duration-300 ease-out items-center justify-center",
                       isExpanded
-                        ? "pointer-events-none max-h-0 opacity-0 blur-[4px] lg:w-0 lg:max-h-none"
-                        : "opacity-100 blur-0 lg:w-1/2 lg:max-h-none h-full",
+                        ? "pointer-events-none lg:w-0 opacity-0 blur-[4px]"
+                        : "opacity-100 blur-0 lg:w-1/2 h-full",
                     ]
                       .filter(Boolean)
                       .join(" ")}
                   >
-                    <SingleBookPage book={book} />
+                    <div className="w-[290px] shrink-0 flex items-center justify-center">
+                      <SingleBookPage book={book} />
+                    </div>
                   </div>
 
                   {/* Right Column (50%): Writing / Note preview panel with toolbar & scroll */}
                   <div
-                    className={`relative flex min-h-0 flex-1 overflow-hidden transition-[width,max-width,margin,opacity,filter] duration-300 ease-out ${
+                    className={`relative flex min-h-0 flex-1 overflow-hidden transition-[width,max-width,margin] duration-300 ease-out ${
                       isExpanded ? "w-full" : "w-full lg:w-1/2 lg:max-h-full"
                     }`}
                   >

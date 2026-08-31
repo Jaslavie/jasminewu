@@ -11,13 +11,33 @@ import {
   pageLayoutClasses,
 } from "@/components/home/pageStyles";
 
+const parseDate = (str: string) => {
+  if (!str || str === "—") return 0;
+  const parts = str.split("-").map(Number);
+  if (parts.length === 3 && !parts.some(isNaN)) {
+    const [month, day, year] = parts;
+    const fullYear = year < 100 ? 2000 + year : year;
+    return new Date(fullYear, month - 1, day).getTime();
+  }
+  return 0;
+};
+
 export default function LibraryContent() {
   const router = useRouter();
   const [showContent, setShowContent] = useState(false);
   const [hoveredBookId, setHoveredBookId] = useState<string | null>(null);
 
+  const sortedListBooks = [...books].sort((a, b) => {
+    const dateA = parseDate(a.subtitle);
+    const dateB = parseDate(b.subtitle);
+    if (dateA && dateB) return dateB - dateA;
+    if (dateA && !dateB) return -1;
+    if (!dateA && dateB) return 1;
+    return 0;
+  });
+
   useEffect(() => {
-    const timer = setTimeout(() => setShowContent(true), 150);
+    const timer = setTimeout(() => setShowContent(true), 200);
     return () => clearTimeout(timer);
   }, []);
 
@@ -127,7 +147,7 @@ export default function LibraryContent() {
                 {/* Mobile List View - exact same UX & UI as Writing page */}
                 <div className="md:hidden flex-1 overflow-y-auto overscroll-none py-2 scrollbar-none">
                   <div className="flex w-full flex-col gap-2">
-                    {books.map((book) => {
+                    {sortedListBooks.map((book) => {
                       const isMock = !!book.isActive;
                       const isHovered = hoveredBookId === book.id;
                       const isOtherHovered = hoveredBookId !== null && !isHovered;
@@ -188,7 +208,7 @@ export default function LibraryContent() {
                     className="text-[12px] leading-[1.45] text-[var(--color-text-subheading)]"
                     style={{ fontFamily: "'EB Garamond', serif" }}
                   >
-                    inspired by{" "}
+                    some short essays and notes on the books i've read, inspired by{" "}
                     <a
                       href="https://www.ando.so/library"
                       target="_blank"

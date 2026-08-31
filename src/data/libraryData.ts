@@ -93,9 +93,9 @@ export const books: Book[] = [
     year: "1818",
     link: "https://example.com",
     coverImage: "/library/frankenstein.png",
-    noteTitle: "Frankenstein",
+    noteTitle: "Frankenstein and the consequences of objectification",
     subtitle: "07-22-26",
-    readingTime: "3",
+    readingTime: "4",
     isActive: true,
     layout: {
       x: 22,
@@ -131,7 +131,7 @@ export const books: Book[] = [
     link: "https://example.com",
     coverImage: "/library/simulacra.png",
     noteTitle: "Simulacra and Simulation",
-    subtitle: "07-02-26",
+    subtitle: "—",
     readingTime: "4",
     layout: {
       x: 63,
