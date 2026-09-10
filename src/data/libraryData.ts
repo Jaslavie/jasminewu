@@ -94,7 +94,7 @@ export const books: Book[] = [
     link: "https://example.com",
     coverImage: "/library/frankenstein.png",
     noteTitle: "Frankenstein and the consequences of objectification",
-    subtitle: "07-22-26",
+    subtitle: "08-30-26",
     readingTime: "4",
     isActive: true,
     layout: {

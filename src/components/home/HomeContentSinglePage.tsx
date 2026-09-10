@@ -124,7 +124,7 @@ export default function HomeContentSinglePage() {
         minute: "2-digit",
         second: "2-digit",
         hour12: true,
-        timeZone: "America/New_York",
+        timeZone: "America/Los_Angeles",
       };
       setTime(now.toLocaleTimeString("en-US", options));
     }
@@ -260,7 +260,7 @@ export default function HomeContentSinglePage() {
               {/* Header section - Time + Headline */}
               <div className="flex flex-col gap-0 mb-0">
                 {/* Time Display */}
-                <p className={mutedTextClass}>it&apos;s {time} in NYC</p>
+                <p className={mutedTextClass}>it&apos;s {time} in Irvine</p>
 
                 {/* Headline with typing cursor */}
                 <h3>
@@ -273,9 +273,9 @@ export default function HomeContentSinglePage() {
               </div>
 
               <p>
-                I work on research to understand how agents build and reason
-                over internal models of the physical world, particularly in
-                adversarial domains
+                I work on research to understand how intelligent systems build
+                and reason over internal models of the world, particularly in
+                ambiguous and adversarial domains
                 <Citation
                   number={1}
                   content={
@@ -309,13 +309,11 @@ export default function HomeContentSinglePage() {
                     </>
                   }
                 />
-                . I'm currently working on spatial reasoning models in{" "}
+                . I'm currently working on spatial reasoning models for{" "}
                 <Link href="https://robotics.eng.uci.edu/">
                   robot manipulation
                 </Link>{" "}
-                and{" "}
-                <Link href="https://systems.mit.edu/">lunar simulation</Link>,
-                and studying cs and cognitive neuroscience at UC Irvine.
+                and studying cs and cognition at UC Irvine.
               </p>
 
               <RecentSectionTabs showPast={showPast} onSelect={setShowPast} />
@@ -332,21 +330,21 @@ export default function HomeContentSinglePage() {
                 <p>
                   I spent a year working on{" "}
                   <Link href="https://en.wikipedia.org/wiki/Wargame">
-                    wargaming simulations
+                    wargames
                   </Link>{" "}
-                  at{" "}
+                  and mission planning at{" "}
                   <Link href="https://time.com/6691662/ai-ukraine-war-palantir/">
                     Palantir
                   </Link>{" "}
                   and <Link href="https://www.gallatin.ai/">Gallatin</Link>.
                   Before that, I spent a stint researching decision-making
-                  frameworks for lunar navigation with NASA JSC. Recently, I've
-                  been thinking a lot about the fundamental mechanics of
-                  perception, decision-making, and consciousness.
+                  frameworks for lunar navigation with NASA JSC. I've been
+                  thinking a lot about formal models of uncertainty/ambiguity,
+                  specifically in how we perceive reality and make decisions.
                 </p>
               )}
               <p>
-                You'll find me sampling cortados and{" "}
+                You'll find me cafe hopping and{" "}
                 <Link href="https://www.notion.so/bookshelf-31274d39a48380c1a3edf6d3eeab9f50?showMoveTo=true&saveParent=true">
                   rabbit-holing
                 </Link>{" "}
