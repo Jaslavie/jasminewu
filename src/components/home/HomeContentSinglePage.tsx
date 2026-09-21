@@ -275,7 +275,7 @@ export default function HomeContentSinglePage() {
               <p>
                 I work on research to understand how intelligent systems build
                 and reason over internal models of the world, particularly in
-                ambiguous and adversarial domains
+                ambiguous and adversarial conditions
                 <Citation
                   number={1}
                   content={

@@ -98,22 +98,22 @@ export const curationsData: CurationData = {
     //   title: "Imitation Game",
     //   link: "https://www.imdb.com/title/tt2084970/",
     // },
-    {
-      title: "The Pursuit of Happyness",
-      link: "https://www.imdb.com/title/tt0454921/",
-    },
+    // {
+    //   title: "The Pursuit of Happyness",
+    //   link: "https://www.imdb.com/title/tt0454921/",
+    // },
     // {
     //   title: "The Fault in our Stars",
     //   link: "https://www.imdb.com/title/tt2582846/",
     // },
     {
+      title: "Pride and Prejudice",
+      link: "https://www.imdb.com/title/tt0414387/",
+    },
+    {
       title: "The Last of Us",
       link: "https://www.imdb.com/title/tt3581920/",
     },
-    // {
-    //   title: "Pride and Prejudice",
-    //   link: "https://www.imdb.com/title/tt0414387/",
-    // },
 
   ],
 

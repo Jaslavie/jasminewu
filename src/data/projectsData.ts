@@ -40,26 +40,26 @@ export const projects: Project[] = [
       "Reimplemented LeWorldModel from scratch to learn Minecraft dynamics in latent space.",
     tags: ["ai-research", "software-engineering"],
   },
-  {
-    id: "pltr",
-    title: "Military Intelligence Analysis",
-    description: "Summer 2025 internship @ Palantir",
-    link: "/projects/pltr",
-    hoverImage: "/projects/palantir_hover.png",
-    hoverCaption:
-      "Interned with Palantir US Gov (Gotham) over the summer in D.C. to design workflows for a live operational theater.",
-    tags: ["product-design"],
-  },
-  {
-    id: "nasa",
-    title: "Anticipatory heads up display for spacesuits",
-    description: "HCI Research with NASA JSC",
-    link: "/projects/nasa",
-    hoverImage: "/projects/nasaSUITS_hover.png",
-    hoverCaption:
-      "Worked with NASA JSC to design & deploy spacesuit interfaces for lunar navigation under the Artemis mission.",
-    tags: ["software-engineering", "ai-research"],
-  },
+  // {
+  //   id: "pltr",
+  //   title: "Military Intelligence Analysis",
+  //   description: "Summer 2025 internship @ Palantir",
+  //   link: "/projects/pltr",
+  //   hoverImage: "/projects/palantir_hover.png",
+  //   hoverCaption:
+  //     "Interned with Palantir US Gov (Gotham) over the summer in D.C. to design workflows for a live operational theater.",
+  //   tags: ["product-design"],
+  // },
+  // {
+  //   id: "nasa",
+  //   title: "Anticipatory heads up display for spacesuits",
+  //   description: "HCI Research with NASA JSC",
+  //   link: "/projects/nasa",
+  //   hoverImage: "/projects/nasaSUITS_hover.png",
+  //   hoverCaption:
+  //     "Worked with NASA JSC to design & deploy spacesuit interfaces for lunar navigation under the Artemis mission.",
+  //   tags: ["software-engineering", "ai-research"],
+  // },
   {
     id: "spacechi",
     title: "Decision support system for lunar traversal",
