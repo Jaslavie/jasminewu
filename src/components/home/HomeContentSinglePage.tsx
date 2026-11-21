@@ -315,7 +315,8 @@ export default function HomeContentSinglePage() {
                 />
                 . I am interested in how language models encode knowledge and
                 uncertainty, the underlying geometry of these representations,
-                and its applications toward multi-agent simulations.
+                and its applications toward more interpretable multi-agent
+                simulations.
               </p>
 
               <p>
@@ -376,7 +377,7 @@ export default function HomeContentSinglePage() {
                       >
                         Eclipse of Reason
                       </a>{" "}
-                      - Max Horkheimer)
+                      - Max Horkheimer).
                     </>
                   }
                 />

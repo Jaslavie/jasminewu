@@ -133,30 +133,21 @@ export default function CurationsContent() {
                   to its essence, and mechanically raw.
                 </p>
                 <p>
-                  Appreciator of sci-fi terminals
-                  {/* <a
-                    href="https://www.pinterest.com/Jaslavie/curations/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="citation"
-                  >
-                    [1]
-                  </a> */}
-                  , scandinavian architecture, and avatar-esque cinematography.
+                  Appreciator of scandinavian architecture, analog
+                  systems, handwritten letters, and nostalgic imagery.
                 </p>
                 <p className="[&_.citation]:ml-0">
                   This is a [growing] collection of artifacts that resonate with
-                  me, and humans that inspire me
-                  {' '}<Citation
+                  me, and humans that inspire me{" "}
+                  <Citation
                     number={1}
                     content={
                       <>
                         I value sustained patience: the decade-long quiet work
-                        without recognition. 
+                        without recognition.
                         <br />
-                        The greatest artists and thinkers
-                        create beyond the spotlight, but then are heard all at
-                        once like{" "}
+                        The greatest artists and thinkers create beyond the
+                        spotlight, but then are heard all at once like{" "}
                         <ChaosLink href="https://www.mothfund.com/manifesto">
                           moths
                         </ChaosLink>
