@@ -111,7 +111,7 @@ export default function ProjectsContent() {
   return (
     <div className={pageLayoutClasses.screenSpace}>
       <div
-        className={`flex-1 flex flex-col ${pageLayoutClasses.screenPadding}`}
+        className={`flex-1 flex flex-col ${pageLayoutClasses.screenPadding} ${pageLayoutClasses.screenOverflow}`}
       >
         {/* Main Content Area */}
         <div className="flex-1 flex items-start lg:items-center justify-center min-h-0 overflow-hidden">

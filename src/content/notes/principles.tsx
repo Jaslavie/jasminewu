@@ -4,6 +4,18 @@ import Divider from "@/components/global/Divider";
 export default function PrinciplesContent() {
   return (
     <>
+      <blockquote>
+        <strong>Festina lente</strong> /fesˈtiː.naː ˈlɛn.teː/ · Latin; from
+        Greek σπεῦδε βραδέως (<em>speûde bradéōs</em>). Oxymoron meaning
+        &ldquo;make haste slowly.&rdquo; Adopted by emperors Augustus and Titus
+        to balance urgency with careful deliberation in battle.
+        <br />
+        Interpretation II: Thoughtful and enduring work demands patience and
+        serious commitment to quality. We should not expect fruits of our labor
+        to be wrought from frantic motion. All motion ought to be deliberately
+        concentrated.
+      </blockquote>
+
       <p>
         My contrarian and not-so-contrarian beliefs, separated by core
         principles and hard-won life lessons.

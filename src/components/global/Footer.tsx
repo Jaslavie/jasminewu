@@ -7,7 +7,7 @@ export default function Footer() {
           {/* Mobile: Column layout, Desktop: Inline */}
           <div className="flex flex-col lg:flex-row lg:items-center space-y-1 lg:space-y-0 lg:space-x-2">
             <div className="flex flex-wrap items-center gap-x-1">
-              <span>currently listening to the </span>
+              <span>Currently listening to the </span>
               <a
                 href="https://open.spotify.com/album/2ANVost0y2y52ema1E9xAZ"
                 target="_blank"
@@ -16,7 +16,6 @@ export default function Footer() {
               >
                 Thriller album
               </a>
-              <span>on repeat</span>
               {/* <span>& reading</span>
               <a
                 href="https://www.amazon.com/Heretics-Heroes-Renaissance-Artists-Reformation/dp/0385495587"
@@ -32,7 +31,7 @@ export default function Footer() {
 
         {/* Right side - Copyright - hidden on mobile */}
         <div className="hidden lg:block text-right">
-          <span>© 2026 made by jasmine</span>
+          <span>© 2026 Jasmine Wu</span>
         </div>
       </div>
     </footer>

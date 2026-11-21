@@ -11,8 +11,8 @@ import NavHint from "@/components/ui/NavHint";
 
 const NAME_LEAVE_DELAY_MS = 1500;
 const mutedTextClass = "text-[var(--color-text-muted)]";
-const tabHoverClass =
-  "transition-colors duration-300 hover:text-[rgba(255,255,255,0.85)]";
+// const tabHoverClass =
+//   "transition-colors duration-300 hover:text-[rgba(255,255,255,0.85)]";
 
 function NameHoverSwap() {
   const [showAlt, setShowAlt] = useState(false);
@@ -65,55 +65,55 @@ function NameHoverSwap() {
   );
 }
 
-function RecentSectionTabs({
-  showPast,
-  onSelect,
-}: {
-  showPast: boolean;
-  onSelect: (past: boolean) => void;
-}) {
-  const tabOptionClass = (active: boolean) =>
-    `cursor-pointer border-0 bg-transparent p-0 font-inherit ${tabHoverClass} ${
-      active
-        ? "text-text-body underline underline-offset-4 decoration-1 decoration-[var(--color-text-muted)]"
-        : `${mutedTextClass} no-underline`
-    }`;
+// function RecentSectionTabs({
+//   showPast,
+//   onSelect,
+// }: {
+//   showPast: boolean;
+//   onSelect: (past: boolean) => void;
+// }) {
+//   const tabOptionClass = (active: boolean) =>
+//     `cursor-pointer border-0 bg-transparent p-0 font-inherit ${tabHoverClass} ${
+//       active
+//         ? "text-text-body underline underline-offset-4 decoration-1 decoration-[var(--color-text-muted)]"
+//         : `${mutedTextClass} no-underline`
+//     }`;
 
-  return (
-    <p className="flex flex-wrap items-baseline gap-x-1">
-      <button
-        type="button"
-        aria-pressed={!showPast}
-        className={tabOptionClass(!showPast)}
-        onClick={(e) => {
-          e.stopPropagation();
-          onSelect(false);
-        }}
-      >
-        Recently
-      </button>
-      <span className={`${mutedTextClass} ${tabHoverClass}`}>or</span>
-      <button
-        type="button"
-        aria-pressed={showPast}
-        className={tabOptionClass(showPast)}
-        onClick={(e) => {
-          e.stopPropagation();
-          onSelect(true);
-        }}
-      >
-        in the distant past
-      </button>
-    </p>
-  );
-}
+//   return (
+//     <p className="flex flex-wrap items-baseline gap-x-1">
+//       <button
+//         type="button"
+//         aria-pressed={!showPast}
+//         className={tabOptionClass(!showPast)}
+//         onClick={(e) => {
+//           e.stopPropagation();
+//           onSelect(false);
+//         }}
+//       >
+//         Recently
+//       </button>
+//       <span className={`${mutedTextClass} ${tabHoverClass}`}>or</span>
+//       <button
+//         type="button"
+//         aria-pressed={showPast}
+//         className={tabOptionClass(showPast)}
+//         onClick={(e) => {
+//           e.stopPropagation();
+//           onSelect(true);
+//         }}
+//       >
+//         in the distant past
+//       </button>
+//     </p>
+//   );
+// }
 
 export default function HomeContentSinglePage() {
   const [time, setTime] = useState("");
   const [showCursor, setShowCursor] = useState(true);
   const [showContent, setShowContent] = useState(false);
   const [showPlanet, setShowPlanet] = useState(false);
-  const [showPast, setShowPast] = useState(false);
+  // const [showPast, setShowPast] = useState(false);
 
   // Live time in Los Angeles
   useEffect(() => {
@@ -233,11 +233,15 @@ export default function HomeContentSinglePage() {
     <div className={pageLayoutClasses.screenSpace}>
       <NavHint isObserving={isObserving} />
 
-      <div className={`flex flex-col ${pageLayoutClasses.screenPadding}`}>
+      <div
+        className={`flex flex-col ${pageLayoutClasses.screenPadding} ${pageLayoutClasses.screenOverflow}`}
+      >
         {/* Main Content Area */}
         <div className="flex-1 flex items-start lg:items-center justify-center min-h-0 overflow-hidden">
           {/* Centered Container - nav + divider + content + planet */}
-          <div className={`${pageLayoutClasses.innerWrapper}`}>
+          <div
+            className={`${pageLayoutClasses.innerWrapper} lg:gap-10 xl:gap-12`}
+          >
             {/* Left Nav - Aligned to top of content */}
             <div className={pageLayoutClasses.navWidth}>
               <HomeLeftNav />
@@ -249,7 +253,7 @@ export default function HomeContentSinglePage() {
             {/* Content */}
             <div
               ref={contentRef}
-              className={`w-full lg:max-w-[29vw] ${pageLayoutClasses.contentContainer}`}
+              className={`w-full max-w-[36rem] xl:max-w-[29vw] ${pageLayoutClasses.contentContainer}`}
               style={{
                 ...pageContentStyle,
                 opacity: showContent ? 1 : 0,
@@ -260,7 +264,7 @@ export default function HomeContentSinglePage() {
               {/* Header section - Time + Headline */}
               <div className="flex flex-col gap-0 mb-0">
                 {/* Time Display */}
-                <p className={mutedTextClass}>it&apos;s {time} in Irvine</p>
+                <p className={mutedTextClass}>It&apos;s {time} in Irvine</p>
 
                 {/* Headline with typing cursor */}
                 <h3>
@@ -273,16 +277,16 @@ export default function HomeContentSinglePage() {
               </div>
 
               <p>
-                I work on research to understand how intelligent systems build
-                and reason over internal models of the world, particularly in
-                ambiguous and adversarial conditions
+                I work on research to understand how agents construct and reason
+                over internal models of the world, particularly under ambiguous
+                and adversarial conditions
                 <Citation
                   number={1}
                   content={
                     <>
                       I believe the hardest problems are solved in the most high
                       pressure environments. I'm a strong believer in the ethos
-                      of wartime resolve. I'm deeply drawn to WW2 — which
+                      of wartime resolve and am deeply drawn to WW2 — which
                       revealed to us the incredible magnitude of human
                       potential. See{" "}
                       <a
@@ -309,42 +313,87 @@ export default function HomeContentSinglePage() {
                     </>
                   }
                 />
-                . I'm currently working on spatial reasoning models for{" "}
-                <Link href="https://robotics.eng.uci.edu/">
-                  robot manipulation
-                </Link>{" "}
-                and studying cs and cognition at UC Irvine.
+                . I am interested in how language models encode knowledge and
+                uncertainty, the underlying geometry of these representations,
+                and its applications toward multi-agent simulations.
               </p>
 
-              <RecentSectionTabs showPast={showPast} onSelect={setShowPast} />
-              {showPast ? (
-                <p>
-                  I spent most weekends of freshman year at{" "}
-                  <Link href="https://devpost.com/jaslavie">hackathons</Link>{" "}
-                  where I developed a serial obsession with experimentation.
-                  Before that, I was a devout Minecraft kid, spending my
-                  childhood building neighborhoods and exploiting bed wars
-                  games.
-                </p>
-              ) : (
-                <p>
-                  I spent a year working on{" "}
-                  <Link href="https://en.wikipedia.org/wiki/Wargame">
-                    wargames
-                  </Link>{" "}
-                  and mission planning at{" "}
-                  <Link href="https://time.com/6691662/ai-ukraine-war-palantir/">
-                    Palantir
-                  </Link>{" "}
-                  and <Link href="https://www.gallatin.ai/">Gallatin</Link>.
-                  Before that, I spent a stint researching decision-making
-                  frameworks for lunar navigation with NASA JSC. I've been
-                  thinking a lot about formal models of uncertainty/ambiguity,
-                  specifically in how we perceive reality and make decisions.
-                </p>
-              )}
               <p>
-                You'll find me cafe hopping and{" "}
+                I currently work on spatial reasoning models for{" "}
+                <Link href="https://robotics.eng.uci.edu/">
+                  dexterous manipulation
+                </Link>{" "}
+                , study cs and cognition at UC Irvine, and [trying to] read as
+                much as possible
+                <Citation
+                  number={2}
+                  content={
+                    <>
+                      Currently reading{" "}
+                      <a
+                        href="https://en.wikipedia.org/wiki/The_World_as_Will_and_Representation"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="link"
+                        style={{
+                          color: "inherit",
+                          textDecoration: "underline",
+                          textDecorationColor: "var(--theme-link-decoration)",
+                          textUnderlineOffset: "4px",
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.textDecorationColor =
+                            "var(--theme-link-hover-decoration)";
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.textDecorationColor =
+                            "var(--theme-link-decoration)";
+                        }}
+                      >
+                        The World as Will and Representation
+                      </a>{" "}
+                      - Arthur Schopenhauer and dipping my toes into critical
+                      theory/critiques of instrumental reason (
+                      <a
+                        href="https://en.wikipedia.org/wiki/Eclipse_of_Reason_(Horkheimer)"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="link"
+                        style={{
+                          color: "inherit",
+                          textDecoration: "underline",
+                          textDecorationColor: "var(--theme-link-decoration)",
+                          textUnderlineOffset: "4px",
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.textDecorationColor =
+                            "var(--theme-link-hover-decoration)";
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.textDecorationColor =
+                            "var(--theme-link-decoration)";
+                        }}
+                      >
+                        Eclipse of Reason
+                      </a>{" "}
+                      - Max Horkheimer)
+                    </>
+                  }
+                />
+                . Most recently I worked on{" "}
+                <Link href="https://en.wikipedia.org/wiki/Wargame">
+                  wargames
+                </Link>{" "}
+                and military operation planning at{" "}
+                <Link href="https://time.com/6691662/ai-ukraine-war-palantir/">
+                  Palantir
+                </Link>{" "}
+                and <Link href="https://www.gallatin.ai/">Gallatin</Link>, and
+                decision-making frameworks for lunar navigation with NASA JSC.
+              </p>
+              <p>
+                In my free time, I enjoy cafe-hopping, studying military history
+                and philosophy, and{" "}
                 <Link href="https://www.notion.so/bookshelf-31274d39a48380c1a3edf6d3eeab9f50?showMoveTo=true&saveParent=true">
                   rabbit-holing
                 </Link>{" "}
@@ -358,16 +407,13 @@ export default function HomeContentSinglePage() {
                   <Link href="https://linkedin.com/in/jaslavie">Linkedin</Link>
                   <Link href="https://x.com/jaslavie">X</Link>
                   <Link href="https://github.com/jaslavie">Github</Link>
-                  {/* <Link href="https://drive.google.com/file/d/1GwnN269vEkCpKu3ZGxNPWhVRkGVzbMxZ/view?usp=sharing">
-                    Resume
-                    </Link> */}
                 </p>
               </div>
             </div>
 
-            {/* Right Side - ASCII Art - aligned with content row, hidden on mobile */}
+            {/* Right Side - ASCII Art — only on xl+ so mid widths aren't cramped */}
             <div
-              className="hidden lg:flex items-center justify-center"
+              className="hidden xl:flex items-center justify-center"
               style={{
                 opacity: showPlanet ? 1 : 0,
                 filter: showPlanet ? "blur(0px)" : "blur(4px)",

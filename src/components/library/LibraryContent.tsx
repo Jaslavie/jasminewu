@@ -95,7 +95,7 @@ export default function LibraryContent() {
     <div className={pageLayoutClasses.screenSpace}>
       <NavHint isObserving={hoveredBookId !== null} />
       <div
-        className={`flex-1 flex flex-col ${pageLayoutClasses.screenPadding}`}
+        className={`flex-1 flex flex-col ${pageLayoutClasses.screenPadding} ${pageLayoutClasses.screenOverflow}`}
       >
         {/* Main Content Area */}
         <div className="flex-1 flex items-start lg:items-center justify-center min-h-0 overflow-hidden">

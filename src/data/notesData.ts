@@ -26,12 +26,12 @@ export const notes: NoteMeta[] = [
     subtitle: "06-02-26",
     readingTime: "2",
   },
-  {
-    id: "bucketlist",
-    title: "Bucketlist",
-    subtitle: "05-27-26",
-    readingTime: "1",
-  },
+  // {
+  //   id: "bucketlist",
+  //   title: "Bucketlist",
+  //   subtitle: "05-27-26",
+  //   readingTime: "1",
+  // },
   {
     id: "living-ecosystems",
     title: "Living Ecosystems",
@@ -55,11 +55,17 @@ export const notes: NoteMeta[] = [
     subtitle: "02-09-25",
     externalUrl: "https://substack.com/home/post/p-156802970",
   },
-  {
-    id: "sandbox",
-    title: "The world is your sandbox",
-    subtitle: "03-10-22",
-    externalUrl:
-      "https://medium.com/@Jaslavie/minecraft-creative-mode-or-survival-mode-70656cdc0f39",
-  },
+  // {
+  //   id: "little-infinities",
+  //   title: "Little Infinities",
+  //   subtitle: "01-18-25",
+  //   readingTime: "3",
+  // },
+  // {
+  //   id: "sandbox",
+  //   title: "The world is your sandbox",
+  //   subtitle: "03-10-22",
+  //   externalUrl:
+  //     "https://medium.com/@Jaslavie/minecraft-creative-mode-or-survival-mode-70656cdc0f39",
+  // },
 ];

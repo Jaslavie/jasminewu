@@ -32,7 +32,10 @@ export const noteCaptionClass =
 export const pageLayoutClasses = {
   screenSpace: "h-screen overflow-hidden overscroll-none flex flex-col",
   container: "min-h-screen flex flex-col",
-  screenPadding: "px-4 sm:px-6 lg:px-[16vw] pt-[12vh] lg:pt-[3vh] pb-4 lg:pb-0 flex-1 overflow-hidden",
+  /** Horizontal + vertical page chrome — keep identical across home, projects, writing, library, curations */
+  screenPadding:
+    "px-6 sm:px-10 lg:px-28 xl:px-[16vw] pt-[12vh] lg:pt-[3vh] pb-4 lg:pb-0 flex-1",
+  screenOverflow: "overflow-hidden",
   contentWrapper: "flex-1 flex justify-center py-[8vh]",
   innerWrapper: "flex flex-col lg:flex-row gap-4 lg:gap-6 items-start lg:items-center py-4 lg:py-[14vh] w-full h-full",
   navWidth: "hidden h-full lg:block lg:w-[100px] lg:min-w-[100px] lg:max-w-[100px] lg:shrink-0 lg:self-start",

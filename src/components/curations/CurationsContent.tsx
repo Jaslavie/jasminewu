@@ -95,7 +95,9 @@ export default function CurationsContent() {
 
   return (
     <div className="min-h-screen flex flex-col lg:h-screen lg:overflow-hidden lg:overscroll-none">
-      <div className="flex-1 flex flex-col px-4 sm:px-6 lg:px-[16vw] pt-[12vh] lg:pt-[3vh] pb-4 lg:pb-0 overflow-visible lg:overflow-hidden">
+      <div
+        className={`flex flex-col ${pageLayoutClasses.screenPadding} overflow-visible lg:overflow-hidden`}
+      >
         {/* Main Content Area */}
         <div className="flex-1 flex items-start lg:items-center justify-center lg:min-h-0 lg:overflow-hidden">
           {/* Centered Container - nav + divider + content */}

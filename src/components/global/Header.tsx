@@ -70,7 +70,7 @@ export default function Header() {
           }}
         ></div>
         <div className="text-sm text-[rgba(255,255,255,0.75)] font-serif px-4 py-3 flex items-center">
-          it's currently {Time} in Los Angeles
+          It's currently {Time} in Los Angeles
         </div>
         <div
           className="self-stretch"

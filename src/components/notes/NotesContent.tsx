@@ -320,7 +320,9 @@ export default function NotesContent({ activeNoteId }: NotesContentProps = {}) {
 
   return (
     <div className={pageLayoutClasses.screenSpace}>
-      <div className={`flex-1 flex flex-col ${pageLayoutClasses.screenPadding}`}>
+      <div
+        className={`flex-1 flex flex-col ${pageLayoutClasses.screenPadding} ${pageLayoutClasses.screenOverflow}`}
+      >
         <div className="flex-1 flex items-start lg:items-center justify-center min-h-0 overflow-hidden">
           <div className={`${pageLayoutClasses.innerWrapper}`}>
             <div className={pageLayoutClasses.navWidth}>

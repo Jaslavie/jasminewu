@@ -27,10 +27,6 @@ export const curationsData: CurationData = {
   //     link: "https://www.imdb.com/title/tt2119532/?ref_=nv_sr_srsg_1_tt_5_nm_2_in_0_q_hacksa",
   //   },
   //   {
-  //     title: "Rise and Fall of the 3rd Reich",
-  //     link: "https://www.amazon.com/Rise-Fall-Third-Reich-ebook/dp/B07XD76H41/",
-  //   },
-  //   {
   //     title: "The Diary of Anne Frank",
   //     link: "https://www.amazon.com/Anne-Frank-Diary-Young-Girl/dp/B007Z332A0/",
   //   },
@@ -63,17 +59,13 @@ export const curationsData: CurationData = {
       link: "https://www.amazon.com/Fault-Our-Stars-John-Green/dp/1455869929/",
     },
     {
-      title: "Minecraft End Poem",
+      title: "End Poem - Julian Gough",
       link: "https://theendpoem.com/",
     },
     // {
-    //   title: "Ironies of Automation",
-    //   link: "https://ckrybus.com/static/papers/Bainbridge_1983_Automatica.pdf",
+    //   title: "Rise and Fall of the 3rd Reich",
+    //   link: "https://www.amazon.com/Rise-Fall-Third-Reich-ebook/dp/B07XD76H41/",
     // },
-    // {
-    //   title: "How to do Great Work",
-    //   link: "https://paulgraham.com/greatwork.html",
-    // }
   ],
 
   //* ========== Films ==========
@@ -106,9 +98,13 @@ export const curationsData: CurationData = {
     //   title: "The Fault in our Stars",
     //   link: "https://www.imdb.com/title/tt2582846/",
     // },
+    // {
+    //   title: "Pride and Prejudice",
+    //   link: "https://www.imdb.com/title/tt0414387/",
+    // },
     {
-      title: "Pride and Prejudice",
-      link: "https://www.imdb.com/title/tt0414387/",
+      title: "Downfall",
+      link: "https://www.imdb.com/title/tt0363163/",
     },
     {
       title: "The Last of Us",

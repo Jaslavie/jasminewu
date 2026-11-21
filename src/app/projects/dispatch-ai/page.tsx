@@ -180,7 +180,7 @@ export default function DispatchAIProject() {
   return (
     <LightProjectPage
       title="emergency triage system for 911 calls"
-      meta="2024 / Product Design, Fullstack"
+      meta="2024 / Product & Fullstack"
       imageSrc="/projects/dispatchAI/dispatchThumbnail.png"
       imageAlt="Dispatch AI emergency response platform"
       actions={[

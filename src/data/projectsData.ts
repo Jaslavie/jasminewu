@@ -21,6 +21,16 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: "le-wm-minecraft",
+    title: "LeWorldModel for Minecraft",
+    description: "Physics-grounded world model for 3D, egocentric Minecraft tasks",
+    link: "https://github.com/Jaslavie/le-wm-minecraft",
+    hoverImage: "/projects/lewm_hover.png",
+    hoverCaption:
+      "Reimplemented LeWorldModel from scratch to learn Minecraft dynamics in latent space.",
+    tags: ["ai-research", "software-engineering"],
+  },
+  {
     id: "world-gen",
     title: "Verifiable 2D game generation",
     description: "Text-to-game worlds with queryable, verifiable game states",
@@ -28,16 +38,6 @@ export const projects: Project[] = [
     hoverImage: "/projects/worldgen_hover.gif",
     hoverCaption:
       "Agent harness to generate 2D game worlds with queryable, verifiable states.",
-    tags: ["ai-research", "software-engineering"],
-  },
-  {
-    id: "le-wm-minecraft",
-    title: "LeWorldModel for Minecraft",
-    description: "Physics-grounded world model for 3D Minecraft tasks",
-    link: "https://github.com/Jaslavie/le-wm-minecraft",
-    hoverImage: "/projects/lewm_hover.png",
-    hoverCaption:
-      "Reimplemented LeWorldModel from scratch to learn Minecraft dynamics in latent space.",
     tags: ["ai-research", "software-engineering"],
   },
   // {
