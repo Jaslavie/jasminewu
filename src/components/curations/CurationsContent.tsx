@@ -147,7 +147,7 @@ export default function CurationsContent() {
                         without recognition.
                         <br />
                         The greatest artists and thinkers create beyond the
-                        spotlight, but then are heard all at once like{" "}
+                        spotlight, but then are seen all at once like{" "}
                         <ChaosLink href="https://www.mothfund.com/manifesto">
                           moths
                         </ChaosLink>

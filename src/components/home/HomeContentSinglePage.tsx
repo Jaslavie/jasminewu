@@ -240,7 +240,7 @@ export default function HomeContentSinglePage() {
         <div className="flex-1 flex items-start lg:items-center justify-center min-h-0 overflow-hidden">
           {/* Centered Container - nav + divider + content + planet */}
           <div
-            className={`${pageLayoutClasses.innerWrapper} lg:gap-10 xl:gap-12`}
+            className={pageLayoutClasses.innerWrapper}
           >
             {/* Left Nav - Aligned to top of content */}
             <div className={pageLayoutClasses.navWidth}>
@@ -324,7 +324,7 @@ export default function HomeContentSinglePage() {
                 <Link href="https://robotics.eng.uci.edu/">
                   dexterous manipulation
                 </Link>{" "}
-                , study cs and cognition at UC Irvine, and [trying to] read as
+                , study cs and cognition at UC Irvine, and am [trying to] read as
                 much as possible
                 <Citation
                   number={2}
@@ -336,20 +336,6 @@ export default function HomeContentSinglePage() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="link"
-                        style={{
-                          color: "inherit",
-                          textDecoration: "underline",
-                          textDecorationColor: "var(--theme-link-decoration)",
-                          textUnderlineOffset: "4px",
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.textDecorationColor =
-                            "var(--theme-link-hover-decoration)";
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.textDecorationColor =
-                            "var(--theme-link-decoration)";
-                        }}
                       >
                         The World as Will and Representation
                       </a>{" "}
@@ -360,20 +346,6 @@ export default function HomeContentSinglePage() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="link"
-                        style={{
-                          color: "inherit",
-                          textDecoration: "underline",
-                          textDecorationColor: "var(--theme-link-decoration)",
-                          textUnderlineOffset: "4px",
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.textDecorationColor =
-                            "var(--theme-link-hover-decoration)";
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.textDecorationColor =
-                            "var(--theme-link-decoration)";
-                        }}
                       >
                         Eclipse of Reason
                       </a>{" "}
